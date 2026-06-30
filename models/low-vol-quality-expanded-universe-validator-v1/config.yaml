@@ -1,0 +1,36 @@
+model_name: low-vol-quality-expanded-universe-validator-v1
+issue_id: AR-164
+parent_alpha: AR-010
+status: rejected
+research_type: promotion_pruning_validator
+asset_bucket: equity
+data_source: qfa/Alpaca real daily market data
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+universe:
+  selection: predeclared liquid U.S. common-stock proxy list, frozen before scoring
+  selected_count: 133
+  limitations:
+    - current-liquid-large-cap proxy list is survivorship-biased because qfa workflow lacks full point-in-time security master
+    - manually predeclared sector map
+filters:
+  min_history_days: 900
+  max_missing_ratio: 0.25
+  price_floor: 95% of trailing 252 closes above 5 USD
+  median_dollar_volume_1y_min: 5000000
+  corporate_action_sanity: 0.999 abs daily return quantile below 80%, last close above 1 USD
+signal:
+  vol_window_days: 63
+  downside_vol_window_days: 63
+  smoothness_window_days: 63
+  rebalance: monthly in evaluator; qfa model emits current target weights
+  portfolio: long top 20% low-vol/smooth-quality rank, short bottom 20%, 100% gross market-neutral
+costs_bps_one_way: [5, 10, 20]
+primary_cost_bps_one_way: 10
+decision_gates:
+  median_random_window_sharpe_gt_0: true
+  positive_window_rate_min: 0.55
+  max_relevant_corr_preferred: 0.60

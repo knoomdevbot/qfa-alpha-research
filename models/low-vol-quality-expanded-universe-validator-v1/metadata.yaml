@@ -1,0 +1,23 @@
+model_name: low-vol-quality-expanded-universe-validator-v1
+issue_id: AR-164
+created_at: '2026-06-30T16:16:54Z'
+last_evaluated_at: '20260630T163134Z'
+status: rejected
+priority: completed_realdata_rejection
+family: defensive_quality_validation
+parent_alpha: AR-010
+decision: rejected
+summary: >-
+  Expanded-universe AR-010 low-vol/smooth-return quality validator failed real-data
+  promotion gates after 10 bps one-way costs: Sharpe -0.870,
+  median random-window Sharpe -0.981, p25
+  -1.378, positive-window rate 7.5%.
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+artifacts:
+  latest_json: evaluations/latest.json
+  latest_md: evaluations/latest.md
+  run_json: evaluations/runs/ar164_realdata_20260630T163134Z.json
