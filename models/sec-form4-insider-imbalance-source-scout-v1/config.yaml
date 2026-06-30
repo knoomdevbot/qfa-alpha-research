@@ -1,0 +1,25 @@
+model_name: sec-form4-insider-imbalance-source-scout-v1
+issue_id: AR-159
+status: rejected
+queue_status: completed_source_gate_rejection
+research_type: source_gate_feasibility_scout
+zero_weight: true
+source_gate_passed: false
+performance_run: false
+candidate_source:
+  canonical: SEC EDGAR submissions metadata and raw Form 4 ownership XML
+  optional_cross_check: OpenInsider only as non-authoritative audit, not used in this recovery artifact
+bounded_limits:
+  checked_ciks: 5
+  sampled_form4_filings: 10
+  max_allowed_ciks: 10
+  max_allowed_form4_filings: 30
+controls:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
+signal:
+  enabled: false
+  reason: Source gate rejected; no durable timestamp-safe mapped clustered event table was built.

@@ -1,0 +1,117 @@
+{
+  "issue_id": "AR-159",
+  "model_name": "sec-form4-insider-imbalance-source-scout-v1",
+  "run_id": "ar159_form4_source_gate_20260630T090918Z",
+  "created_at": "2026-06-30T09:09:18Z",
+  "decision": {
+    "status": "rejected",
+    "queue_status": "completed_source_gate_rejection",
+    "source_gate_status": "source_gate_rejected",
+    "rationale": "A bounded recovery probe confirmed SEC EDGAR submissions metadata reachability, Form 4 acceptance timestamps, and parseable raw ownership XML in a small sample. However, no durable 2018-2026 timestamp-safe parsed event table with at least 500 conservatively mapped clustered insider-imbalance events was built, and no mapping, clustering, concentration, control, or performance gates were completed."
+  },
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "data": {
+    "source": "SEC EDGAR submissions metadata and raw Form 4 ownership XML",
+    "endpoints": [
+      "https://data.sec.gov/submissions/CIK##########.json",
+      "https://www.sec.gov/Archives/edgar/data/CIK/ACCESSION/form4.xml"
+    ],
+    "endpoint_status": "ok_for_bounded_probe",
+    "performance_market_data_source": null,
+    "raw_sec_documents_retained": false,
+    "raw_event_tables_retained": false,
+    "raw_bars_retained": false,
+    "raw_cache_retained": false
+  },
+  "bounded_probe": {
+    "checked_ciks": 5,
+    "ciks_with_submissions": 5,
+    "submission_fetch_errors": 0,
+    "sampled_issuer_ciks": [
+      "0000320193",
+      "0000789019",
+      "0001018724",
+      "0001045810",
+      "0001326801"
+    ],
+    "recent_form4_rows": 2969,
+    "form4_rows_with_acceptance_datetime": 2969,
+    "sample_accessions_retained_as_metadata_only": 10,
+    "sampled_form4_filings": 10,
+    "archive_xml_attempts": 10,
+    "archive_xml_reachable": 10,
+    "xml_parse_success": 10,
+    "non_derivative_transactions_seen": 22,
+    "transaction_code_counts": {
+      "M": 6,
+      "F": 6,
+      "S": 8,
+      "G": 2
+    },
+    "acquired_disposed_counts": {
+      "A": 6,
+      "D": 16
+    },
+    "field_presence": {
+      "acceptanceDateTime": true,
+      "accessionNumber": true,
+      "primaryDocument": true,
+      "issuerCik": true,
+      "issuerTradingSymbol": true,
+      "nonDerivativeTransaction": true,
+      "transactionDate": true,
+      "transactionCode": true,
+      "transactionAcquiredDisposedCode": true,
+      "transactionShares": true
+    },
+    "path_resolution_note": "When primaryDocument used an XSL path such as xslF345X06/form4.xml, raw XML was resolved by using the accession directory basename form4.xml rather than the XSL subdirectory URL."
+  },
+  "candidate_pool": {
+    "description": "Potentially SEC Form 4 and Form 4/A ownership filings for liquid U.S. common-stock issuers over 2018-2026, if parsed from raw XML with EDGAR acceptance timestamps and conservative issuer mapping.",
+    "source_reachability": "sample_passed",
+    "parser_reachability": "sample_passed_only",
+    "conservative_mapping_reachability": "not_completed",
+    "timestamp_safe_form4_event_table_built": false,
+    "liquid_us_common_stock_table_built": false,
+    "duplicate_or_amendment_clustering_built": false,
+    "insider_imbalance_clusters_built": false
+  },
+  "selected_universe": [],
+  "feasibility_counts": {
+    "candidate_forms_with_acceptance_datetime_in_probe": 2969,
+    "sample_raw_xml_documents_parsed": 10,
+    "sample_non_derivative_transactions_seen": 22,
+    "required_mapped_clustered_events": 500,
+    "mapped_liquid_symbols": null,
+    "timestamp_safe_clustered_events": null
+  },
+  "source_gate": {
+    "passed": false,
+    "required_mapped_clustered_events": 500,
+    "failed_components": [
+      "no durable 2018-2026 Form 4 parsed event table was built",
+      "conservative issuer-to-liquid-common-stock mapping was not built",
+      "duplicate and amendment handling was not built",
+      "issuer/date/filer transaction clustering and sale-to-purchase imbalance calculation were not built",
+      "breadth and concentration gates were not evaluated",
+      "real-data performance evaluator and controls were not run"
+    ],
+    "reason": "The issue requires a reproducible timestamp-safe Form 4 event table with at least 500 mapped clustered events before any alpha claim. The bounded recovery proved source/parsing basics only."
+  },
+  "metrics": null,
+  "performance_run": {
+    "run": false,
+    "reason": "Source/event-table gate failed; no returns, event windows, controls, costs, random periods, shifted/shuffled labels, daemon, or orders were evaluated."
+  },
+  "limitations": [
+    "The probe was intentionally bounded to 5 CIKs and 10 sampled Form 4 filings, below the allowed cap of 10 CIKs and 30 filings.",
+    "No raw SEC filings, raw event rows, raw parsed table, or market bars were retained.",
+    "SEC company ticker/common-stock mapping, survivorship handling, ticker changes, amendments, duplicate filings, filer roles, and clustered imbalance breadth remain unresolved.",
+    "Observed transaction code counts are source parsing observations only, not alpha or performance metrics."
+  ],
+  "status_rationale": "Rejected for this research cycle at source/event-table gate with a disabled zero-weight model. No direct Form 4 continuation child should be created."
+}
