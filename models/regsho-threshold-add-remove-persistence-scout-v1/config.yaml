@@ -1,0 +1,34 @@
+model_name: regsho-threshold-add-remove-persistence-scout-v1
+issue_id: AR-158
+asset_bucket: equity
+status: rejected
+weight: 0.0
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+source_gate:
+  decision: rejected_blocking
+  reason: official source reachability was demonstrated, but full reproducible archive ingestion, liquid Alpaca mapping, and required real daily-bar event-window performance were not completed; NYSE endpoint throttled/failed after bounded monthly probes.
+  conservative_trade_lag: next_session_after_exchange_timestamp
+candidate_product_pool:
+  - Nasdaq-listed common stocks and ETFs in Nasdaq Trader nasdaqthYYYYMMDD files
+  - NYSE common stocks and ETFs from NYSE regulatory threshold-securities download endpoint
+  - NYSE American common stocks and ETFs from the same NYSE regulatory endpoint
+  - NYSE Arca ETFs from the same NYSE regulatory endpoint
+selected_universe: none_zero_weight
+costs_bps:
+  primary: 10
+  sensitivity: [5, 20]
+controls_required_if_reopened:
+  - shifted_list_dates
+  - shuffled_labels
+  - matched_distressed_non_threshold_names
+  - generic_momentum_reversal_liquidity
+  - meme_period_exclusion
+  - add_remove_inversion
+orthogonality_required_if_reopened:
+  - AR-138 SEC FTD
+  - AR-140 FINRA short-volume
+  - liquidity-stress/reversal watchlist where reconstructable

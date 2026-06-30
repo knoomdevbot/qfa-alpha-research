@@ -1,0 +1,116 @@
+{
+  "run_id": "ar158_regsho_source_gate_20260630T094900Z",
+  "issue_id": "AR-158",
+  "model_name": "regsho-threshold-add-remove-persistence-scout-v1",
+  "asset_bucket": "equity",
+  "status": "rejected",
+  "decision": "rejected_blocking_source_gate_incomplete",
+  "weight": 0.0,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "evaluation_timestamp_utc": "2026-06-30T09:49:00Z",
+  "hypothesis": "Reg SHO threshold-list add, persistence, and removal states may create short-horizon continuation/reversal pressure from settlement-fail constraints, covering, attention, and distress-liquidity effects.",
+  "candidate_product_pool": [
+    "Nasdaq-listed common stocks and ETFs in official Nasdaq Trader nasdaqthYYYYMMDD text files",
+    "NYSE common stocks and ETFs in NYSE regulatory threshold-securities download endpoint",
+    "NYSE American common stocks and ETFs in the same endpoint",
+    "NYSE Arca ETFs in the same endpoint"
+  ],
+  "selected_universe": {
+    "status": "none_zero_weight",
+    "mapped_liquid_event_breadth": 0,
+    "reason": "No full daily source archive and no qfa/Alpaca liquid mapping were completed in this scout. Bounded source samples showed sufficient raw symbolic breadth but not enough to pass the hard liquid-mapped event gate."
+  },
+  "source_gate": {
+    "overall": "fail_blocking",
+    "timestamp_vintage_assessment": "Official files carry date-specific URLs or selectedDate parameters plus 14-digit exchange timestamp trailers. Nasdaq monthly probes were reproducible across 2018-2026. NYSE-family probes were reachable and timestamped but became unstable/rate-limited after 2018 in the bounded monthly sweep; repeatability for the late-2024 NYSE sample failed in the same session after throttling.",
+    "parser_built": true,
+    "durable_event_table_built": false,
+    "full_archive_completed": false,
+    "market_data_performance_ran": false,
+    "why_performance_not_run": "Required source gate did not pass: full reproducible daily archive, liquid symbol mapping, and concentration-safe event table were not available. Per issue rule, source reachability alone is not a completed alpha result.",
+    "probe_scope": {
+      "date_samples": 102,
+      "frequency": "month-end requested dates from 2018-01 through 2026-06 with up-to-7-day fallback",
+      "markets": ["nasdaq", "nyse", "nyse_american", "nyse_arca"]
+    },
+    "market_ok_counts": {
+      "nasdaq": 102,
+      "nyse": 17,
+      "nyse_american": 17,
+      "nyse_arca": 16
+    },
+    "market_fail_counts": {
+      "nyse": 85,
+      "nyse_american": 85,
+      "nyse_arca": 86
+    },
+    "sampled_unique_symbols_raw": 1580,
+    "sampled_event_counts_raw_vs_previous_monthly_sample": {
+      "sampled_rows": 3127,
+      "sampled_adds": 2487,
+      "sampled_removes": 2392,
+      "sampled_persists": 640
+    },
+    "sampled_rows_by_year_raw": {
+      "2018": 473,
+      "2019": 278,
+      "2020": 234,
+      "2021": 302,
+      "2022": 237,
+      "2023": 248,
+      "2024": 446,
+      "2025": 527,
+      "2026": 382
+    },
+    "repeatability_probe": [
+      {"market": "nasdaq", "used_date": "2024-06-28", "ok_pair": true, "same_hash": true, "hash_a": "b737aec93b9942c2", "hash_b": "b737aec93b9942c2", "rows_a": 42, "rows_b": 42},
+      {"market": "nyse", "used_date": null, "ok_pair": false, "same_hash": false, "rows_a": 0, "rows_b": 0},
+      {"market": "nyse_american", "used_date": null, "ok_pair": false, "same_hash": false, "rows_a": 0, "rows_b": 0},
+      {"market": "nyse_arca", "used_date": null, "ok_pair": false, "same_hash": false, "rows_a": 0, "rows_b": 0}
+    ],
+    "source_url_probes": [
+      {"market": "nasdaq", "url": "https://www.nasdaqtrader.com/dynamic/symdir/regsho/nasdaqth20180131.txt", "used_date": "2018-01-31", "content_type": "text/plain", "bytes": 1195, "sha256_16": "1b6fa858bddb3c6d", "timestamp_trailer": "20180131230022"},
+      {"market": "nyse", "url": "https://www.nyse.com/api/regulatory/threshold-securities/download?selectedDate=2018-01-31&market=NYSE", "used_date": "2018-01-31", "content_type": "text/plain; charset=UTF-8", "bytes": 197, "sha256_16": "a93a3efafb05e32f", "timestamp_trailer": "20180131210502"},
+      {"market": "nyse_american", "url": "https://www.nyse.com/api/regulatory/threshold-securities/download?selectedDate=2018-01-31&market=NYSE+American", "used_date": "2018-01-31", "content_type": "text/plain; charset=UTF-8", "bytes": 128, "sha256_16": "3a9827f04a845af9", "timestamp_trailer": "20180131210502"},
+      {"market": "nyse_arca", "url": "https://www.nyse.com/api/regulatory/threshold-securities/download?selectedDate=2018-01-31&market=NYSE+Arca", "used_date": "2018-01-31", "content_type": "text/plain; charset=UTF-8", "bytes": 1659, "sha256_16": "b6113d247f8837f5", "timestamp_trailer": "20180131210502"},
+      {"market": "nasdaq", "url": "https://www.nasdaqtrader.com/dynamic/symdir/regsho/nasdaqth20260629.txt", "used_date": "2026-06-29", "content_type": "text/plain", "bytes": 3211, "sha256_16": "0d5f35d27682dce2", "timestamp_trailer": "20260629230020"}
+    ]
+  },
+  "performance": {
+    "ran": false,
+    "cost_bps_primary": 10,
+    "cost_bps_sensitivity": [5, 20],
+    "metrics": {},
+    "controls": {
+      "shifted_list_dates": "not_run",
+      "shuffled_labels": "not_run",
+      "matched_distressed_non_threshold_names": "not_run",
+      "generic_momentum_reversal_liquidity": "not_run",
+      "meme_period_exclusion": "not_run",
+      "add_remove_inversion": "not_run"
+    }
+  },
+  "orthogonality": {
+    "AR-138_SEC_FTD": "not_run_no_event_table",
+    "AR-140_FINRA_short_volume": "not_run_no_event_table",
+    "liquidity_stress_reversal_watchlist": "not_run_no_event_table"
+  },
+  "warnings": [
+    "Source reachability was not promoted to alpha acceptance; no real-data performance ran.",
+    "NYSE-family endpoint appeared official and timestamped but was not robust under bounded repeated monthly probes in this session.",
+    "Raw source symbolic breadth is not equivalent to mapped liquid qfa/Alpaca event breadth."
+  ],
+  "artifacts": {
+    "model": "models/regsho-threshold-add-remove-persistence-scout-v1/model.py",
+    "config": "models/regsho-threshold-add-remove-persistence-scout-v1/config.yaml",
+    "metadata": "models/regsho-threshold-add-remove-persistence-scout-v1/metadata.yaml",
+    "readme": "models/regsho-threshold-add-remove-persistence-scout-v1/README.md",
+    "latest_json": "models/regsho-threshold-add-remove-persistence-scout-v1/evaluations/latest.json",
+    "latest_md": "models/regsho-threshold-add-remove-persistence-scout-v1/evaluations/latest.md",
+    "run_json": "models/regsho-threshold-add-remove-persistence-scout-v1/evaluations/runs/ar158_regsho_source_gate_20260630T094900Z.json"
+  }
+}

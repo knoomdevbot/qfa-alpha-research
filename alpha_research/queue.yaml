@@ -1177,11 +1177,13 @@ issues:
 - id: AR-158
   title: SEC/exchange Reg SHO threshold-list add-remove persistence feasibility scout
   model_name: regsho-threshold-add-remove-persistence-scout-v1
-  status: queued
-  priority: preflight_queue_feasibility_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_short_constraint_event_source
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-158.md
+  last_checked_at: '2026-06-30T09:49:00Z'
+  tried_count: 1
 - id: AR-159
   title: SEC Form 4 insider sale-to-purchase imbalance source feasibility scout
   model_name: sec-form4-insider-imbalance-source-scout-v1
@@ -1190,10 +1192,9 @@ issues:
   family: public_filing_insider_imbalance_event_source
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-159.md
-active_batch:
-- AR-158
+active_batch: []
 last_realdata_batch:
 - AR-157
-updated_at: '2026-06-30T09:20:00Z'
+updated_at: '2026-06-30T09:49:00Z'
 target_tried_ideas: 100
-tried_ideas_count: 144
+tried_ideas_count: 145

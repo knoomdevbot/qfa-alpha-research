@@ -1,0 +1,22 @@
+model_name: regsho-threshold-add-remove-persistence-scout-v1
+issue_id: AR-158
+title: SEC/exchange Reg SHO threshold-list add-remove persistence feasibility scout
+asset_bucket: equity
+status: rejected
+weight: 0.0
+created_at: '2026-06-30T09:49:00Z'
+updated_at: '2026-06-30T09:49:00Z'
+research_stage: source_gate_feasibility_scout
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+decision: rejected_blocking
+hard_gate_summary: >-
+  Official Nasdaq and NYSE Reg SHO threshold-list sources are reachable and timestamped,
+  but the bounded scout did not complete a full reproducible daily archive, liquid
+  qfa/Alpaca mapping, or the required no-CSV real-data event-window performance test.
+  NYSE-family endpoint access was unstable/rate-limited in the monthly sweep, so the
+  model remains zero-weight and should not spawn children.
+latest_evaluation: evaluations/latest.json
