@@ -1203,15 +1203,16 @@ issues:
 - id: AR-161
   title: SEC Form 10b5-1 plan-change event-source feasibility scout
   model_name: sec-10b5-1-plan-change-source-scout-v1
-  status: queued
-  priority: preflight_queue_feasibility_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_filing_insider_plan_intent
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-161.md
-active_batch:
-- AR-161
+  last_checked_at: '2026-06-30T14:10:02Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
 - AR-160
-updated_at: '2026-06-30T12:28:00Z'
+updated_at: '2026-06-30T14:10:02Z'
 target_tried_ideas: 100
-tried_ideas_count: 146
+tried_ideas_count: 147

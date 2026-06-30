@@ -1,0 +1,59 @@
+{
+  "model_name": "sec-10b5-1-plan-change-source-scout-v1",
+  "issue_id": "AR-161",
+  "run_id": "ar161_sourcegate_20260630T141002Z",
+  "created_at": "2026-06-30T14:10:02Z",
+  "decision": "rejected",
+  "status": "rejected",
+  "priority": "completed_source_gate_rejection",
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "market_data_performance_run": false,
+  "source_gate": {
+    "decision": "rejected",
+    "reason": "Official SEC 10-Q/10-K Item 408 text is present, but bounded probe did not establish >=150 timestamp-safe liquid mapped issuer events after conservative filters; hit set is concentrated and includes duplicate-class issuer exposure.",
+    "gate_required_events": 150,
+    "sampled_issuers": 10,
+    "filings_inspected": 120,
+    "filing_budget": 120,
+    "candidate_text_hits": 111,
+    "item408_context_hits": 71,
+    "parsed_valid_plan_change_events": 130,
+    "mapped_liquid_event_estimate": 130,
+    "issuer_with_events": 9,
+    "max_issuer_event_share": 0.2076923076923077,
+    "forms_inspected": {
+      "10-Q": 89,
+      "10-K": 31
+    },
+    "filings_by_year": {
+      "2023": 28,
+      "2024": 34,
+      "2025": 38,
+      "2026": 20
+    },
+    "action_type_counts": {
+      "adopted": 70,
+      "modified": 49,
+      "terminated": 11
+    },
+    "concentration_notes": [
+      "Only 9 sampled liquid issuer tickers produced parsed valid events before the 120-filing cap.",
+      "GOOG/GOOGL are duplicate share classes for one issuer in the probe universe, so issuer-level breadth is overstated by ticker counts.",
+      "The largest ticker-level event share was about 20.8%, before consolidating duplicate classes."
+    ],
+    "timestamp_discipline": "SEC filing documents were fetched from official EDGAR URLs via submissions metadata; no event table was retained because the source gate failed.",
+    "raw_text_retained": false,
+    "sec_http_requests": 131,
+    "sec_user_agent_used": true,
+    "short_http_timeouts_used": true
+  },
+  "provenance": {
+    "workspace": "/Users/moonk/qfa-alpha-research",
+    "source_probe": "bounded SEC company_tickers, submissions JSON, and 10-Q/10-K primary-document scan; no raw filing text stored",
+    "sanitized": true
+  }
+}

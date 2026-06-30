@@ -1,0 +1,22 @@
+model_name: sec-10b5-1-plan-change-source-scout-v1
+issue_id: AR-161
+title: SEC Form 10b5-1 plan-change event-source feasibility scout
+status: rejected
+priority: completed_source_gate_rejection
+created_at: '2026-06-30T14:10:02Z'
+updated_at: '2026-06-30T14:10:02Z'
+decision: rejected
+summary: >-
+  Bounded SEC source-gate probe found official 10-Q/10-K Item 408 text but did
+  not clear the required >=150 liquid mapped issuer events after conservative
+  source/parser/mapping filters within the 120-filing budget.
+artifacts:
+  evaluation_latest_json: evaluations/latest.json
+  evaluation_latest_md: evaluations/latest.md
+  run_json: evaluations/runs/ar161_sourcegate_20260630T141002Z.json
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

@@ -1,0 +1,21 @@
+model_name: sec-10b5-1-plan-change-source-scout-v1
+status: rejected_source_gate
+issue_id: AR-161
+asset_bucket: equity
+signal_type: none
+positioning: zero_weight
+source_gate:
+  required_liquid_mapped_events: 150
+  decision: rejected
+  no_market_data_performance_run: true
+  sec_probe_max_filings: 120
+  sec_forms:
+    - 10-Q
+    - 10-K
+  sec_item: Regulation S-K Item 408 / Rule 10b5-1 trading arrangements
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
