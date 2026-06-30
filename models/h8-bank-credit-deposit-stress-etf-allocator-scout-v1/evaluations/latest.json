@@ -1,0 +1,109 @@
+{
+  "alpha_id": "AR-160",
+  "issue_id": "AR-160",
+  "model_name": "h8-bank-credit-deposit-stress-etf-allocator-scout-v1",
+  "created_at_utc": "2026-06-30T10:47:41Z",
+  "run_id": "ar160_sourcegate_20260630T104741Z",
+  "status": "queued",
+  "priority": "source_gate_passed_needs_realdata_evaluation",
+  "decision": "source_gate_passed_keep_queued_for_realdata_evaluation",
+  "decision_reason": "Bounded source/vintage gate found official timestamp-safe H.8 release lag and dated archive availability for bank credit, deposits, and borrowings, plus ALFRED archival coverage for bank credit/deposits and monthly borrowings. No qfa/Alpaca real-market-data evaluation was run within recovery bounds, so the model remains disabled and queued.",
+  "source_gate": {
+    "status": "passed",
+    "release_lag": {
+      "status": "passed",
+      "official_source": "https://www.federalreserve.gov/releases/h8/default.htm and https://www.federalreserve.gov/releases/h8/about.htm",
+      "observed_rule": "H.8 is released each Friday generally at 4:15 p.m. ET, unless Friday is a federal holiday, in which case release is Thursday generally at 4:15 p.m. ET.",
+      "timestamp_safe_trade_rule": "Use only values after the public release timestamp; first eligible ETF trade is the next ETF session after 4:15 p.m. ET release."
+    },
+    "official_h8_archive_probe": {
+      "status": "passed",
+      "release_dates_json": "https://www.federalreserve.gov/releases/h8/releaseDates.json",
+      "year_buckets_observed": 31,
+      "sampled_archive_dates": [
+        "20260626",
+        "20260618",
+        "20210108",
+        "20180316"
+      ],
+      "sample_result": "All sampled dated official H.8 archive pages included Bank credit, Deposits, and Borrowings rows and Last Update dates matching the archive release date."
+    },
+    "alfred_probe": {
+      "status": "passed_with_borrowings_caveat",
+      "series": {
+        "TOTBKCR": {
+          "title": "Bank Credit, All Commercial Banks",
+          "frequency": "weekly ending Wednesday",
+          "coverage_observed": "1973-01-03 to 2026-06-17",
+          "archival_real_time_page": "https://alfred.stlouisfed.org/series?seid=TOTBKCR"
+        },
+        "DPSACBW027SBOG": {
+          "title": "Deposits, All Commercial Banks",
+          "frequency": "weekly ending Wednesday",
+          "coverage_observed": "1973-01-03 to 2026-06-17",
+          "archival_real_time_page": "https://alfred.stlouisfed.org/series?seid=DPSACBW027SBOG"
+        },
+        "H8B3094NCBCMG": {
+          "title": "Borrowings, All Commercial Banks",
+          "frequency": "monthly",
+          "coverage_observed": "Feb 1973 to May 2026",
+          "archival_real_time_page": "https://alfred.stlouisfed.org/series?seid=H8B3094NCBCMG",
+          "caveat": "ALFRED series is monthly; weekly borrowings must be parsed from dated official H.8 archives or excluded by the real-data evaluator."
+        }
+      }
+    }
+  },
+  "market_data_evaluation": {
+    "run": false,
+    "reason": "Recovery scope limited to compact source/vintage feasibility; durable qfa/Alpaca random-period performance evaluation was left queued."
+  },
+  "performance_metrics": null,
+  "random_window_metrics": null,
+  "controls": {
+    "static_spy_equal_shy": "not_run_needs_realdata_evaluation",
+    "etf_tsmom_reversal": "not_run_needs_realdata_evaluation",
+    "shifted_labels": "not_run_needs_realdata_evaluation",
+    "inverted_labels": "not_run_needs_realdata_evaluation",
+    "release_weekday_date_placebos": "not_run_needs_realdata_evaluation",
+    "AR_147_H41": "not_run_needs_realdata_evaluation",
+    "AR_155_margin_debt": "not_run_needs_realdata_evaluation",
+    "AR_063_AR_157_macro_drawdown": "not_run_needs_realdata_evaluation"
+  },
+  "universe": [
+    "KRE",
+    "IAT",
+    "XLF",
+    "HYG",
+    "LQD",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "TLT",
+    "IEF",
+    "SHY",
+    "GLD",
+    "UUP"
+  ],
+  "artifacts": {
+    "model_path": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/model.py",
+    "config_path": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/config.yaml",
+    "metadata_path": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/metadata.yaml",
+    "readme_path": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/README.md",
+    "latest_json": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/evaluations/latest.json",
+    "latest_md": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/evaluations/latest.md",
+    "run_json": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/evaluations/runs/ar160_sourcegate_20260630T104741Z.json",
+    "run_md": "models/h8-bank-credit-deposit-stress-etf-allocator-scout-v1/evaluations/runs/ar160_sourcegate_20260630T104741Z.md"
+  },
+  "bad_result_policy": {
+    "completed": false,
+    "rejected": false,
+    "watchlist": false,
+    "children_spawned": false,
+    "keep_active_batch": true
+  },
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false
+}

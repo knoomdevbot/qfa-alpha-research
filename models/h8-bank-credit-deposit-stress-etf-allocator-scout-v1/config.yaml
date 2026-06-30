@@ -1,0 +1,47 @@
+model_name: h8-bank-credit-deposit-stress-etf-allocator-scout-v1
+issue_id: AR-160
+status: disabled_source_gate_passed_needs_realdata_evaluation
+enabled: false
+weight: 0.0
+universe:
+  - KRE
+  - IAT
+  - XLF
+  - HYG
+  - LQD
+  - SPY
+  - QQQ
+  - IWM
+  - TLT
+  - IEF
+  - SHY
+  - GLD
+  - UUP
+source_gate:
+  passed: true
+  release_lag_rule: trade no earlier than the next ETF session after the public H.8 release, normally Friday 4:15 p.m. ET or Thursday 4:15 p.m. ET before federal-holiday Fridays
+  approved_feature_sources:
+    bank_credit:
+      fred_alfred_series: TOTBKCR
+      source: Federal Reserve H.8 / ALFRED
+      frequency: weekly ending Wednesday
+    deposits:
+      fred_alfred_series: DPSACBW027SBOG
+      source: Federal Reserve H.8 / ALFRED
+      frequency: weekly ending Wednesday
+    borrowings:
+      fred_alfred_series: H8B3094NCBCMG
+      source: Federal Reserve H.8 / ALFRED monthly plus official dated H.8 archives for weekly row validation
+      frequency: monthly in ALFRED; weekly row present in dated official H.8 archive pages
+market_data_evaluation:
+  run: false
+  required_before_enable: true
+  required_engine: qfa/Alpaca real daily bars; no CSV market data
+controls_required:
+  - static SPY/equal/SHY baselines
+  - ETF TSMOM/reversal controls
+  - shifted and inverted signal placebos
+  - release-weekday/date placebos
+  - AR-147 H.4.1 liquidity control
+  - AR-155 margin debt control
+  - AR-063/AR-157 macro drawdown controls
