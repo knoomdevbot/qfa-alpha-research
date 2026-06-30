@@ -1,0 +1,20 @@
+model_name: fed-g19-consumer-credit-impulse-etf-scout-v1
+issue_id: AR-162
+status: rejected
+priority: completed_source_gate_rejection
+mode: source_vintage_recovery_micro_scout
+positioning:
+  enabled: false
+  target_weight: 0.0
+source_gate:
+  decision: rejected
+  official_source: Federal Reserve G.19 dated releases
+  release_dates_url: https://www.federalreserve.gov/releases/g19/releaseDates.json
+  sampled_release_count: 5
+  no_market_data_performance_run: true
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

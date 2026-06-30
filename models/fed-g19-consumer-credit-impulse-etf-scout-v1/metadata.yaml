@@ -1,0 +1,25 @@
+model_name: fed-g19-consumer-credit-impulse-etf-scout-v1
+issue_id: AR-162
+title: Federal Reserve G.19 revolving consumer-credit impulse ETF allocator source/vintage scout
+status: rejected
+priority: completed_source_gate_rejection
+created_at: '2026-06-30T15:09:06Z'
+updated_at: '2026-06-30T15:09:06Z'
+decision: rejected
+summary: >-
+  Bounded recovery micro-scout verified the official Fed G.19 releaseDates archive
+  and five dated releases, but did not build a durable cross-vintage parser/event
+  table or any real market-data performance evaluator. Recent releases have
+  semantic HTML tables; older 2010/2000 samples are fixed-width preformatted
+  text, so parser safety across the full source vintage remains unproven in this
+  bounded pass.
+artifacts:
+  evaluation_latest_json: evaluations/latest.json
+  evaluation_latest_md: evaluations/latest.md
+  run_json: evaluations/runs/ar162_sourcegate_20260630T150906Z.json
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

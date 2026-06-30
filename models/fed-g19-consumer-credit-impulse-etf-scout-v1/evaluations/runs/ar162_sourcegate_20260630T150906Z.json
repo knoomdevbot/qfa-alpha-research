@@ -1,0 +1,49 @@
+{
+  "model_name": "fed-g19-consumer-credit-impulse-etf-scout-v1",
+  "issue_id": "AR-162",
+  "run_id": "ar162_sourcegate_20260630T150906Z",
+  "created_at": "2026-06-30T15:09:06Z",
+  "decision": "rejected",
+  "status": "rejected",
+  "priority": "completed_source_gate_rejection",
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "market_data_performance_run": false,
+  "source_gate": {
+    "decision": "rejected",
+    "official_source": "Federal Reserve G.19 dated release pages and releaseDates archive",
+    "release_dates_url": "https://www.federalreserve.gov/releases/g19/releaseDates.json",
+    "release_dates_reachable": true,
+    "year_bucket_count": 31,
+    "release_count": 361,
+    "date_min": "19960611",
+    "date_max": "20260605",
+    "sampled_release_count": 5,
+    "sampled_release_success_count": 5,
+    "sampled_urls": [
+      "https://www.federalreserve.gov/releases/g19/20260605/",
+      "https://www.federalreserve.gov/releases/g19/20241206/",
+      "https://www.federalreserve.gov/releases/g19/20201207/",
+      "https://www.federalreserve.gov/releases/g19/20101207/",
+      "https://www.federalreserve.gov/releases/g19/20001207/"
+    ],
+    "sample_findings": [
+      {"release_date": "20260605", "latest_update": "June 05, 2026", "release_period": "April 2026", "semantic_table_count": 3, "table_titles": ["Consumer Credit Outstanding", "Consumer Credit Outstanding (Levels)", "Consumer Credit Outstanding (Flows)"], "fixed_width_pre_page": false, "revolving_nonrevolving_text_present": true},
+      {"release_date": "20241206", "latest_update": "December 06, 2024", "release_period": "October 2024", "semantic_table_count": 3, "table_titles": ["Consumer Credit Outstanding", "Consumer Credit Outstanding (Levels)", "Consumer Credit Outstanding (Flows)"], "fixed_width_pre_page": false, "revolving_nonrevolving_text_present": true},
+      {"release_date": "20201207", "latest_update": "December 07, 2020", "release_period": "October 2020", "semantic_table_count": 3, "table_titles": ["Consumer Credit Outstanding", "Consumer Credit Outstanding (Levels)", "Consumer Credit Outstanding (Flows)"], "fixed_width_pre_page": false, "revolving_nonrevolving_text_present": true},
+      {"release_date": "20101207", "latest_update": "December 7, 2010", "release_period": "October 2010", "semantic_table_count": 0, "table_titles": [], "fixed_width_pre_page": true, "revolving_nonrevolving_text_present": true},
+      {"release_date": "20001207", "latest_update": "December 7, 2000", "release_period": "October 2000", "semantic_table_count": 0, "table_titles": [], "fixed_width_pre_page": true, "revolving_nonrevolving_text_present": true}
+    ],
+    "parser_safety_assessment": "future_work_plausible_but_unproven_in_this_pass",
+    "reason": "Official G.19 dated releases are reachable and contain relevant consumer-credit fields, but sampled vintages split between modern semantic HTML tables and older fixed-width preformatted text; this bounded recovery pass did not build or validate a durable cross-vintage parser/event table.",
+    "exact_reason_no_real_alpha_performance_conclusion": "No timestamp-safe retained event table and no qfa/Alpaca ETF performance evaluator were built; therefore no real alpha, Sharpe, drawdown, random-window, or control/orthogonality conclusion exists."
+  },
+  "provenance": {
+    "workspace": "/Users/moonk/qfa-alpha-research",
+    "source_probe": "bounded official Federal Reserve G.19 releaseDates JSON and five dated release pages; no raw pages retained",
+    "sanitized": true
+  }
+}

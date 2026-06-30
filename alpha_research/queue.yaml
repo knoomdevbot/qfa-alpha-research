@@ -1213,15 +1213,16 @@ issues:
 - id: AR-162
   title: Federal Reserve G.19 revolving consumer-credit impulse ETF allocator source/vintage scout
   model_name: fed-g19-consumer-credit-impulse-etf-scout-v1
-  status: queued
-  priority: preflight_queue_feasibility_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_consumer_credit_cycle_allocation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-162.md
-active_batch:
-- AR-162
+  last_checked_at: '2026-06-30T15:09:06Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
 - AR-160
-updated_at: '2026-06-30T14:40:00Z'
+updated_at: '2026-06-30T15:09:06Z'
 target_tried_ideas: 100
-tried_ideas_count: 147
+tried_ideas_count: 148
