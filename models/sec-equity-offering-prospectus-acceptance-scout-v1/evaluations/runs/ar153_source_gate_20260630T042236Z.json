@@ -1,0 +1,70 @@
+{
+  "issue_id": "AR-153",
+  "model_name": "sec-equity-offering-prospectus-acceptance-scout-v1",
+  "run_id": "ar153_source_gate_20260630T042236Z",
+  "created_at": "2026-06-30T04:22:36Z",
+  "decision": {
+    "status": "rejected",
+    "queue_status": "completed_source_gate",
+    "rationale": "SEC public metadata was reachable and offering-related form metadata was present in a bounded probe, but a conservative parsed timestamp-safe event table with at least 150 liquid mapped common-stock offering events was not completed. Rejected at source/event-table gate; this is not a performance result."
+  },
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "data": {
+    "source": "SEC public company ticker and submissions metadata",
+    "endpoints": [
+      "https://www.sec.gov/files/company_tickers.json",
+      "https://data.sec.gov/submissions/CIK##########.json"
+    ],
+    "endpoint_status": "ok",
+    "performance_market_data_source": null,
+    "raw_sec_documents_retained": false,
+    "raw_event_tables_retained": false,
+    "raw_bars_retained": false,
+    "raw_cache_retained": false
+  },
+  "candidate_pool": {
+    "description": "Current SEC company ticker entries with bounded submissions JSON probes; no historical ticker-change, delisting, document-level common-stock parser, or liquidity reconstruction.",
+    "company_tickers_entries": 10433,
+    "sample_method": "first 30 entries from SEC company_tickers.json sorted by numeric key",
+    "sample_size": 30,
+    "submissions_attempted": 30,
+    "submissions_errors": 0
+  },
+  "selected_universe": [],
+  "feasibility_counts": {
+    "candidate_forms_with_acceptanceDateTime": 3869,
+    "candidate_forms_with_primaryDocument": 3869,
+    "issuers_with_any_candidate_form": 29,
+    "form_counts": {
+      "424B3": 1187,
+      "424B4": 2,
+      "424B5": 170,
+      "8-K": 2441,
+      "S-3": 3,
+      "S-3ASR": 66
+    },
+    "conservative_parsed_common_stock_offering_events": null,
+    "liquid_mapped_common_stock_offering_events": null
+  },
+  "source_gate": {
+    "passed": false,
+    "required_liquid_mapped_common_stock_offering_events": 150,
+    "reason": "The bounded run did not produce a parser-validated, timestamp-safe, liquid mapped common-stock offering event table. Form metadata counts are not accepted as events because they include generic disclosures, shelves, debt, preferreds, warrants, units, mixed filings, and ambiguous cases."
+  },
+  "metrics": null,
+  "performance_run": {
+    "run": false,
+    "reason": "Source/event-table gate failed; no returns, random windows, controls, costs, or orders were evaluated."
+  },
+  "limitations": [
+    "SEC company_tickers is a current mapping and can introduce survivorship and ticker-change bias.",
+    "Submissions metadata provides form labels, timestamps, accessions, and document names but not validated common-stock offering economics.",
+    "No raw SEC documents or event rows were retained in this recovery artifact.",
+    "No matched non-event, shifted-label, generic filing-day, debt/prospectus placebo, momentum/reversal, sector/beta, AR-130, AR-134, or AR-145 control was run."
+  ],
+  "status_rationale": "Rejected for this research cycle at source/event-table gate; no child idea should be created from AR-153."
+}

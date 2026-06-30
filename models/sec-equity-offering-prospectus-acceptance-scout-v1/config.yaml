@@ -1,0 +1,22 @@
+model_name: sec-equity-offering-prospectus-acceptance-scout-v1
+issue_id: AR-153
+mode: source_gate_only
+status: rejected
+signal_enabled: false
+universe: []
+data:
+  source: SEC public company ticker and submissions metadata
+  endpoints:
+    - https://www.sec.gov/files/company_tickers.json
+    - https://data.sec.gov/submissions/CIK##########.json
+probe:
+  sample_method: first 30 entries from SEC company_tickers.json sorted by numeric key
+  form_filter: "424B5, 424B4, 424B3, S-3, S-3ASR, S-1, S-1/A, 8-K"
+  performance_backtest_run: false
+source_gate:
+  required_liquid_mapped_common_stock_offering_events: 150
+  passed: false
+risk_controls:
+  no_daemon: true
+  no_orders: true
+  no_csv: true

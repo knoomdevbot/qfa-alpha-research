@@ -1,0 +1,13 @@
+model_name: sec-equity-offering-prospectus-acceptance-scout-v1
+issue_id: AR-153
+family: public_filing_equity_offering_event_drift
+status: rejected
+created_at: '2026-06-30T04:22:36Z'
+updated_at: '2026-06-30T04:22:36Z'
+summary: >-
+  Bounded source-gate recovery for an SEC common-stock offering/prospectus
+  acceptance event scout. SEC metadata was reachable and offering-related form
+  counts existed in a small probe, but a conservative parsed liquid common-stock
+  event table with at least 150 mapped events was not completed.
+signal_enabled: false
+decision: rejected

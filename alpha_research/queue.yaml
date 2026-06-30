@@ -1137,15 +1137,14 @@ issues:
 - id: AR-153
   title: SEC common-stock offering/prospectus acceptance event scout
   model_name: sec-equity-offering-prospectus-acceptance-scout-v1
-  status: queued
-  priority: preflight_queue_feasibility_first
+  status: rejected
+  priority: completed_source_gate
   family: public_filing_equity_offering_event_drift
   issue_path: alpha_research/issues/AR-153.md
 active_batch:
 - AR-152
-- AR-153
 last_realdata_batch:
 - AR-151
-updated_at: '2026-06-30T01:58:30Z'
+updated_at: '2026-06-30T04:22:36Z'
 target_tried_ideas: 100
-tried_ideas_count: 138
+tried_ideas_count: 139
