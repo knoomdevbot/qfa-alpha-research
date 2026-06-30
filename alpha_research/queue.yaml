@@ -1334,9 +1334,20 @@ issues:
   issue_path: alpha_research/issues/AR-173.md
   last_checked_at: '2026-06-30T22:49:39Z'
   tried_count: 1
-active_batch: []
+- id: AR-174
+  title: Official BLS Employment Situation labor-cycle first-vintage ETF allocator source/vintage scout
+  model_name: bls-employment-situation-labor-cycle-etf-source-scout-v1
+  status: queued
+  priority: preflight_queue_source_vintage_scout
+  family: public_labor_cycle_macro_release
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-174.md
+  last_checked_at: '2026-06-30T22:59:45Z'
+  tried_count: 0
+active_batch:
+- AR-174
 last_realdata_batch:
 - AR-171
-updated_at: '2026-06-30T22:49:39Z'
+updated_at: '2026-06-30T22:59:45Z'
 target_tried_ideas: 100
 tried_ideas_count: 157
