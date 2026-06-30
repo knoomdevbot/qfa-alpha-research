@@ -1,0 +1,15 @@
+model_name: sec-form144-affiliate-sale-pressure-scout-v1
+issue_id: AR-154
+title: SEC Form 144 proposed insider/affiliate sale pressure feasibility scout
+family: public_filing_insider_affiliate_sale_pressure
+status: rejected
+priority: completed_source_gate_rejection
+created_at: '2026-06-30T05:53:03Z'
+research_type: source_gate_feasibility_scout
+performance_claim: false
+source_gate_passed: false
+zero_weight: true
+paths:
+  model: models/sec-form144-affiliate-sale-pressure-scout-v1/model.py
+  config: models/sec-form144-affiliate-sale-pressure-scout-v1/config.yaml
+  latest_evaluation: models/sec-form144-affiliate-sale-pressure-scout-v1/evaluations/latest.json

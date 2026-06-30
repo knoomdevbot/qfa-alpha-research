@@ -1,0 +1,112 @@
+{
+  "issue_id": "AR-154",
+  "model_name": "sec-form144-affiliate-sale-pressure-scout-v1",
+  "run_id": "ar154_form144_source_gate_20260630T055303Z",
+  "created_at": "2026-06-30T05:53:03Z",
+  "decision": {
+    "status": "rejected",
+    "queue_status": "completed_source_gate_rejection",
+    "rationale": "A bounded recovery probe confirmed recent Form 144 rows and EDGAR acceptance timestamps in SEC submissions metadata for large issuers, and archive primary documents were reachable. However, no durable timestamp-safe Form 144 parser/event table with conservative issuer mapping, duplicate/amendment clustering, breadth/concentration gates, or real-data evaluator was built after the prior timeout. Rejected at source/event-table gate; no performance evaluation was run."
+  },
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "data": {
+    "source": "SEC EDGAR submissions metadata and public Form 144 archive documents",
+    "endpoints": [
+      "https://data.sec.gov/submissions/CIK##########.json",
+      "https://www.sec.gov/Archives/edgar/data/CIK/ACCESSION/primary_doc.xml",
+      "https://www.sec.gov/Archives/edgar/data/CIK/ACCESSION/ACCESSION.txt"
+    ],
+    "endpoint_status": "ok_for_bounded_probe",
+    "performance_market_data_source": null,
+    "raw_sec_documents_retained": false,
+    "raw_event_tables_retained": false,
+    "raw_bars_retained": false,
+    "raw_cache_retained": false
+  },
+  "bounded_probe": {
+    "checked_ciks": 10,
+    "ciks_with_submissions": 10,
+    "submission_fetch_errors": 0,
+    "sampled_issuer_ciks": [
+      "0000320193",
+      "0000789019",
+      "0001018724",
+      "0001045810",
+      "0001326801",
+      "0001318605",
+      "0000019617",
+      "0000104169",
+      "0001652044",
+      "0001065280"
+    ],
+    "form_144_or_144a_rows_in_recent_submission_metadata": 1646,
+    "sample_accessions_retained_as_metadata_only": 5,
+    "primary_xml_attempts": 3,
+    "primary_xml_documents_reachable": 3,
+    "edgar_complete_submission_text_attempts": 1,
+    "edgar_complete_submission_text_reachable": 1,
+    "sample_text_field_presence": {
+      "issuerName": true,
+      "issuerCik": true,
+      "securitiesClassTitle": true,
+      "brokerName": false,
+      "unitsToBeSold": false,
+      "aggregateMarketValue": true,
+      "unitsOutstanding": true,
+      "approximateDateOfSale": false,
+      "securitiesExchangeName": true,
+      "dateOfNotice": false
+    },
+    "notes": "The xsl144X01/primary_doc.xml URLs returned SEC-rendered XHTML for the sampled filings; the complete-submission .txt contained embedded Form 144 XML-like fields for one sample. This was a reachability probe only, not a durable parser."
+  },
+  "candidate_pool": {
+    "description": "Potentially all public SEC Form 144/144-A filings with EDGAR acceptance timestamps, proposed-sale fields, issuer/filer/broker metadata, and conservative mapping to liquid U.S. common stocks.",
+    "source_reachability": "partial_sample_passed",
+    "parser_reachability": "not_completed",
+    "conservative_mapping_reachability": "not_completed",
+    "timestamp_safe_form144_event_table_built": false,
+    "liquid_us_common_stock_table_built": false,
+    "duplicate_or_amendment_clustering_built": false
+  },
+  "selected_universe": [],
+  "feasibility_counts": {
+    "candidate_forms_with_acceptance_datetime_in_probe": 1646,
+    "candidate_forms_with_primary_archive_document_in_probe": 3,
+    "sample_complete_submission_texts_checked": 1,
+    "required_mapped_liquid_symbols": 150,
+    "required_clustered_event_observations": "thousands",
+    "mapped_liquid_symbols": null,
+    "timestamp_safe_clustered_events": null
+  },
+  "source_gate": {
+    "passed": false,
+    "required_mapped_liquid_symbols": 150,
+    "required_event_observations": "thousands",
+    "failed_components": [
+      "no durable Form 144 XML/text parser was implemented after prior timeout",
+      "no reproducible timestamp-safe parsed event table was retained",
+      "conservative issuer-to-liquid-common-stock mapping was not built",
+      "duplicate/amendment/issuer/filer/broker/approximate-sale-date clustering was not built",
+      "breadth and issuer/filer/broker/sector/year concentration gates were not evaluated",
+      "real-data performance evaluator and controls were not run"
+    ],
+    "reason": "The issue falsifier requires a reproducible timestamp-safe Form 144 event table with parsed proposed-sale fields, conservative issuer mapping, clustering, breadth/concentration gates, and real-data performance evaluation. The bounded recovery found source reachability but did not produce those durable components."
+  },
+  "metrics": null,
+  "performance_run": {
+    "run": false,
+    "reason": "Source/event-table gate failed; no returns, event windows, controls, costs, random periods, shifted/shuffled labels, daemon, or orders were evaluated."
+  },
+  "limitations": [
+    "The probe was intentionally bounded and did not retain raw SEC filings or raw parsed event rows.",
+    "Current SEC submissions recent metadata is issuer-centric and may omit older filing history without additional index crawling, which was out of scope for recovery.",
+    "Rendered Form 144 primary documents and complete-submission text require a robust parser before any timestamp-safe event claims.",
+    "No qfa/market daily bars were requested because no valid mapped event universe was produced.",
+    "No Form 4, generic filing-day, momentum/reversal, sector/beta, price/volume, size/liquidity, shifted-label, shuffled-size, or matched non-event controls were run."
+  ],
+  "status_rationale": "Rejected for this research cycle at source/event-table gate with a disabled zero-weight model. No direct Form 144 refinement child should be created."
+}
