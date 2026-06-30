@@ -1,0 +1,24 @@
+model_name: sec-8k-item202-accepted-filing-event-table-scout-v1
+issue_id: AR-171
+status: source_gate_passed_needs_realdata_evaluation
+weight: 0.0
+enabled: false
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+data_sources:
+  - SEC submissions JSON
+  - SEC company ticker mapping
+  - SEC filing archive index JSON
+  - qfa/Alpaca daily OHLCV coverage probe
+source_gate:
+  min_timestamp_safe_events: 1000
+  min_mapped_issuers: 200
+  scout_sample_current_sec_tickers: 500
+  qfa_coverage_probe_symbols: 120
+next_required_steps:
+  - Build durable parser/event table without raw cache retention.
+  - Add stricter historical ticker/common-stock/security-type mapping.
+  - Run timestamp-safe qfa/Alpaca real-data drift/reversal evaluation before any acceptance/watchlist decision.

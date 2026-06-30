@@ -1,0 +1,419 @@
+{
+  "created_at_utc": "2026-06-30T20:31:00Z",
+  "data_sources": [
+    "SEC company_tickers_exchange.json",
+    "SEC submissions JSON",
+    "SEC filing archive index.json",
+    "qfa/Alpaca real daily OHLCV coverage probe"
+  ],
+  "decision": "source_gate_passed_needs_realdata_evaluation",
+  "evaluation_type": "bounded_sec_source_gate_and_qfa_coverage_micro_scout",
+  "issue_id": "AR-171",
+  "method": {
+    "attachment_probe": "SEC archive index.json for first 40 sampled Item 2.02 events",
+    "item_filter": "8-K rows with items containing 2.02 and nonempty acceptanceDateTime/accession/primaryDocument",
+    "qfa_coverage_probe": "120 mapped candidate symbols, 2025-01-02 through 2025-01-17 1Day bars; retained compact counts only",
+    "sec_sample": "first 500 current SEC exchange ticker rows after simple common-like ticker/name filters; submissions recent arrays only"
+  },
+  "metrics": {
+    "accession_proof_count": 13088,
+    "attachment_probe": {
+      "attachment_or_press_name_discovered": 16,
+      "ex99_like_name_count": 15,
+      "failures_by_type": {},
+      "filing_index_reachable": 40,
+      "press_release_name_like_count": 1,
+      "probed_events": 40
+    },
+    "concentration": {
+      "top_10_issuer_event_share": 0.0621179706601467,
+      "top_issuer_counts": [
+        [
+          "CRS",
+          103
+        ],
+        [
+          "CASY",
+          99
+        ],
+        [
+          "IMO",
+          87
+        ],
+        [
+          "MELI",
+          80
+        ],
+        [
+          "SCCO",
+          77
+        ],
+        [
+          "CQP",
+          77
+        ],
+        [
+          "CPRT",
+          75
+        ],
+        [
+          "CTAS",
+          73
+        ],
+        [
+          "HEI",
+          71
+        ],
+        [
+          "LVS",
+          71
+        ]
+      ],
+      "top_issuer_event_share": 0.007869804400977995,
+      "top_month_counts": [
+        [
+          "2025-10",
+          243
+        ],
+        [
+          "2026-02",
+          236
+        ],
+        [
+          "2026-04",
+          229
+        ],
+        [
+          "2024-10",
+          229
+        ],
+        [
+          "2025-07",
+          226
+        ],
+        [
+          "2025-02",
+          224
+        ],
+        [
+          "2024-02",
+          218
+        ],
+        [
+          "2022-02",
+          214
+        ],
+        [
+          "2023-02",
+          211
+        ],
+        [
+          "2021-02",
+          204
+        ]
+      ],
+      "top_year_counts": [
+        [
+          "2025",
+          1552
+        ],
+        [
+          "2024",
+          1491
+        ],
+        [
+          "2023",
+          1456
+        ],
+        [
+          "2022",
+          1421
+        ],
+        [
+          "2021",
+          1336
+        ],
+        [
+          "2020",
+          1249
+        ],
+        [
+          "2019",
+          1039
+        ],
+        [
+          "2018",
+          847
+        ],
+        [
+          "2026",
+          805
+        ],
+        [
+          "2017",
+          604
+        ]
+      ],
+      "unique_months": 240,
+      "unique_years": 23
+    },
+    "dropped_event_reasons": {},
+    "issuer_sample_size": 500,
+    "item_202_event_count": 13088,
+    "mapped_issuers_with_item_202": 375,
+    "primary_document_name_proof_count": 13088,
+    "qfa_alpaca_coverage": {
+      "attempted_symbols": 120,
+      "bar_rows": 1190,
+      "coverage_rate": 0.9916666666666667,
+      "date_range": "2025-01-02..2025-01-17",
+      "missing_symbols": [
+        "SNDK"
+      ],
+      "sample_counts": {
+        "AAPL": 10,
+        "ABBV": 10,
+        "ABT": 10,
+        "ACN": 10,
+        "ADI": 10,
+        "AMAT": 10,
+        "AMD": 10,
+        "AMGN": 10,
+        "AMZN": 10,
+        "ANET": 10,
+        "APH": 10,
+        "APP": 10,
+        "AVGO": 10,
+        "AXP": 10,
+        "BA": 10,
+        "BAC": 10,
+        "BKNG": 10,
+        "BLK": 10,
+        "BMY": 10,
+        "BNY": 10
+      },
+      "symbols_with_any_bar": 119,
+      "timeframe": "1Day"
+    },
+    "recent_8k_rows": 41345,
+    "sec_reachability": {
+      "company_tickers_exchange_json": true,
+      "company_tickers_exchange_rows": 10433
+    },
+    "submissions_fetch_failed": 0,
+    "submissions_fetch_ok": 500,
+    "timestamp_safe_item_202_events": 13088
+  },
+  "model_name": "sec-8k-item202-accepted-filing-event-table-scout-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "performance_evaluation_done": false,
+  "proof_samples": {
+    "attachment_samples": [
+      {
+        "accession": "0001045810-26-000051",
+        "attachment_names_sample": [
+          "0001045810-26-000051-index-headers.html",
+          "0001045810-26-000051-index.html",
+          "0001045810-26-000051.txt",
+          "0001045810-26-000051-xbrl.zip",
+          "FilingSummary.xml",
+          "MetaLinks.json",
+          "nvda-20260520.htm",
+          "nvda-20260520.xsd"
+        ],
+        "ex99_like": false,
+        "file_count": 17,
+        "index_url_reachable": true,
+        "press_release_name_like": false,
+        "primaryDocument": "nvda-20260520.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "accession": "0001045810-26-000019",
+        "attachment_names_sample": [
+          "0001045810-26-000019-index-headers.html",
+          "0001045810-26-000019-index.html",
+          "0001045810-26-000019.txt",
+          "0001045810-26-000019-xbrl.zip",
+          "FilingSummary.xml",
+          "MetaLinks.json",
+          "nvda-20260225.htm",
+          "nvda-20260225.xsd"
+        ],
+        "ex99_like": false,
+        "file_count": 17,
+        "index_url_reachable": true,
+        "press_release_name_like": false,
+        "primaryDocument": "nvda-20260225.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "accession": "0001045810-25-000228",
+        "attachment_names_sample": [
+          "0001045810-25-000228-index-headers.html",
+          "0001045810-25-000228-index.html",
+          "0001045810-25-000228.txt",
+          "0001045810-25-000228-xbrl.zip",
+          "FilingSummary.xml",
+          "MetaLinks.json",
+          "nvda-20251119.htm",
+          "nvda-20251119.xsd"
+        ],
+        "ex99_like": false,
+        "file_count": 17,
+        "index_url_reachable": true,
+        "press_release_name_like": false,
+        "primaryDocument": "nvda-20251119.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "accession": "0001045810-25-000207",
+        "attachment_names_sample": [
+          "0001045810-25-000207-index-headers.html",
+          "0001045810-25-000207-index.html",
+          "0001045810-25-000207.txt",
+          "0001045810-25-000207-xbrl.zip",
+          "FilingSummary.xml",
+          "MetaLinks.json",
+          "nvda-20250827.htm",
+          "nvda-20250827.xsd"
+        ],
+        "ex99_like": false,
+        "file_count": 17,
+        "index_url_reachable": true,
+        "press_release_name_like": false,
+        "primaryDocument": "nvda-20250827.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "accession": "0001045810-25-000115",
+        "attachment_names_sample": [
+          "0001045810-25-000115-index-headers.html",
+          "0001045810-25-000115-index.html",
+          "0001045810-25-000115.txt",
+          "0001045810-25-000115-xbrl.zip",
+          "FilingSummary.xml",
+          "MetaLinks.json",
+          "nvda-20250528.htm",
+          "nvda-20250528.xsd"
+        ],
+        "ex99_like": false,
+        "file_count": 17,
+        "index_url_reachable": true,
+        "press_release_name_like": false,
+        "primaryDocument": "nvda-20250528.htm",
+        "ticker": "NVDA"
+      }
+    ],
+    "event_table_sample": [
+      {
+        "acceptanceDateTime": "2026-05-20T20:21:19.000Z",
+        "accession": "0001045810-26-000051",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20260520.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2026-02-25T21:31:25.000Z",
+        "accession": "0001045810-26-000019",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20260225.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2025-11-19T21:20:44.000Z",
+        "accession": "0001045810-25-000228",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20251119.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2025-08-27T20:22:14.000Z",
+        "accession": "0001045810-25-000207",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20250827.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2025-05-28T20:21:30.000Z",
+        "accession": "0001045810-25-000115",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20250528.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2025-02-26T21:21:32.000Z",
+        "accession": "0001045810-25-000021",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20250226.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2024-11-20T21:21:20.000Z",
+        "accession": "0001045810-24-000315",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20241120.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2024-08-28T20:21:16.000Z",
+        "accession": "0001045810-24-000262",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20240828.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2024-05-22T20:21:29.000Z",
+        "accession": "0001045810-24-000113",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,8.01,9.01",
+        "primaryDocument": "nvda-20240522.htm",
+        "ticker": "NVDA"
+      },
+      {
+        "acceptanceDateTime": "2024-02-21T21:22:09.000Z",
+        "accession": "0001045810-24-000028",
+        "cik": 1045810,
+        "exchange": "Nasdaq",
+        "items": "2.02,9.01",
+        "primaryDocument": "nvda-20240221.htm",
+        "ticker": "NVDA"
+      }
+    ]
+  },
+  "rationale": "Source gate passes in bounded scout: SEC metadata reachable; 13,088 Item 2.02 8-K events across 375 mapped issuers in 500 current SEC ticker sample; accession, acceptance timestamp, primary document, filing index, attachment discovery and qfa/Alpaca coverage probes succeeded. No return/performance evaluator was run, so artifact remains zero-weight active scaffold, not accepted/watchlist.",
+  "raw_daily_paths_retained": false,
+  "run_id": "ar171_sec_item202_source_gate_20260630T202627Z",
+  "source_gate_passed": true,
+  "source_gate_targets": {
+    "mapped_issuers_min": 200,
+    "timestamp_safe_item_202_events_min": 1000
+  },
+  "status_recommendation": "active_zero_weight_scaffold_do_not_accept_watchlist_or_reject",
+  "warnings": [
+    "Current SEC ticker mapping is survivorship-biased and not a historical security master; tickers with share-class punctuation and non-common securities need stricter production filtering.",
+    "Attachment name discovery is partial: 16/40 probed filing archive indexes had Exhibit-99 or press-release-like names; some issuers embed earnings release in primary inline document rather than separate Exhibit 99.",
+    "No parser extracted press-release text, no historical ticker/common-stock mapping was completed, and no drift/reversal performance was evaluated.",
+    "The source event count is based on SEC recent submissions arrays, not full historical files beyond recent-array coverage."
+  ]
+}
