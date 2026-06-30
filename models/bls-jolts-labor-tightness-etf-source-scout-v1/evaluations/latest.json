@@ -13,7 +13,24 @@
   "raw_daily_paths_retained": false,
   "market_data_evaluation_run": false,
   "selected_universe": [],
-  "candidate_universe": ["XLI", "XLY", "XLP", "XLV", "XLU", "XLF", "XLK", "SPY", "IWM", "QQQ", "TLT", "IEF", "HYG", "LQD", "GLD", "DBC"],
+  "candidate_universe": [
+    "XLI",
+    "XLY",
+    "XLP",
+    "XLV",
+    "XLU",
+    "XLF",
+    "XLK",
+    "SPY",
+    "IWM",
+    "QQQ",
+    "TLT",
+    "IEF",
+    "HYG",
+    "LQD",
+    "GLD",
+    "DBC"
+  ],
   "source_gate": {
     "required_official_release_dates_times": true,
     "required_historical_vintage_values": true,
@@ -30,10 +47,42 @@
     "rejection_reason": "Could not prove both official historical JOLTS release timestamps and point-in-time JOLTS vintages. BLS pages were blocked from this environment; accessible BLS API and ALFRED CSV downloads exposed current/revised values or a single current vintage only."
   },
   "series_checked": {
-    "job_openings": {"bls_series_id": "JTS000000000000000JOL", "alfred_series_id": "JTSJOL", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSJOL_20260630"]},
-    "hires": {"bls_series_id": "JTS000000000000000HIL", "alfred_series_id": "JTSHIL", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSHIL_20260630"]},
-    "quits": {"bls_series_id": "JTS000000000000000QUR", "alfred_series_id": "JTSQUR", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSQUR_20260630"]},
-    "layoffs_discharges": {"bls_series_id": "JTS000000000000000LDL", "alfred_series_id": "JTSLDL", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSLDL_20260630"]}
+    "job_openings": {
+      "bls_series_id": "JTS000000000000000JOL",
+      "alfred_series_id": "JTSJOL",
+      "alfred_rows": 306,
+      "alfred_header": [
+        "observation_date",
+        "JTSJOL_20260630"
+      ]
+    },
+    "hires": {
+      "bls_series_id": "JTS000000000000000HIL",
+      "alfred_series_id": "JTSHIL",
+      "alfred_rows": 306,
+      "alfred_header": [
+        "observation_date",
+        "JTSHIL_20260630"
+      ]
+    },
+    "quits": {
+      "bls_series_id": "JTS000000000000000QUR",
+      "alfred_series_id": "JTSQUR",
+      "alfred_rows": 306,
+      "alfred_header": [
+        "observation_date",
+        "JTSQUR_20260630"
+      ]
+    },
+    "layoffs_discharges": {
+      "bls_series_id": "JTS000000000000000LDL",
+      "alfred_series_id": "JTSLDL",
+      "alfred_rows": 306,
+      "alfred_header": [
+        "observation_date",
+        "JTSLDL_20260630"
+      ]
+    }
   },
   "metrics": {
     "median_sharpe_10bps": null,
@@ -46,5 +95,9 @@
   "warnings": [
     "No performance claims are made because the source/vintage gate failed.",
     "Do not use BLS current API values or single-current-vintage ALFRED graph downloads as historical point-in-time signals."
-  ]
+  ],
+  "asset_bucket": "etf",
+  "crypto_label": false,
+  "status": "rejected",
+  "decision_status": "rejected"
 }

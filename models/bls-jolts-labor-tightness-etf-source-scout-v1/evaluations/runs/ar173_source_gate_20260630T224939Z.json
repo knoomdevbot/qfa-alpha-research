@@ -22,5 +22,9 @@
     "alfred_rows_per_series": 306,
     "alfred_verified_historical_vintage_columns": 0
   },
-  "null_metrics_reason": "Source/vintage gate failed before market-data evaluation."
+  "null_metrics_reason": "Source/vintage gate failed before market-data evaluation.",
+  "asset_bucket": "etf",
+  "crypto_label": false,
+  "status": "rejected",
+  "decision_status": "rejected"
 }
