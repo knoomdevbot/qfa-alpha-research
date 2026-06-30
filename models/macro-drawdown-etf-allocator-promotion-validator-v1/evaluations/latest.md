@@ -17,3 +17,7 @@ SPY, equal-weight universe, ETF TSMOM, ETF reversal, risk-off switch, shifted si
 
 ## Data and policy
 Real daily OHLCV bars were fetched as provider JSON into memory; no CSV input, no `--data-csv`, no daemon, no orders, and no raw market data were retained. Configured paper-data access through the preferred qfa/Alpaca path was unavailable in this scheduled run, so the validator used the JSON fallback and documented that limitation.
+
+
+## Controller caveat
+Controller qfa/Alpaca tiny-bar smoke succeeded after the timed-out subagent. The subagent evaluation used a public real-bar fallback, so this result is retained only as decisive rejection/pruning evidence and cannot promote AR-063 without a future qfa/Alpaca rerun.

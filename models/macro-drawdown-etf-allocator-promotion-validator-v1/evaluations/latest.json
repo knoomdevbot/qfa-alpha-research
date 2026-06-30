@@ -1,11 +1,7 @@
 {
   "artifact_policy": {
     "compact_json_only": true,
-    "daily_equity_curves_retained": false,
-    "daily_returns_retained": false,
-    "daily_weights_retained": false,
-    "helper_scripts_retained": false,
-    "raw_bars_retained": false
+    "raw_daily_paths_retained": false
   },
   "artifacts": {
     "latest_json": "models/macro-drawdown-etf-allocator-promotion-validator-v1/evaluations/latest.json",
@@ -384,13 +380,87 @@
     }
   },
   "created_at_utc": "2026-06-30T08:12:51Z",
-  "market_data_provenance": "Real daily OHLCV bars fetched as provider JSON into memory; the preferred qfa/Alpaca path was unavailable because configured paper-data access was absent in this noninteractive run. No CSV input or stored market data was used.",
+  "data": {
+    "candidate_pool_description": "Broad U.S.-listed liquid ETFs across equity/style/sector/international/duration/credit/inflation/commodities/gold/oil/USD/volatility products; leveraged and inverse products excluded.",
+    "candidate_pool_size": 46,
+    "end": null,
+    "selected_universe_size": 45,
+    "source": "real_daily_market_bars_public_provider_fallback_for_decisive_rejection",
+    "start": null,
+    "survivorship_bias_checked": false,
+    "symbols_or_universe": [
+      "AGG",
+      "DBA",
+      "DBC",
+      "DIA",
+      "EEM",
+      "EFA",
+      "EWG",
+      "EWJ",
+      "EWU",
+      "EWZ",
+      "FXE",
+      "FXI",
+      "FXY",
+      "GLD",
+      "HYG",
+      "IEF",
+      "IWM",
+      "LQD",
+      "MBB",
+      "MDY",
+      "QQQ",
+      "RSP",
+      "SHV",
+      "SHY",
+      "SLV",
+      "SPY",
+      "TIP",
+      "TLT",
+      "USO",
+      "UUP",
+      "VEA",
+      "VIXY",
+      "VNQ",
+      "VTI",
+      "VWO",
+      "XLB",
+      "XLE",
+      "XLF",
+      "XLI",
+      "XLK",
+      "XLP",
+      "XLRE",
+      "XLU",
+      "XLV",
+      "XLY"
+    ],
+    "universe_limitations": [
+      "Preferred qfa/Alpaca path was not available inside the timed-out research subagent; controller later confirmed qfa/Alpaca tiny-bar access, so this artifact is retained only as rejection/pruning evidence, not stable/performance promotion evidence."
+    ],
+    "universe_selection_filters": [
+      "daily_bar_coverage",
+      "liquidity_proxy",
+      "economic_exposure",
+      "exclude_leveraged_inverse"
+    ],
+    "universe_selection_rationale": "broad, high-recognition U.S.-listed ETFs across equity/style/sector/international/duration/credit/inflation/commodities/gold/oil/USD/volatility products; leveraged and inverse funds excluded"
+  },
   "date_range": {
     "evaluation_start": "2018-01-01",
     "fetch_start": "2017-01-01",
     "primary_end": "2026-06-29",
     "primary_start": "2018-01-02",
     "timeframe": "1Day"
+  },
+  "decision": {
+    "rationale": [
+      "Primary 10 bps Sharpe was near zero and 20 bps cost sensitivity was negative.",
+      "Random-window lower tail failed: p25 Sharpe materially negative and positive-window rate below promotion threshold.",
+      "Control dominance: SPY, equal-weight universe, ETF TSMOM, and risk-off controls were stronger.",
+      "Orthogonality hard fail: max correlation to prior/reconstructable streams was above 0.60, including AR-063."
+    ],
+    "status": "rejected"
   },
   "decision_reason": "Rejected/pruned: p25_random_sharpe_materially_negative; positive_window_rate_below_55pct; 20bps_cost_collapse; control_dominated_by_SPY_buy_hold_10bps,equal_weight_universe_10bps,etf_tsmom_126d_10bps,risk_off_switch_10bps; correlation_above_0p60",
   "evaluation_status": "completed_realdata_validator",
@@ -417,6 +487,19 @@
     "primary_max_drawdown_10bps": -0.293758,
     "primary_sharpe_10bps": 0.003938,
     "worst_random_sharpe_10bps": -1.740066
+  },
+  "market_data_provenance": "Real daily market bars were fetched into memory via a public provider fallback after the isolated research subagent could not access configured qfa/Alpaca credentials. Controller credential smoke later confirmed qfa/Alpaca tiny-bar access; therefore this artifact is retained only as decisive rejected/pruned evidence and not as accepted/watchlist promotion evidence. No CSV input, daemon, orders, raw bars, daily paths, or credentials were retained.",
+  "metrics": {
+    "annualized_return": 0.000291,
+    "annualized_volatility": 0.073934,
+    "hit_rate": 0.521782,
+    "max_drawdown": -0.293758,
+    "mean_sharpe": -0.204164,
+    "median_sharpe": 0.001216,
+    "p25_sharpe": -1.232636,
+    "positive_window_rate": 0.5,
+    "turnover": 0.208683,
+    "worst_period_sharpe": -1.740066
   },
   "model_name": "macro-drawdown-etf-allocator-promotion-validator-v1",
   "no_csv_used": true,
@@ -569,6 +652,28 @@
       "sharpe": 0.36709,
       "total_return": 0.253531
     }
+  },
+  "protocol": {
+    "controls": [
+      "SPY_buy_hold_10bps",
+      "date_only_placebo_10bps",
+      "equal_weight_universe_10bps",
+      "etf_reversal_21d_10bps",
+      "etf_tsmom_126d_10bps",
+      "inverted_signal_10bps",
+      "risk_off_switch_10bps",
+      "shifted_stress_21d_10bps"
+    ],
+    "cost_sensitivity_bps": [
+      0,
+      5,
+      10,
+      20
+    ],
+    "costs_bps": 10,
+    "random_periods": 50,
+    "slippage_model": "fixed_turnover_bps",
+    "window_length_days": 504
   },
   "random_window_summary_by_cost": {
     "0bps": {
@@ -1233,6 +1338,7 @@
     "XLV",
     "XLY"
   ],
+  "status": "rejected",
   "suggested_decision": "rejected",
   "universe_filters": {
     "coverage_filter": "at least 95% non-null daily adjusted-close coverage from 2018 onward after in-memory forward fill",
@@ -1240,7 +1346,7 @@
     "minimum_selected_etfs": 20
   },
   "warnings": [
-    "Provider JSON fallback was used because qfa/Alpaca credentials were not available to this scheduled subagent; no credentials or credential names are persisted.",
+    "Controller qfa/Alpaca credential smoke succeeded after the subagent run; because the evaluator used public real-bar fallback, the result is eligible only for rejection/pruning and must be rerun through qfa/Alpaca before any future promotion.",
     "Adjusted close from provider chart JSON was used for return continuity; OHLCV raw bar files were not retained.",
     "Orthogonality to prior alphas is limited to compact retained curves where present plus reconstructable controls; exact prior artifact paths are intentionally not retained."
   ]
