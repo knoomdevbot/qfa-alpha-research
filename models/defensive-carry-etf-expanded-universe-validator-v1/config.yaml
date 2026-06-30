@@ -1,0 +1,94 @@
+model_name: defensive-carry-etf-expanded-universe-validator-v1
+issue_id: AR-167
+parent_alpha: AR-037/AR-049
+status: rejected
+research_type: promotion_pruning_validator
+asset_bucket: etf
+family: defensive_carry_validation
+data_source: qfa/Alpaca real daily OHLCV only
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+universe:
+  selection: predeclared broad non-levered ETF universe before scoring
+  requested_symbols:
+    - SHY
+    - IEI
+    - IEF
+    - TLH
+    - TLT
+    - TIP
+    - SCHP
+    - LQD
+    - VCIT
+    - VCSH
+    - HYG
+    - JNK
+    - BKLN
+    - SPY
+    - QQQ
+    - IWM
+    - DIA
+    - RSP
+    - VTV
+    - VUG
+    - QUAL
+    - USMV
+    - XLU
+    - XLP
+    - XLV
+    - XLF
+    - XLI
+    - XLE
+    - XLK
+    - XLY
+    - XLB
+    - XLRE
+    - GLD
+    - SLV
+    - DBC
+    - USO
+    - UUP
+    - FXE
+    - FXY
+    - FXF
+    - FXA
+  sleeves:
+    treasuries: [SHY, IEI, IEF, TLH, TLT]
+    tips: [TIP, SCHP]
+    credit: [LQD, VCIT, VCSH, HYG, JNK, BKLN]
+    broad_equity_style_sector: [SPY, QQQ, IWM, DIA, RSP, VTV, VUG, QUAL, USMV, XLU, XLP, XLV, XLF, XLI, XLE, XLK, XLY, XLB, XLRE]
+    real_asset_fx: [GLD, SLV, DBC, USO, UUP, FXE, FXY, FXF, FXA]
+  limitations:
+    - static ETF availability may create survivorship bias
+    - no performance-based product pruning was applied
+signal:
+  min_history_days: 190
+  vol_window_days: 63
+  defensive_window_days: 63
+  carry_window_days: 126
+  fast_window_days: 21
+  max_single_weight: 0.16
+  gross_exposure_cap: 1.0
+costs_bps_one_way: [5, 10, 20]
+primary_cost_bps_one_way: 10
+random_window_protocol:
+  requested_windows: 50
+  completed_windows: 50
+  window_trading_days: 252
+controls:
+  - SPY
+  - equal_weight_universe
+  - TLT
+  - IEF
+  - SHY
+  - carry_proxy
+  - tsmom_proxy
+decision_gates:
+  median_random_window_sharpe_gt_0: true
+  positive_window_rate_min: 0.55
+  cost_20bps_not_collapsed: true
+  full_model_beats_spy_and_equal_weight: true
+  max_relevant_corr_hard: 0.60

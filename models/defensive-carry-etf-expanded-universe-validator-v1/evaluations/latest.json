@@ -1,0 +1,1010 @@
+{
+  "acceptance_gates": {
+    "beats_equal_weight_10bps_sharpe": false,
+    "beats_spy_10bps_sharpe": false,
+    "cost_20bps_not_collapsed_positive_sharpe": false,
+    "max_relevant_corr_le_0_60": true,
+    "median_random_sharpe_gt_0": false,
+    "positive_window_rate_ge_55pct": false
+  },
+  "asset_bucket": "etf",
+  "asset_class": "etf",
+  "config_path": "models/defensive-carry-etf-expanded-universe-validator-v1/config.yaml",
+  "control_return_correlations_10bps": {
+    "IEF": 0.55827879,
+    "SHY": 0.50965611,
+    "SPY": 0.41187144,
+    "TLT": 0.47286015,
+    "carry_proxy": 0.43435313,
+    "equal_weight_universe": 0.52899641,
+    "tsmom_proxy": 0.48289202
+  },
+  "controls_10bps": {
+    "IEF": {
+      "active_day_fraction": 1.0,
+      "annualized_return": -0.01359858,
+      "annualized_turnover": 0.0,
+      "annualized_volatility": 0.07241417,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.27718186,
+      "mean_daily_one_way_turnover": 0.0,
+      "mean_gross_exposure": 1.0,
+      "periods": 1880,
+      "sharpe": -0.15289694,
+      "total_return": -0.09710214,
+      "win_rate": 0.49787234
+    },
+    "SHY": {
+      "active_day_fraction": 1.0,
+      "annualized_return": -0.00259696,
+      "annualized_turnover": 0.0,
+      "annualized_volatility": 0.01891257,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.07246544,
+      "mean_daily_one_way_turnover": 0.0,
+      "mean_gross_exposure": 1.0,
+      "periods": 1880,
+      "sharpe": -0.12804111,
+      "total_return": -0.01921241,
+      "win_rate": 0.48138298
+    },
+    "SPY": {
+      "active_day_fraction": 1.0,
+      "annualized_return": 0.15792093,
+      "annualized_turnover": 0.0,
+      "annualized_volatility": 0.19188025,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.34180657,
+      "mean_daily_one_way_turnover": 0.0,
+      "mean_gross_exposure": 1.0,
+      "periods": 1880,
+      "sharpe": 0.86055226,
+      "total_return": 1.98582838,
+      "win_rate": 0.5537234
+    },
+    "TLT": {
+      "active_day_fraction": 1.0,
+      "annualized_return": -0.04538716,
+      "annualized_turnover": 0.0,
+      "annualized_volatility": 0.16116232,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.517573,
+      "mean_daily_one_way_turnover": 0.0,
+      "mean_gross_exposure": 1.0,
+      "periods": 1880,
+      "sharpe": -0.20769148,
+      "total_return": -0.29286061,
+      "win_rate": 0.49893617
+    },
+    "carry_proxy": {
+      "active_day_fraction": 0.93297872,
+      "annualized_return": 0.01618617,
+      "annualized_turnover": 30.02553191,
+      "annualized_volatility": 0.10807129,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.30229401,
+      "mean_daily_one_way_turnover": 0.11914894,
+      "mean_gross_exposure": 0.93297872,
+      "periods": 1880,
+      "sharpe": 0.20270384,
+      "total_return": 0.12725689,
+      "win_rate": 0.49521277
+    },
+    "equal_weight_universe": {
+      "active_day_fraction": 1.0,
+      "annualized_return": 0.0867195,
+      "annualized_turnover": 0.0,
+      "annualized_volatility": 0.12851494,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.22694733,
+      "mean_daily_one_way_turnover": 0.0,
+      "mean_gross_exposure": 1.0,
+      "periods": 1880,
+      "sharpe": 0.70942908,
+      "total_return": 0.85972071,
+      "win_rate": 0.55319149
+    },
+    "tsmom_proxy": {
+      "active_day_fraction": 0.89946809,
+      "annualized_return": -0.00722857,
+      "annualized_turnover": 53.43963154,
+      "annualized_volatility": 0.11813585,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.24506063,
+      "mean_daily_one_way_turnover": 0.21206203,
+      "mean_gross_exposure": 0.89946809,
+      "periods": 1880,
+      "sharpe": -0.00200325,
+      "total_return": -0.05268467,
+      "win_rate": 0.49734043
+    }
+  },
+  "cost_sensitivity": {
+    "10": {
+      "active_day_fraction": 0.89946809,
+      "annualized_return": -0.01697512,
+      "annualized_turnover": 13.36731246,
+      "annualized_volatility": 0.04632349,
+      "cost_bps": 10.0,
+      "max_drawdown": -0.17673322,
+      "mean_daily_one_way_turnover": 0.05304489,
+      "mean_gross_exposure": 0.89946809,
+      "periods": 1880,
+      "sharpe": -0.34633238,
+      "total_return": -0.11990634,
+      "win_rate": 0.48776596
+    },
+    "20": {
+      "active_day_fraction": 0.89946809,
+      "annualized_return": -0.03003264,
+      "annualized_turnover": 13.36731246,
+      "annualized_volatility": 0.04639533,
+      "cost_bps": 20.0,
+      "max_drawdown": -0.22635494,
+      "mean_daily_one_way_turnover": 0.05304489,
+      "mean_gross_exposure": 0.89946809,
+      "periods": 1880,
+      "sharpe": -0.63391374,
+      "total_return": -0.20346674,
+      "win_rate": 0.47606383
+    },
+    "5": {
+      "active_day_fraction": 0.89946809,
+      "annualized_return": -0.01038105,
+      "annualized_turnover": 13.36731246,
+      "annualized_volatility": 0.04629182,
+      "cost_bps": 5.0,
+      "max_drawdown": -0.15664157,
+      "mean_daily_one_way_turnover": 0.05304489,
+      "mean_gross_exposure": 0.89946809,
+      "periods": 1880,
+      "sharpe": -0.2021884,
+      "total_return": -0.07489746,
+      "win_rate": 0.49095745
+    }
+  },
+  "coverage": {
+    "min_symbols_per_day_filter": 30,
+    "price_rows": 77036,
+    "trading_days_after_coverage_filter": 1881
+  },
+  "created_at": "2026-06-30T18:11:16Z",
+  "data_source": "qfa Alpaca real daily OHLCV",
+  "decision": "rejected",
+  "decision_rationale": [
+    "10 bps random-window median Sharpe is not positive",
+    "positive random-window rate below 55%",
+    "20 bps cost sensitivity is not positive",
+    "simple SPY/equal-weight controls are not both beaten"
+  ],
+  "end": "2026-06-26",
+  "evaluation_periods": 1880,
+  "issue_id": "AR-167",
+  "limitations": [
+    "Static ETF availability can create survivorship bias.",
+    "Controls are compact proxies where exact AR-037/AR-049/AR-003/AR-015 parent streams were not reconstructed.",
+    "Artifacts intentionally omit raw bars, equity curves, and weight tails."
+  ],
+  "model_name": "defensive-carry-etf-expanded-universe-validator-v1",
+  "model_path": "models/defensive-carry-etf-expanded-universe-validator-v1/model.py",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "primary_cost_bps": 10.0,
+  "primary_metrics": {
+    "active_day_fraction": 0.89946809,
+    "annualized_return": -0.01697512,
+    "annualized_turnover": 13.36731246,
+    "annualized_volatility": 0.04632349,
+    "cost_bps": 10.0,
+    "max_drawdown": -0.17673322,
+    "mean_daily_one_way_turnover": 0.05304489,
+    "mean_gross_exposure": 0.89946809,
+    "periods": 1880,
+    "sharpe": -0.34633238,
+    "total_return": -0.11990634,
+    "win_rate": 0.48776596
+  },
+  "random_windows_10bps": [
+    {
+      "end": "2020-01-07",
+      "id": 1,
+      "metrics": {
+        "annualized_return": -0.00119047,
+        "annualized_volatility": 0.01249849,
+        "max_drawdown": -0.01555243,
+        "periods": 252,
+        "sharpe": -0.08907781,
+        "total_return": -0.00119047,
+        "win_rate": 0.1547619
+      },
+      "start": "2019-01-08"
+    },
+    {
+      "end": "2020-01-09",
+      "id": 2,
+      "metrics": {
+        "annualized_return": 0.00049591,
+        "annualized_volatility": 0.01255622,
+        "max_drawdown": -0.01555243,
+        "periods": 252,
+        "sharpe": 0.04574219,
+        "total_return": 0.00049591,
+        "win_rate": 0.16269841
+      },
+      "start": "2019-01-10"
+    },
+    {
+      "end": "2020-02-24",
+      "id": 3,
+      "metrics": {
+        "annualized_return": -0.00069529,
+        "annualized_volatility": 0.01690523,
+        "max_drawdown": -0.01555243,
+        "periods": 252,
+        "sharpe": -0.03271175,
+        "total_return": -0.00069529,
+        "win_rate": 0.23809524
+      },
+      "start": "2019-02-25"
+    },
+    {
+      "end": "2020-03-12",
+      "id": 4,
+      "metrics": {
+        "annualized_return": -0.04363094,
+        "annualized_volatility": 0.03531413,
+        "max_drawdown": -0.05287458,
+        "periods": 252,
+        "sharpe": -1.2454442,
+        "total_return": -0.04363094,
+        "win_rate": 0.25793651
+      },
+      "start": "2019-03-14"
+    },
+    {
+      "end": "2020-06-11",
+      "id": 5,
+      "metrics": {
+        "annualized_return": -0.01657817,
+        "annualized_volatility": 0.0451835,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": -0.34733887,
+        "total_return": -0.01657817,
+        "win_rate": 0.41666667
+      },
+      "start": "2019-06-13"
+    },
+    {
+      "end": "2020-06-18",
+      "id": 6,
+      "metrics": {
+        "annualized_return": -0.01051082,
+        "annualized_volatility": 0.04530577,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": -0.21052777,
+        "total_return": -0.01051082,
+        "win_rate": 0.43650794
+      },
+      "start": "2019-06-20"
+    },
+    {
+      "end": "2020-07-24",
+      "id": 7,
+      "metrics": {
+        "annualized_return": 0.01015001,
+        "annualized_volatility": 0.04642177,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.24079721,
+        "total_return": 0.01015001,
+        "win_rate": 0.51984127
+      },
+      "start": "2019-07-26"
+    },
+    {
+      "end": "2020-07-28",
+      "id": 8,
+      "metrics": {
+        "annualized_return": 0.01459545,
+        "annualized_volatility": 0.04652656,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.33474261,
+        "total_return": 0.01459545,
+        "win_rate": 0.52777778
+      },
+      "start": "2019-07-30"
+    },
+    {
+      "end": "2020-08-17",
+      "id": 9,
+      "metrics": {
+        "annualized_return": 0.01752558,
+        "annualized_volatility": 0.04853891,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.38225109,
+        "total_return": 0.01752558,
+        "win_rate": 0.56349206
+      },
+      "start": "2019-08-19"
+    },
+    {
+      "end": "2020-09-02",
+      "id": 10,
+      "metrics": {
+        "annualized_return": 0.01550971,
+        "annualized_volatility": 0.04942788,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.33613082,
+        "total_return": 0.01550971,
+        "win_rate": 0.5952381
+      },
+      "start": "2019-09-05"
+    },
+    {
+      "end": "2020-09-16",
+      "id": 11,
+      "metrics": {
+        "annualized_return": 0.01367163,
+        "annualized_volatility": 0.04986465,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.29728646,
+        "total_return": 0.01367163,
+        "win_rate": 0.61507937
+      },
+      "start": "2019-09-18"
+    },
+    {
+      "end": "2020-09-30",
+      "id": 12,
+      "metrics": {
+        "annualized_return": 0.00757752,
+        "annualized_volatility": 0.05057069,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.17458975,
+        "total_return": 0.00757752,
+        "win_rate": 0.63095238
+      },
+      "start": "2019-10-02"
+    },
+    {
+      "end": "2020-10-01",
+      "id": 13,
+      "metrics": {
+        "annualized_return": 0.00705656,
+        "annualized_volatility": 0.05058394,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.1643328,
+        "total_return": 0.00705656,
+        "win_rate": 0.63095238
+      },
+      "start": "2019-10-03"
+    },
+    {
+      "end": "2020-12-01",
+      "id": 14,
+      "metrics": {
+        "annualized_return": 0.01458331,
+        "annualized_volatility": 0.05087963,
+        "max_drawdown": -0.071506,
+        "periods": 252,
+        "sharpe": 0.31002897,
+        "total_return": 0.01458331,
+        "win_rate": 0.62301587
+      },
+      "start": "2019-12-03"
+    },
+    {
+      "end": "2021-03-10",
+      "id": 15,
+      "metrics": {
+        "annualized_return": 0.03320483,
+        "annualized_volatility": 0.04343449,
+        "max_drawdown": -0.03390103,
+        "periods": 252,
+        "sharpe": 0.7738012,
+        "total_return": 0.03320483,
+        "win_rate": 0.61111111
+      },
+      "start": "2020-03-11"
+    },
+    {
+      "end": "2021-03-17",
+      "id": 16,
+      "metrics": {
+        "annualized_return": 0.06292063,
+        "annualized_volatility": 0.03877397,
+        "max_drawdown": -0.0294723,
+        "periods": 252,
+        "sharpe": 1.59326631,
+        "total_return": 0.06292063,
+        "win_rate": 0.61507937
+      },
+      "start": "2020-03-18"
+    },
+    {
+      "end": "2021-05-05",
+      "id": 17,
+      "metrics": {
+        "annualized_return": 0.04181843,
+        "annualized_volatility": 0.03513395,
+        "max_drawdown": -0.0294723,
+        "periods": 252,
+        "sharpe": 1.18366576,
+        "total_return": 0.04181843,
+        "win_rate": 0.61904762
+      },
+      "start": "2020-05-06"
+    },
+    {
+      "end": "2021-11-08",
+      "id": 18,
+      "metrics": {
+        "annualized_return": 0.01282816,
+        "annualized_volatility": 0.02969305,
+        "max_drawdown": -0.02079949,
+        "periods": 252,
+        "sharpe": 0.44409016,
+        "total_return": 0.01282816,
+        "win_rate": 0.55952381
+      },
+      "start": "2020-11-09"
+    },
+    {
+      "end": "2021-12-29",
+      "id": 19,
+      "metrics": {
+        "annualized_return": 0.00292132,
+        "annualized_volatility": 0.03037528,
+        "max_drawdown": -0.02370423,
+        "periods": 252,
+        "sharpe": 0.11117626,
+        "total_return": 0.00292132,
+        "win_rate": 0.55555556
+      },
+      "start": "2020-12-30"
+    },
+    {
+      "end": "2022-04-27",
+      "id": 20,
+      "metrics": {
+        "annualized_return": -0.04950633,
+        "annualized_volatility": 0.03559227,
+        "max_drawdown": -0.06483844,
+        "periods": 252,
+        "sharpe": -1.40865491,
+        "total_return": -0.04950633,
+        "win_rate": 0.5
+      },
+      "start": "2021-04-29"
+    },
+    {
+      "end": "2022-06-15",
+      "id": 21,
+      "metrics": {
+        "annualized_return": -0.09159923,
+        "annualized_volatility": 0.04296556,
+        "max_drawdown": -0.10876744,
+        "periods": 252,
+        "sharpe": -2.21410231,
+        "total_return": -0.09159923,
+        "win_rate": 0.49603175
+      },
+      "start": "2021-06-17"
+    },
+    {
+      "end": "2022-08-17",
+      "id": 22,
+      "metrics": {
+        "annualized_return": -0.08158705,
+        "annualized_volatility": 0.0462209,
+        "max_drawdown": -0.10868032,
+        "periods": 252,
+        "sharpe": -1.81797177,
+        "total_return": -0.08158705,
+        "win_rate": 0.47222222
+      },
+      "start": "2021-08-18"
+    },
+    {
+      "end": "2022-08-30",
+      "id": 23,
+      "metrics": {
+        "annualized_return": -0.10622736,
+        "annualized_volatility": 0.04752224,
+        "max_drawdown": -0.10868032,
+        "periods": 252,
+        "sharpe": -2.3389567,
+        "total_return": -0.10622736,
+        "win_rate": 0.46031746
+      },
+      "start": "2021-08-31"
+    },
+    {
+      "end": "2022-08-31",
+      "id": 24,
+      "metrics": {
+        "annualized_return": -0.10789251,
+        "annualized_volatility": 0.04756639,
+        "max_drawdown": -0.10951209,
+        "periods": 252,
+        "sharpe": -2.37592866,
+        "total_return": -0.10789251,
+        "win_rate": 0.46031746
+      },
+      "start": "2021-09-01"
+    },
+    {
+      "end": "2022-11-30",
+      "id": 25,
+      "metrics": {
+        "annualized_return": -0.09328322,
+        "annualized_volatility": 0.05733181,
+        "max_drawdown": -0.14173962,
+        "periods": 252,
+        "sharpe": -1.67915409,
+        "total_return": -0.09328322,
+        "win_rate": 0.46825397
+      },
+      "start": "2021-12-01"
+    },
+    {
+      "end": "2022-12-20",
+      "id": 26,
+      "metrics": {
+        "annualized_return": -0.10710251,
+        "annualized_volatility": 0.05911475,
+        "max_drawdown": -0.14173962,
+        "periods": 252,
+        "sharpe": -1.88645377,
+        "total_return": -0.10710251,
+        "win_rate": 0.46031746
+      },
+      "start": "2021-12-21"
+    },
+    {
+      "end": "2023-05-03",
+      "id": 27,
+      "metrics": {
+        "annualized_return": -0.05003686,
+        "annualized_volatility": 0.06094516,
+        "max_drawdown": -0.09015397,
+        "periods": 252,
+        "sharpe": -0.81183296,
+        "total_return": -0.05003686,
+        "win_rate": 0.49603175
+      },
+      "start": "2022-05-03"
+    },
+    {
+      "end": "2023-05-17",
+      "id": 28,
+      "metrics": {
+        "annualized_return": -0.05790506,
+        "annualized_volatility": 0.06013695,
+        "max_drawdown": -0.08876238,
+        "periods": 252,
+        "sharpe": -0.961827,
+        "total_return": -0.05790506,
+        "win_rate": 0.48412698
+      },
+      "start": "2022-05-17"
+    },
+    {
+      "end": "2023-06-14",
+      "id": 29,
+      "metrics": {
+        "annualized_return": -0.02656074,
+        "annualized_volatility": 0.05717335,
+        "max_drawdown": -0.07620514,
+        "periods": 252,
+        "sharpe": -0.44236853,
+        "total_return": -0.02656074,
+        "win_rate": 0.48809524
+      },
+      "start": "2022-06-14"
+    },
+    {
+      "end": "2023-07-05",
+      "id": 30,
+      "metrics": {
+        "annualized_return": -0.04695606,
+        "annualized_volatility": 0.05646718,
+        "max_drawdown": -0.07620514,
+        "periods": 252,
+        "sharpe": -0.8235384,
+        "total_return": -0.04695606,
+        "win_rate": 0.47619048
+      },
+      "start": "2022-07-05"
+    },
+    {
+      "end": "2023-08-16",
+      "id": 31,
+      "metrics": {
+        "annualized_return": -0.06822687,
+        "annualized_volatility": 0.05502373,
+        "max_drawdown": -0.07546075,
+        "periods": 252,
+        "sharpe": -1.2567171,
+        "total_return": -0.06822687,
+        "win_rate": 0.46428571
+      },
+      "start": "2022-08-16"
+    },
+    {
+      "end": "2023-08-25",
+      "id": 32,
+      "metrics": {
+        "annualized_return": -0.05695131,
+        "annualized_volatility": 0.05474878,
+        "max_drawdown": -0.067984,
+        "periods": 252,
+        "sharpe": -1.04365508,
+        "total_return": -0.05695131,
+        "win_rate": 0.46825397
+      },
+      "start": "2022-08-25"
+    },
+    {
+      "end": "2024-01-08",
+      "id": 33,
+      "metrics": {
+        "annualized_return": -0.01834873,
+        "annualized_volatility": 0.04292467,
+        "max_drawdown": -0.05977264,
+        "periods": 252,
+        "sharpe": -0.41004281,
+        "total_return": -0.01834873,
+        "win_rate": 0.48412698
+      },
+      "start": "2023-01-06"
+    },
+    {
+      "end": "2024-01-26",
+      "id": 34,
+      "metrics": {
+        "annualized_return": -0.02059022,
+        "annualized_volatility": 0.04338976,
+        "max_drawdown": -0.05977264,
+        "periods": 252,
+        "sharpe": -0.45786581,
+        "total_return": -0.02059022,
+        "win_rate": 0.49603175
+      },
+      "start": "2023-01-26"
+    },
+    {
+      "end": "2024-03-22",
+      "id": 35,
+      "metrics": {
+        "annualized_return": -0.00305183,
+        "annualized_volatility": 0.03994557,
+        "max_drawdown": -0.05211884,
+        "periods": 252,
+        "sharpe": -0.0566261,
+        "total_return": -0.00305183,
+        "win_rate": 0.51190476
+      },
+      "start": "2023-03-23"
+    },
+    {
+      "end": "2024-03-28",
+      "id": 36,
+      "metrics": {
+        "annualized_return": 0.00166158,
+        "annualized_volatility": 0.04024668,
+        "max_drawdown": -0.05211884,
+        "periods": 252,
+        "sharpe": 0.06129014,
+        "total_return": 0.00166158,
+        "win_rate": 0.51190476
+      },
+      "start": "2023-03-29"
+    },
+    {
+      "end": "2024-12-26",
+      "id": 37,
+      "metrics": {
+        "annualized_return": -0.04969627,
+        "annualized_volatility": 0.05762374,
+        "max_drawdown": -0.08726897,
+        "periods": 252,
+        "sharpe": -0.855447,
+        "total_return": -0.04969627,
+        "win_rate": 0.54365079
+      },
+      "start": "2023-12-27"
+    },
+    {
+      "end": "2025-03-06",
+      "id": 38,
+      "metrics": {
+        "annualized_return": -0.03213976,
+        "annualized_volatility": 0.05641884,
+        "max_drawdown": -0.09125469,
+        "periods": 252,
+        "sharpe": -0.55052002,
+        "total_return": -0.03213976,
+        "win_rate": 0.54761905
+      },
+      "start": "2024-03-05"
+    },
+    {
+      "end": "2025-03-10",
+      "id": 39,
+      "metrics": {
+        "annualized_return": -0.0405753,
+        "annualized_volatility": 0.05627656,
+        "max_drawdown": -0.09125469,
+        "periods": 252,
+        "sharpe": -0.70758228,
+        "total_return": -0.0405753,
+        "win_rate": 0.53968254
+      },
+      "start": "2024-03-07"
+    },
+    {
+      "end": "2025-05-29",
+      "id": 40,
+      "metrics": {
+        "annualized_return": -0.03151647,
+        "annualized_volatility": 0.06140151,
+        "max_drawdown": -0.09125469,
+        "periods": 252,
+        "sharpe": -0.49058763,
+        "total_return": -0.03151647,
+        "win_rate": 0.5515873
+      },
+      "start": "2024-05-28"
+    },
+    {
+      "end": "2025-07-24",
+      "id": 41,
+      "metrics": {
+        "annualized_return": -0.03243053,
+        "annualized_volatility": 0.0607682,
+        "max_drawdown": -0.09125469,
+        "periods": 252,
+        "sharpe": -0.51187207,
+        "total_return": -0.03243053,
+        "win_rate": 0.54365079
+      },
+      "start": "2024-07-23"
+    },
+    {
+      "end": "2025-10-08",
+      "id": 42,
+      "metrics": {
+        "annualized_return": -0.02584783,
+        "annualized_volatility": 0.05960638,
+        "max_drawdown": -0.07595903,
+        "periods": 252,
+        "sharpe": -0.40928022,
+        "total_return": -0.02584783,
+        "win_rate": 0.53571429
+      },
+      "start": "2024-10-07"
+    },
+    {
+      "end": "2025-11-18",
+      "id": 43,
+      "metrics": {
+        "annualized_return": 0.03433065,
+        "annualized_volatility": 0.04567727,
+        "max_drawdown": -0.03757735,
+        "periods": 252,
+        "sharpe": 0.76181037,
+        "total_return": 0.03433065,
+        "win_rate": 0.54761905
+      },
+      "start": "2024-11-15"
+    },
+    {
+      "end": "2025-12-02",
+      "id": 44,
+      "metrics": {
+        "annualized_return": 0.02232501,
+        "annualized_volatility": 0.04606597,
+        "max_drawdown": -0.03757735,
+        "periods": 252,
+        "sharpe": 0.5022986,
+        "total_return": 0.02232501,
+        "win_rate": 0.53571429
+      },
+      "start": "2024-11-29"
+    },
+    {
+      "end": "2025-12-17",
+      "id": 45,
+      "metrics": {
+        "annualized_return": 0.0151329,
+        "annualized_volatility": 0.05142132,
+        "max_drawdown": -0.0376709,
+        "periods": 252,
+        "sharpe": 0.31781519,
+        "total_return": 0.0151329,
+        "win_rate": 0.54761905
+      },
+      "start": "2024-12-16"
+    },
+    {
+      "end": "2026-01-14",
+      "id": 46,
+      "metrics": {
+        "annualized_return": 0.04984968,
+        "annualized_volatility": 0.05000216,
+        "max_drawdown": -0.0376709,
+        "periods": 252,
+        "sharpe": 0.99799882,
+        "total_return": 0.04984968,
+        "win_rate": 0.56349206
+      },
+      "start": "2025-01-14"
+    },
+    {
+      "end": "2026-01-21",
+      "id": 47,
+      "metrics": {
+        "annualized_return": 0.04292484,
+        "annualized_volatility": 0.04977069,
+        "max_drawdown": -0.0376709,
+        "periods": 252,
+        "sharpe": 0.86941834,
+        "total_return": 0.04292484,
+        "win_rate": 0.55952381
+      },
+      "start": "2025-01-21"
+    },
+    {
+      "end": "2026-02-26",
+      "id": 48,
+      "metrics": {
+        "annualized_return": 0.04336899,
+        "annualized_volatility": 0.05200753,
+        "max_drawdown": -0.0376709,
+        "periods": 252,
+        "sharpe": 0.84240219,
+        "total_return": 0.04336899,
+        "win_rate": 0.56746032
+      },
+      "start": "2025-02-26"
+    },
+    {
+      "end": "2026-04-08",
+      "id": 49,
+      "metrics": {
+        "annualized_return": 0.04029889,
+        "annualized_volatility": 0.0514033,
+        "max_drawdown": -0.03842218,
+        "periods": 252,
+        "sharpe": 0.79435075,
+        "total_return": 0.04029889,
+        "win_rate": 0.56349206
+      },
+      "start": "2025-04-07"
+    },
+    {
+      "end": "2026-06-02",
+      "id": 50,
+      "metrics": {
+        "annualized_return": 0.00834266,
+        "annualized_volatility": 0.04715259,
+        "max_drawdown": -0.03842218,
+        "periods": 252,
+        "sharpe": 0.19978979,
+        "total_return": 0.00834266,
+        "win_rate": 0.55555556
+      },
+      "start": "2025-06-02"
+    }
+  ],
+  "random_windows_10bps_summary": {
+    "completed_windows": 50,
+    "median_sharpe": -0.07285195,
+    "p25_sharpe": -0.82061204,
+    "positive_window_rate": 0.46,
+    "requested_windows": 50,
+    "window_trading_days": 252,
+    "worst_sharpe": -2.37592866
+  },
+  "raw_daily_paths_retained": false,
+  "run_id": "ar167_qfa_alpaca_real_20260630T181153Z",
+  "start": "2019-01-02",
+  "symbols_evaluated": [
+    "SHY",
+    "IEI",
+    "IEF",
+    "TLH",
+    "TLT",
+    "TIP",
+    "SCHP",
+    "LQD",
+    "VCIT",
+    "VCSH",
+    "HYG",
+    "JNK",
+    "BKLN",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "DIA",
+    "RSP",
+    "VTV",
+    "VUG",
+    "QUAL",
+    "USMV",
+    "XLU",
+    "XLP",
+    "XLV",
+    "XLF",
+    "XLI",
+    "XLE",
+    "XLK",
+    "XLY",
+    "XLB",
+    "XLRE",
+    "GLD",
+    "SLV",
+    "DBC",
+    "USO",
+    "UUP",
+    "FXE",
+    "FXY",
+    "FXF",
+    "FXA"
+  ],
+  "symbols_requested": [
+    "SHY",
+    "IEI",
+    "IEF",
+    "TLH",
+    "TLT",
+    "TIP",
+    "SCHP",
+    "LQD",
+    "VCIT",
+    "VCSH",
+    "HYG",
+    "JNK",
+    "BKLN",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "DIA",
+    "RSP",
+    "VTV",
+    "VUG",
+    "QUAL",
+    "USMV",
+    "XLU",
+    "XLP",
+    "XLV",
+    "XLF",
+    "XLI",
+    "XLE",
+    "XLK",
+    "XLY",
+    "XLB",
+    "XLRE",
+    "GLD",
+    "SLV",
+    "DBC",
+    "USO",
+    "UUP",
+    "FXE",
+    "FXY",
+    "FXF",
+    "FXA"
+  ],
+  "timeframe": "1Day"
+}
