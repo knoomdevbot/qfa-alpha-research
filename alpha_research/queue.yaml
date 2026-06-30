@@ -1230,9 +1230,45 @@ issues:
   issue_path: alpha_research/issues/AR-163.md
   last_checked_at: '2026-06-30T15:52:54Z'
   tried_count: 1
-active_batch: []
+- id: AR-164
+  title: AR-010 low-vol quality expanded-universe promotion/pruning validator
+  model_name: low-vol-quality-expanded-universe-validator-v1
+  status: queued
+  priority: preflight_queue
+  family: defensive_quality_validation
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-164.md
+  parent: AR-010
+  last_checked_at: '2026-06-30T16:16:54Z'
+  tried_count: 0
+- id: AR-165
+  title: Single-stock closing-liquidity exhaustion promotion/pruning validator for AR-046/AR-056
+  model_name: single-stock-closing-liquidity-exhaustion-validator-v1
+  status: queued
+  priority: preflight_queue
+  family: single_stock_liquidity_reversal_validation
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-165.md
+  parent: AR-046/AR-056
+  last_checked_at: '2026-06-30T16:16:54Z'
+  tried_count: 0
+- id: AR-166
+  title: AR-006 ToM ETF seasonality expanded-universe promotion/pruning validator
+  model_name: tom-etf-seasonality-expanded-universe-validator-v1
+  status: queued
+  priority: preflight_queue
+  family: calendar_seasonality_validation
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-166.md
+  parent: AR-006/AR-021
+  last_checked_at: '2026-06-30T16:16:54Z'
+  tried_count: 0
+active_batch:
+- AR-164
+- AR-165
+- AR-166
 last_realdata_batch:
 - AR-163
-updated_at: '2026-06-30T15:52:54Z'
+updated_at: '2026-06-30T16:16:54Z'
 target_tried_ideas: 100
 tried_ideas_count: 149
