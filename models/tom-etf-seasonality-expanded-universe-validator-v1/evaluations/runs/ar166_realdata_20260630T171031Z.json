@@ -1,0 +1,2442 @@
+{
+  "acceptance_tests": {
+    "20bps_not_collapsed": false,
+    "controls_not_dominant": false,
+    "max_corr_le_0_60": false,
+    "median_random_window_sharpe_gt_0": false,
+    "p25_non_hostile": false,
+    "positive_window_rate_ge_55pct": false
+  },
+  "candidate_pool": {
+    "count": 85,
+    "description": "predeclared non-levered liquid primary ETF pool across equities, sectors, international/country, rates/credit/inflation, real assets/commodities/FX proxies; no performance-ranked selection",
+    "sleeves": {
+      "broad_us_equity": [
+        "SPY",
+        "IVV",
+        "VOO",
+        "VTI",
+        "ITOT",
+        "QQQ",
+        "DIA",
+        "IWM",
+        "MDY",
+        "RSP"
+      ],
+      "duration_treasury": [
+        "SHY",
+        "IEI",
+        "IEF",
+        "TLT",
+        "GOVT",
+        "BIL",
+        "SGOV",
+        "TIP",
+        "SCHP",
+        "VTIP",
+        "LQD",
+        "HYG",
+        "JNK",
+        "MUB",
+        "BND",
+        "AGG",
+        "MBB"
+      ],
+      "intl_country": [
+        "EFA",
+        "VEA",
+        "IEFA",
+        "EEM",
+        "VWO",
+        "IEMG",
+        "EWJ",
+        "EWU",
+        "EWG",
+        "EWZ",
+        "EWC",
+        "FXI",
+        "INDA",
+        "EWT",
+        "EWY",
+        "EWW"
+      ],
+      "real_assets_commod_fx": [
+        "GLD",
+        "IAU",
+        "SLV",
+        "PDBC",
+        "DBC",
+        "USO",
+        "UNG",
+        "CPER",
+        "DBA",
+        "VNQ",
+        "REET",
+        "UUP",
+        "FXE",
+        "FXY",
+        "FXB",
+        "FXA"
+      ],
+      "sectors": [
+        "XLB",
+        "XLE",
+        "XLF",
+        "XLI",
+        "XLK",
+        "XLP",
+        "XLU",
+        "XLV",
+        "XLY",
+        "XLC",
+        "XLRE",
+        "SMH",
+        "IBB",
+        "KRE"
+      ],
+      "style_size": [
+        "IWF",
+        "IWD",
+        "IWO",
+        "IWN",
+        "VUG",
+        "VTV",
+        "VB",
+        "VO",
+        "MTUM",
+        "QUAL",
+        "USMV",
+        "SPLV"
+      ]
+    }
+  },
+  "controls": {
+    "equal_weight_universe_tom": {
+      "active_days": 330,
+      "annualized_return": -0.006602461348863997,
+      "annualized_volatility": 0.0650130824384874,
+      "avg_exposure": 0.23982558139534876,
+      "event_entries": 67,
+      "max_drawdown": -0.1607701988323893,
+      "periods": 1376,
+      "sharpe": -0.06924986771954965,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "IVV",
+        "VOO",
+        "DIA",
+        "RSP",
+        "VTI",
+        "IWF",
+        "VTV",
+        "IWD",
+        "VUG",
+        "QUAL",
+        "SPLV",
+        "MTUM",
+        "USMV",
+        "SMH",
+        "XLK",
+        "XLF",
+        "XLV",
+        "XLE",
+        "XLI",
+        "XLY",
+        "XLP",
+        "EEM",
+        "EFA",
+        "FXI",
+        "IEFA",
+        "EWZ",
+        "EWY",
+        "IEMG",
+        "VEA",
+        "LQD",
+        "HYG",
+        "TLT",
+        "SGOV",
+        "AGG",
+        "BIL",
+        "IEF",
+        "BND",
+        "GLD",
+        "SLV",
+        "IAU",
+        "USO",
+        "VNQ",
+        "UNG",
+        "PDBC",
+        "REET"
+      ],
+      "total_return": -0.03552471909265187,
+      "turnover_sum": 131.99999999999997,
+      "win_rate": 0.13226744186046513
+    },
+    "generic_month_end_3pre": {
+      "active_days": 198,
+      "annualized_return": -0.0015898799261961916,
+      "annualized_volatility": 0.04481586561058711,
+      "avg_exposure": 0.14389534883720928,
+      "event_entries": 66,
+      "max_drawdown": -0.11075715172885792,
+      "periods": 1376,
+      "sharpe": -0.013135850713300732,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "IVV",
+        "VOO",
+        "DIA",
+        "RSP",
+        "VTI",
+        "IWF",
+        "VTV",
+        "IWD",
+        "VUG",
+        "QUAL",
+        "SPLV",
+        "MTUM",
+        "USMV",
+        "SMH",
+        "XLK",
+        "XLF",
+        "XLV",
+        "XLE",
+        "XLI",
+        "XLY",
+        "XLP",
+        "EEM",
+        "EFA",
+        "FXI",
+        "IEFA",
+        "EWZ",
+        "EWY",
+        "IEMG",
+        "VEA",
+        "LQD",
+        "HYG",
+        "TLT",
+        "SGOV",
+        "AGG",
+        "BIL",
+        "IEF",
+        "BND",
+        "GLD",
+        "SLV",
+        "IAU",
+        "USO",
+        "VNQ",
+        "UNG",
+        "PDBC",
+        "REET"
+      ],
+      "total_return": -0.008650524541411242,
+      "turnover_sum": 130.99999999999997,
+      "win_rate": 0.07485465116279069
+    },
+    "narrow_original_basket_tom": {
+      "active_days": 330,
+      "annualized_return": -0.011472290168473509,
+      "annualized_volatility": 0.06847070205349585,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.18353394382236365,
+      "periods": 1376,
+      "sharpe": -0.1341874301719023,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "TLT",
+        "GLD"
+      ],
+      "total_return": -0.061060698929196744,
+      "turnover_sum": 132.0,
+      "win_rate": 0.1300872093023256
+    },
+    "random_labels_50": {
+      "max_sharpe": -0.35128502913580767,
+      "median_sharpe": -1.0119924334069008,
+      "p25_sharpe": -1.276333101213627
+    },
+    "shifted_month_labels_plus1": {
+      "active_days": 330,
+      "annualized_return": -0.018464426442997728,
+      "annualized_volatility": 0.06674425949896506,
+      "avg_exposure": 0.2398255813953488,
+      "event_entries": 66,
+      "max_drawdown": -0.21747467468867376,
+      "periods": 1376,
+      "sharpe": -0.24569141672621414,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "IVV",
+        "VOO",
+        "DIA",
+        "RSP",
+        "VTI",
+        "IWF",
+        "VTV",
+        "IWD",
+        "VUG",
+        "QUAL",
+        "SPLV",
+        "MTUM",
+        "USMV",
+        "SMH",
+        "XLK",
+        "XLF",
+        "XLV",
+        "XLE",
+        "XLI",
+        "XLY",
+        "XLP",
+        "EEM",
+        "EFA",
+        "FXI",
+        "IEFA",
+        "EWZ",
+        "EWY",
+        "IEMG",
+        "VEA",
+        "LQD",
+        "HYG",
+        "TLT",
+        "SGOV",
+        "AGG",
+        "BIL",
+        "IEF",
+        "BND",
+        "GLD",
+        "SLV",
+        "IAU",
+        "USO",
+        "VNQ",
+        "UNG",
+        "PDBC",
+        "REET"
+      ],
+      "total_return": -0.09675735862306245,
+      "turnover_sum": 131.99999999999997,
+      "win_rate": 0.12936046511627908
+    },
+    "spy_tom": {
+      "active_days": 330,
+      "annualized_return": 0.013006088745292299,
+      "annualized_volatility": 0.083381711893287,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.1808663085248391,
+      "periods": 1376,
+      "sharpe": 0.19689764334068155,
+      "symbols": [
+        "SPY"
+      ],
+      "total_return": 0.0731084282884662,
+      "turnover_sum": 132.0,
+      "win_rate": 0.13154069767441862
+    },
+    "tsmom_carry_on_tom": {
+      "active_days": 330,
+      "annualized_return": -0.02227193153370899,
+      "annualized_volatility": 0.04181121479202237,
+      "avg_exposure": 0.21656976744186046,
+      "event_entries": 67,
+      "max_drawdown": -0.16457987157347564,
+      "periods": 1376,
+      "sharpe": -0.5178060629711407,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "TLT",
+        "IEF",
+        "GLD",
+        "HYG",
+        "LQD",
+        "VNQ"
+      ],
+      "total_return": -0.11572442783297987,
+      "turnover_sum": 145.62225938231904,
+      "win_rate": 0.10247093023255814
+    },
+    "tsmom_carry_unconditional": {
+      "active_days": 1376,
+      "annualized_return": -0.005171757892049156,
+      "annualized_volatility": 0.08455142561941507,
+      "avg_exposure": 0.9084302325581395,
+      "event_entries": 1,
+      "max_drawdown": -0.18538535639654274,
+      "periods": 1376,
+      "sharpe": -0.019043635484004496,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "TLT",
+        "IEF",
+        "GLD",
+        "HYG",
+        "LQD",
+        "VNQ"
+      ],
+      "total_return": -0.02791566749264962,
+      "turnover_sum": 117.87763587739119,
+      "win_rate": 0.45494186046511625
+    },
+    "unconditional_equal_weight_buyhold": {
+      "active_days": 1376,
+      "annualized_return": 0.09286767735680534,
+      "annualized_volatility": 0.12934090951705016,
+      "avg_exposure": 0.9999999999999999,
+      "event_entries": 1,
+      "max_drawdown": -0.20004233140986205,
+      "periods": 1376,
+      "sharpe": 0.751195484797355,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "IVV",
+        "VOO",
+        "DIA",
+        "RSP",
+        "VTI",
+        "IWF",
+        "VTV",
+        "IWD",
+        "VUG",
+        "QUAL",
+        "SPLV",
+        "MTUM",
+        "USMV",
+        "SMH",
+        "XLK",
+        "XLF",
+        "XLV",
+        "XLE",
+        "XLI",
+        "XLY",
+        "XLP",
+        "EEM",
+        "EFA",
+        "FXI",
+        "IEFA",
+        "EWZ",
+        "EWY",
+        "IEMG",
+        "VEA",
+        "LQD",
+        "HYG",
+        "TLT",
+        "SGOV",
+        "AGG",
+        "BIL",
+        "IEF",
+        "BND",
+        "GLD",
+        "SLV",
+        "IAU",
+        "USO",
+        "VNQ",
+        "UNG",
+        "PDBC",
+        "REET"
+      ],
+      "total_return": 0.6240194956794065,
+      "turnover_sum": 0.0,
+      "win_rate": 0.5494186046511628
+    }
+  },
+  "costs": {
+    "implementation": "daily turnover haircut: sum(abs(delta target weights))*bps/10000 subtracted from daily portfolio return",
+    "one_way_bps_tested": [
+      5,
+      10,
+      20
+    ],
+    "primary_decision_gate_bps": 10
+  },
+  "created_at_utc": "2026-06-30T17:10:31Z",
+  "data_source": {
+    "configured_access": "paper/market-data access configured with credential values redacted",
+    "end": "2026-06-29",
+    "provider": "qfa/Alpaca real daily ETF market data via AlpacaGateway",
+    "rows": 116960,
+    "start": "2021-01-01",
+    "symbols_requested": 85,
+    "timeframe": "1Day"
+  },
+  "decision": "rejected",
+  "issue_id": "AR-166",
+  "model_name": "tom-etf-seasonality-expanded-universe-validator-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "orthogonality": {
+    "daily_return_correlations_to_controls": {
+      "equal_weight_universe_tom": 1.0,
+      "generic_month_end_3pre": 0.17699642423184714,
+      "narrow_original_basket_tom": 0.9131137623426117,
+      "shifted_month_labels_plus1": 0.8601851769310793,
+      "spy_tom": 0.9056091334254524,
+      "tsmom_carry_on_tom": -0.20348997834838464,
+      "tsmom_carry_unconditional": -0.10442647711462108,
+      "unconditional_equal_weight_buyhold": 0.5015442203282915
+    },
+    "deferred_reason": "No separate alpha-library equity curves recomputed because validator failed controls/random-window gates; control streams proxy AR-006/021, ETF TSMOM/carry, SPY and equal-weight exposures.",
+    "max_abs_corr_to_controls": 1.0
+  },
+  "primary_metrics": {
+    "0bps": {
+      "active_days": 330,
+      "annualized_return": 0.017711611436111108,
+      "annualized_volatility": 0.06491543365260168,
+      "avg_exposure": 0.23982558139534876,
+      "event_entries": 67,
+      "max_drawdown": -0.11807005829000672,
+      "periods": 1376,
+      "sharpe": 0.30304459415649776,
+      "total_return": 0.10060997351146872,
+      "turnover_sum": 131.99999999999997,
+      "win_rate": 0.13517441860465115
+    },
+    "10bps": {
+      "active_days": 330,
+      "annualized_return": -0.006602461348863997,
+      "annualized_volatility": 0.0650130824384874,
+      "avg_exposure": 0.23982558139534876,
+      "event_entries": 67,
+      "max_drawdown": -0.1607701988323893,
+      "periods": 1376,
+      "sharpe": -0.06924986771954965,
+      "total_return": -0.03552471909265187,
+      "turnover_sum": 131.99999999999997,
+      "win_rate": 0.13226744186046513
+    },
+    "20bps": {
+      "active_days": 330,
+      "annualized_return": -0.030359126240968815,
+      "annualized_volatility": 0.0654456321050511,
+      "avg_exposure": 0.23982558139534876,
+      "event_entries": 67,
+      "max_drawdown": -0.24226991137330223,
+      "periods": 1376,
+      "sharpe": -0.4381738710617989,
+      "total_return": -0.15493261377531686,
+      "turnover_sum": 131.99999999999997,
+      "win_rate": 0.1308139534883721
+    },
+    "5bps": {
+      "active_days": 330,
+      "annualized_return": 0.005484123914063055,
+      "annualized_volatility": 0.06492217951729559,
+      "avg_exposure": 0.23982558139534876,
+      "event_entries": 67,
+      "max_drawdown": -0.12684926543918618,
+      "periods": 1376,
+      "sharpe": 0.11683313776302683,
+      "total_return": 0.030313624124517657,
+      "turnover_sum": 131.99999999999997,
+      "win_rate": 0.13517441860465115
+    }
+  },
+  "random_period_protocol": {
+    "method": "4 named stress windows where in-sample plus deterministic pseudo-random windows of 126-756 trading sessions to total 50; qfa/Alpaca real bars only",
+    "seed": 166006,
+    "summary": {
+      "event_entries_total": 1117,
+      "median_sharpe_10bps": -0.4007288003646545,
+      "p25_sharpe_10bps": -0.5605648630831065,
+      "positive_window_rate_10bps": 0.2,
+      "window_count": 50,
+      "worst_sharpe_10bps": -2.283373885446494
+    },
+    "windows": [
+      {
+        "active_days": 60,
+        "avg_exposure": 0.23904382470119517,
+        "end": "2022-12-30",
+        "event_entries": 13,
+        "label": "inflation_2022",
+        "metrics_10bps": {
+          "annualized_return": -0.05514994220203828,
+          "annualized_volatility": 0.08203663777547873,
+          "max_drawdown": -0.06279401516231464,
+          "periods": 251,
+          "sharpe": -0.6505947768249223,
+          "total_return": -0.054937218139466504,
+          "win_rate": 0.11155378486055777
+        },
+        "start": "2022-01-03",
+        "turnover_sum": 23.999999999999996
+      },
+      {
+        "active_days": 15,
+        "avg_exposure": 0.23437499999999994,
+        "end": "2023-05-31",
+        "event_entries": 4,
+        "label": "regional_bank_2023",
+        "metrics_10bps": {
+          "annualized_return": -0.08239003868932715,
+          "annualized_volatility": 0.048619973875398945,
+          "max_drawdown": -0.03875425343999861,
+          "periods": 64,
+          "sharpe": -1.7442065236999682,
+          "total_return": -0.021600216768966285,
+          "win_rate": 0.09375
+        },
+        "start": "2023-03-01",
+        "turnover_sum": 5.999999999999999
+      },
+      {
+        "active_days": 120,
+        "avg_exposure": 0.23904382470119517,
+        "end": "2025-12-31",
+        "event_entries": 25,
+        "label": "post2024",
+        "metrics_10bps": {
+          "annualized_return": -0.043850690138916515,
+          "annualized_volatility": 0.06402236951253742,
+          "max_drawdown": -0.13647511395078182,
+          "periods": 502,
+          "sharpe": -0.6679163183573352,
+          "total_return": -0.0854530839080353,
+          "win_rate": 0.13147410358565736
+        },
+        "start": "2024-01-02",
+        "turnover_sum": 47.99999999999999
+      },
+      {
+        "active_days": 84,
+        "avg_exposure": 0.25377643504531716,
+        "end": "2025-05-06",
+        "event_entries": 17,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.06949629451926076,
+          "annualized_volatility": 0.07186443722964277,
+          "max_drawdown": -0.1355454079731675,
+          "periods": 331,
+          "sharpe": -0.9657832912745868,
+          "total_return": -0.09027216777891933,
+          "win_rate": 0.1299093655589124
+        },
+        "start": "2024-01-10",
+        "turnover_sum": 31.999999999999993
+      },
+      {
+        "active_days": 45,
+        "avg_exposure": 0.2472527472527472,
+        "end": "2024-01-26",
+        "event_entries": 10,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.030109732334206663,
+          "annualized_volatility": 0.04838207826571242,
+          "max_drawdown": -0.0628111731982598,
+          "periods": 182,
+          "sharpe": -0.6078267958915042,
+          "total_return": -0.021838043862281387,
+          "win_rate": 0.1043956043956044
+        },
+        "start": "2023-05-08",
+        "turnover_sum": 17.999999999999996
+      },
+      {
+        "active_days": 147,
+        "avg_exposure": 0.24337748344370858,
+        "end": "2026-02-03",
+        "event_entries": 30,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.026106683556805454,
+          "annualized_volatility": 0.06234334643562897,
+          "max_drawdown": -0.1364751139507806,
+          "periods": 604,
+          "sharpe": -0.3927845216595564,
+          "total_return": -0.061436206246592406,
+          "win_rate": 0.13410596026490065
+        },
+        "start": "2023-09-07",
+        "turnover_sum": 57.999999999999986
+      },
+      {
+        "active_days": 165,
+        "avg_exposure": 0.24408284023668636,
+        "end": "2026-04-30",
+        "event_entries": 34,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.02596668320292206,
+          "annualized_volatility": 0.0632255497810734,
+          "max_drawdown": -0.14307112602772276,
+          "periods": 676,
+          "sharpe": -0.38420079883086655,
+          "total_return": -0.0681440174890896,
+          "win_rate": 0.13165680473372782
+        },
+        "start": "2023-08-21",
+        "turnover_sum": 65.99999999999999
+      },
+      {
+        "active_days": 70,
+        "avg_exposure": 0.25179856115107907,
+        "end": "2025-01-15",
+        "event_entries": 15,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.007543541187265301,
+          "annualized_volatility": 0.04908486979753436,
+          "max_drawdown": -0.07316817305553236,
+          "periods": 278,
+          "sharpe": 0.1776364740568431,
+          "total_return": 0.008325074231833263,
+          "win_rate": 0.13309352517985612
+        },
+        "start": "2023-12-06",
+        "turnover_sum": 27.999999999999993
+      },
+      {
+        "active_days": 42,
+        "avg_exposure": 0.26249999999999996,
+        "end": "2021-09-02",
+        "event_entries": 9,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.1386224061467567,
+          "annualized_volatility": 0.05254294426194622,
+          "max_drawdown": -0.02381954963902444,
+          "periods": 160,
+          "sharpe": 2.4973635088930024,
+          "total_return": 0.08591704803546962,
+          "win_rate": 0.16875
+        },
+        "start": "2021-01-15",
+        "turnover_sum": 15.999999999999996
+      },
+      {
+        "active_days": 135,
+        "avg_exposure": 0.2481617647058823,
+        "end": "2024-01-22",
+        "event_entries": 28,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.03919542778895968,
+          "annualized_volatility": 0.07108369748301446,
+          "max_drawdown": -0.10885318168669877,
+          "periods": 544,
+          "sharpe": -0.5269893478347701,
+          "total_return": -0.08269495368588631,
+          "win_rate": 0.11948529411764706
+        },
+        "start": "2021-11-19",
+        "turnover_sum": 53.99999999999999
+      },
+      {
+        "active_days": 88,
+        "avg_exposure": 0.24581005586592175,
+        "end": "2024-05-31",
+        "event_entries": 18,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.02110344913774287,
+          "annualized_volatility": 0.05322101978445455,
+          "max_drawdown": -0.0779965255570475,
+          "periods": 358,
+          "sharpe": 0.4188951251575514,
+          "total_return": 0.03011282421277972,
+          "win_rate": 0.12290502793296089
+        },
+        "start": "2022-12-28",
+        "turnover_sum": 33.99999999999999
+      },
+      {
+        "active_days": 55,
+        "avg_exposure": 0.2594339622641509,
+        "end": "2022-05-18",
+        "event_entries": 12,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.0011487034583808065,
+          "annualized_volatility": 0.06791481494291629,
+          "max_drawdown": -0.05526622879262444,
+          "periods": 212,
+          "sharpe": 0.05080210724124035,
+          "total_return": 0.0009662815142041925,
+          "win_rate": 0.15566037735849056
+        },
+        "start": "2021-07-19",
+        "turnover_sum": 21.999999999999996
+      },
+      {
+        "active_days": 136,
+        "avg_exposure": 0.24199288256227752,
+        "end": "2023-04-03",
+        "event_entries": 28,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.02884213262938351,
+          "annualized_volatility": 0.06903009696498252,
+          "max_drawdown": -0.0627940151623142,
+          "periods": 562,
+          "sharpe": 0.4463395890708563,
+          "total_return": 0.06546613962507308,
+          "win_rate": 0.14056939501779359
+        },
+        "start": "2021-01-08",
+        "turnover_sum": 53.99999999999999
+      },
+      {
+        "active_days": 60,
+        "avg_exposure": 0.25104602510460244,
+        "end": "2025-07-18",
+        "event_entries": 13,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.05305597024259556,
+          "annualized_volatility": 0.07563120983143024,
+          "max_drawdown": -0.10194561925347623,
+          "periods": 239,
+          "sharpe": -0.6824251153936419,
+          "total_return": -0.05038913444638504,
+          "win_rate": 0.13389121338912133
+        },
+        "start": "2024-08-05",
+        "turnover_sum": 23.999999999999996
+      },
+      {
+        "active_days": 93,
+        "avg_exposure": 0.25067385444743934,
+        "end": "2023-08-16",
+        "event_entries": 19,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.027009065911861363,
+          "annualized_volatility": 0.07636158049717989,
+          "max_drawdown": -0.07112434421372726,
+          "periods": 371,
+          "sharpe": -0.3205147413044886,
+          "total_return": -0.039508553088935194,
+          "win_rate": 0.11859838274932614
+        },
+        "start": "2022-02-24",
+        "turnover_sum": 35.99999999999999
+      },
+      {
+        "active_days": 71,
+        "avg_exposure": 0.2544802867383512,
+        "end": "2024-10-09",
+        "event_entries": 15,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.018321054854172902,
+          "annualized_volatility": 0.053962858620038814,
+          "max_drawdown": -0.07316817305553236,
+          "periods": 279,
+          "sharpe": -0.315714337331487,
+          "total_return": -0.020264007043128807,
+          "win_rate": 0.12186379928315412
+        },
+        "start": "2023-08-31",
+        "turnover_sum": 27.999999999999993
+      },
+      {
+        "active_days": 107,
+        "avg_exposure": 0.25058548009367676,
+        "end": "2025-07-15",
+        "event_entries": 22,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.024920937156970857,
+          "annualized_volatility": 0.06632642136965776,
+          "max_drawdown": -0.13554540797316783,
+          "periods": 427,
+          "sharpe": -0.3469519305948771,
+          "total_return": -0.04186081259072216,
+          "win_rate": 0.13114754098360656
+        },
+        "start": "2023-10-30",
+        "turnover_sum": 41.99999999999999
+      },
+      {
+        "active_days": 175,
+        "avg_exposure": 0.2447552447552447,
+        "end": "2026-06-01",
+        "event_entries": 35,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.028151719542936604,
+          "annualized_volatility": 0.0628507691102985,
+          "max_drawdown": -0.1430711260277232,
+          "periods": 715,
+          "sharpe": -0.42260953798895307,
+          "total_return": -0.07782547457992672,
+          "win_rate": 0.13006993006993006
+        },
+        "start": "2023-07-26",
+        "turnover_sum": 67.99999999999999
+      },
+      {
+        "active_days": 70,
+        "avg_exposure": 0.2602230483271375,
+        "end": "2022-12-14",
+        "event_entries": 15,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.05937423440340994,
+          "annualized_volatility": 0.08513390664098246,
+          "max_drawdown": -0.07028182947924155,
+          "periods": 269,
+          "sharpe": -0.6764861534103623,
+          "total_return": -0.06325029625123268,
+          "win_rate": 0.12639405204460966
+        },
+        "start": "2021-11-19",
+        "turnover_sum": 27.999999999999993
+      },
+      {
+        "active_days": 115,
+        "avg_exposure": 0.24999999999999994,
+        "end": "2026-05-13",
+        "event_entries": 24,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.0716967370570103,
+          "annualized_volatility": 0.07055230056476441,
+          "max_drawdown": -0.16265764698626406,
+          "periods": 460,
+          "sharpe": -1.0186759642653158,
+          "total_return": -0.12698600857882458,
+          "win_rate": 0.13260869565217392
+        },
+        "start": "2024-07-15",
+        "turnover_sum": 45.99999999999999
+      },
+      {
+        "active_days": 180,
+        "avg_exposure": 0.24128686327077745,
+        "end": "2025-10-24",
+        "event_entries": 37,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.02957646747231102,
+          "annualized_volatility": 0.06209996894759268,
+          "max_drawdown": -0.14401363377080623,
+          "periods": 746,
+          "sharpe": -0.4521523261578854,
+          "total_return": -0.08504156235799643,
+          "win_rate": 0.1260053619302949
+        },
+        "start": "2022-11-03",
+        "turnover_sum": 71.99999999999999
+      },
+      {
+        "active_days": 130,
+        "avg_exposure": 0.24436090225563906,
+        "end": "2024-03-28",
+        "event_entries": 27,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.024702788238389117,
+          "annualized_volatility": 0.06843637789205372,
+          "max_drawdown": -0.10478302504936732,
+          "periods": 532,
+          "sharpe": -0.33136002396530073,
+          "total_return": -0.05143528995099789,
+          "win_rate": 0.11654135338345864
+        },
+        "start": "2022-02-15",
+        "turnover_sum": 51.99999999999999
+      },
+      {
+        "active_days": 150,
+        "avg_exposure": 0.2419354838709677,
+        "end": "2024-08-21",
+        "event_entries": 31,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.017859060272977567,
+          "annualized_volatility": 0.06695045098744198,
+          "max_drawdown": -0.09742279445900437,
+          "periods": 620,
+          "sharpe": -0.23575005854566752,
+          "total_return": -0.04336756993480284,
+          "win_rate": 0.11774193548387096
+        },
+        "start": "2022-03-04",
+        "turnover_sum": 59.999999999999986
+      },
+      {
+        "active_days": 135,
+        "avg_exposure": 0.24368231046931402,
+        "end": "2026-04-28",
+        "event_entries": 28,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.037666013288001565,
+          "annualized_volatility": 0.066533555508081,
+          "max_drawdown": -0.14307112602772232,
+          "periods": 554,
+          "sharpe": -0.5433992773873433,
+          "total_return": -0.08094123804740172,
+          "win_rate": 0.13537906137184116
+        },
+        "start": "2024-02-12",
+        "turnover_sum": 53.999999999999986
+      },
+      {
+        "active_days": 142,
+        "avg_exposure": 0.24398625429553258,
+        "end": "2023-09-19",
+        "event_entries": 29,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.02038413686986651,
+          "annualized_volatility": 0.06633242946077662,
+          "max_drawdown": -0.08445161450993521,
+          "periods": 582,
+          "sharpe": -0.2773787348826534,
+          "total_return": -0.046450641671165194,
+          "win_rate": 0.1254295532646048
+        },
+        "start": "2021-05-27",
+        "turnover_sum": 55.999999999999986
+      },
+      {
+        "active_days": 180,
+        "avg_exposure": 0.24523160762942775,
+        "end": "2024-05-14",
+        "event_entries": 37,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.006411038561883853,
+          "annualized_volatility": 0.06375249394614588,
+          "max_drawdown": -0.10167601540531557,
+          "periods": 734,
+          "sharpe": -0.0690814501154039,
+          "total_return": -0.018559154853792004,
+          "win_rate": 0.12534059945504086
+        },
+        "start": "2021-06-15",
+        "turnover_sum": 71.99999999999999
+      },
+      {
+        "active_days": 96,
+        "avg_exposure": 0.24999999999999997,
+        "end": "2023-10-10",
+        "event_entries": 20,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.035431019076516135,
+          "annualized_volatility": 0.07269479811729859,
+          "max_drawdown": -0.09742279445900426,
+          "periods": 384,
+          "sharpe": -0.46000844727714446,
+          "total_return": -0.05348626497196207,
+          "win_rate": 0.11979166666666667
+        },
+        "start": "2022-03-31",
+        "turnover_sum": 37.99999999999999
+      },
+      {
+        "active_days": 85,
+        "avg_exposure": 0.2567975830815709,
+        "end": "2024-07-10",
+        "event_entries": 18,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.013125109548168368,
+          "annualized_volatility": 0.047629350438397354,
+          "max_drawdown": -0.06893614990915398,
+          "periods": 331,
+          "sharpe": 0.2974946543669848,
+          "total_return": 0.01727508872617678,
+          "win_rate": 0.1268882175226586
+        },
+        "start": "2023-03-16",
+        "turnover_sum": 33.99999999999999
+      },
+      {
+        "active_days": 113,
+        "avg_exposure": 0.24726477024070015,
+        "end": "2026-05-05",
+        "event_entries": 23,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.05915774009163599,
+          "annualized_volatility": 0.06935344380657084,
+          "max_drawdown": -0.14157162255852862,
+          "periods": 457,
+          "sharpe": -0.8440809475277884,
+          "total_return": -0.10469098650318698,
+          "win_rate": 0.13566739606126915
+        },
+        "start": "2024-07-10",
+        "turnover_sum": 43.99999999999999
+      },
+      {
+        "active_days": 145,
+        "avg_exposure": 0.24956970740103265,
+        "end": "2026-03-10",
+        "event_entries": 30,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.037433982087145434,
+          "annualized_volatility": 0.06508479912999525,
+          "max_drawdown": -0.14307112602772343,
+          "periods": 581,
+          "sharpe": -0.553279891098159,
+          "total_return": -0.08420523659848633,
+          "win_rate": 0.1342512908777969
+        },
+        "start": "2023-11-13",
+        "turnover_sum": 57.999999999999986
+      },
+      {
+        "active_days": 102,
+        "avg_exposure": 0.24999999999999992,
+        "end": "2025-10-13",
+        "event_entries": 21,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.03587304065306496,
+          "annualized_volatility": 0.06524704306069767,
+          "max_drawdown": -0.1355454079731676,
+          "periods": 408,
+          "sharpe": -0.5268406198896758,
+          "total_return": -0.05743228977379078,
+          "win_rate": 0.13725490196078433
+        },
+        "start": "2024-02-28",
+        "turnover_sum": 39.99999999999999
+      },
+      {
+        "active_days": 145,
+        "avg_exposure": 0.2453468697123519,
+        "end": "2025-10-14",
+        "event_entries": 30,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.029088365073076883,
+          "annualized_volatility": 0.06007860838813476,
+          "max_drawdown": -0.1355454079731675,
+          "periods": 591,
+          "sharpe": -0.4609780277965934,
+          "total_return": -0.06688889735375625,
+          "win_rate": 0.12859560067681894
+        },
+        "start": "2023-06-07",
+        "turnover_sum": 57.999999999999986
+      },
+      {
+        "active_days": 40,
+        "avg_exposure": 0.2597402597402597,
+        "end": "2022-02-11",
+        "event_entries": 9,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.028022489768666503,
+          "annualized_volatility": 0.05194123604519219,
+          "max_drawdown": -0.0204441355828191,
+          "periods": 154,
+          "sharpe": 0.5579302719139985,
+          "total_return": 0.017032735316619307,
+          "win_rate": 0.15584415584415584
+        },
+        "start": "2021-07-07",
+        "turnover_sum": 15.999999999999996
+      },
+      {
+        "active_days": 178,
+        "avg_exposure": 0.24450549450549441,
+        "end": "2025-08-05",
+        "event_entries": 36,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.040890190330978404,
+          "annualized_volatility": 0.06979842254218635,
+          "max_drawdown": -0.14939158949311682,
+          "periods": 728,
+          "sharpe": -0.562993187078089,
+          "total_return": -0.11362065259068477,
+          "win_rate": 0.12225274725274725
+        },
+        "start": "2022-09-09",
+        "turnover_sum": 69.99999999999999
+      },
+      {
+        "active_days": 75,
+        "avg_exposure": 0.24916943521594678,
+        "end": "2022-12-28",
+        "event_entries": 16,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.01670669076941711,
+          "annualized_volatility": 0.0787960840482055,
+          "max_drawdown": -0.06279401516231475,
+          "periods": 301,
+          "sharpe": -0.17456408955738228,
+          "total_return": -0.019922654975606635,
+          "win_rate": 0.132890365448505
+        },
+        "start": "2021-10-19",
+        "turnover_sum": 29.999999999999993
+      },
+      {
+        "active_days": 71,
+        "avg_exposure": 0.2553956834532374,
+        "end": "2024-08-02",
+        "event_entries": 14,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.007153719067967801,
+          "annualized_volatility": 0.04989241322986835,
+          "max_drawdown": -0.05906506980332615,
+          "periods": 278,
+          "sharpe": 0.16772029606322986,
+          "total_return": 0.007894707385473598,
+          "win_rate": 0.12589928057553956
+        },
+        "start": "2023-06-27",
+        "turnover_sum": 25.999999999999996
+      },
+      {
+        "active_days": 49,
+        "avg_exposure": 0.27222222222222214,
+        "end": "2025-04-04",
+        "event_entries": 10,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.1856806749579588,
+          "annualized_volatility": 0.08819369120809224,
+          "max_drawdown": -0.1373563459774677,
+          "periods": 180,
+          "sharpe": -2.283373885446494,
+          "total_return": -0.13646099651764154,
+          "win_rate": 0.12222222222222222
+        },
+        "start": "2024-07-18",
+        "turnover_sum": 17.999999999999996
+      },
+      {
+        "active_days": 85,
+        "avg_exposure": 0.2591463414634146,
+        "end": "2025-12-10",
+        "event_entries": 18,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.07244658768133483,
+          "annualized_volatility": 0.07126078017460853,
+          "max_drawdown": -0.10291146122331918,
+          "periods": 328,
+          "sharpe": -1.0190552532843633,
+          "total_return": -0.09324749774287389,
+          "win_rate": 0.1402439024390244
+        },
+        "start": "2024-08-21",
+        "turnover_sum": 33.99999999999999
+      },
+      {
+        "active_days": 125,
+        "avg_exposure": 0.251004016064257,
+        "end": "2023-04-12",
+        "event_entries": 26,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": 0.004648248744358874,
+          "annualized_volatility": 0.06945551505429295,
+          "max_drawdown": -0.06279401516231464,
+          "periods": 498,
+          "sharpe": 0.10139759318025911,
+          "total_return": 0.009206664821663324,
+          "win_rate": 0.13855421686746988
+        },
+        "start": "2021-04-21",
+        "turnover_sum": 49.99999999999999
+      },
+      {
+        "active_days": 185,
+        "avg_exposure": 0.2460106382978723,
+        "end": "2024-02-14",
+        "event_entries": 38,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.005626589534570736,
+          "annualized_volatility": 0.06497497150604103,
+          "max_drawdown": -0.10167601540531712,
+          "periods": 752,
+          "sharpe": -0.05441380682203129,
+          "total_return": -0.01669690742560337,
+          "win_rate": 0.12898936170212766
+        },
+        "start": "2021-02-19",
+        "turnover_sum": 73.99999999999999
+      },
+      {
+        "active_days": 110,
+        "avg_exposure": 0.23913043478260865,
+        "end": "2025-10-31",
+        "event_entries": 23,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.02618906811756916,
+          "annualized_volatility": 0.062281808263151835,
+          "max_drawdown": -0.13554540797316794,
+          "periods": 460,
+          "sharpe": -0.3945553202237582,
+          "total_return": -0.04728795797285268,
+          "win_rate": 0.13043478260869565
+        },
+        "start": "2024-01-03",
+        "turnover_sum": 43.99999999999999
+      },
+      {
+        "active_days": 153,
+        "avg_exposure": 0.2444089456869009,
+        "end": "2024-06-26",
+        "event_entries": 31,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.012793075967700962,
+          "annualized_volatility": 0.06573982211290841,
+          "max_drawdown": -0.10167601540531601,
+          "periods": 626,
+          "sharpe": -0.1630652693523291,
+          "total_return": -0.03147855638513575,
+          "win_rate": 0.11980830670926518
+        },
+        "start": "2021-12-29",
+        "turnover_sum": 59.999999999999986
+      },
+      {
+        "active_days": 125,
+        "avg_exposure": 0.24950099800399195,
+        "end": "2025-02-13",
+        "event_entries": 26,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.02666851292230632,
+          "annualized_volatility": 0.051318287623232886,
+          "max_drawdown": -0.08946440493189278,
+          "periods": 501,
+          "sharpe": -0.5010413917022922,
+          "total_return": -0.052320909309062524,
+          "win_rate": 0.11976047904191617
+        },
+        "start": "2023-02-15",
+        "turnover_sum": 49.999999999999986
+      },
+      {
+        "active_days": 179,
+        "avg_exposure": 0.24689655172413788,
+        "end": "2026-06-15",
+        "event_entries": 36,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.0361399814025436,
+          "annualized_volatility": 0.06450371992673715,
+          "max_drawdown": -0.1430711260277232,
+          "periods": 725,
+          "sharpe": -0.5380594254334847,
+          "total_return": -0.10048495086207121,
+          "win_rate": 0.1310344827586207
+        },
+        "start": "2023-07-26",
+        "turnover_sum": 69.99999999999999
+      },
+      {
+        "active_days": 80,
+        "avg_exposure": 0.2588996763754045,
+        "end": "2023-04-14",
+        "event_entries": 17,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.03654376616595112,
+          "annualized_volatility": 0.08080006945114225,
+          "max_drawdown": -0.06288825807464882,
+          "periods": 309,
+          "sharpe": -0.4204814557209276,
+          "total_return": -0.04462264868720811,
+          "win_rate": 0.1262135922330097
+        },
+        "start": "2022-01-21",
+        "turnover_sum": 31.999999999999993
+      },
+      {
+        "active_days": 95,
+        "avg_exposure": 0.25198938992042436,
+        "end": "2023-02-22",
+        "event_entries": 20,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.0005929648790725661,
+          "annualized_volatility": 0.07604141099930635,
+          "max_drawdown": -0.06279401516231442,
+          "periods": 377,
+          "sharpe": 0.03008044119396796,
+          "total_return": -0.0008869638101195454,
+          "win_rate": 0.13527851458885942
+        },
+        "start": "2021-08-24",
+        "turnover_sum": 37.99999999999999
+      },
+      {
+        "active_days": 95,
+        "avg_exposure": 0.25469168900804284,
+        "end": "2023-09-18",
+        "event_entries": 20,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.024521743428268183,
+          "annualized_volatility": 0.0733081155025571,
+          "max_drawdown": -0.0801168426043567,
+          "periods": 373,
+          "sharpe": -0.30216635196601666,
+          "total_return": -0.03608147513483195,
+          "win_rate": 0.12332439678284182
+        },
+        "start": "2022-03-24",
+        "turnover_sum": 37.99999999999999
+      },
+      {
+        "active_days": 40,
+        "avg_exposure": 0.2649006622516556,
+        "end": "2025-09-15",
+        "event_entries": 9,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.08553889090489852,
+          "annualized_volatility": 0.08625836572509651,
+          "max_drawdown": -0.09542115054806832,
+          "periods": 151,
+          "sharpe": -0.9927360765324887,
+          "total_return": -0.05217105889992346,
+          "win_rate": 0.152317880794702
+        },
+        "start": "2025-02-07",
+        "turnover_sum": 15.999999999999996
+      },
+      {
+        "active_days": 130,
+        "avg_exposure": 0.2504816955684007,
+        "end": "2023-11-13",
+        "event_entries": 27,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.019597911755564912,
+          "annualized_volatility": 0.07101678928144363,
+          "max_drawdown": -0.1016760154053159,
+          "periods": 519,
+          "sharpe": -0.24328367898081904,
+          "total_return": -0.039943478333884896,
+          "win_rate": 0.12716763005780346
+        },
+        "start": "2021-10-21",
+        "turnover_sum": 51.99999999999999
+      },
+      {
+        "active_days": 115,
+        "avg_exposure": 0.24416135881104029,
+        "end": "2025-07-24",
+        "event_entries": 24,
+        "label": "random",
+        "metrics_10bps": {
+          "annualized_return": -0.027846362664964097,
+          "annualized_volatility": 0.06427188604934055,
+          "max_drawdown": -0.13554540797316672,
+          "periods": 471,
+          "sharpe": -0.4069022805055508,
+          "total_return": -0.051415652320779714,
+          "win_rate": 0.12738853503184713
+        },
+        "start": "2023-09-07",
+        "turnover_sum": 45.99999999999999
+      }
+    ]
+  },
+  "raw_daily_paths_retained": false,
+  "sleeve_attribution_10bps": {
+    "broad_us_equity": {
+      "active_days": 330,
+      "annualized_return": 0.010393782172720467,
+      "annualized_volatility": 0.0862081007523497,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.1846178251237277,
+      "periods": 1376,
+      "sharpe": 0.16324591829374535,
+      "symbols": [
+        "SPY",
+        "IVV",
+        "VOO",
+        "VTI",
+        "QQQ",
+        "DIA",
+        "IWM",
+        "RSP"
+      ],
+      "total_return": 0.058084753174343584,
+      "turnover_sum": 132.0,
+      "win_rate": 0.12863372093023256
+    },
+    "duration_treasury": {
+      "active_days": 330,
+      "annualized_return": -0.06250434833855179,
+      "annualized_volatility": 0.032520650788794576,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.29701951002780247,
+      "periods": 1376,
+      "sharpe": -1.9681476089921275,
+      "symbols": [
+        "IEF",
+        "TLT",
+        "BIL",
+        "SGOV",
+        "LQD",
+        "HYG",
+        "BND",
+        "AGG"
+      ],
+      "total_return": -0.29701951002780247,
+      "turnover_sum": 132.0,
+      "win_rate": 0.09956395348837209
+    },
+    "intl_country": {
+      "active_days": 330,
+      "annualized_return": 0.01539111073731525,
+      "annualized_volatility": 0.1004207825269755,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.15310236966357416,
+      "periods": 1376,
+      "sharpe": 0.2024529313732879,
+      "symbols": [
+        "EFA",
+        "VEA",
+        "IEFA",
+        "EEM",
+        "IEMG",
+        "EWZ",
+        "FXI",
+        "EWY"
+      ],
+      "total_return": 0.08697670118034062,
+      "turnover_sum": 132.0,
+      "win_rate": 0.12936046511627908
+    },
+    "real_assets_commod_fx": {
+      "active_days": 330,
+      "annualized_return": 0.00874949143110526,
+      "annualized_volatility": 0.08969801363211631,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.20994860594452736,
+      "periods": 1376,
+      "sharpe": 0.14212633852435416,
+      "symbols": [
+        "GLD",
+        "IAU",
+        "SLV",
+        "PDBC",
+        "USO",
+        "UNG",
+        "VNQ",
+        "REET"
+      ],
+      "total_return": 0.04871668145064367,
+      "turnover_sum": 132.0,
+      "win_rate": 0.13590116279069767
+    },
+    "sectors": {
+      "active_days": 330,
+      "annualized_return": -0.025262859706783214,
+      "annualized_volatility": 0.11773438697896349,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.3539047358641775,
+      "periods": 1376,
+      "sharpe": -0.15426654170462553,
+      "symbols": [
+        "XLE",
+        "XLF",
+        "XLI",
+        "XLK",
+        "XLP",
+        "XLV",
+        "XLY",
+        "SMH"
+      ],
+      "total_return": -0.13039445561983087,
+      "turnover_sum": 132.0,
+      "win_rate": 0.12281976744186046
+    },
+    "style_size": {
+      "active_days": 330,
+      "annualized_return": 0.005080249962965855,
+      "annualized_volatility": 0.07641886842375083,
+      "avg_exposure": 0.23982558139534885,
+      "event_entries": 67,
+      "max_drawdown": -0.17563254126318084,
+      "periods": 1376,
+      "sharpe": 0.10472519690398614,
+      "symbols": [
+        "IWF",
+        "IWD",
+        "VUG",
+        "VTV",
+        "MTUM",
+        "QUAL",
+        "USMV",
+        "SPLV"
+      ],
+      "total_return": 0.028055910101909776,
+      "turnover_sum": 132.0,
+      "win_rate": 0.12863372093023256
+    }
+  },
+  "timing_rule": {
+    "active_days_full_sample": 330,
+    "event_count_full_sample": 67,
+    "frozen": "AR-021 observed-session ToM: long equal-weight selected universe on first 4 and final 1 observed sessions of each calendar month; flat otherwise",
+    "no_posthoc_window_or_sleeve_optimization": true
+  },
+  "universe_discovery": {
+    "filters": "history>=1000 bars, missing<=8%, median 1y dollar volume>=USD5m, last price>=USD5, then sleeve cap top 8 by liquidity only before scoring",
+    "limitations": [
+      "survivorship-biased currently listed ETFs",
+      "Alpaca daily bars may be split/dividend adjustment dependent through provider defaults",
+      "ETF inception dates limit some newer/commodity/fx proxies"
+    ],
+    "per_symbol": {
+      "AGG": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 813651129.54,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "BIL": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 798451428.1,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "BND": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 544807290.01,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "CPER": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 18664544.23,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "DBA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 6790056.34,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "DBC": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 13705388.75,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "DIA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2605358146.42,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "EEM": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1592912514.99,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EFA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1517288151.17,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWC": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 97908754.79,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWG": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 82304752.86,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWJ": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 497516813.12,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWT": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 278953857.27,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWU": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 83565835.48,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWW": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 101038709.93,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWY": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 854915246.8,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "EWZ": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 877282497.7,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "FXA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 798173.89,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": false,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "FXB": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1464449.7,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": false,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "FXE": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 12413936.81,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "FXI": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1072557878.83,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "FXY": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 9786896.09,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "GLD": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 4089966492.69,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "GOVT": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 143402197.75,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "HYG": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2973477904.04,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "IAU": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 652547850.37,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "IBB": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 264079155.41,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "IEF": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 737132560.88,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "IEFA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 979514737.21,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "IEI": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 196095205.28,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "IEMG": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 835234662.71,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "INDA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 310161602.91,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "ITOT": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 311159129.29,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "IVV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 4420053369.15,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "IWD": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 550225938.4,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "IWF": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 632974653.98,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "IWM": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 8832111463.75,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "IWN": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 130942157.45,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "IWO": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 128353615.47,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "JNK": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 373055209.04,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "KRE": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1003827450.44,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "LQD": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 3299974526.36,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "MBB": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 232986172.95,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "MDY": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 490970191.42,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "MTUM": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 201572776.05,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "MUB": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 394105237.77,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "PDBC": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 75012576.78,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "QQQ": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 30708104278.76,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "QUAL": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 259132875.12,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "REET": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 41942923.84,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "RSP": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2438443023.12,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "SCHP": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 87405811.49,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "SGOV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1493713186.29,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "SHY": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 304428562.82,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "SLV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1705038182.96,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "SMH": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2893789611.69,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "SPLV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 211876505.21,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "SPY": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 46388932325.03,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "TIP": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 272098518.63,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "TLT": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2807348018.56,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "UNG": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 133653665.23,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "USMV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 200506569.28,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "USO": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 473130953.24,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "UUP": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 36126888.92,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "VB": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 164645683.43,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "VEA": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 834712918.48,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "VNQ": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 321248594.94,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "real_assets_commod_fx"
+      },
+      "VO": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 188311779.5,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "VOO": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 4414782112.02,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "VTI": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1281514842.86,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "broad_us_equity"
+      },
+      "VTIP": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 88702167.43,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "duration_treasury"
+      },
+      "VTV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 585130415.28,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "VUG": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 548285060.42,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "style_size"
+      },
+      "VWO": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 483247971.47,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "intl_country"
+      },
+      "XLB": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 602246212.26,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLC": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 639992430.56,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLE": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1712743003.39,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLF": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2043824413.85,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLI": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1612298763.24,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLK": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 2134357448.28,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLP": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1160143053.36,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLRE": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 274458099.46,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLU": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 951634009.35,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": false,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLV": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1805685754.7,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      },
+      "XLY": {
+        "history_days": 1376,
+        "median_dollar_volume_1y": 1183183545.1,
+        "missing_ratio": 0.0,
+        "price_floor_ok": true,
+        "selected": true,
+        "selected_pre_sleeve_cap": true,
+        "sleeve": "sectors"
+      }
+    },
+    "selected_count": 48,
+    "selected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "IVV",
+      "VOO",
+      "DIA",
+      "RSP",
+      "VTI",
+      "IWF",
+      "VTV",
+      "IWD",
+      "VUG",
+      "QUAL",
+      "SPLV",
+      "MTUM",
+      "USMV",
+      "SMH",
+      "XLK",
+      "XLF",
+      "XLV",
+      "XLE",
+      "XLI",
+      "XLY",
+      "XLP",
+      "EEM",
+      "EFA",
+      "FXI",
+      "IEFA",
+      "EWZ",
+      "EWY",
+      "IEMG",
+      "VEA",
+      "LQD",
+      "HYG",
+      "TLT",
+      "SGOV",
+      "AGG",
+      "BIL",
+      "IEF",
+      "BND",
+      "GLD",
+      "SLV",
+      "IAU",
+      "USO",
+      "VNQ",
+      "UNG",
+      "PDBC",
+      "REET"
+    ]
+  },
+  "warnings": [
+    "Validator-only artifact; no orders/daemon/CSV.",
+    "Selected-universe liquidity filter can introduce current-constituent survivorship bias.",
+    "Controls include unconditional equal-weight exposure that is not directly same holding frequency but tests beta dominance."
+  ]
+}

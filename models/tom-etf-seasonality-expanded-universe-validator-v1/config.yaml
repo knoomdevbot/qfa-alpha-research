@@ -1,0 +1,82 @@
+issue_id: AR-166
+model_name: tom-etf-seasonality-expanded-universe-validator-v1
+model_type: validator_calendar_seasonality
+decision: rejected
+data:
+  source: qfa/Alpaca real daily ETF market data
+  timeframe: 1Day
+  start: 2021-01-01
+  end: 2026-06-29
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  credential_values: redacted/not stored
+universe:
+  selected_count: 48
+  selected_symbols:
+    - SPY
+    - QQQ
+    - IWM
+    - IVV
+    - VOO
+    - DIA
+    - RSP
+    - VTI
+    - IWF
+    - VTV
+    - IWD
+    - VUG
+    - QUAL
+    - SPLV
+    - MTUM
+    - USMV
+    - SMH
+    - XLK
+    - XLF
+    - XLV
+    - XLE
+    - XLI
+    - XLY
+    - XLP
+    - EEM
+    - EFA
+    - FXI
+    - IEFA
+    - EWZ
+    - EWY
+    - IEMG
+    - VEA
+    - LQD
+    - HYG
+    - TLT
+    - SGOV
+    - AGG
+    - BIL
+    - IEF
+    - BND
+    - GLD
+    - SLV
+    - IAU
+    - USO
+    - VNQ
+    - UNG
+    - PDBC
+    - REET
+  selection_rule: history>=1000 bars, missing<=8%, median 1y dollar volume>=USD5m, last price>=USD5, then sleeve cap top 8 by liquidity only before scoring
+signal:
+  pre_month_end_sessions: 1
+  post_month_start_sessions: 4
+  positioning: long-only equal-weight selected ETF universe during ToM window, flat otherwise
+  frozen_before_scoring: true
+costs:
+  one_way_bps_tested: [5, 10, 20]
+  primary_decision_gate_bps: 10
+  implementation: daily turnover haircut; sum(abs(delta target weights))*bps/10000 subtracted from daily portfolio return
+acceptance_tests:
+  20bps_not_collapsed: false
+  controls_not_dominant: false
+  max_corr_le_0_60: false
+  median_random_window_sharpe_gt_0: false
+  p25_non_hostile: false
+  positive_window_rate_ge_55pct: false

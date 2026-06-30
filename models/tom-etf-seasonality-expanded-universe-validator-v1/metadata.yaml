@@ -1,0 +1,19 @@
+issue_id: AR-166
+model_name: tom-etf-seasonality-expanded-universe-validator-v1
+status: rejected
+created_at_utc: 2026-06-30T17:10:31Z
+hypothesis: AR-006/AR-021 ToM ETF seasonality may be durable but should fail if generic beta/month-end/TSMOM/carry controls dominate in a broad ETF universe.
+decision_summary: Rejected because primary 10 bps Sharpe and random-window median were negative; p25 hostile; 20 bps collapsed; controls/correlation gates failed.
+artifacts:
+  model: models/tom-etf-seasonality-expanded-universe-validator-v1/model.py
+  config: models/tom-etf-seasonality-expanded-universe-validator-v1/config.yaml
+  latest_json: models/tom-etf-seasonality-expanded-universe-validator-v1/evaluations/latest.json
+  latest_md: models/tom-etf-seasonality-expanded-universe-validator-v1/evaluations/latest.md
+  run_json: models/tom-etf-seasonality-expanded-universe-validator-v1/evaluations/runs/ar166_realdata_20260630T171031Z.json
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
+  credential_values: redacted/not stored

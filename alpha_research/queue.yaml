@@ -1255,19 +1255,18 @@ issues:
 - id: AR-166
   title: AR-006 ToM ETF seasonality expanded-universe promotion/pruning validator
   model_name: tom-etf-seasonality-expanded-universe-validator-v1
-  status: queued
-  priority: preflight_queue
+  status: rejected
+  priority: completed_realdata
   family: calendar_seasonality_validation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-166.md
   parent: AR-006/AR-021
-  last_checked_at: '2026-06-30T16:16:54Z'
-  tried_count: 0
+  last_checked_at: '2026-06-30T17:10:31Z'
+  tried_count: 1
 active_batch:
 - AR-165
-- AR-166
 last_realdata_batch:
 - AR-164
-updated_at: '2026-06-30T16:31:34Z'
+updated_at: '2026-06-30T17:10:31Z'
 target_tried_ideas: 100
-tried_ideas_count: 150
+tried_ideas_count: 151
