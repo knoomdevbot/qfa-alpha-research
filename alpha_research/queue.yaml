@@ -1266,14 +1266,14 @@ issues:
 - id: AR-167
   title: AR-037/AR-049 defensive-carry ETF expanded-universe promotion/pruning validator
   model_name: defensive-carry-etf-expanded-universe-validator-v1
-  status: queued
-  priority: preflight_queue
+  status: rejected
+  priority: completed_realdata_rejection
   family: defensive_carry_validation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-167.md
   parent: AR-037/AR-049
-  last_checked_at: '2026-06-30T17:21:07Z'
-  tried_count: 0
+  last_checked_at: '2026-06-30T18:11:16Z'
+  tried_count: 1
 - id: AR-168
   title: Vol-ETP term-state risk allocator fast-falsification validator
   model_name: vol-etp-term-state-risk-allocator-validator-v1
@@ -1285,11 +1285,9 @@ issues:
   last_checked_at: '2026-06-30T17:21:07Z'
   tried_count: 0
 active_batch:
-- AR-167
 - AR-168
 last_realdata_batch:
-- AR-165
-- AR-166
-updated_at: '2026-06-30T17:21:07Z'
+- AR-167
+updated_at: '2026-06-30T18:11:16Z'
 target_tried_ideas: 100
-tried_ideas_count: 152
+tried_ideas_count: 153

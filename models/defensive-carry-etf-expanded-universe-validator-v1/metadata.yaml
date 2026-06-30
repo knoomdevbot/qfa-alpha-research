@@ -1,0 +1,26 @@
+model_name: defensive-carry-etf-expanded-universe-validator-v1
+issue_id: AR-167
+created_at: '2026-06-30T17:21:07Z'
+last_evaluated_at: '2026-06-30T18:11:53Z'
+status: rejected
+priority: completed_realdata_rejection
+family: defensive_carry_validation
+asset_bucket: etf
+parent_alpha: AR-037/AR-049
+decision: rejected
+summary: >-
+  Expanded-universe defensive/carry ETF promotion-pruning validator failed decisive
+  real-data gates using qfa/Alpaca daily OHLCV. Primary 10 bps Sharpe was -0.3463,
+  20 bps Sharpe was -0.6339, random-window median Sharpe was -0.0729 with p25
+  -0.8206 and 46% positive windows, while SPY and equal-weight controls were much
+  stronger at 10 bps.
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+artifacts:
+  config: config.yaml
+  latest_json: evaluations/latest.json
+  latest_md: evaluations/latest.md
+  run_json: evaluations/runs/ar167_qfa_alpaca_real_20260630T181153Z.json
