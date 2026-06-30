@@ -1,0 +1,12 @@
+issue: AR-165
+model_name: single-stock-closing-liquidity-exhaustion-validator-v1
+status: rejected
+created_at_utc: 2026-06-30T17:15:13Z
+data_source: Alpaca real daily OHLCV via qfa AlpacaGateway
+raw_daily_paths_retained: false
+artifact_latest_json: models/single-stock-closing-liquidity-exhaustion-validator-v1/evaluations/latest.json
+artifact_run_json: models/single-stock-closing-liquidity-exhaustion-validator-v1/evaluations/runs/ar165_realdata_20260630T171513Z.json
+primary_10bps_median_random_sharpe: -4.31178968
+primary_10bps_p25_random_sharpe: -5.04648719
+primary_10bps_positive_window_rate: 0.00000000
+max_abs_relevant_corr: 0.31424619

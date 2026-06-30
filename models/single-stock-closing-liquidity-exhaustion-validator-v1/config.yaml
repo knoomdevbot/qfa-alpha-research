@@ -1,0 +1,19 @@
+model_name: single-stock-closing-liquidity-exhaustion-validator-v1
+issue: AR-165
+data_source: qfa_alpaca_real_daily_ohlcv
+no_csv_used: true
+no_daemon: true
+no_orders: true
+universe_count: 120
+primary_horizon: next_day
+one_way_cost_bps: [5, 10, 20]
+decision_gate_bps: 10
+signal:
+  volume_z_min: 1.0
+  abs_close_location_min: 0.35
+  range_z_min: -0.25
+  sector_neutral: true
+  beta_neutral: true
+  gross_normalized: true
+  per_name_cap_pre_normalization: 0.02
+selected_universe: ["NVDA", "AMZN", "AAPL", "TSLA", "MSFT", "GOOGL", "META", "AVGO", "AMD", "NFLX", "INTC", "ORCL", "BAC", "LLY", "XOM", "WMT", "UNH", "BKNG", "CRM", "AMAT", "CSCO", "NOW", "WFC", "JPM", "KO", "CAT", "TMO", "JNJ", "COST", "GE", "C", "VZ", "FCX", "T", "GS", "SCHW", "PFE", "BA", "HD", "PG", "CVX", "ABBV", "NKE", "TXN", "CMCSA", "ETN", "QCOM", "DHR", "ADBE", "MRK", "TMUS", "IBM", "LIN", "COF", "DE", "DIS", "ISRG", "SLB", "MS", "UNP", "BMY", "BLK", "NEM", "NEE", "MCD", "AXP", "PEP", "PM", "COP", "ABT", "SBUX", "RTX", "MDLZ", "F", "GM", "MO", "USB", "CVS", "HON", "GILD", "SHW", "CL", "AMGN", "VLO", "LOW", "TJX", "MAR", "EQIX", "LMT", "SO", "TGT", "AMT", "WELL", "KR", "ORLY", "OXY", "HAL", "EOG", "DOW", "KMI", "ADP", "PNC", "MPC", "UPS", "O", "MMM", "EMR", "EXC", "PSX", "D", "EA", "APD", "TTWO", "KMB", "XEL", "MLM", "PLD", "ECL", "DUK", "AEP"]
