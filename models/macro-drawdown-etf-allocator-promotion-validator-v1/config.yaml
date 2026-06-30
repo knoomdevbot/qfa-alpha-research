@@ -1,0 +1,10 @@
+model_name: macro-drawdown-etf-allocator-promotion-validator-v1
+issue_id: AR-157
+universe: [SPY, QQQ, IWM, DIA, MDY, RSP, VTI, VNQ, VEA, VWO, EFA, EEM, EWJ, EWG, EWU, EWZ, FXI, XLB, XLE, XLF, XLI, XLK, XLP, XLU, XLV, XLY, XLC, XLRE, TLT, IEF, SHY, SHV, AGG, LQD, HYG, TIP, MBB, GLD, SLV, USO, DBC, DBA, UUP, FXE, FXY, VIXY]
+primary_turnover_cost_bps: 10
+cost_sensitivity_bps: [5, 20]
+random_windows: 50
+window_length_trading_days: 504
+max_position_weight: 0.18
+uses_macro_surprise_data: false
+uses_ohlcv_only: true

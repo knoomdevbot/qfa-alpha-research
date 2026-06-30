@@ -1,0 +1,12 @@
+id: AR-157
+model_name: macro-drawdown-etf-allocator-promotion-validator-v1
+status: rejected
+asset_bucket: etf
+created_at_utc: 2026-06-30T08:12:51Z
+parent: AR-063/AR-072
+decision: rejected
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false

@@ -1168,16 +1168,15 @@ issues:
 - id: AR-157
   title: AR-063 macro-drawdown ETF allocator promotion/pruning validator
   model_name: macro-drawdown-etf-allocator-promotion-validator-v1
-  status: queued
-  priority: preflight_queue_promotion_gate
+  status: rejected
+  priority: completed_realdata_validator
   family: macro_regime_allocation_validation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-157.md
   parent: AR-063/AR-072
-active_batch:
-- AR-157
+active_batch: []
 last_realdata_batch:
-- AR-156
+- AR-157
 updated_at: '2026-06-30T07:36:00Z'
 target_tried_ideas: 100
-tried_ideas_count: 142
+tried_ideas_count: 143
