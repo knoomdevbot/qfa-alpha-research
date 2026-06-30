@@ -1,0 +1,156 @@
+{
+  "run_id": "ar172_short_interest_source_gate_20260630T220639Z",
+  "issue_id": "AR-172",
+  "model_name": "exchange-reported-short-interest-publication-scout-v1",
+  "asset_bucket": "equity",
+  "status": "rejected",
+  "decision": "rejected_source_gate_official_historical_publication_source_not_reproducible",
+  "weight": 0.0,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "evaluation_timestamp_utc": "2026-06-30T22:06:39Z",
+  "hypothesis": "Timestamp-safe exchange-reported bi-monthly short-interest publication changes could support a broad common-stock event table only if official historical publication dates, records, and conservative common-stock mapping are proven first.",
+  "candidate_product_pool": [
+    "U.S. exchange-listed common stocks with official/reproducible historical exchange-reported short-interest records",
+    "Official dissemination/publication dates tied to each settlement cycle",
+    "Conservative common-stock symbol/security mapping with qfa/Alpaca daily bar coverage"
+  ],
+  "selected_universe": {
+    "status": "none_zero_weight",
+    "hard_gate_min_liquid_mapped_common_stocks": 150,
+    "mapped_liquid_common_stocks": 0,
+    "multi_year_publication_observations": 0,
+    "reason": "No free/public official source was proven to provide broad multi-year listed-common-stock short-interest records with reproducible publication/dissemination dates."
+  },
+  "source_gate": {
+    "overall": "fail_blocking",
+    "parser_built": false,
+    "durable_event_table_built": false,
+    "full_archive_completed": false,
+    "market_data_performance_ran": false,
+    "why_performance_not_run": "Required source/vintage/breadth gate failed. Per issue rule, no qfa/Alpaca daily bar evaluator or performance metrics were run.",
+    "publication_date_assessment": "Not proven. Nasdaq states release after 4:00 p.m. ET on dissemination date, but the current public schedule link redirected to Nasdaq Data Link/NSIR rather than a free historical table; NYSE sample files carried FTP modification dates not official dissemination vintages; FINRA API partitions are settlement dates only.",
+    "source_probe_scope": {
+      "finra_pages_reached": 2,
+      "finra_api_partitions_probed": [
+        "equityShortInterest",
+        "equityShortInterestStandardized"
+      ],
+      "finra_standardized_sample_settlement_date": "2026-06-15",
+      "nasdaq_trader_pages_reached": [
+        "ShortInterest",
+        "ShortIntPubSch_redirected_to_NSIR"
+      ],
+      "nyse_catalog_pages_reached": 1,
+      "nyse_public_sample_files_probed": 2
+    },
+    "finra": {
+      "official_page": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest/files",
+      "data_api": "https://api.finra.org/data/group/otcMarket/name/equityShortInterestStandardized",
+      "partitions_endpoint_status": 200,
+      "latest_standardized_partition": "2026-06-15",
+      "latest_standardized_partition_sha256_16": "b031a73c6d64113a",
+      "sample_record_total": 9573,
+      "sample_market_class_counts_first_5000": {
+        "OTC": 5000
+      },
+      "blocking_note": "Public standardized API sample showed OTC-only rows and no broad listed-exchange common-stock source; FINRA file page notes prior-to-June-2021 files exclude exchange-listed securities."
+    },
+    "nasdaq": {
+      "official_page": "https://www.nasdaqtrader.com/Trader.aspx?id=ShortInterest",
+      "page_status": 200,
+      "page_sha256_16": "not_retained_in_artifact_probe_only",
+      "public_data_scope": "rolling_12_months_by_issue_widget",
+      "broad_file_access": "subscription_secure_file_transfer_protocol",
+      "publication_schedule_probe": {
+        "requested": "https://www.nasdaqtrader.com/Trader.aspx?id=ShortIntPubSch",
+        "final_url": "https://data.nasdaq.com/databases/NSIR",
+        "status": 200,
+        "sha256_16": "e36581d85beaae53",
+        "schedule_table_found": false
+      },
+      "blocking_note": "No free broad historical listed-security records or reproducible historical dissemination-date table were found."
+    },
+    "nyse": {
+      "official_catalog_page": "https://www.nyse.com/data-products/catalog/nyse-group-short-interest",
+      "catalog_status": 200,
+      "catalog_sha256_16": "0859439356e81609",
+      "catalog_claim": "Semi-monthly file containing reported uncovered short positions of securities listed on NYSE, NYSE Arca and NYSE American; historical data Jan 1988-present.",
+      "access_model": "order/subscription product via ICE dashboard",
+      "public_sample_directory": "https://ftp.nyse.com/Reference%20Data%20Samples/NYSE%20GROUP%20SHORT%20INTEREST/",
+      "sample_files": [
+        {
+          "file": "EQY_US_NYSE_REF_SHORTINT_NEW_20260115.txt",
+          "http_status": 200,
+          "last_modified": "Wed, 01 Apr 2026 04:06:34 GMT",
+          "bytes": 719906,
+          "sha256_16": "d93153186d519247",
+          "lines": 5681
+        },
+        {
+          "file": "EQY_US_NYSE_REF_SHORTINT_NEW_20260130.txt",
+          "http_status": 200,
+          "last_modified": "Wed, 01 Apr 2026 04:17:11 GMT",
+          "bytes": 722893,
+          "sha256_16": "6a56fd81f68ed8e0",
+          "lines": 5698
+        }
+      ],
+      "sample_common_stock_like_rows_first_file_approx": 3440,
+      "blocking_note": "Samples demonstrate schema/breadth potential but only two settlement dates were public samples, with FTP modification dates months after settlement and no multi-year official publication-vintage archive."
+    }
+  },
+  "performance": {
+    "ran": false,
+    "metrics": {
+      "annualized_return": null,
+      "annualized_volatility": null,
+      "median_sharpe": null,
+      "p25_sharpe": null,
+      "worst_period_sharpe": null,
+      "positive_window_rate": null,
+      "max_drawdown": null,
+      "turnover": null,
+      "hit_rate": null
+    },
+    "controls": {
+      "shifted_publication_dates": "not_run_no_event_table",
+      "random_matched_publication_dates": "not_run_no_event_table",
+      "generic_momentum_reversal": "not_run_no_event_table",
+      "sector_size_liquidity": "not_run_no_event_table",
+      "meme_distress_period_exclusion": "not_run_no_event_table"
+    }
+  },
+  "orthogonality": {
+    "AR-140_FINRA_daily_short_volume": "not_run_no_event_table; source differs conceptually but source gate failed",
+    "AR-138_SEC_FTD": "not_run_no_event_table",
+    "AR-158_RegSHO_threshold_list": "not_run_no_event_table"
+  },
+  "decision_summary": {
+    "status": "rejected",
+    "rationale": [
+      "Nasdaq official broad historical files appear subscription/SFTP only and public by-issue data is rolling 12 months.",
+      "NYSE official historical listed short-interest file is an order/subscription product; public FTP samples cover only two 2026 settlement dates and do not prove publication vintages.",
+      "FINRA public API/file probe was OTC-oriented and did not establish listed common-stock breadth or dissemination dates.",
+      "Hard gate of >=150 liquid mapped common stocks with multi-year official publication observations was not met."
+    ],
+    "children": "none; rejected source-gate scout should not spawn direct short-interest continuation children"
+  },
+  "warnings": [
+    "Source reachability and NYSE sample breadth were not promoted to an alpha result.",
+    "No qfa/Alpaca bars were fetched; no performance, raw bars, weights, or equity curves exist.",
+    "A licensed Nasdaq/NYSE product with historical dissemination metadata could reopen the gate, but it was not available as a reproducible public artifact in this run."
+  ],
+  "artifacts": {
+    "model": "models/exchange-reported-short-interest-publication-scout-v1/model.py",
+    "config": "models/exchange-reported-short-interest-publication-scout-v1/config.yaml",
+    "metadata": "models/exchange-reported-short-interest-publication-scout-v1/metadata.yaml",
+    "readme": "models/exchange-reported-short-interest-publication-scout-v1/README.md",
+    "latest_json": "models/exchange-reported-short-interest-publication-scout-v1/evaluations/latest.json",
+    "latest_md": "models/exchange-reported-short-interest-publication-scout-v1/evaluations/latest.md",
+    "run_json": "models/exchange-reported-short-interest-publication-scout-v1/evaluations/runs/ar172_short_interest_source_gate_20260630T220639Z.json"
+  }
+}

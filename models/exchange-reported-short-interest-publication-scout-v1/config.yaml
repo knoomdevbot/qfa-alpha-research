@@ -1,0 +1,24 @@
+model_name: exchange-reported-short-interest-publication-scout-v1
+issue_id: AR-172
+status: rejected
+priority: completed_source_gate_rejection
+asset_bucket: equity
+family: public_short_interest_position_source
+weight: 0.0
+source_gate:
+  required: true
+  passed: false
+  reason: official_free_reproducible_historical_publication_source_not_proven
+performance:
+  enabled: false
+  reason: source_vintage_breadth_gate_failed
+constraints:
+  no_csv_market_data: true
+  no_data_csv_argument: true
+  no_daemon: true
+  no_orders: true
+  retain_raw_daily_paths: false
+universe_gate:
+  hard_min_liquid_mapped_common_stocks: 150
+  liquid_mapped_common_stocks: 0
+  selected_universe: none_zero_weight

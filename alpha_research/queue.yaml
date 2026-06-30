@@ -1317,17 +1317,16 @@ issues:
 - id: AR-172
   title: Official exchange-reported short-interest publication source/vintage scout
   model_name: exchange-reported-short-interest-publication-scout-v1
-  status: queued
-  priority: preflight_queue_source_vintage_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_short_interest_position_source
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-172.md
-  last_checked_at: '2026-06-30T21:29:56Z'
-  tried_count: 0
-active_batch:
-- AR-172
+  last_checked_at: '2026-06-30T22:06:39Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
 - AR-171
-updated_at: '2026-06-30T21:29:56Z'
+updated_at: '2026-06-30T22:09:46Z'
 target_tried_ideas: 100
-tried_ideas_count: 155
+tried_ideas_count: 156
