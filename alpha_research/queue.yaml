@@ -1151,15 +1151,14 @@ issues:
 - id: AR-155
   title: FINRA margin-debt leverage-cycle ETF allocator feasibility scout
   model_name: finra-margin-debt-leverage-cycle-etf-scout-v1
-  status: queued
-  priority: preflight_queue_feasibility_scout
+  status: rejected
+  priority: completed_fast_falsification_rejection
   family: public_brokerage_leverage_cycle_allocation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-155.md
-active_batch:
-- AR-155
+active_batch: []
 last_realdata_batch:
-- AR-151
-updated_at: '2026-06-30T06:35:31Z'
+- AR-155
+updated_at: '2026-06-30T06:46:51Z'
 target_tried_ideas: 100
-tried_ideas_count: 140
+tried_ideas_count: 141

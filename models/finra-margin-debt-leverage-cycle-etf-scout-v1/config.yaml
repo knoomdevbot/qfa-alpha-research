@@ -1,0 +1,33 @@
+model_name: finra-margin-debt-leverage-cycle-etf-scout-v1
+issue_id: AR-155
+status: rejected_fast_falsification
+asset_bucket: etf
+trade_enabled: false
+source:
+  finra_page: https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics
+  finra_xlsx: https://www.finra.org/sites/default/files/2021-03/margin-statistics.xlsx
+  conservative_publication_lag: reference month assumed public on fourth Friday of following month; rebalance only at a month-end on/after that date
+market_data:
+  provider: configured market-data access through qfa/Alpaca gateway
+  timeframe: 1Day
+  no_csv_used: true
+universe:
+  candidate_pool: [SPY, IVV, VOO, QQQ, IWM, HYG, JNK, LQD, TLT, IEF, SHY, GLD, IAU, UUP, DBC, USO, XLP, XLU, XLV, XLF, XLK]
+  selected: [SPY, QQQ, IWM, HYG, LQD, TLT, IEF, SHY, GLD, UUP, DBC, XLP, XLU, XLV, XLF, XLK]
+  excluded:
+    IVV: duplicate S&P 500 exposure vs SPY
+    VOO: duplicate S&P 500 exposure and not needed for compact allocator
+    IAU: duplicate gold exposure vs GLD
+    USO: narrow oil-futures roll exposure; DBC kept for broader commodity sleeve
+    JNK: materially shorter configured market-data coverage than selected overlap; HYG kept as high-yield credit sleeve
+strategy_if_researched:
+  rebalance: monthly_close
+  gross_exposure_max: 1.0
+  long_only: true
+  max_sleeve_weight: 0.14285714285714285
+  primary_one_way_cost_bps: 5
+  stress_cost_bps: [10, 20]
+  signal_features:
+    - debit_balance_1m_change_z12
+    - free_credit_total_1m_change_z12
+    - debit_to_free_credit_ratio_1m_change_z12

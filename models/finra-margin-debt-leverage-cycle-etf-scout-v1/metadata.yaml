@@ -1,0 +1,24 @@
+model_name: finra-margin-debt-leverage-cycle-etf-scout-v1
+issue_id: AR-155
+created_at: 2026-06-30T06:43:15Z
+status: rejected_fast_falsification
+decision: rejected
+asset_bucket: etf
+owner: qfa-alpha-research
+implementation: disabled_zero_weight_model
+latest_evaluation: evaluations/latest.json
+immutable_run: evaluations/runs/ar155_finra_margin_debt_scout_20260630T064315Z.json
+data_safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
+summary:
+  source_gate: passed_for_bounded_scout_with_vintage_caveat
+  performance_gate: failed_static_trend_inverted_shifted_controls
+  primary_5bps_sharpe: 0.5783027407323441
+  equal_weight_sharpe: 0.7958917357536791
+  spy_sharpe: 0.9189324689062179
+  etf_tsmom_sharpe: 0.5593454583400532
+  inverted_signal_sharpe: 0.6787140483228432

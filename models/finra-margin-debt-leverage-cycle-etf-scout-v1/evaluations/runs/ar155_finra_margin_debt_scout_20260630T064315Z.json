@@ -1,0 +1,400 @@
+{
+  "candidate_pool": {
+    "coverage": {
+      "DBC": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 26873685.299999997
+      },
+      "GLD": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1308055624.3899999
+      },
+      "HYG": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 2138529070.6399999
+      },
+      "IAU": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 224507877.76999998
+      },
+      "IEF": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 538418684.09
+      },
+      "IVV": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1614968531.22
+      },
+      "IWM": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 4723799947.84
+      },
+      "JNK": {
+        "bars": 1796,
+        "first": "2019-05-06",
+        "last": "2026-06-26",
+        "median_dollar_volume": 628846967.235
+      },
+      "LQD": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1740203455.9
+      },
+      "QQQ": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 12359504133.039999
+      },
+      "SHY": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 245788353.0
+      },
+      "SPY": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 27695991855.84
+      },
+      "TLT": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1942284696.24
+      },
+      "USO": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 279600291.86
+      },
+      "UUP": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 28566240.810000002
+      },
+      "VOO": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1293621880.32
+      },
+      "XLF": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1595407058.64
+      },
+      "XLK": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 991612413.4000001
+      },
+      "XLP": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 790692223.86
+      },
+      "XLU": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 863371349.01
+      },
+      "XLV": {
+        "bars": 2635,
+        "first": "2016-01-04",
+        "last": "2026-06-26",
+        "median_dollar_volume": 1022235549.3
+      }
+    },
+    "excluded": {
+      "IAU": "duplicate gold exposure vs GLD",
+      "IVV": "duplicate S&P 500 exposure vs SPY for compact broad allocator",
+      "JNK": "configured market-data coverage started materially later than the otherwise available ETF overlap; HYG kept as high-yield credit sleeve",
+      "USO": "narrow oil-futures roll exposure; DBC selected for broader commodity sleeve",
+      "VOO": "duplicate S&P 500 exposure and shorter post-2010 inception"
+    },
+    "input_symbols": [
+      "SPY",
+      "IVV",
+      "VOO",
+      "QQQ",
+      "IWM",
+      "HYG",
+      "JNK",
+      "LQD",
+      "TLT",
+      "IEF",
+      "SHY",
+      "GLD",
+      "IAU",
+      "UUP",
+      "DBC",
+      "USO",
+      "XLP",
+      "XLU",
+      "XLV",
+      "XLF",
+      "XLK"
+    ],
+    "selected_universe": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "HYG",
+      "LQD",
+      "TLT",
+      "IEF",
+      "SHY",
+      "GLD",
+      "UUP",
+      "DBC",
+      "XLP",
+      "XLU",
+      "XLV",
+      "XLF",
+      "XLK"
+    ]
+  },
+  "controls": {
+    "ETF_TSMOM_12m": {
+      "ann_return": 0.05039416102845751,
+      "ann_vol": 0.0964991827420056,
+      "hit_rate": 0.672566371681416,
+      "max_drawdown": -0.1863803968098623,
+      "months": 113,
+      "sharpe": 0.5593454583400532,
+      "total_return": 0.5887935990044282
+    },
+    "SHY": {
+      "ann_return": -0.003202626808345266,
+      "ann_vol": 0.015125695166413102,
+      "hit_rate": 0.4435483870967742,
+      "max_drawdown": -0.06716589861751165,
+      "months": 124,
+      "sharpe": -0.20447809299270292,
+      "total_return": -0.03260357815442627
+    },
+    "SPY": {
+      "ann_return": 0.13704710694083277,
+      "ann_vol": 0.1533681564712206,
+      "hit_rate": 0.6854838709677419,
+      "max_drawdown": -0.24797877716018202,
+      "months": 124,
+      "sharpe": 0.9189324689062179,
+      "total_return": 2.770312904059991
+    },
+    "equal_weight": {
+      "ann_return": 0.06901605734177241,
+      "ann_vol": 0.08911159486905243,
+      "hit_rate": 0.6854838709677419,
+      "max_drawdown": -0.15731316875638324,
+      "months": 124,
+      "sharpe": 0.7958917357536791,
+      "total_return": 0.9929834674901576
+    },
+    "inverted_signal": {
+      "ann_return": 0.07331448274466079,
+      "ann_vol": 0.11430020960737354,
+      "hit_rate": 0.6290322580645161,
+      "max_drawdown": -0.1793648341983366,
+      "months": 124,
+      "sharpe": 0.6787140483228432,
+      "total_return": 1.077362201947588
+    },
+    "shifted_extra_month_lag": {
+      "ann_return": 0.08866160623415809,
+      "ann_vol": 0.10797612624744916,
+      "hit_rate": 0.6290322580645161,
+      "max_drawdown": -0.12099829176515531,
+      "months": 124,
+      "sharpe": 0.8429482099584964,
+      "total_return": 1.4056182241335082
+    }
+  },
+  "created_at": "2026-06-30T06:43:15Z",
+  "decision": {
+    "queue_status": "completed_fast_falsification",
+    "rationale": "primary 5 bps Sharpe failed to beat equal/SPY/ETF-TSMOM static/trend controls; inverted-signal control matched or beat primary",
+    "status": "rejected"
+  },
+  "issue_id": "AR-155",
+  "limitations": [
+    "No FINRA point-in-time vintage archive was located; current official workbook could include revisions, mitigated only by conservative lag.",
+    "Orthogonality versus alpha library was deferred because fast-falsification controls were sufficient for the decision.",
+    "No raw bars, daily return arrays, equity curves, databases, or credentials are retained in artifacts."
+  ],
+  "market_data": {
+    "asset_class": "equity",
+    "monthly_overlap_end": "2026-06-30",
+    "monthly_overlap_start": "2016-02-29",
+    "monthly_return_observations": 125,
+    "provider": "configured market-data access through qfa/Alpaca gateway",
+    "raw_bars_retained": false,
+    "timeframe": "1Day"
+  },
+  "metrics": {
+    "avg_monthly_turnover": 1.0181451612903225,
+    "cost_10bps": {
+      "ann_return": 0.04927171259209917,
+      "ann_vol": 0.10346400761186023,
+      "hit_rate": 0.6532258064516129,
+      "max_drawdown": -0.23962476934311672,
+      "months": 124,
+      "sharpe": 0.5179119689938273,
+      "total_return": 0.6437747437492991
+    },
+    "cost_20bps": {
+      "ann_return": 0.03650997382720944,
+      "ann_vol": 0.10400415343686335,
+      "hit_rate": 0.6370967741935484,
+      "max_drawdown": -0.2473586983478192,
+      "months": 124,
+      "sharpe": 0.39774859560661213,
+      "total_return": 0.4485250709788975
+    },
+    "cost_5bps": {
+      "ann_return": 0.055703142240481895,
+      "ann_vol": 0.10322295687964071,
+      "hit_rate": 0.6532258064516129,
+      "max_drawdown": -0.23573360673430832,
+      "months": 124,
+      "sharpe": 0.5783027407323441,
+      "total_return": 0.7509164118148803
+    },
+    "end": "2026-06-30",
+    "gross": {
+      "ann_return": 0.062168478377655934,
+      "ann_vol": 0.10300143902115404,
+      "hit_rate": 0.6532258064516129,
+      "max_drawdown": -0.23182624230011795,
+      "months": 124,
+      "sharpe": 0.6388550535126056,
+      "total_return": 0.8649415498363437
+    },
+    "median_monthly_turnover": 1.1249999999999998,
+    "rebalance_months": 124,
+    "start": "2016-03-31"
+  },
+  "model_name": "finra-margin-debt-leverage-cycle-etf-scout-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "random_windows": {
+    "count": 200,
+    "median_ann_return": 0.0598789636491166,
+    "median_sharpe": 0.5798303253576409,
+    "p25_ann_return": 0.040687605115458325,
+    "p25_sharpe": 0.39482842661563256,
+    "positive_sharpe_rate": 0.95
+  },
+  "raw_daily_paths_retained": false,
+  "regime_diagnostics": {
+    "best_year": "2021",
+    "best_year_return": 0.17839969116829013,
+    "calendar_year_returns": {
+      "2016": 0.027614094213535445,
+      "2017": 0.12191739797187862,
+      "2018": 0.005036187218159682,
+      "2019": 0.10757952208116373,
+      "2020": 0.13398957440683956,
+      "2021": 0.17839969116829013,
+      "2022": -0.19759289838860816,
+      "2023": 0.14018296393125906,
+      "2024": 0.08201355003151778,
+      "2025": 0.013969074950284543,
+      "2026": 0.017160436355120545
+    },
+    "one_year_dominance_ratio_vs_total_return": 0.23757596499604822,
+    "worst_year": "2022",
+    "worst_year_return": -0.19759289838860816
+  },
+  "run_id": "ar155_finra_margin_debt_scout_20260630T064315Z",
+  "source_probe": {
+    "first_ref": "1997-01-31",
+    "last_ref": "2026-05-31",
+    "page_bytes": 90254,
+    "page_mentions_third_week": true,
+    "page_status": 200,
+    "rows": 353,
+    "xlsx_bytes": 20391,
+    "xlsx_status": 200
+  },
+  "source_vintage": {
+    "conservative_lag_rule": "reference month assumed public on fourth Friday of following month; trade only at a month-end on/after that date",
+    "exact_historical_publication_timestamps_captured": false,
+    "notes": "FINRA page states updates are generally published in the third week of the month following the reference month and no data feeds are available. Current official workbook/page were used; no PIT vintage archive was found in this scout.",
+    "official_source": "FINRA margin statistics webpage and Excel download",
+    "page_url": "https://www.finra.org/rules-guidance/key-topics/margin-accounts/margin-statistics",
+    "passed_for_bounded_scout": true,
+    "point_in_time_vintage_archive_available": false,
+    "xlsx_url": "https://www.finra.org/sites/default/files/2021-03/margin-statistics.xlsx"
+  },
+  "strategy": {
+    "defensive_assets": [
+      "TLT",
+      "IEF",
+      "SHY",
+      "GLD",
+      "UUP",
+      "XLP",
+      "XLU",
+      "XLV",
+      "LQD"
+    ],
+    "gross_exposure_max": 1.0,
+    "long_only": true,
+    "max_sleeve_weight": 0.14285714285714285,
+    "neutral_assets": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "HYG",
+      "LQD",
+      "TLT",
+      "IEF",
+      "SHY",
+      "GLD",
+      "UUP",
+      "DBC",
+      "XLP",
+      "XLU",
+      "XLV",
+      "XLF",
+      "XLK"
+    ],
+    "rebalance": "monthly close",
+    "risk_on_assets": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "HYG",
+      "XLK",
+      "XLF",
+      "DBC"
+    ],
+    "signal": "z-scored monthly changes in debit balances, free-credit total, and debit/free-credit ratio after conservative publication lag"
+  }
+}
