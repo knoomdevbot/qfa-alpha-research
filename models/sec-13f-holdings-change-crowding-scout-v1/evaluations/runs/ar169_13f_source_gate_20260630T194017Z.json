@@ -1,0 +1,17 @@
+{
+  "issue_id": "AR-169",
+  "model_name": "sec-13f-holdings-change-crowding-scout-v1",
+  "run_id": "ar169_13f_source_gate_20260630T194017Z",
+  "created_at": "2026-06-30T19:40:17Z",
+  "decision": {"status": "rejected", "queue_status": "completed_source_gate_rejection", "source_gate_status": "source_mapping_gate_rejected"},
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "bounded_probe": {"checked_filer_ciks": 12, "ciks_with_submissions": 12, "recent_13f_rows_in_submissions": 379, "sampled_filings": 36, "sampled_filings_with_acceptance_datetime": 36, "filings_with_parseable_information_table_xml": 36, "parsed_holdings_rows": 573744, "distinct_cusips_in_sample": 13513, "put_rows_seen": 15173, "call_rows_seen": 17684},
+  "change_table_probe": {"same_filer_quarter_pairs_checked": 24, "same_cusip_pairs_compared": 77375, "new_positions": 16224, "exit_positions": 15265, "increased_positions": 35884, "decreased_positions": 32886, "unchanged_positions": 8605},
+  "source_gate": {"passed": false, "failed_components": ["conservative CUSIP-to-ticker/common-stock mapping not established", "mapped liquid common-stock breadth >=150-250 not proven", "qfa/Alpaca bar coverage not checked", "concentration safety not completed", "amendment replacement policy not fully implemented"]},
+  "metrics": null,
+  "performance_run": {"run": false, "reason": "source/mapping gate failed"}
+}

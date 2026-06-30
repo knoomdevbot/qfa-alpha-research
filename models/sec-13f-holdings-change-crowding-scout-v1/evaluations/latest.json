@@ -1,0 +1,168 @@
+{
+  "issue_id": "AR-169",
+  "model_name": "sec-13f-holdings-change-crowding-scout-v1",
+  "run_id": "ar169_13f_source_gate_20260630T194017Z",
+  "created_at": "2026-06-30T19:40:17Z",
+  "decision": {
+    "status": "rejected",
+    "queue_status": "completed_source_gate_rejection",
+    "source_gate_status": "source_mapping_gate_rejected",
+    "rationale": "A bounded EDGAR probe confirmed SEC submissions metadata, 13F-HR/13F-HR/A acceptance timestamps, archive index resolution, information-table XML parsing, and same-filer same-CUSIP quarter-to-quarter change mechanics. The scout did not establish a conservative public CUSIP-to-ticker/common-stock mapping with qfa/Alpaca liquid daily-bar coverage, so the mapped breadth and concentration hard gates could not pass. No performance evaluation was run."
+  },
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "data": {
+    "source": "SEC EDGAR submissions metadata and archive information-table XML for 13F-HR / 13F-HR/A filings",
+    "endpoints": [
+      "https://data.sec.gov/submissions/CIK##########.json",
+      "https://www.sec.gov/Archives/edgar/data/CIK/ACCESSION/index.json",
+      "https://www.sec.gov/Archives/edgar/data/CIK/ACCESSION/*.xml"
+    ],
+    "endpoint_status": "ok_for_bounded_probe",
+    "performance_market_data_source": null,
+    "raw_sec_documents_retained": false,
+    "raw_event_tables_retained": false,
+    "raw_bars_retained": false,
+    "raw_cache_retained": false
+  },
+  "bounded_probe": {
+    "checked_filer_ciks": 12,
+    "ciks_with_submissions": 12,
+    "recent_13f_rows_in_submissions": 379,
+    "sampled_filings": 36,
+    "sampled_filings_with_acceptance_datetime": 36,
+    "filings_with_parseable_information_table_xml": 36,
+    "xml_parse_success": 36,
+    "parsed_holdings_rows": 573744,
+    "distinct_cusips_in_sample": 13513,
+    "option_rows_seen_and_excluded_from_primary_alpha": {
+      "Call": 17684,
+      "Put": 15173
+    },
+    "blank_putcall_primary_candidate_rows": 540887,
+    "filers_sampled": [
+      "Berkshire Hathaway",
+      "BlackRock",
+      "Vanguard",
+      "State Street",
+      "JPMorgan Chase",
+      "Morgan Stanley",
+      "Goldman Sachs",
+      "Citadel Advisors",
+      "Bridgewater Associates",
+      "Renaissance Technologies",
+      "Two Sigma Investments",
+      "AQR Capital Management"
+    ],
+    "largest_sample_holding_row_counts_by_filer_three_filings": {
+      "BlackRock": 145652,
+      "Morgan Stanley": 136458,
+      "JPMorgan Chase": 65236,
+      "AQR Capital Management": 52261,
+      "Vanguard": 52019,
+      "Citadel Advisors": 46543
+    }
+  },
+  "change_table_probe": {
+    "same_filer_quarter_pairs_checked": 24,
+    "same_cusip_pairs_compared": 77375,
+    "new_positions": 16224,
+    "exit_positions": 15265,
+    "increased_positions": 35884,
+    "decreased_positions": 32886,
+    "unchanged_positions": 8605,
+    "absolute_share_delta": 50711091579,
+    "absolute_value_delta_thousands": 4370016254078,
+    "timestamp_policy": "Use EDGAR acceptanceDateTime and trade no earlier than the next tradable session after public acceptance; do not use report period date as signal time.",
+    "amendment_policy_needed": true,
+    "sample_pair_diagnostics": [
+      {
+        "filer": "Berkshire Hathaway",
+        "acceptance": "2026-05-15T20:06:05.000Z",
+        "new_report": "2026-03-31",
+        "old_report": "2025-12-31",
+        "same_cusips": 26,
+        "new_positions": 3,
+        "exit_positions": 16,
+        "increased": 5,
+        "decreased": 3,
+        "unchanged": 18
+      },
+      {
+        "filer": "BlackRock",
+        "acceptance": "2024-08-13T17:15:14.000Z",
+        "new_report": "2024-06-30",
+        "old_report": "2024-03-31",
+        "same_cusips": 5007,
+        "new_positions": 219,
+        "exit_positions": 215,
+        "increased": 2584,
+        "decreased": 1486,
+        "unchanged": 937
+      },
+      {
+        "filer": "Vanguard",
+        "acceptance": "2026-01-29T14:40:29.000Z",
+        "new_report": "2025-12-31",
+        "old_report": "2025-09-30",
+        "same_cusips": 4206,
+        "new_positions": 123,
+        "exit_positions": 138,
+        "increased": 2259,
+        "decreased": 1578,
+        "unchanged": 369
+      }
+    ]
+  },
+  "candidate_pool": {
+    "description": "Potential 13F-HR/13F-HR/A information-table holdings and same-filer quarterly CUSIP changes for institutional managers, excluding 13F-NT and PUT/CALL rows for the primary alpha universe.",
+    "source_reachability": "sample_passed",
+    "parser_reachability": "sample_passed",
+    "quarterly_change_mechanics": "sample_passed",
+    "conservative_mapping_reachability": "failed",
+    "liquid_us_common_stock_table_built": false,
+    "timestamp_safe_full_event_table_built": false,
+    "concentration_safety_checked": false
+  },
+  "selected_universe": [],
+  "feasibility_counts": {
+    "required_mapped_liquid_common_stock_issuers_min": 150,
+    "required_mapped_liquid_common_stock_issuers_target": 250,
+    "mapped_liquid_common_stock_issuers": null,
+    "timestamp_safe_change_observations": null,
+    "concentration_safe": null
+  },
+  "source_gate": {
+    "passed": false,
+    "passed_components": [
+      "SEC submissions metadata reachable for sampled filer CIKs",
+      "acceptanceDateTime available for sampled 13F rows",
+      "archive index and information-table XML resolution worked in sampled filings",
+      "CUSIP/share/value parser supported same-filer quarterly change mechanics in sampled filings"
+    ],
+    "failed_components": [
+      "no conservative timestamp-safe CUSIP-to-ticker/common-stock mapping was established",
+      "mapped liquid common-stock issuer breadth was not proven to be >=150-250",
+      "qfa/Alpaca daily-bar coverage was not checked because mapping gate failed",
+      "issuer/filer/sector/quarter/year concentration safety was not completed",
+      "amendment de-duplication/replacement policy was not fully implemented"
+    ],
+    "reason": "13F information tables are parseable and contain broad CUSIP-level changes, but the issue's hard gate requires a conservative mapped liquid common-stock event universe before any returns test. Filing rows generally provide CUSIP/name/class, not ticker, and inferring current tickers from names would introduce ambiguity and survivorship/lookahead risk."
+  },
+  "metrics": null,
+  "performance_run": {
+    "run": false,
+    "reason": "Source/mapping gate failed; no returns, event windows, ranker, costs, random periods, shifted/shuffled labels, calendar/momentum/sector controls, daemon, or orders were evaluated."
+  },
+  "limitations": [
+    "The probe was intentionally bounded and did not retain raw SEC filings, parsed tables, bars, databases, caches, or helper scripts.",
+    "13F rows include CUSIP/name/class and can include options; PUT/CALL rows must be excluded or controlled.",
+    "CUSIP-to-ticker/common-stock mapping is the central unresolved dependency; current-name inference is not conservative enough for alpha validation.",
+    "Amendments may restate prior reports and require a durable replacement policy before full event construction.",
+    "No qfa/Alpaca market data were requested because no valid mapped tradable universe was produced."
+  ],
+  "status_rationale": "Rejected for this research cycle at source/mapping gate with a disabled zero-weight model. No direct 13F continuation child was created."
+}

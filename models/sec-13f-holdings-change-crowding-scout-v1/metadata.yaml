@@ -1,0 +1,19 @@
+model_name: sec-13f-holdings-change-crowding-scout-v1
+issue_id: AR-169
+title: SEC 13F holdings-change crowding/uncrowding source feasibility scout
+status: rejected_source_gate
+created_at: '2026-06-30T19:40:17Z'
+updated_at: '2026-06-30T19:40:17Z'
+owner: qfa-alpha-research
+family: public_filing_holdings_change
+asset_bucket: equity
+model_type: zero_weight_source_gate_scaffold
+weight: 0.0
+decision: rejected
+source_gate_passed: false
+performance_evaluated: false
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false

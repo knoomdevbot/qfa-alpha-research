@@ -1,0 +1,42 @@
+model_name: sec-13f-holdings-change-crowding-scout-v1
+issue_id: AR-169
+status: rejected_source_gate
+enabled: false
+weight: 0.0
+asset_bucket: equity
+family: public_filing_holdings_change
+hypothesis: >-
+  SEC 13F information-table holdings changes, handled with EDGAR acceptance-time
+  discipline and conservative lag, may identify institutional accumulation,
+  distribution, new, and exit positions with post-publication drift/reversal.
+source_gate:
+  required_mapped_liquid_common_stock_issuers_min: 150
+  required_mapped_liquid_common_stock_issuers_target: 250
+  required_components:
+    - durable_edgar_13f_parser
+    - same_filer_cusip_quarterly_change_table
+    - conservative_cusip_to_ticker_common_stock_mapping
+    - qfa_alpaca_liquid_daily_bar_coverage
+    - concentration_safety
+  passed: false
+  rejection_reason: >-
+    Bounded EDGAR parsing and same-filer change mechanics worked, but no
+    conservative public CUSIP-to-ticker/common-stock mapping with liquid daily
+    bar coverage was established; performance evaluation was not run.
+edgar_discipline:
+  timestamp: acceptanceDateTime
+  lag_policy: next tradable session after public acceptance; no report-period lookahead
+  excluded_primary_alpha_rows:
+    - 13F-NT filings
+    - option PUT/CALL rows
+    - ambiguous non-common securities
+performance:
+  run: false
+  reason: source_mapping_gate_failed
+costs_bps_not_evaluated: [5, 10, 20]
+outputs:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
