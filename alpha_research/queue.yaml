@@ -1192,9 +1192,27 @@ issues:
   family: public_filing_insider_imbalance_event_source
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-159.md
-active_batch: []
+- id: AR-160
+  title: Federal Reserve H.8 bank credit/deposit stress impulse ETF allocator scout
+  model_name: h8-bank-credit-deposit-stress-etf-allocator-scout-v1
+  status: queued
+  priority: preflight_queue_feasibility_scout
+  family: public_bank_balance_sheet_stress_release
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-160.md
+- id: AR-161
+  title: SEC Form 10b5-1 plan-change event-source feasibility scout
+  model_name: sec-10b5-1-plan-change-source-scout-v1
+  status: queued
+  priority: preflight_queue_feasibility_scout
+  family: public_filing_insider_plan_intent
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-161.md
+active_batch:
+- AR-160
+- AR-161
 last_realdata_batch:
 - AR-157
-updated_at: '2026-06-30T09:49:00Z'
+updated_at: '2026-06-30T09:58:01Z'
 target_tried_ideas: 100
 tried_ideas_count: 145

@@ -8,7 +8,6 @@ liquid-mapped event table and no real daily-bar performance evaluation was run.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import date, timedelta
 from hashlib import sha256
 from typing import Dict, Iterable, List, Optional, Tuple
 import re
