@@ -1,0 +1,26 @@
+model_name: december-loser-etf-rebound-event-study-v1
+issue_id: AR-163
+asset_bucket: etf
+family: tax_loss_calendar_rebound
+status: rejected
+timeframe: daily
+holding_period: last_december_close_to_fifth_january_trading_day
+parameters:
+  signal_start_month_day: '10-01'
+  signal_end_month_day: '12-20'
+  selected_loser_count: 5
+  minimum_usable_annual_events: 8
+  primary_cost_bps_total_event_haircut: 10.0
+universe:
+  candidate_pool: ["SPY", "RSP", "QQQ", "DIA", "IWM", "MDY", "XLB", "XLC", "XLE", "XLF", "XLI", "XLK", "XLP", "XLU", "XLV", "XLY", "XBI", "KRE", "KBE", "SMH", "IGV", "IYT", "ITB", "XHB", "XRT", "IYR", "VNQ", "IBB", "XME", "XOP", "OIH", "TAN", "PBW", "ICLN", "HACK", "ARKK", "FDN", "SKYY", "SOXX"]
+  selected_symbols: ["SPY", "RSP", "QQQ", "DIA", "IWM", "MDY", "XLB", "XLE", "XLF", "XLI", "XLK", "XLP", "XLU", "XLV", "XLY", "XBI", "KRE", "KBE", "SMH", "IGV", "IYT", "ITB", "XHB", "XRT", "IYR", "VNQ", "IBB", "XME", "XOP", "OIH", "TAN", "PBW", "ICLN", "HACK", "ARKK", "FDN", "SKYY", "SOXX"]
+  selection_filters:
+    - coverage_at_least_8_years_with_180_daily_bars
+    - recent_median_dollar_volume_at_least_5mm
+    - fixed_prompt_economic_exposure_pool
+risk:
+  max_gross_exposure: 1.0
+  equal_weight_selected_basket: true
+execution:
+  no_orders: true
+  no_daemon: true

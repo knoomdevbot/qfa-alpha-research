@@ -1220,9 +1220,19 @@ issues:
   issue_path: alpha_research/issues/AR-162.md
   last_checked_at: '2026-06-30T15:09:06Z'
   tried_count: 1
+- id: AR-163
+  title: Timestamp-safe December loser ETF rebound event study with January-effect hard controls
+  model_name: december-loser-etf-rebound-event-study-v1
+  status: rejected
+  priority: completed_realdata_rejection
+  family: tax_loss_calendar_rebound
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-163.md
+  last_checked_at: '2026-06-30T15:52:54Z'
+  tried_count: 1
 active_batch: []
 last_realdata_batch:
-- AR-160
-updated_at: '2026-06-30T15:09:06Z'
+- AR-163
+updated_at: '2026-06-30T15:52:54Z'
 target_tried_ideas: 100
-tried_ideas_count: 148
+tried_ideas_count: 149

@@ -1,0 +1,20 @@
+model_name: december-loser-etf-rebound-event-study-v1
+created_at: '2026-06-30T15:52:54Z'
+created_by: AOI
+status: rejected
+family: tax_loss_calendar_rebound
+asset_bucket: etf
+research_issue: AR-163
+hypothesis: Liquid ETFs with large Oct-Nov/December drawdowns rebound around late December / early January.
+data_requirements:
+  prices: Alpaca/qfa real daily ETF OHLCV
+  fundamentals: none
+artifact_policy:
+  git_tracked: true
+  large_files_external: false
+  raw_daily_paths_retained: false
+known_risks:
+  - sparse annual event count
+  - current ETF product-pool survivorship bias
+  - cannot observe actual tax-loss flows from OHLCV
+  - overlaps generic January and turn-of-month seasonality controls

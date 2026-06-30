@@ -1,0 +1,782 @@
+{
+  "config_path": "models/december-loser-etf-rebound-event-study-v1/config.yaml",
+  "control_summary": {
+    "placebo_by_year_compact": [
+      {
+        "mean": 0.019963,
+        "p95": 0.039816,
+        "primary": 0.067799,
+        "primary_percentile": 1.0,
+        "year": 2016
+      },
+      {
+        "mean": 0.028303,
+        "p95": 0.043159,
+        "primary": 0.014092,
+        "primary_percentile": 0.062,
+        "year": 2017
+      },
+      {
+        "mean": 0.049713,
+        "p95": 0.07578,
+        "primary": 0.107478,
+        "primary_percentile": 1.0,
+        "year": 2018
+      },
+      {
+        "mean": -0.020731,
+        "p95": 0.02375,
+        "primary": -0.004877,
+        "primary_percentile": 0.752,
+        "year": 2021
+      },
+      {
+        "mean": 0.020871,
+        "p95": 0.03576,
+        "primary": 0.023116,
+        "primary_percentile": 0.558,
+        "year": 2022
+      },
+      {
+        "mean": 0.010883,
+        "p95": 0.023857,
+        "primary": 0.01703,
+        "primary_percentile": 0.784,
+        "year": 2024
+      },
+      {
+        "mean": 0.031313,
+        "p95": 0.051716,
+        "primary": 0.019687,
+        "primary_percentile": 0.168,
+        "year": 2025
+      }
+    ],
+    "primary_placebo_percentile_median": 0.752
+  },
+  "data": {
+    "availability_summary": {
+      "ARKK": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 693289049.0,
+        "years_with_180_bars": 10
+      },
+      "DIA": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 2605358146.42,
+        "years_with_180_bars": 10
+      },
+      "FDN": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 102285861.02,
+        "years_with_180_bars": 10
+      },
+      "HACK": {
+        "bars": 2514,
+        "first_bar": "2016-06-27",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 7580639.08,
+        "years_with_180_bars": 9
+      },
+      "IBB": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 264079155.41,
+        "years_with_180_bars": 10
+      },
+      "ICLN": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 68272064.16,
+        "years_with_180_bars": 10
+      },
+      "IGV": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 768810469.41,
+        "years_with_180_bars": 10
+      },
+      "ITB": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 231117313.74,
+        "years_with_180_bars": 10
+      },
+      "IWM": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 8832111463.75,
+        "years_with_180_bars": 10
+      },
+      "IYR": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 622142956.2,
+        "years_with_180_bars": 10
+      },
+      "IYT": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 36892945.12,
+        "years_with_180_bars": 10
+      },
+      "KBE": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 104289141.0,
+        "years_with_180_bars": 10
+      },
+      "KRE": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1003827450.44,
+        "years_with_180_bars": 10
+      },
+      "MDY": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 490970191.42,
+        "years_with_180_bars": 10
+      },
+      "OIH": {
+        "bars": 2553,
+        "first_bar": "2016-05-02",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 132737902.05,
+        "years_with_180_bars": 9
+      },
+      "PBW": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 22523866.01,
+        "years_with_180_bars": 10
+      },
+      "QQQ": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 30708104278.76,
+        "years_with_180_bars": 10
+      },
+      "RSP": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 2438443023.12,
+        "years_with_180_bars": 10
+      },
+      "SKYY": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 21593477.48,
+        "years_with_180_bars": 10
+      },
+      "SMH": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 2893789611.69,
+        "years_with_180_bars": 10
+      },
+      "SOXX": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 2121099003.73,
+        "years_with_180_bars": 10
+      },
+      "SPY": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 46388932325.03,
+        "years_with_180_bars": 10
+      },
+      "TAN": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 49864164.98,
+        "years_with_180_bars": 10
+      },
+      "VNQ": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 321248594.94,
+        "years_with_180_bars": 10
+      },
+      "XBI": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1047163618.26,
+        "years_with_180_bars": 10
+      },
+      "XHB": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 237475642.32,
+        "years_with_180_bars": 10
+      },
+      "XLB": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 602246212.26,
+        "years_with_180_bars": 10
+      },
+      "XLC": {
+        "bars": 2016,
+        "first_bar": "2018-06-19",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 639992430.56,
+        "years_with_180_bars": 7
+      },
+      "XLE": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1712743003.39,
+        "years_with_180_bars": 10
+      },
+      "XLF": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 2043824413.85,
+        "years_with_180_bars": 10
+      },
+      "XLI": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1612298763.24,
+        "years_with_180_bars": 10
+      },
+      "XLK": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 2134357448.28,
+        "years_with_180_bars": 10
+      },
+      "XLP": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1160143053.36,
+        "years_with_180_bars": 10
+      },
+      "XLU": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 951634009.35,
+        "years_with_180_bars": 10
+      },
+      "XLV": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1805685754.7,
+        "years_with_180_bars": 10
+      },
+      "XLY": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 1183183545.1,
+        "years_with_180_bars": 10
+      },
+      "XME": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 224238346.5,
+        "years_with_180_bars": 10
+      },
+      "XOP": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 453175047.13,
+        "years_with_180_bars": 10
+      },
+      "XRT": {
+        "bars": 2635,
+        "first_bar": "2016-01-04",
+        "last_bar": "2026-06-26",
+        "recent_median_dollar_volume": 395534694.0,
+        "years_with_180_bars": 10
+      }
+    },
+    "candidate_pool_description": "Broad U.S.-listed broad/sector/industry/theme ETFs fixed ex ante from issue prompt.",
+    "candidate_pool_size": 39,
+    "candidate_pool_symbols": [
+      "SPY",
+      "RSP",
+      "QQQ",
+      "DIA",
+      "IWM",
+      "MDY",
+      "XLB",
+      "XLC",
+      "XLE",
+      "XLF",
+      "XLI",
+      "XLK",
+      "XLP",
+      "XLU",
+      "XLV",
+      "XLY",
+      "XBI",
+      "KRE",
+      "KBE",
+      "SMH",
+      "IGV",
+      "IYT",
+      "ITB",
+      "XHB",
+      "XRT",
+      "IYR",
+      "VNQ",
+      "IBB",
+      "XME",
+      "XOP",
+      "OIH",
+      "TAN",
+      "PBW",
+      "ICLN",
+      "HACK",
+      "ARKK",
+      "FDN",
+      "SKYY",
+      "SOXX"
+    ],
+    "end": "2026-06-29",
+    "selected_symbols": [
+      "SPY",
+      "RSP",
+      "QQQ",
+      "DIA",
+      "IWM",
+      "MDY",
+      "XLB",
+      "XLE",
+      "XLF",
+      "XLI",
+      "XLK",
+      "XLP",
+      "XLU",
+      "XLV",
+      "XLY",
+      "XBI",
+      "KRE",
+      "KBE",
+      "SMH",
+      "IGV",
+      "IYT",
+      "ITB",
+      "XHB",
+      "XRT",
+      "IYR",
+      "VNQ",
+      "IBB",
+      "XME",
+      "XOP",
+      "OIH",
+      "TAN",
+      "PBW",
+      "ICLN",
+      "HACK",
+      "ARKK",
+      "FDN",
+      "SKYY",
+      "SOXX"
+    ],
+    "selected_universe_size": 38,
+    "source": "Alpaca/qfa real daily ETF OHLCV via configured market-data access; credential values redacted",
+    "start": "2008-01-01",
+    "timeframe": "1Day",
+    "universe_limitations": [
+      "Survivorship/product-list bias remains because the prompt supplied a current broad ETF candidate pool.",
+      "Daily OHLCV cannot observe actual tax-loss-selling flows."
+    ],
+    "universe_selection_filters": [
+      "coverage: at least 8 years with >=180 daily bars",
+      "liquidity: recent median dollar volume >= 5mm",
+      "economic exposure: broad/sector/industry/theme ETFs from fixed prompt pool"
+    ],
+    "universe_selection_rationale": "Selected by coverage/liquidity/economic-exposure filters before studying event performance; no performance-based inclusion."
+  },
+  "decision": {
+    "rationale": [
+      "fewer_than_8_usable_annual_events_after_filters",
+      "primary_dominated_or_matched_by_controls: all_etf_equal_weight_10bps, etf_short_term_reversal_control_10bps, randomized_loser_labels_year_mean_10bps"
+    ],
+    "spawned_children": [],
+    "status": "rejected"
+  },
+  "evaluated_at": "2026-06-30T15:52:54Z",
+  "evaluator": "custom_sparse_event_study_over_qfa_alpaca_daily_bars",
+  "event_records_compact": [
+    {
+      "all_etf_equal_weight_10bps": 0.019473,
+      "eligible_symbol_count": 38,
+      "entry_date": "2016-12-30",
+      "exit_date": "2017-01-09",
+      "mean_loser_pressure_oct1_to_dec20": -0.087905,
+      "primary_return_10bps": 0.067799,
+      "primary_return_pre_cost": 0.068799,
+      "selected_symbols": [
+        "ICLN",
+        "TAN",
+        "XBI",
+        "IBB",
+        "ARKK"
+      ],
+      "signal_date": "2016-12-20",
+      "spy_10bps": 0.012422,
+      "year": 2016
+    },
+    {
+      "all_etf_equal_weight_10bps": 0.028514,
+      "eligible_symbol_count": 38,
+      "entry_date": "2017-12-29",
+      "exit_date": "2018-01-08",
+      "mean_loser_pressure_oct1_to_dec20": -0.157579,
+      "primary_return_10bps": 0.014092,
+      "primary_return_pre_cost": 0.015092,
+      "selected_symbols": [
+        "IBB",
+        "XBI",
+        "OIH",
+        "XLU",
+        "VNQ"
+      ],
+      "signal_date": "2017-12-20",
+      "spy_10bps": 0.025111,
+      "year": 2017
+    },
+    {
+      "all_etf_equal_weight_10bps": 0.049977,
+      "eligible_symbol_count": 38,
+      "entry_date": "2018-12-31",
+      "exit_date": "2019-01-08",
+      "mean_loser_pressure_oct1_to_dec20": -0.324586,
+      "primary_return_10bps": 0.107478,
+      "primary_return_pre_cost": 0.108478,
+      "selected_symbols": [
+        "OIH",
+        "XOP",
+        "XBI",
+        "XLE",
+        "XME"
+      ],
+      "signal_date": "2018-12-20",
+      "spy_10bps": 0.025152,
+      "year": 2018
+    },
+    {
+      "all_etf_equal_weight_10bps": -0.021521,
+      "eligible_symbol_count": 38,
+      "entry_date": "2021-12-31",
+      "exit_date": "2022-01-07",
+      "mean_loser_pressure_oct1_to_dec20": -0.113599,
+      "primary_return_10bps": -0.004877,
+      "primary_return_pre_cost": -0.003877,
+      "selected_symbols": [
+        "ARKK",
+        "OIH",
+        "PBW",
+        "TAN",
+        "XOP"
+      ],
+      "signal_date": "2021-12-20",
+      "spy_10bps": -0.019675,
+      "year": 2021
+    },
+    {
+      "all_etf_equal_weight_10bps": 0.02043,
+      "eligible_symbol_count": 38,
+      "entry_date": "2022-12-30",
+      "exit_date": "2023-01-09",
+      "mean_loser_pressure_oct1_to_dec20": -0.109448,
+      "primary_return_10bps": 0.023116,
+      "primary_return_pre_cost": 0.024116,
+      "selected_symbols": [
+        "PBW",
+        "ARKK",
+        "XLY",
+        "SKYY",
+        "KRE"
+      ],
+      "signal_date": "2022-12-20",
+      "spy_10bps": 0.013199,
+      "year": 2022
+    },
+    {
+      "all_etf_equal_weight_10bps": 0.011256,
+      "eligible_symbol_count": 38,
+      "entry_date": "2024-12-31",
+      "exit_date": "2025-01-08",
+      "mean_loser_pressure_oct1_to_dec20": -0.171504,
+      "primary_return_10bps": 0.01703,
+      "primary_return_pre_cost": 0.01803,
+      "selected_symbols": [
+        "TAN",
+        "ICLN",
+        "ITB",
+        "XHB",
+        "XME"
+      ],
+      "signal_date": "2024-12-20",
+      "spy_10bps": 0.004818,
+      "year": 2024
+    },
+    {
+      "all_etf_equal_weight_10bps": 0.030815,
+      "eligible_symbol_count": 38,
+      "entry_date": "2025-12-31",
+      "exit_date": "2026-01-08",
+      "mean_loser_pressure_oct1_to_dec20": -0.499384,
+      "primary_return_10bps": 0.019687,
+      "primary_return_pre_cost": 0.020687,
+      "selected_symbols": [
+        "XLU",
+        "XLE",
+        "XLY",
+        "XLK",
+        "XLB"
+      ],
+      "signal_date": "2025-12-19",
+      "spy_10bps": 0.01013,
+      "year": 2025
+    }
+  ],
+  "hypothesis": "Liquid sector/industry/theme ETFs with large Oct-1 to Dec-20 drawdowns rebound from the last December close through the first five January trading days as tax-loss selling exhausts and January reinvestment/re-risking begins.",
+  "issue_id": "AR-163",
+  "metrics": {
+    "all_etf_equal_weight_10bps": {
+      "best_event_return": 0.049977,
+      "event_count": 7,
+      "event_sharpe": 0.904586,
+      "max_drawdown_compounded_events": -0.021521,
+      "mean_event_return": 0.019849,
+      "median_event_return": 0.02043,
+      "p25_event_return": 0.015364,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.145888,
+      "worst_event_return": -0.021521
+    },
+    "etf_short_term_reversal_control_10bps": {
+      "best_event_return": 0.089258,
+      "event_count": 7,
+      "event_sharpe": 0.441741,
+      "max_drawdown_compounded_events": -0.07371,
+      "mean_event_return": 0.021976,
+      "median_event_return": 0.020711,
+      "p25_event_return": 0.020182,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.155885,
+      "worst_event_return": -0.07371
+    },
+    "etf_tsmom_control_10bps": {
+      "best_event_return": 0.040205,
+      "event_count": 6,
+      "event_sharpe": 0.716161,
+      "max_drawdown_compounded_events": -0.023069,
+      "mean_event_return": 0.016413,
+      "median_event_return": 0.018116,
+      "p25_event_return": 0.010069,
+      "positive_event_rate": 0.833333,
+      "total_compounded_return": 0.101196,
+      "worst_event_return": -0.023069
+    },
+    "january_no_loser_baseline_10bps": {
+      "best_event_return": 0.040516,
+      "event_count": 6,
+      "event_sharpe": 0.54924,
+      "max_drawdown_compounded_events": -0.030887,
+      "mean_event_return": 0.013806,
+      "median_event_return": 0.016037,
+      "p25_event_return": 0.00917,
+      "positive_event_rate": 0.833333,
+      "total_compounded_return": 0.084059,
+      "worst_event_return": -0.030887
+    },
+    "no_december_drawdown_conditioning_10bps": {
+      "best_event_return": 0.067521,
+      "event_count": 5,
+      "event_sharpe": 0.724911,
+      "max_drawdown_compounded_events": -0.004149,
+      "mean_event_return": 0.020492,
+      "median_event_return": 0.010435,
+      "p25_event_return": 0.004319,
+      "positive_event_rate": 0.8,
+      "total_compounded_return": 0.105076,
+      "worst_event_return": -0.004149
+    },
+    "primary_10bps": {
+      "best_event_return": 0.107478,
+      "event_count": 7,
+      "event_sharpe": 0.898481,
+      "max_drawdown_compounded_events": -0.004877,
+      "mean_event_return": 0.034904,
+      "median_event_return": 0.019687,
+      "p25_event_return": 0.015561,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.266206,
+      "worst_event_return": -0.004877
+    },
+    "primary_20bps": {
+      "best_event_return": 0.106478,
+      "event_count": 7,
+      "event_sharpe": 0.872739,
+      "max_drawdown_compounded_events": -0.005877,
+      "mean_event_return": 0.033904,
+      "median_event_return": 0.018687,
+      "p25_event_return": 0.014561,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.257657,
+      "worst_event_return": -0.005877
+    },
+    "primary_5bps": {
+      "best_event_return": 0.107978,
+      "event_count": 7,
+      "event_sharpe": 0.911352,
+      "max_drawdown_compounded_events": -0.004377,
+      "mean_event_return": 0.035404,
+      "median_event_return": 0.020187,
+      "p25_event_return": 0.016061,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.2705,
+      "worst_event_return": -0.004377
+    },
+    "primary_pre_cost": {
+      "best_event_return": 0.108478,
+      "event_count": 7,
+      "event_sharpe": 0.924223,
+      "max_drawdown_compounded_events": -0.003877,
+      "mean_event_return": 0.035904,
+      "median_event_return": 0.020687,
+      "p25_event_return": 0.016561,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.274806,
+      "worst_event_return": -0.003877
+    },
+    "randomized_loser_labels_year_mean_10bps": {
+      "best_event_return": 0.049713,
+      "event_count": 7,
+      "event_sharpe": 0.92417,
+      "max_drawdown_compounded_events": -0.020731,
+      "mean_event_return": 0.020045,
+      "median_event_return": 0.020871,
+      "p25_event_return": 0.015423,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.147467,
+      "worst_event_return": -0.020731
+    },
+    "shifted_february_window_10bps": {
+      "best_event_return": 0.031956,
+      "event_count": 5,
+      "event_sharpe": -0.154335,
+      "max_drawdown_compounded_events": -0.030845,
+      "mean_event_return": -0.00375,
+      "median_event_return": -0.012759,
+      "p25_event_return": -0.015207,
+      "positive_event_rate": 0.4,
+      "total_compounded_return": -0.019771,
+      "worst_event_return": -0.030845
+    },
+    "shifted_november_window_10bps": {
+      "best_event_return": 0.024288,
+      "event_count": 7,
+      "event_sharpe": -0.664854,
+      "max_drawdown_compounded_events": -0.261155,
+      "mean_event_return": -0.037041,
+      "median_event_return": -0.031155,
+      "p25_event_return": -0.060241,
+      "positive_event_rate": 0.428571,
+      "total_compounded_return": -0.240094,
+      "worst_event_return": -0.139166
+    },
+    "spy_10bps": {
+      "best_event_return": 0.025152,
+      "event_count": 7,
+      "event_sharpe": 0.669955,
+      "max_drawdown_compounded_events": -0.019675,
+      "mean_event_return": 0.010165,
+      "median_event_return": 0.012422,
+      "p25_event_return": 0.007474,
+      "positive_event_rate": 0.857143,
+      "total_compounded_return": 0.07263,
+      "worst_event_return": -0.019675
+    }
+  },
+  "model_name": "december-loser-etf-rebound-event-study-v1",
+  "model_path": "models/december-loser-etf-rebound-event-study-v1/model.py",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "orthogonality": {
+    "reason": "Sparse annual/event return stream failed hard baseline/placebo/control gates; compact accepted/watchlist library streams are not consistently reconstructable enough to change the rejection decision.",
+    "status": "deferred_due_rejection"
+  },
+  "protocol": {
+    "controls": [
+      "January/no-loser baseline",
+      "all-ETF equal-weight same window",
+      "SPY same window",
+      "AR-006/AR-021 turn-of-month/month-end proxy concept via same calendar window equal-weight/SPY controls",
+      "ETF TSMOM same window",
+      "ETF short-term reversal same window",
+      "randomized loser labels within year",
+      "shifted Nov and Feb labels",
+      "no-December-drawdown conditioning"
+    ],
+    "cost_sensitivity_bps": [
+      5,
+      10,
+      20
+    ],
+    "costs_bps_primary_total_event_haircut": 10.0,
+    "minimum_events_required": 8,
+    "randomized_placebo_draws_per_year": 500,
+    "usable_annual_events": 7
+  },
+  "raw_daily_paths_retained": false,
+  "reproducibility": {
+    "command_provenance": "Transient helper script fetched real daily bars through qfa/Alpaca interfaces using configured paper-data access with credential values redacted; no CSV input, daemon, or order path was used.",
+    "helper_script_retained": false,
+    "qfa_repo_modified": false
+  },
+  "run_id": "20260630T154925Z-ar163-realdata-eventstudy",
+  "signal_definition": "On the last trading day on or before Dec 20, rank eligible ETFs by close-to-close return from the first trading day on/after Oct 1 through that signal date; buy the five most negative-pressure ETFs at the last December close and hold through the close of the fifth January trading day.",
+  "warnings": [
+    "Event count is sparse by design.",
+    "Current ETF pool creates survivorship/product availability limitations.",
+    "Daily bars and trailing returns cannot verify actual tax-loss flows; this is only a timestamp-safe price-event falsification."
+  ]
+}
