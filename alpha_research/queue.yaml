@@ -1327,17 +1327,16 @@ issues:
 - id: AR-173
   title: Official BLS JOLTS labor-market tightness surprise ETF allocator source/vintage scout
   model_name: bls-jolts-labor-tightness-etf-source-scout-v1
-  status: queued
-  priority: preflight_queue_source_vintage_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_labor_tightness_macro_release
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-173.md
-  last_checked_at: '2026-06-30T22:14:43Z'
-  tried_count: 0
-active_batch:
-- AR-173
+  last_checked_at: '2026-06-30T22:49:39Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
 - AR-171
-updated_at: '2026-06-30T22:14:43Z'
+updated_at: '2026-06-30T22:49:39Z'
 target_tried_ideas: 100
-tried_ideas_count: 156
+tried_ideas_count: 157

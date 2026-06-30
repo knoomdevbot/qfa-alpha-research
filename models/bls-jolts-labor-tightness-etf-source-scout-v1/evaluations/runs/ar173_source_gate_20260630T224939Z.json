@@ -1,0 +1,26 @@
+{
+  "run_id": "ar173_source_gate_20260630T224939Z",
+  "issue_id": "AR-173",
+  "model_name": "bls-jolts-labor-tightness-etf-source-scout-v1",
+  "checked_at": "2026-06-30T22:49:39Z",
+  "decision": "rejected_source_gate",
+  "source_gate_passed": false,
+  "performance_gate_passed": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "market_data_evaluation_run": false,
+  "source_counts": {
+    "official_bls_release_pages_attempted": 3,
+    "official_bls_release_pages_http_403": 3,
+    "bls_current_api_series_checked": 4,
+    "bls_current_api_series_succeeded": 4,
+    "alfred_series_checked": 4,
+    "alfred_series_reachable": 4,
+    "alfred_rows_per_series": 306,
+    "alfred_verified_historical_vintage_columns": 0
+  },
+  "null_metrics_reason": "Source/vintage gate failed before market-data evaluation."
+}

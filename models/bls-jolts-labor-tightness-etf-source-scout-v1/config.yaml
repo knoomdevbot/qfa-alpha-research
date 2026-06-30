@@ -1,0 +1,31 @@
+model_name: bls-jolts-labor-tightness-etf-source-scout-v1
+issue_id: AR-173
+status: rejected_source_gate
+asset_bucket: etf
+family: public_labor_tightness_macro_release
+universe_candidates:
+  - XLI
+  - XLY
+  - XLP
+  - XLV
+  - XLU
+  - XLF
+  - XLK
+  - SPY
+  - IWM
+  - QQQ
+  - TLT
+  - IEF
+  - HYG
+  - LQD
+  - GLD
+  - DBC
+selected_universe: []
+source_gate:
+  required_release_dates_times: true
+  required_historical_vintages: true
+  passed: false
+  rejection_reason: Official BLS JOLTS calendar/release pages returned 403 from this environment; BLS API and unauthenticated ALFRED graph downloads exposed current/revised values, not a verified historical vintage panel.
+trading:
+  enabled: false
+  reason: no timestamp-safe signal source

@@ -1,0 +1,50 @@
+{
+  "run_id": "ar173_source_gate_20260630T224939Z",
+  "issue_id": "AR-173",
+  "model_name": "bls-jolts-labor-tightness-etf-source-scout-v1",
+  "checked_at": "2026-06-30T22:49:39Z",
+  "decision": "rejected_source_gate",
+  "source_gate_passed": false,
+  "performance_gate_passed": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "market_data_evaluation_run": false,
+  "selected_universe": [],
+  "candidate_universe": ["XLI", "XLY", "XLP", "XLV", "XLU", "XLF", "XLK", "SPY", "IWM", "QQQ", "TLT", "IEF", "HYG", "LQD", "GLD", "DBC"],
+  "source_gate": {
+    "required_official_release_dates_times": true,
+    "required_historical_vintage_values": true,
+    "official_bls_release_pages_attempted": 3,
+    "official_bls_release_pages_http_403": 3,
+    "bls_current_api_series_checked": 4,
+    "bls_current_api_series_succeeded": 4,
+    "alfred_series_checked": 4,
+    "alfred_series_reachable": 4,
+    "alfred_rows_per_series": 306,
+    "alfred_columns_per_download": 2,
+    "alfred_verified_historical_vintage_columns": 0,
+    "fred_vintage_api_without_key_status": 400,
+    "rejection_reason": "Could not prove both official historical JOLTS release timestamps and point-in-time JOLTS vintages. BLS pages were blocked from this environment; accessible BLS API and ALFRED CSV downloads exposed current/revised values or a single current vintage only."
+  },
+  "series_checked": {
+    "job_openings": {"bls_series_id": "JTS000000000000000JOL", "alfred_series_id": "JTSJOL", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSJOL_20260630"]},
+    "hires": {"bls_series_id": "JTS000000000000000HIL", "alfred_series_id": "JTSHIL", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSHIL_20260630"]},
+    "quits": {"bls_series_id": "JTS000000000000000QUR", "alfred_series_id": "JTSQUR", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSQUR_20260630"]},
+    "layoffs_discharges": {"bls_series_id": "JTS000000000000000LDL", "alfred_series_id": "JTSLDL", "alfred_rows": 306, "alfred_header": ["observation_date", "JTSLDL_20260630"]}
+  },
+  "metrics": {
+    "median_sharpe_10bps": null,
+    "p25_sharpe_10bps": null,
+    "positive_window_rate_10bps": null,
+    "max_correlation_to_existing": null,
+    "turnover": null,
+    "max_drawdown": null
+  },
+  "warnings": [
+    "No performance claims are made because the source/vintage gate failed.",
+    "Do not use BLS current API values or single-current-vintage ALFRED graph downloads as historical point-in-time signals."
+  ]
+}

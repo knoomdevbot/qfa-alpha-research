@@ -1,0 +1,12 @@
+model_name: bls-jolts-labor-tightness-etf-source-scout-v1
+issue_id: AR-173
+title: Official BLS JOLTS labor-market tightness surprise ETF allocator source/vintage scout
+status: rejected
+priority: completed_source_gate_rejection
+created_at: '2026-06-30T22:49:39Z'
+updated_at: '2026-06-30T22:49:39Z'
+decision: rejected_source_gate
+summary: >-
+  Source/vintage scout found accessible current BLS/ALFRED JOLTS levels but did
+  not verify timestamp-safe release dates/times plus historical multi-vintage
+  values. No market-data performance was run.
