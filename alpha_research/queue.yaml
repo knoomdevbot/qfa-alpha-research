@@ -1141,9 +1141,17 @@ issues:
   priority: completed_source_gate
   family: public_filing_equity_offering_event_drift
   issue_path: alpha_research/issues/AR-153.md
-active_batch: []
+- id: AR-154
+  title: SEC Form 144 proposed insider/affiliate sale pressure feasibility scout
+  model_name: sec-form144-affiliate-sale-pressure-scout-v1
+  status: queued
+  priority: preflight_queue_feasibility_first
+  family: public_filing_insider_affiliate_sale_pressure
+  issue_path: alpha_research/issues/AR-154.md
+active_batch:
+- AR-154
 last_realdata_batch:
 - AR-151
-updated_at: '2026-06-30T05:00:44Z'
+updated_at: '2026-06-30T05:08:13Z'
 target_tried_ideas: 100
 tried_ideas_count: 139
