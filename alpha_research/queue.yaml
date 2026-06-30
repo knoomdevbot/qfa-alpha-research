@@ -1156,9 +1156,28 @@ issues:
   family: public_brokerage_leverage_cycle_allocation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-155.md
-active_batch: []
+- id: AR-156
+  title: ETF TSMOM promotion/pruning expanded-universe validator
+  model_name: etf-tsmom-expanded-universe-promotion-validator-v1
+  status: rejected
+  priority: completed_realdata_validator
+  family: time_series_momentum_validation
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-156.md
+  parent: AR-003/AR-015
+- id: AR-157
+  title: AR-063 macro-drawdown ETF allocator promotion/pruning validator
+  model_name: macro-drawdown-etf-allocator-promotion-validator-v1
+  status: queued
+  priority: preflight_queue_promotion_gate
+  family: macro_regime_allocation_validation
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-157.md
+  parent: AR-063/AR-072
+active_batch:
+- AR-157
 last_realdata_batch:
-- AR-155
-updated_at: '2026-06-30T06:46:51Z'
+- AR-156
+updated_at: '2026-06-30T07:36:00Z'
 target_tried_ideas: 100
-tried_ideas_count: 141
+tried_ideas_count: 142

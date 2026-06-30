@@ -1,0 +1,16 @@
+model_name: etf-tsmom-expanded-universe-promotion-validator-v1
+issue_id: AR-156
+universe: ["SPY", "QQQ", "IWM", "DIA", "MDY", "RSP", "VTI", "VNQ", "VEA", "VWO", "EFA", "EEM", "EWJ", "EWG", "EWU", "EWZ", "FXI", "XLB", "XLE", "XLF", "XLI", "XLK", "XLP", "XLU", "XLV", "XLY", "XLRE", "TLT", "IEF", "SHY", "SHV", "AGG", "LQD", "HYG", "TIP", "MBB", "GLD", "SLV", "USO", "DBC", "DBA", "UUP", "FXE", "FXY", "VIXY"]
+lookback_days: 126
+volatility_window_days: 20
+rebalance: weekly_monday
+max_abs_weight: 0.15
+gross_exposure: 1.0
+primary_turnover_cost_bps: 5
+cost_sensitivity_bps: [0, 5, 10, 20]
+data_source: qfa_alpaca_daily_configured_paper_access
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
