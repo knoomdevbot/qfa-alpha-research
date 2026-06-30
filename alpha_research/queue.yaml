@@ -1277,17 +1277,16 @@ issues:
 - id: AR-168
   title: Vol-ETP term-state risk allocator fast-falsification validator
   model_name: vol-etp-term-state-risk-allocator-validator-v1
-  status: queued
-  priority: preflight_queue
+  status: rejected
+  priority: completed_realdata
   family: volatility_term_state_proxy_allocation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-168.md
-  last_checked_at: '2026-06-30T17:21:07Z'
-  tried_count: 0
-active_batch:
-- AR-168
+  last_checked_at: '2026-06-30T18:50:34Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
-- AR-167
-updated_at: '2026-06-30T18:11:16Z'
+- AR-168
+updated_at: '2026-06-30T18:50:34Z'
 target_tried_ideas: 100
 tried_ideas_count: 153

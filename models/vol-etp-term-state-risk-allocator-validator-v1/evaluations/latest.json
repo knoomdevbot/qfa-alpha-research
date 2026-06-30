@@ -1,0 +1,252 @@
+{
+  "acceptance_thresholds": {
+    "beats_controls": false,
+    "cost_20bps_not_collapsed": true,
+    "max_corr_le_0_60": false,
+    "median_random_window_sharpe_gt_0": true,
+    "p25_non_hostile": false,
+    "positive_window_rate_ge_55pct": true
+  },
+  "completed_at": "2026-06-30T18:50:34.155967+00:00",
+  "control_dominance": {
+    "best_control": "spy",
+    "best_control_sharpe": 0.7053999736254115,
+    "full_model_beats_all_controls_by_sharpe": false
+  },
+  "controls_10bps": {
+    "equal_weight": {
+      "ann_return": 0.06081738672667414,
+      "ann_vol": 0.11570289956726225,
+      "avg_daily_turnover": 0.0,
+      "corr_to_model": 0.5156477008960514,
+      "max_drawdown": -0.22670978726476687,
+      "sharpe": 0.5684534564854086,
+      "total_return": 0.6440324197804415
+    },
+    "etf_tsmom": {
+      "ann_return": 0.03188876710404931,
+      "ann_vol": 0.10901417844586013,
+      "avg_daily_turnover": 0.05100311250169874,
+      "corr_to_model": 0.5278603519556773,
+      "max_drawdown": -0.15676861046373103,
+      "sharpe": 0.34274365072852336,
+      "total_return": 0.3025594267259635
+    },
+    "spy": {
+      "ann_return": 0.12290922186196185,
+      "ann_vol": 0.19003797069797007,
+      "avg_daily_turnover": 0.0,
+      "corr_to_model": 0.3539576074337174,
+      "max_drawdown": -0.34180657365807565,
+      "sharpe": 0.7053999736254115,
+      "total_return": 1.6542015903718048
+    },
+    "tlt": {
+      "ann_return": -0.04035629306493904,
+      "ann_vol": 0.15494579602853176,
+      "avg_daily_turnover": 0.0,
+      "corr_to_model": 0.3441358972450223,
+      "max_drawdown": -0.5175730022731255,
+      "sharpe": -0.18843484770040242,
+      "total_return": -0.29310484196912556
+    },
+    "vixy_tlt_stress": {
+      "ann_return": 0.023861880246609735,
+      "ann_vol": 0.13249930363659979,
+      "avg_daily_turnover": 0.08718190386427899,
+      "corr_to_model": 0.8296147068389569,
+      "max_drawdown": -0.4589769409126402,
+      "sharpe": 0.24430253734214202,
+      "total_return": 0.2196602528971907
+    }
+  },
+  "correlations_10bps": {
+    "equal_weight": 0.5156477008960514,
+    "etf_tsmom": 0.5278603519556773,
+    "spy": 0.35395760743371735,
+    "tlt": 0.3441358972450223,
+    "vixy_tlt_stress": 0.8296147068389569
+  },
+  "data_source": {
+    "common_history_days": 2122,
+    "end": "2026-06-29",
+    "provider": "Alpaca real daily OHLCV via qfa AlpacaGateway",
+    "raw_bar_counts": {
+      "DBC": 2636,
+      "EEM": 2636,
+      "EFA": 2636,
+      "GLD": 2636,
+      "HYG": 2636,
+      "IEF": 2636,
+      "IWM": 2636,
+      "LQD": 2636,
+      "QQQ": 2636,
+      "SHY": 2636,
+      "SPY": 2636,
+      "SVXY": 2636,
+      "TLT": 2636,
+      "UUP": 2636,
+      "VIXY": 2636,
+      "VXX": 2122,
+      "VXZ": 2122,
+      "XLE": 2636,
+      "XLF": 2636,
+      "XLK": 2636
+    },
+    "start": "2018-01-18",
+    "symbols_excluded_or_insufficient": [],
+    "symbols_requested": [
+      "VIXY",
+      "VXX",
+      "VXZ",
+      "SVXY",
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "EEM",
+      "XLF",
+      "XLE",
+      "XLK",
+      "HYG",
+      "LQD",
+      "DBC",
+      "TLT",
+      "IEF",
+      "GLD",
+      "UUP",
+      "SHY"
+    ],
+    "symbols_used": [
+      "VIXY",
+      "VXX",
+      "VXZ",
+      "SVXY",
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "EEM",
+      "XLF",
+      "XLE",
+      "XLK",
+      "HYG",
+      "LQD",
+      "DBC",
+      "TLT",
+      "IEF",
+      "GLD",
+      "UUP",
+      "SHY"
+    ]
+  },
+  "decision": "rejected",
+  "issue": "AR-168",
+  "limitations": [
+    "Volatility ETP common history is short and survivorship/issuer-product-definition biased.",
+    "ETP proxies are not true VIX futures curve, implied volatility, or variance-risk-premium data.",
+    "Orthogonality to prior alpha library is approximated with reconstructable controls because durable prior daily return paths are not retained."
+  ],
+  "max_relevant_abs_correlation": 0.8296147068389569,
+  "metrics_by_one_way_cost_bps": {
+    "10": {
+      "active_state_rate": 0.9547596606974552,
+      "ann_return": 0.014388932487211958,
+      "ann_vol": 0.11514473909402426,
+      "annualized_turnover": 21.49481621112158,
+      "avg_daily_turnover": 0.08529688972667294,
+      "max_drawdown": -0.33015852637174814,
+      "risk_on_rate": 0.5546654099905749,
+      "sharpe": 0.18197781079218675,
+      "total_return": 0.1278357268137642
+    },
+    "20": {
+      "active_state_rate": 0.9547596606974552,
+      "ann_return": -0.007231346843377007,
+      "ann_vol": 0.1155657335304363,
+      "annualized_turnover": 21.49481621112158,
+      "avg_daily_turnover": 0.08529688972667294,
+      "max_drawdown": -0.37309213090113436,
+      "risk_on_rate": 0.5546654099905749,
+      "sharpe": -0.004681566499217037,
+      "total_return": -0.059283788261792036
+    },
+    "5": {
+      "active_state_rate": 0.9547596606974552,
+      "ann_return": 0.025358462906488466,
+      "ann_vol": 0.11506754371290341,
+      "annualized_turnover": 21.49481621112158,
+      "avg_daily_turnover": 0.08529688972667294,
+      "max_drawdown": -0.3076358655364032,
+      "risk_on_rate": 0.5546654099905749,
+      "sharpe": 0.27550075918213884,
+      "total_return": 0.23475407996537645
+    }
+  },
+  "model_name": "vol-etp-term-state-risk-allocator-validator-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "predeclared_rule": {
+    "defensive_sleeve": [
+      "TLT",
+      "IEF",
+      "GLD",
+      "UUP",
+      "SHY"
+    ],
+    "features": "20-day changes in VIXY/VXZ ratio, VIXY, VXZ, VXX, and SVXY closes",
+    "rebalance": "weekly Friday close, weights shifted one trading day",
+    "risk_sleeve": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "EEM",
+      "XLF",
+      "XLE",
+      "XLK",
+      "HYG",
+      "LQD",
+      "DBC"
+    ],
+    "selection_note": "Universe selected by public liquid ETF category and coverage, not by realized performance."
+  },
+  "random_windows_10bps": {
+    "median_sharpe": 0.22502632119775742,
+    "n_windows": 60,
+    "p25_sharpe": -0.42418606855944907,
+    "positive_window_rate": 0.6166666666666667,
+    "worst_sharpe": -1.7745228284330592
+  },
+  "raw_daily_paths_retained": false,
+  "stress_windows_10bps": {
+    "covid_crash_2020": {
+      "ann_return": 0.28469375542668285,
+      "ann_vol": 0.20138535285947787,
+      "max_drawdown": -0.08276591141073808,
+      "sharpe": 1.3432900038969606,
+      "total_return": 0.05200782292543926
+    },
+    "inflation_bear_2022": {
+      "ann_return": -0.2614208372854854,
+      "ann_vol": 0.14165280770016644,
+      "max_drawdown": -0.22251982861974673,
+      "sharpe": -2.067253485819459,
+      "total_return": -0.2118703199558185
+    },
+    "vol_spike_2024_2025": {
+      "ann_return": -0.020602174142491547,
+      "ann_vol": 0.09065049434275498,
+      "max_drawdown": -0.09782263013379944,
+      "sharpe": -0.18433901099117228,
+      "total_return": -0.017117001740183824
+    }
+  },
+  "warnings": [
+    "max relevant correlation exceeds 0.60",
+    "model does not beat all simple controls",
+    "p25 random-window Sharpe is negative/hostile"
+  ]
+}

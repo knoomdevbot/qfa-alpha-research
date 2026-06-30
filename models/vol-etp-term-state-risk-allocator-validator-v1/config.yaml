@@ -1,0 +1,48 @@
+issue: AR-168
+model_name: vol-etp-term-state-risk-allocator-validator-v1
+status: rejected
+family: volatility_term_state_proxy_allocation
+asset_bucket: etf
+type: validator
+data_source: Alpaca real daily OHLCV via qfa AlpacaGateway
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+rebalance: weekly Friday close in evaluation, target weights shifted one trading day
+feature_window_days: 20
+volatility_etp_inputs:
+  - VIXY
+  - VXX
+  - VXZ
+  - SVXY
+risk_sleeve:
+  - SPY
+  - QQQ
+  - IWM
+  - EFA
+  - EEM
+  - XLF
+  - XLE
+  - XLK
+  - HYG
+  - LQD
+  - DBC
+defensive_sleeve:
+  TLT: 0.35
+  IEF: 0.25
+  GLD: 0.20
+  UUP: 0.10
+  SHY: 0.10
+cost_bps_evaluated:
+  - 5
+  - 10
+  - 20
+acceptance_gates:
+  median_random_window_sharpe_gt_0: true
+  p25_non_hostile: false
+  positive_window_rate_ge_55pct: true
+  cost_20bps_not_collapsed: true
+  max_corr_le_0_60: false
+  beats_controls: false
