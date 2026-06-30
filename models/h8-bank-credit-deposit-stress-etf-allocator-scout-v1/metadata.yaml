@@ -1,21 +1,13 @@
+alpha_id: AR-160
 model_name: h8-bank-credit-deposit-stress-etf-allocator-scout-v1
-issue_id: AR-160
-created_at_utc: '2026-06-30T10:47:41Z'
-status: source_gate_passed_needs_realdata_evaluation
-decision: keep_queued_after_source_gate_pass
-enabled: false
-weight: 0.0
-children_spawned: false
-performance_evaluation_run: false
-source_observations:
-  - Federal Reserve H.8 current/release-date pages responded; release schedule text states weekly release each Friday generally at 4:15 p.m., or Thursday generally at 4:15 p.m. when Friday is a federal holiday.
-  - Official releaseDates.json exposed dated H.8 archive dates back across 31 year buckets; sampled 20260626, 20260618, 20210108, and 20180316 archive pages included Bank credit, Deposits, and Borrowings rows with Last Update dates matching release dates.
-  - ALFRED pages for TOTBKCR and DPSACBW027SBOG identified archival, real-time revision pages for weekly H.8 bank credit and deposits from 1973-01-03 to 2026-06-17.
-  - ALFRED page for H8B3094NCBCMG identified archival, real-time revision coverage for monthly H.8 borrowings from Feb 1973 to May 2026; weekly borrowings can be guarded by dated official H.8 archives if a later evaluator parses archive rows.
-required_next_step: bounded source/vintage gate passed; run durable qfa/Alpaca real-market-data random-period evaluation before any completion, rejection, watchlist, nonzero weight, or child issue decision.
-provenance_flags:
-  no_csv_used: true
-  no_data_csv_argument_used: true
-  no_daemon: true
-  no_orders: true
-  raw_daily_paths_retained: false
+status: rejected
+decision: rejected
+last_evaluation_run_id: ar160_qfa_alpaca_real_20260630T122402Z
+last_evaluation_utc: 2026-06-30T12:26:00Z
+source_gate_passed: true
+realdata_evaluation_completed: true
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false

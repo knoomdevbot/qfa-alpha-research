@@ -1,18 +1,15 @@
-# H.8 bank credit/deposit stress ETF allocator scout (AR-160)
+# H.8 bank credit/deposit stress ETF allocator scout v1
 
-This is a disabled scaffold created by bounded recovery. The compact source/vintage gate passed, but no qfa/Alpaca real-market-data performance evaluation was run. `generate_signals` therefore returns `{}` and the configured model weight is zero.
+AR-160 evaluated the hypothesis that point-in-time Federal Reserve H.8 bank credit, deposit, and borrowing impulses forecast ETF rotation after the official public release timestamp.
 
-## Source/vintage observations
+## Decision
 
-- Federal Reserve H.8 release pages state the public lag: data are released each Friday generally at 4:15 p.m. ET, or Thursday generally at 4:15 p.m. ET when Friday is a federal holiday.
-- Federal Reserve `releaseDates.json` exposes dated H.8 archive pages; sampled 20260626, 20260618, 20210108, and 20180316 archives contained the required Bank credit, Deposits, and Borrowings rows.
-- ALFRED pages confirmed archival real-time revision availability for weekly H.8 bank credit (`TOTBKCR`) and weekly H.8 deposits (`DPSACBW027SBOG`).
-- ALFRED confirmed archival real-time revision availability for monthly H.8 borrowings (`H8B3094NCBCMG`); the weekly borrowings row must be parsed from dated official H.8 archive pages if included in the real-data evaluator.
+**rejected** after qfa/Alpaca real daily ETF evaluation (`ar160_qfa_alpaca_real_20260630T122402Z`). The model remains disabled (`generate_signals` returns zero weights).
 
-## Status
-
-AR-160 remains queued with priority `source_gate_passed_needs_realdata_evaluation`. Before any completion/rejection/watchlist decision or nonzero weight, a durable qfa/Alpaca real daily market-data random-period evaluation with controls is required.
+See `evaluations/latest.json` and `evaluations/latest.md` for metrics, controls, random windows, and required provenance flags.
 
 ## Provenance
 
-No CSV market data, daemon, orders, raw daily bar paths, equity paths, databases, credentials, or environment variable snippets are included in this artifact set.
+- Macro source: official Federal Reserve H.8 dated release pages, with first tradable ETF session after the 4:15 p.m. ET release timestamp.
+- Market source: qfa `AlpacaGateway.get_bars` real daily bars for the selected ETF universe.
+- No CSV, no `--data-csv`, no daemon, no orders; raw daily paths were not retained.

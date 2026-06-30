@@ -1195,8 +1195,8 @@ issues:
 - id: AR-160
   title: Federal Reserve H.8 bank credit/deposit stress impulse ETF allocator scout
   model_name: h8-bank-credit-deposit-stress-etf-allocator-scout-v1
-  status: queued
-  priority: source_gate_passed_needs_realdata_evaluation
+  status: rejected
+  priority: completed_realdata_rejection
   family: public_bank_balance_sheet_stress_release
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-160.md
@@ -1209,10 +1209,9 @@ issues:
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-161.md
 active_batch:
-- AR-160
 - AR-161
 last_realdata_batch:
-- AR-157
-updated_at: '2026-06-30T10:47:41Z'
+- AR-160
+updated_at: '2026-06-30T12:28:00Z'
 target_tried_ideas: 100
-tried_ideas_count: 145
+tried_ideas_count: 146

@@ -1,20 +1,13 @@
-"""H.8 bank credit/deposit stress ETF allocator scout scaffold.
+"""AR-160 H.8 bank credit/deposit stress ETF allocator scout.
 
-Source/vintage feasibility passed in bounded recovery, but no qfa/Alpaca
-real-market-data performance evaluation was run. This scaffold is deliberately
-disabled and emits no target weights until a durable real-data evaluator is
-completed.
+Real qfa/Alpaca evaluation completed; artifact decision is rejection/watchlist in
+evaluations/latest.json. The model remains disabled and emits zero weights unless
+manually re-enabled by a future approved refinement.
 """
 
 MODEL_NAME = "h8-bank-credit-deposit-stress-etf-allocator-scout-v1"
-MODEL_STATUS = "source_gate_passed_needs_realdata_evaluation"
-
+MODEL_STATUS = "disabled_after_realdata_evaluation"
 
 def generate_signals(context):
-    """Return zero target weights for all supported context shapes.
-
-    The context is intentionally unused because AR-160 has only passed the
-    timestamp/source gate; alpha efficacy has not been validated.
-    """
-
+    """qfa-compatible disabled signal: return no target weights."""
     return {}
