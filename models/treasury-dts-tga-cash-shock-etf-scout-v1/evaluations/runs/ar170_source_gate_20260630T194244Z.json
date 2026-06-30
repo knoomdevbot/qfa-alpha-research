@@ -1,0 +1,113 @@
+{
+  "issue": "AR-170",
+  "model_name": "treasury-dts-tga-cash-shock-etf-scout-v1",
+  "completed_at": "2026-06-30T19:42:44Z",
+  "decision": "rejected",
+  "status": "completed_source_vintage_gate_rejection",
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "source_gate": {
+    "passed": false,
+    "reachable": true,
+    "line_schema_stable_enough_for_parser": true,
+    "publication_vintage_convention_proven": false,
+    "rejection_reason": "Official FiscalData DTS API rows expose record_date and fiscal/calendar dimensions, but not a per-record publication timestamp, immutable vintage id, or official release-time field. Because AR-170 required explicit resolution of whether record_date is statement date, publication date, or both before any performance conclusion, the scout stops at the source/vintage gate rather than assuming a lag convention.",
+    "official_endpoints_checked": {
+      "operating_cash_balance": {
+        "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance",
+        "http_status": 200,
+        "latest_record_date_seen": "2026-06-26",
+        "required_fields_seen": [
+          "record_date",
+          "account_type",
+          "open_today_bal",
+          "close_today_bal",
+          "table_nbr",
+          "table_nm",
+          "sub_table_name",
+          "src_line_nbr"
+        ],
+        "stable_lines_checked": {
+          "Treasury General Account (TGA) Opening Balance": {
+            "src_line_nbr": "1",
+            "first_record_date": "2022-04-18",
+            "latest_record_date": "2026-06-26",
+            "total_count_reported": 1050
+          },
+          "Total TGA Deposits (Table II)": {
+            "src_line_nbr": "2",
+            "first_record_date": "2022-04-18",
+            "latest_record_date": "2026-06-26",
+            "total_count_reported": 1050
+          },
+          "Total TGA Withdrawals (Table II) (-)": {
+            "src_line_nbr": "3",
+            "first_record_date": "2022-04-18",
+            "latest_record_date": "2026-06-26",
+            "total_count_reported": 1050
+          },
+          "Treasury General Account (TGA) Closing Balance": {
+            "src_line_nbr": "4",
+            "first_record_date": "2022-04-18",
+            "latest_record_date": "2026-06-26",
+            "total_count_reported": 1050
+          }
+        }
+      },
+      "deposits_withdrawals_operating_cash": {
+        "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+        "http_status": 200,
+        "latest_record_date_seen": "2026-06-26",
+        "required_fields_seen": [
+          "record_date",
+          "account_type",
+          "transaction_type",
+          "transaction_catg",
+          "transaction_today_amt",
+          "transaction_mtd_amt",
+          "transaction_fytd_amt",
+          "table_nbr",
+          "table_nm",
+          "src_line_nbr"
+        ],
+        "coverage_checked": {
+          "TGA Deposits rows": {
+            "first_record_date": "2021-10-01",
+            "latest_record_date": "2026-06-26",
+            "total_count_reported": 88590
+          },
+          "TGA Withdrawals rows": {
+            "first_record_date": "2021-10-01",
+            "latest_record_date": "2026-06-26",
+            "total_count_reported": 119110
+          }
+        }
+      }
+    },
+    "sample_observations": [
+      "The API is official and reachable for table I operating cash balance and table II deposits/withdrawals.",
+      "TGA closing balance is available as account_type Treasury General Account (TGA) Closing Balance with src_line_nbr 4; current API stores the value in open_today_bal for that closing-balance row while close_today_bal is the string null.",
+      "Operating cash balance filtered rows returned coverage from 2022-04-18 through 2026-06-26 in this check; deposits/withdrawals detail rows returned coverage from 2021-10-01 through 2026-06-26.",
+      "No raw DTS or market-data paths were retained."
+    ]
+  },
+  "performance_evaluation": {
+    "run": false,
+    "metrics": null,
+    "reason_not_run": "Source/vintage gate failed before market-data evaluation; no qfa/Alpaca performance metrics were computed or invented."
+  },
+  "controls": {
+    "spy_equal_weight_tsmom_shifted_inverted_calendar_macro_controls": "not_run_source_gate_failed"
+  },
+  "model_behavior": {
+    "generate_signals": "zero weights for all requested symbols",
+    "tradable": false
+  },
+  "warnings": [
+    "Rejecting at source/vintage gate does not imply the DTS economic hypothesis is false; it means this source as accessed did not meet AR-170's vintage proof requirement.",
+    "A future source/parser project would need an official publication timestamp or immutable release archive before any DTS/TGA allocation backtest should be scored."
+  ]
+}

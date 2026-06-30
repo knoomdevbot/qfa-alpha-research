@@ -1,0 +1,22 @@
+model_name: treasury-dts-tga-cash-shock-etf-scout-v1
+issue: AR-170
+title: Official Treasury DTS TGA cash-balance shock ETF allocator source/vintage scout
+created_at: '2026-06-30T19:42:44Z'
+decision: rejected
+status: completed_source_vintage_gate_rejection
+family: public_treasury_cash_balance_liquidity_shock
+asset_bucket: etf
+tradable: false
+source_gate_passed: false
+performance_evaluation_run: false
+reason: Official FiscalData DTS endpoints were reachable and schema/line names were inspectable, but the API did not provide a per-record publication timestamp or immutable vintage marker needed to prove non-lookahead use of record_date; zero-weight scaffold retained.
+artifacts:
+  latest_json: models/treasury-dts-tga-cash-shock-etf-scout-v1/evaluations/latest.json
+  latest_md: models/treasury-dts-tga-cash-shock-etf-scout-v1/evaluations/latest.md
+  immutable_run: models/treasury-dts-tga-cash-shock-etf-scout-v1/evaluations/runs/ar170_source_gate_20260630T194244Z.json
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

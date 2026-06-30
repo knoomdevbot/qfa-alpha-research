@@ -1,0 +1,22 @@
+model_name: treasury-dts-tga-cash-shock-etf-scout-v1
+issue: AR-170
+status: rejected_source_vintage_gate
+tradable: false
+source_gate:
+  official_source: Treasury FiscalData Daily Treasury Statement API
+  endpoints_checked:
+    operating_cash_balance: https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance
+    deposits_withdrawals_operating_cash: https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash
+  required_vintage_convention: explicit publication/vintage timestamp or other official per-record release-time proof
+  result: failed
+  reason: API rows expose record_date and fiscal/calendar fields but no per-record publication timestamp or immutable vintage identifier; record_date is insufficient for the required statement-date/publication-date proof.
+allocation:
+  enabled: false
+  symbols: [SPY, QQQ, IWM, EFA, EEM, XLF, XLE, XLK, TLT, IEF, SHY, HYG, LQD, GLD, DBC, UUP]
+  fallback: zero_weight
+execution_safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
