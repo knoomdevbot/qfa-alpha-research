@@ -1,0 +1,108 @@
+{
+  "issue_id": "AR-152",
+  "model_name": "sec-nport-holdings-change-pressure-scout-v1",
+  "run_id": "ar152_nport_source_gate_20260630T050044Z",
+  "created_at": "2026-06-30T05:00:44Z",
+  "decision": {
+    "status": "rejected",
+    "queue_status": "completed_source_gate_rejection",
+    "rationale": "SEC NPORT-P source reachability and XML holdings parsing were confirmed, including EDGAR filing timestamps and holdings-level CUSIPs/values. The scout did not produce a conservative timestamp-safe prior-holding change event table with reliable public ticker/CUSIP mapping to liquid U.S. common stocks/ETFs. Rejected at source/event-table gate; no performance evaluation was run."
+  },
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "data": {
+    "source": "SEC EDGAR quarterly full-index master files and public filing text/XML documents",
+    "endpoints": [
+      "https://www.sec.gov/Archives/edgar/full-index/YYYY/QTR#/master.idx",
+      "https://www.sec.gov/Archives/edgar/data/CIK/ACCESSION.txt"
+    ],
+    "endpoint_status": "ok",
+    "performance_market_data_source": null,
+    "raw_sec_documents_retained": false,
+    "raw_event_tables_retained": false,
+    "raw_bars_retained": false,
+    "raw_cache_retained": false
+  },
+  "bounded_probe": {
+    "quarters_checked": [
+      "2024Q4",
+      "2025Q1",
+      "2025Q2",
+      "2025Q3",
+      "2025Q4",
+      "2026Q1"
+    ],
+    "nport_p_filings_in_checked_quarters": 78079,
+    "sample_method": "first 80 NPORT-P filings from the concatenated checked-quarter EDGAR master-index order",
+    "sample_size": 80,
+    "downloads_attempted": 80,
+    "filings_with_acceptance_datetime": 80,
+    "filings_with_xml_document": 80,
+    "parsed_xml_filings": 80,
+    "parsed_holdings_rows": 21697,
+    "distinct_series_ids_in_sample": 80,
+    "distinct_registrant_ciks_in_sample": 13,
+    "distinct_cusips_in_sample": 7694,
+    "distinct_filing_provided_tickers_in_sample": 0,
+    "top_asset_categories": {
+      "EC": 11805,
+      "DBT": 6128,
+      "ABS-MBS": 2068,
+      "ABS-O": 616,
+      "DFE": 345,
+      "LON": 202,
+      "EP": 155,
+      "DIR": 129,
+      "STIV": 106,
+      "RA": 49
+    }
+  },
+  "candidate_pool": {
+    "description": "All public SEC NPORT-P filings over the checked EDGAR index span, then holdings with acceptance/public timestamp, report period, fund/series identifiers, asset category, issuer category, CUSIP/name, balance, value, and percent-of-fund fields.",
+    "source_reachability": "passed",
+    "parser_reachability": "partial_sample_passed",
+    "conservative_mapping_reachability": "failed",
+    "prior_holding_change_table_built": false,
+    "liquid_us_common_stock_or_etf_table_built": false
+  },
+  "selected_universe": [],
+  "feasibility_counts": {
+    "candidate_forms_with_acceptance_datetime": 80,
+    "candidate_forms_with_primary_xml": 80,
+    "sample_parsed_holdings_rows": 21697,
+    "sample_distinct_cusips": 7694,
+    "sample_distinct_filing_provided_tickers": 0,
+    "required_mapped_liquid_symbols": 150,
+    "mapped_liquid_symbols": null,
+    "timestamp_safe_holdings_change_observations": null
+  },
+  "source_gate": {
+    "passed": false,
+    "required_mapped_liquid_symbols": 150,
+    "required_event_observations": "thousands",
+    "failed_components": [
+      "filing-provided ticker coverage absent in bounded sample",
+      "public conservative CUSIP-to-ticker mapping not established",
+      "same-series prior-holding comparison/event table not completed",
+      "liquid daily-bar coverage not checked because mapping gate failed",
+      "issuer/fund-family/sector/year concentration checks not completed"
+    ],
+    "reason": "The bounded probe supports that EDGAR NPORT-P data exist and are parseable, but the issue's falsifier requires a reproducible timestamp-safe mapped holdings-change event table before any performance work. That table was not built, and the observed sample had no filing-provided tickers."
+  },
+  "metrics": null,
+  "performance_run": {
+    "run": false,
+    "reason": "Source/event-table gate failed; no returns, event windows, controls, costs, random periods, shifted/shuffled labels, or orders were evaluated."
+  },
+  "limitations": [
+    "The probe was bounded and did not retain raw SEC filings or raw event rows.",
+    "NPORT-P holdings include many non-U.S., debt, structured, loan, derivative, and cash-like assets; asset category EC alone is not sufficient to identify tradable U.S. common stocks or ETFs.",
+    "CUSIP mapping is a material dependency; inferring tickers from current names would introduce survivorship and ambiguity.",
+    "No qfa/market daily bars were requested because no valid mapped security universe was produced.",
+    "No shifted, shuffled, filing-calendar, momentum/reversal, sector, or fund-family concentration controls were run."
+  ],
+  "status_rationale": "Rejected for this research cycle at source/event-table gate with a disabled zero-weight model. No direct N-PORT refinement child should be created."
+}

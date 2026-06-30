@@ -1130,8 +1130,8 @@ issues:
 - id: AR-152
   title: SEC N-PORT holdings-change pressure feasibility scout
   model_name: sec-nport-holdings-change-pressure-scout-v1
-  status: queued
-  priority: preflight_queue_feasibility_first
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_fund_holdings_disclosure_pressure
   issue_path: alpha_research/issues/AR-152.md
 - id: AR-153
@@ -1141,10 +1141,9 @@ issues:
   priority: completed_source_gate
   family: public_filing_equity_offering_event_drift
   issue_path: alpha_research/issues/AR-153.md
-active_batch:
-- AR-152
+active_batch: []
 last_realdata_batch:
 - AR-151
-updated_at: '2026-06-30T04:22:36Z'
+updated_at: '2026-06-30T05:00:44Z'
 target_tried_ideas: 100
 tried_ideas_count: 139

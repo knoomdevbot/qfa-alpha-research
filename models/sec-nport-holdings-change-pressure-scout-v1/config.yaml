@@ -1,0 +1,29 @@
+model_name: sec-nport-holdings-change-pressure-scout-v1
+issue_id: AR-152
+family: public_fund_holdings_disclosure_pressure
+status: rejected_source_gate
+enabled: false
+weight: 0.0
+source_gate:
+  required: true
+  passed: false
+  rejection_reason: >-
+    Bounded SEC probe found timestamped NPORT-P filings and parseable holdings,
+    but did not produce a reproducible timestamp-safe holdings-change event table
+    with reliable public ticker/CUSIP mapping and liquid U.S. common-stock/ETF
+    coverage.
+trading:
+  enabled: false
+  trade_after: null
+  max_gross_exposure: 0.0
+  one_way_cost_bps: 10
+risk:
+  max_issuer_weight: 0.0
+  max_fund_family_weight: 0.0
+  max_sector_weight: 0.0
+data_policy:
+  sec_edgar_public_filings_only: true
+  real_market_data_evaluation_run: false
+  csv_market_data_used: false
+  daemon_used: false
+  orders_sent: false
