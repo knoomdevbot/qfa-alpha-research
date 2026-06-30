@@ -1307,17 +1307,27 @@ issues:
 - id: AR-171
   title: SEC 8-K Item 2.02 accepted-filing event-table feasibility scout
   model_name: sec-8k-item202-accepted-filing-event-table-scout-v1
-  status: queued
-  priority: source_gate_passed_needs_realdata_evaluation
+  status: rejected
+  priority: completed_realdata_rejection
   family: public_filing_earnings_release_event_table
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-171.md
-  last_checked_at: '2026-06-30T20:31:00Z'
+  last_checked_at: '2026-06-30T21:18:48Z'
+  tried_count: 1
+- id: AR-172
+  title: Official exchange-reported short-interest publication source/vintage scout
+  model_name: exchange-reported-short-interest-publication-scout-v1
+  status: queued
+  priority: preflight_queue_source_vintage_scout
+  family: public_short_interest_position_source
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-172.md
+  last_checked_at: '2026-06-30T21:29:56Z'
   tried_count: 0
 active_batch:
-- AR-171
+- AR-172
 last_realdata_batch:
-- AR-168
-updated_at: '2026-06-30T20:31:00Z'
+- AR-171
+updated_at: '2026-06-30T21:29:56Z'
 target_tried_ideas: 100
-tried_ideas_count: 154
+tried_ideas_count: 155

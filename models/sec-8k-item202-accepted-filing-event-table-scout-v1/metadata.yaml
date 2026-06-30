@@ -2,9 +2,10 @@ model_name: sec-8k-item202-accepted-filing-event-table-scout-v1
 issue_id: AR-171
 title: SEC 8-K Item 2.02 accepted-filing event-table feasibility scout
 created_at_utc: 2026-06-30T20:31:00Z
-decision: source_gate_passed_needs_realdata_evaluation
+updated_at_utc: 2026-06-30T21:19:20Z
+decision: rejected_realdata_performance
 source_gate_passed: true
-performance_evaluation_done: false
+performance_evaluation_done: true
 enabled: false
 weight: 0.0
 no_csv_used: true
@@ -13,10 +14,15 @@ no_daemon: true
 no_orders: true
 raw_daily_paths_retained: false
 key_metrics:
-  item_202_events: 13088
-  mapped_issuers_with_item_202: 375
-  accession_proof_count: 13088
-  filing_index_reachable: 40
-  attachment_or_press_name_discovered: 16
-  qfa_symbols_with_any_bar: 119
-  qfa_coverage_rate: 0.9916666666666667
+  timestamp_safe_item202_events: 14029
+  mapped_issuers_with_item202: 471
+  alpaca_symbols_with_bars: 471
+  selected_liquid_symbols: 220
+  selected_liquid_events_total: 6293
+  conditioned_event_signal_count: 2914
+  primary_median_sharpe_10bps: -0.47363199
+  primary_p25_sharpe_10bps: -0.91711744
+  primary_worst_sharpe_10bps: -1.76430976
+  primary_positive_window_rate_10bps: 0.14285714
+  primary_sharpe_5bps: -0.53321611
+  primary_sharpe_20bps: -1.43787702

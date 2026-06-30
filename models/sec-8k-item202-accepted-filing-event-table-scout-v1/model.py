@@ -1,14 +1,13 @@
-"""Zero-weight scaffold for AR-171 SEC 8-K Item 2.02 event-table scout.
+"""Zero-weight rejected scaffold for AR-171 SEC 8-K Item 2.02 event scout.
 
-The bounded source gate passed, but no timestamp-safe post-filing return
-performance evaluator has been run. This model intentionally emits no weights
-until a durable event parser, historical common-stock mapping, and real-data
-performance evaluation are added.
+The source/event-table gate was feasible, but the timestamp-safe qfa/Alpaca
+real-data performance evaluator failed the predeclared cost/control gate. This
+model intentionally emits no weights and is disabled.
 """
 
 MODEL_NAME = "sec-8k-item202-accepted-filing-event-table-scout-v1"
 
 
 def generate_signals(context):
-    """Return no target weights; scaffold only, no orders or daemon usage."""
+    """Return no target weights; rejected scaffold only, no orders or daemon usage."""
     return {}
