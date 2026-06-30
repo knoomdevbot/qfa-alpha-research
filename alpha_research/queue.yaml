@@ -1284,9 +1284,31 @@ issues:
   issue_path: alpha_research/issues/AR-168.md
   last_checked_at: '2026-06-30T18:50:34Z'
   tried_count: 1
-active_batch: []
+- id: AR-169
+  title: SEC 13F holdings-change crowding/uncrowding source feasibility scout
+  model_name: sec-13f-holdings-change-crowding-scout-v1
+  status: queued
+  priority: preflight_queue
+  family: public_filing_holdings_change
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-169.md
+  last_checked_at: '2026-06-30T19:01:22Z'
+  tried_count: 0
+- id: AR-170
+  title: Official Treasury DTS TGA cash-balance shock ETF allocator source/vintage scout
+  model_name: treasury-dts-tga-cash-shock-etf-scout-v1
+  status: queued
+  priority: preflight_queue
+  family: public_treasury_cash_balance_liquidity_shock
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-170.md
+  last_checked_at: '2026-06-30T19:01:22Z'
+  tried_count: 0
+active_batch:
+- AR-169
+- AR-170
 last_realdata_batch:
 - AR-168
-updated_at: '2026-06-30T18:50:34Z'
+updated_at: '2026-06-30T19:01:22Z'
 target_tried_ideas: 100
 tried_ideas_count: 153
