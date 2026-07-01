@@ -1,0 +1,40 @@
+model_name: bls-employment-situation-labor-cycle-etf-source-scout-v1
+issue_id: AR-174
+status: rejected
+decision: rejected
+asset_bucket: etf
+crypto_label: false
+source_gate_required: true
+source_gate_passed: false
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+candidate_product_pool:
+  - XLY
+  - XLI
+  - IWM
+  - QQQ
+  - XLP
+  - XLU
+  - XLV
+  - SPY
+  - TLT
+  - IEF
+  - HYG
+  - LQD
+  - GLD
+  - DBC
+selected_universe: []
+selection_filters:
+  - liquid U.S.-listed ETFs
+  - sufficient real daily OHLCV coverage if later eligible
+  - unlevered/non-inverse products only
+  - labor-cycle exposure across cyclicals, defensives, duration, credit, and inflation sleeves
+required_components:
+  - PAYEMS
+  - UNRATE
+  - CIVPART
+  - AWHAETP
+  - CES0500000003

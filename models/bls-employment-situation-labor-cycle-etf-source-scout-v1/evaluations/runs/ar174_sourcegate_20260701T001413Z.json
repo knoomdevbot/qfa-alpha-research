@@ -1,0 +1,84 @@
+{
+  "asset_bucket": "etf",
+  "candidate_product_pool": [
+    "XLY",
+    "XLI",
+    "IWM",
+    "QQQ",
+    "XLP",
+    "XLU",
+    "XLV",
+    "SPY",
+    "TLT",
+    "IEF",
+    "HYG",
+    "LQD",
+    "GLD",
+    "DBC"
+  ],
+  "controls_run": [],
+  "created_at": "2026-07-01T00:14:13Z",
+  "crypto_label": false,
+  "decision": "rejected",
+  "issue_id": "AR-174",
+  "market_data_evaluation_run": false,
+  "metrics": null,
+  "model_name": "bls-employment-situation-labor-cycle-etf-source-scout-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "performance_summary": null,
+  "qfa_alpaca_performance_run": false,
+  "raw_daily_paths_retained": false,
+  "rejection_stage": "source_vintage_gate",
+  "run_id": "ar174_sourcegate_20260701T001413Z",
+  "schema_version": "alpha_research_result_v1",
+  "selected_universe": [],
+  "selection_filters": [
+    "liquid U.S.-listed ETFs",
+    "sufficient real daily OHLCV coverage if later eligible",
+    "unlevered/non-inverse products only",
+    "economic exposure to labor-cycle cyclicals, defensives, duration, credit, inflation sleeves"
+  ],
+  "source_gate": {
+    "alfred_smoke_test": {
+      "accessible": true,
+      "component_values": {
+        "AWHAETP": "34.3",
+        "CES0500000003": "28.44",
+        "CIVPART": "63.4",
+        "PAYEMS": "152186",
+        "UNRATE": "3.6"
+      },
+      "limitation": "ALFRED component vintages alone do not prove the official BLS release calendar/archive availability and full first-vintage mapping required by the issue.",
+      "method": "ALFRED graph CSV specific vintage_date smoke test; no files retained",
+      "observation_date": "2020-01-01",
+      "vintage_date": "2020-02-07"
+    },
+    "official_bls_failure_observed": "HTTP 403 Forbidden from this execution environment, including browser-like User-Agent retries.",
+    "official_bls_pages_blocked_or_failed": 4,
+    "official_bls_pages_successful": 0,
+    "official_bls_urls_attempted": [
+      "https://www.bls.gov/schedule/news_release/empsit.htm",
+      "https://www.bls.gov/news.release/empsit.htm",
+      "https://www.bls.gov/news.release/archives/empsit_06062025.htm",
+      "https://www.bls.gov/news.release/archives/empsit_01052024.htm"
+    ],
+    "passed": false,
+    "reason": "The mandatory official BLS release calendar/archive evidence could not be retrieved and verified in-run; therefore timestamp-safe release dates/times and first-vintage mapping were not fully proven before performance.",
+    "required_components": [
+      "nonfarm payrolls PAYEMS",
+      "unemployment rate UNRATE",
+      "labor-force participation CIVPART",
+      "average weekly hours total private AWHAETP",
+      "average hourly earnings total private CES0500000003"
+    ],
+    "required_official_bls_evidence": [
+      "official BLS Employment Situation release calendar/release timing",
+      "official BLS Employment Situation archived release pages"
+    ]
+  },
+  "status": "rejected",
+  "universe_limitations": "No ETF universe was selected because the source/vintage gate failed before performance evaluation."
+}
