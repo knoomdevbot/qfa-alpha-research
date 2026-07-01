@@ -1,0 +1,17 @@
+model_name: ice-bofa-credit-spread-etf-source-scout-v1
+issue_id: AR-188
+title: ICE/BofA credit-spread first-vintage ETF allocator source scout
+status: rejected
+priority: completed_source_gate_rejection
+created_at: '2026-07-01T16:10:03Z'
+updated_at: '2026-07-01T16:44:07Z'
+decision: rejected_source_gate
+asset_bucket: etf
+crypto_label: false
+summary: >-
+  Source/vintage feasibility failed before any ETF performance evaluation.
+  Representative official ICE/BofA OAS series pages and public graph CSVs on
+  FRED, plus ALFRED pages, were reachable, but public data exposed only a short
+  2023-07-03 through 2026-06-30 window and did not prove durable
+  timestamp-safe first-vintage history suitable for random-window ETF allocator
+  research across credit cycles. The qfa scaffold is disabled and zero-weight.

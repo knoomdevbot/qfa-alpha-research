@@ -1,0 +1,27 @@
+model_name: ice-bofa-credit-spread-etf-source-scout-v1
+issue_id: AR-188
+asset_bucket: etf
+crypto_label: false
+enabled: false
+source_gate_required: true
+source_gate_passed: false
+performance_evaluation_run: false
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+representative_series:
+  - id: BAMLH0A0HYM2
+    name: ICE BofA US High Yield Index Option-Adjusted Spread
+  - id: BAMLC0A0CM
+    name: ICE BofA US Corporate Index Option-Adjusted Spread
+  - id: BAMLC0A4CBBB
+    name: ICE BofA BBB US Corporate Index Option-Adjusted Spread
+  - id: BAMLH0A1HYBB
+    name: ICE BofA BB US High Yield Index Option-Adjusted Spread
+stop_reason: >-
+  Public FRED/ALFRED access for representative official ICE/BofA OAS series
+  showed only 2023-07-03+ public observations and no proven durable
+  timestamp-safe first-vintage history across enough credit cycles. The model is
+  disabled and emits zero weights.
