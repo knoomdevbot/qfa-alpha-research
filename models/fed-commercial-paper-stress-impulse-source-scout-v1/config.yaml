@@ -1,0 +1,36 @@
+model_name: fed-commercial-paper-stress-impulse-source-scout-v1
+issue_id: AR-189
+asset_bucket: etf
+status: rejected_source_gate
+enabled: false
+source_gate_passed: false
+performance_evaluation_run: false
+no_csv_used: true
+no_data_csv_argument_used: true
+universe:
+  expected_if_source_gate_passed:
+    - HYG
+    - LQD
+    - JNK
+    - TLT
+    - IEF
+    - SHY
+    - BIL
+    - SPY
+    - QQQ
+    - IWM
+    - XLU
+    - XLP
+    - XLV
+    - GLD
+signal:
+  enabled: false
+  reason: source/vintage gate failed before signal construction
+  candidate_features_not_evaluated:
+    - commercial_paper_outstanding_changes
+    - AA_financial_cp_rate_changes
+    - AA_nonfinancial_cp_rate_changes
+    - funding_stress_impulse_zscores
+timing_policy_if_revisited:
+  minimum_lag: next_session_after_confirmed_publication_date
+  note: Official Fed CP release says usually posted daily at 1:00 p.m. EST but no timing guarantee.

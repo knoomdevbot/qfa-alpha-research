@@ -1,0 +1,16 @@
+model_name: fed-commercial-paper-stress-impulse-source-scout-v1
+issue_id: AR-189
+title: Federal Reserve commercial-paper stress impulse ETF source/vintage scout
+asset_bucket: etf
+family: public_short_term_funding_stress
+created_at: '2026-07-01T17:28:43Z'
+status: rejected_source_gate
+source_gate_passed: false
+performance_gate_passed: false
+market_data_evaluation_run: false
+children_spawned: []
+artifact_type: source_vintage_feasibility_scout
+notes: >-
+  Disabled zero-weight scaffold only. Bounded public probes did not prove
+  complete timestamp-safe first-vintage mechanics and publication timing across
+  required regimes; no qfa/Alpaca performance run was attempted.

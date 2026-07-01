@@ -1,0 +1,94 @@
+{
+  "run_id": "ar189_source_gate_20260701T172843Z",
+  "issue_id": "AR-189",
+  "model_name": "fed-commercial-paper-stress-impulse-source-scout-v1",
+  "checked_at": "2026-07-01T17:28:43Z",
+  "decision": "rejected",
+  "status": "rejected_source_gate",
+  "decision_reasons": [
+    "source/vintage gate failed before performance evaluation",
+    "official Fed CP page says daily posting is usually 1:00 p.m. EST but explicitly not guaranteed",
+    "ALFRED vintage snapshots were reachable for some representative CP series but complete first-vintage mechanics were not proven across all required regimes",
+    "COMPOUT 2008 vintage probe fell back to the current 20260701 vintage, failing the required 2008 outstanding-history check",
+    "no bounded parser/source map was proven for the full outstanding plus AA financial/nonfinancial daily rate feature set"
+  ],
+  "source_gate_passed": false,
+  "performance_gate_passed": false,
+  "market_data_evaluation_run": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "asset_bucket": "etf",
+  "crypto_label": false,
+  "data": {
+    "official_family": "Federal Reserve Commercial Paper Rates and Outstanding release / Data Download Program",
+    "public_sources_checked": [
+      "https://www.federalreserve.gov/releases/cp/",
+      "https://www.federalreserve.gov/releases/cp/about.htm",
+      "https://www.federalreserve.gov/datadownload/Choose.aspx?rel=CP",
+      "ALFRED graph CSV vintage snapshots for representative CP series"
+    ],
+    "official_timing_text_summary": "Data on CP issuance rates and volumes typically are updated daily and typically posted with a one-day lag; CP outstanding is usually Wednesday and month-end close of business and also posted with a one-day lag; daily CP release usually available at 1:00 p.m. EST, but the Federal Reserve Board makes no guarantee regarding timing.",
+    "representative_series_probes": [
+      {
+        "series_id": "COMPOUT",
+        "vintage_date": "2008-10-16",
+        "result_column": "COMPOUT_20260701",
+        "last_observation_seen": "2026-06-24",
+        "assessment": "failed_required_2008_vintage_check_current_vintage_fallback"
+      },
+      {
+        "series_id": "COMPOUT",
+        "vintage_date": "2020-04-02",
+        "result_column": "COMPOUT_20200402",
+        "last_observation_seen": "2020-04-01",
+        "assessment": "reachable_snapshot"
+      },
+      {
+        "series_id": "COMPOUT",
+        "vintage_date": "2022-06-16",
+        "result_column": "COMPOUT_20220616",
+        "last_observation_seen": "2022-06-08",
+        "assessment": "reachable_snapshot_but_one_week_lag_for_weekly_outstanding"
+      },
+      {
+        "series_id": "DCPF3M",
+        "vintage_date": "2008-10-16",
+        "result_column": "DCPF3M_20081016",
+        "last_observation_seen": "2008-10-14",
+        "assessment": "reachable_rate_snapshot"
+      },
+      {
+        "series_id": "DCPN3M",
+        "vintage_date": "2008-10-16",
+        "result_column": "DCPN3M_20081016",
+        "last_observation_seen": "2008-10-14",
+        "assessment": "reachable_rate_snapshot"
+      },
+      {
+        "series_id": "DCPF1M",
+        "vintage_date": "2020-04-02",
+        "result_column": "DCPF1M_20200402",
+        "last_observation_seen": "2020-03-26",
+        "assessment": "reachable_rate_snapshot_but_public_lag_requires_more_mapping"
+      }
+    ],
+    "market_data_source": "Not used; stopped at source gate. No CSV-backed market data, daemon, or orders."
+  },
+  "metrics": {
+    "source_gate_score": 0,
+    "performance_metrics": null,
+    "median_sharpe": null,
+    "p25_sharpe": null,
+    "max_drawdown": null,
+    "turnover": null,
+    "correlation_to_controls": null
+  },
+  "model_behavior": {
+    "enabled": false,
+    "generate_signals": "returns empty weights with rejected_source_gate metadata"
+  },
+  "children_spawned": []
+}
