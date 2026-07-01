@@ -1418,9 +1418,33 @@ issues:
   parent: null
   last_checked_at: '2026-07-01T10:21:51Z'
   tried_count: 1
-active_batch: []
+- id: AR-182
+  title: Official Federal Reserve G.17 industrial-production/capacity-utilization first-vintage ETF allocator source/vintage scout
+  model_name: fed-g17-industrial-production-capacity-etf-source-scout-v1
+  status: queued
+  priority: preflight_queue
+  family: public_macro_production_release
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-182.md
+  parent: null
+  last_checked_at: '2026-07-01T10:38:43Z'
+  tried_count: 0
+- id: AR-183
+  title: Official Census New Residential Construction housing-starts/permits first-vintage ETF allocator source/vintage scout
+  model_name: census-nrc-housing-starts-permits-etf-source-scout-v1
+  status: queued
+  priority: preflight_queue
+  family: public_macro_housing_construction_release
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-183.md
+  parent: null
+  last_checked_at: '2026-07-01T10:38:43Z'
+  tried_count: 0
+active_batch:
+- AR-182
+- AR-183
 last_realdata_batch:
 - AR-178
-updated_at: '2026-07-01T10:21:51Z'
+updated_at: '2026-07-01T10:38:43Z'
 target_tried_ideas: 100
 tried_ideas_count: 165
