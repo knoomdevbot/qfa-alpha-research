@@ -1,0 +1,37 @@
+alpha_id: eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1
+issue_id: AR-192
+model_name: eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1
+asset_bucket: etf
+family: public_energy_inventory_source_vintage
+status: source_gate_passed_needs_realdata_evaluation
+decision: source_gate_passed_needs_realdata_evaluation
+enabled: false
+zero_weight: true
+candidate_product_pool:
+  - UNG
+  - UNL
+  - XLE
+  - XOP
+  - AMLP
+  - XLU
+  - VPU
+  - DBC
+  - DBE
+  - USO
+  - PDBC
+  - GSG
+  - SPY
+  - TLT
+  - IEF
+  - SHY
+diagnostics_only:
+  - BOIL
+  - KOLD
+  - UGA
+  - FCG
+no_performance_before_realdata_gate: true
+costs_future_bps: [5, 10, 20]
+risk_constraints:
+  max_gross_exposure_future: 1.0
+  non_levered_non_inverse_primary_universe: true
+  no_orders: true
