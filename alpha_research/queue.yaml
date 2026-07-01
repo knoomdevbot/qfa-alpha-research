@@ -1484,9 +1484,21 @@ issues:
   parent: AR-043
   last_checked_at: '2026-07-01T16:04:59Z'
   tried_count: 1
-active_batch: []
+- id: AR-188
+  title: ICE/BofA credit-spread first-vintage ETF allocator source scout
+  model_name: ice-bofa-credit-spread-etf-source-scout-v1
+  status: queued
+  priority: preflight_queue_source_vintage
+  family: public_credit_spread_macro_release
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-188.md
+  parent: null
+  last_checked_at: '2026-07-01T16:10:03Z'
+  tried_count: 0
+active_batch:
+- AR-188
 last_realdata_batch:
 - AR-187
-updated_at: '2026-07-01T16:04:59Z'
+updated_at: '2026-07-01T16:10:03Z'
 target_tried_ideas: 100
 tried_ideas_count: 171
