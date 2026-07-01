@@ -1,0 +1,28 @@
+model_name: sector-neutral-peer-residual-convergence-v1
+issue: AR-177
+asset_bucket: equity
+data_source: qfa_alpaca_real_daily_ohlcv
+trade_universe: liquid_us_common_stocks_only
+control_symbols: [SPY, QQQ, IWM, XLK, XLF, XLV, XLY, XLP, XLI, XLE, XLC, XLU, XLRE, XLB]
+parameters:
+  residual_lookback_sessions: 126
+  residual_z_window_sessions: 60
+  min_residual_lookback_sessions: 90
+  cluster_refresh: monthly
+  cluster_features: [trailing_beta_to_spy, trailing_volatility, trailing_60d_momentum]
+  cluster_method: deterministic_two_cluster_kmeans_per_sector_without_sklearn_dependency
+  min_cluster_size: 6
+  signal_quantile: 0.20
+  max_abs_weight: 0.025
+  min_active_names: 20
+risk_controls:
+  dollar_neutral: true
+  gross_normalized: true
+  sector_neutralized_by_peer_group: approximate
+  controls_shifted: true
+  no_orders: true
+forbidden:
+  csv_market_data: true
+  data_csv_argument: true
+  daemon: true
+  orders: true

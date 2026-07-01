@@ -1,0 +1,20 @@
+name: sector-neutral-peer-residual-convergence-v1
+issue: AR-177
+status: researched
+family: sector_neutral_peer_residual_convergence
+created_at_utc: '2026-07-01T06:17:00Z'
+research_data: Alpaca real daily OHLCV accessed through qfa source dependency
+artifact_contract:
+  model: models/sector-neutral-peer-residual-convergence-v1/model.py
+  config: models/sector-neutral-peer-residual-convergence-v1/config.yaml
+  latest_json: models/sector-neutral-peer-residual-convergence-v1/evaluations/latest.json
+  latest_md: models/sector-neutral-peer-residual-convergence-v1/evaluations/latest.md
+compliance:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
+notes:
+  - Interpretable daily residual-convergence rule; controls and clustering use trailing information only.
+  - Broad liquid common-stock candidate pool is static/current-symbol and therefore survivorship-limited.

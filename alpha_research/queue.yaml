@@ -1367,17 +1367,28 @@ issues:
 - id: AR-177
   title: Sector-neutral peer-cluster residual convergence in liquid U.S. common stocks
   model_name: sector-neutral-peer-residual-convergence-v1
-  status: queued
-  priority: preflight_queue
+  status: rejected
+  priority: completed_realdata
   family: sector_neutral_peer_residual_convergence
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-177.md
-  last_checked_at: '2026-07-01T05:42:07Z'
+  last_checked_at: '2026-07-01T06:24:24Z'
+  tried_count: 1
+- id: AR-178
+  title: AR-039/AR-051 frozen ETF defensive-rotation expanded-universe promotion/pruning validator
+  model_name: etf-defensive-rotation-expanded-universe-validator-v1
+  status: queued
+  priority: preflight_queue
+  family: defensive_rotation_validation
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-178.md
+  parent: AR-039/AR-051
+  last_checked_at: '2026-07-01T06:33:55Z'
   tried_count: 0
 active_batch:
-- AR-177
+- AR-178
 last_realdata_batch:
-- AR-171
-updated_at: '2026-07-01T05:42:07Z'
+- AR-177
+updated_at: '2026-07-01T06:33:55Z'
 target_tried_ideas: 100
-tried_ideas_count: 160
+tried_ideas_count: 161
