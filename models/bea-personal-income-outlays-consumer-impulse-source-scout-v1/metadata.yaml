@@ -1,0 +1,26 @@
+issue: AR-176
+model_name: bea-personal-income-outlays-consumer-impulse-source-scout-v1
+title: Official BEA Personal Income and Outlays first-vintage consumer impulse ETF source scout
+status: rejected
+priority: completed_source_gate_rejection
+family: public_consumer_income_inflation_macro_release
+asset_bucket: etf
+created_at: '2026-07-01T01:10:10Z'
+completed_at: '2026-07-01T05:35:15Z'
+decision: rejected
+summary: >-
+  Official dated BEA Personal Income and Outlays pages were reachable and recent
+  XLSX artifacts were parser-readable, but bounded parser evidence did not prove
+  durable first-vintage extraction of the full required component set across both
+  recent and legacy releases, so the qfa real-data performance gate was not run.
+artifacts:
+  model: models/bea-personal-income-outlays-consumer-impulse-source-scout-v1/model.py
+  config: models/bea-personal-income-outlays-consumer-impulse-source-scout-v1/config.yaml
+  latest_json: models/bea-personal-income-outlays-consumer-impulse-source-scout-v1/evaluations/latest.json
+  latest_md: models/bea-personal-income-outlays-consumer-impulse-source-scout-v1/evaluations/latest.md
+validation:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

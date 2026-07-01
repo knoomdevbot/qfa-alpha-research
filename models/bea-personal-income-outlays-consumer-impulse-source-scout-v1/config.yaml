@@ -1,0 +1,33 @@
+model_name: bea-personal-income-outlays-consumer-impulse-source-scout-v1
+issue_id: AR-176
+asset_bucket: etf
+crypto_label: false
+status: rejected_source_gate
+universe_candidates:
+  - XLY
+  - XLP
+  - XRT
+  - SPY
+  - IWM
+  - TLT
+  - IEF
+  - TIP
+  - GLD
+  - UUP
+  - SHY
+source_gate:
+  required: true
+  passed: false
+  official_source: BEA dated Personal Income and Outlays release pages and linked release artifacts
+  current_revised_api_history_allowed: false
+  rejection_reason: >-
+    Bounded official-page probe found durable 8:30 a.m. release pages and recent
+    XLSX artifacts, but parser evidence for the full first-vintage component set
+    was incomplete across older official pages/artifacts; no performance evaluation
+    was permitted.
+execution_constraints:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

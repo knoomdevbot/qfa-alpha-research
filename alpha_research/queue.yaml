@@ -1357,17 +1357,16 @@ issues:
 - id: AR-176
   title: Official BEA Personal Income and Outlays first-vintage consumer impulse ETF source scout
   model_name: bea-personal-income-outlays-consumer-impulse-source-scout-v1
-  status: queued
-  priority: preflight_queue_source_vintage_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_consumer_income_inflation_macro_release
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-176.md
-  last_checked_at: '2026-07-01T01:10:10Z'
-  tried_count: 0
-active_batch:
-- AR-176
+  last_checked_at: '2026-07-01T05:35:15Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
 - AR-171
-updated_at: '2026-07-01T01:10:10Z'
+updated_at: '2026-07-01T05:35:15Z'
 target_tried_ideas: 100
-tried_ideas_count: 159
+tried_ideas_count: 160
