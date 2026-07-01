@@ -1432,18 +1432,17 @@ issues:
 - id: AR-183
   title: Official Census New Residential Construction housing-starts/permits first-vintage ETF allocator source/vintage scout
   model_name: census-nrc-housing-starts-permits-etf-source-scout-v1
-  status: queued
-  priority: source_gate_passed_needs_realdata_evaluation
+  status: rejected
+  priority: completed_realdata
   family: public_macro_housing_construction_release
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-183.md
   parent: null
-  last_checked_at: '2026-07-01T10:38:43Z'
-  tried_count: 0
-active_batch:
-- AR-183
+  last_checked_at: '2026-07-01T12:54:15Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
-- AR-182
-updated_at: '2026-07-01T12:04:11Z'
+- AR-183
+updated_at: '2026-07-01T12:54:15Z'
 target_tried_ideas: 100
-tried_ideas_count: 166
+tried_ideas_count: 167

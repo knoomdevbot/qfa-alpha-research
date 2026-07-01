@@ -3,8 +3,8 @@
 This is a disabled, zero-weight qfa wrapper plus reusable source parser helpers.
 The source gate passed for feasibility only: official Census archive documents
 carry release timestamps and first-published headline permits/starts/completions.
-No market-data performance evaluation was run, so generate_signals emits no
-positions.
+A later market-data performance evaluation rejected the allocator; generate_signals
+continues to emit no positions.
 """
 
 from __future__ import annotations
@@ -209,7 +209,7 @@ def generate_signals(context=None):
         "weights": {},
         "metadata": {
             "model": "census-nrc-housing-starts-permits-etf-source-scout-v1",
-            "decision": "source_gate_passed_no_performance_disabled_scaffold",
-            "reason": "official Census/HUD archive parser feasible; no qfa/Alpaca performance run yet",
+            "decision": "rejected_realdata_disabled_scaffold",
+            "reason": "official Census/HUD source gate passed; real-data ETF allocator failed robustness/control gates",
         },
     }

@@ -4,8 +4,9 @@ asset_bucket: etf
 crypto_label: false
 enabled: false
 zero_weight_scaffold: true
-source_gate_decision: source_gate_passed_no_performance
-performance_evaluation_run: false
+source_gate_decision: passed
+performance_evaluation_run: true
+performance_decision: rejected_realdata
 candidate_universe:
   - XHB
   - ITB

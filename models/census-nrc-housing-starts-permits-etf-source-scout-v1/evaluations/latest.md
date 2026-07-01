@@ -1,36 +1,20 @@
-# AR-183 source/vintage gate — 2026-07-01T11:19:52Z
+# AR-183 real-data evaluation — Census NRC first-vintage ETF allocator
 
-Decision: **source_gate_passed_no_performance_disabled_scaffold**.
+- Run: `ar183_qfa_alpaca_real_20260701T125402Z`
+- Decision: **rejected** (primary full-sample post-cost Sharpe <= 0; random-window p25 Sharpe is negative; positive-window rate below 55% threshold; inverted shock control matches/exceeds primary; SPY next-bar control matches/exceeds primary)
+- Source gate: passed; official Census/HUD NRC PDF archive parsed in-memory.
+- Market data: configured real daily ETF bars via qfa/Alpaca; no CSV, no daemon, no orders.
+- Timing: release-date close to next trading close after 8:30am releases.
+- Universe: XHB, ITB, VNQ, XLF, KRE, XLB, SPY, IWM, TLT, IEF, HYG, LQD; effective event-return sample starts in 2016 when all selected symbols had usable next-bar closes.
 
-Official Census/HUD New Residential Construction archive/source feasibility passed for a future real-data evaluator. No ETF market-data performance was run and the qfa wrapper emits zero weights.
+## Metrics
 
-## Diagnostics
+- Events traded: 123 (2016-01-04 to 2026-06-16).
+- Primary 10 bps Sharpe: -0.8560687881774537 ; ann. return: -0.019073618735442777 ; max drawdown: -0.18429893718976942 ; positive event rate: 0.4146341463414634.
+- Random windows: median Sharpe -0.7610340704574521, p25 -1.1333121584121155, worst -1.563594988705261, positive-window rate 0.015625.
+- Cost sensitivity Sharpe: 5 bps -0.5856829648089552, 10 bps -0.8560687881774537, 20 bps -1.3968404349144503.
+- Controls Sharpe: SPY -0.12827608406098637, equal-weight 0.06012851259405224, trend -0.2857263928244362, reversal 0.2857263928244362, inverted -0.22547450529654015, shifted -0.8938663160824819, random labels -0.21249243168541587.
 
-- Official NRC archive reachable: `https://www.census.gov/construction/nrc/data/releases.html`.
-- Discovered official archived releases: 298 modern PDFs (`newresconst_200104.pdf` through `newresconst_202605.pdf`) and 149 legacy TXT files (`c20`/`c22`, 1995-01 through 2001-03).
-- Parser path: `models/census-nrc-housing-starts-permits-etf-source-scout-v1/model.py`.
-- Modern PDF bounded samples extracted timestamps and first-published headline values:
-  - 2024-05: June 20, 2024 8:30 AM EDT; permits 1,386; starts 1,277; completions 1,514.
-  - 2023-01: February 16, 2023 8:30 AM EST; permits 1,339; starts 1,309; completions 1,406.
-  - 2020-01: February 19, 2020 8:30 AM EST; permits 1,551; starts 1,567; completions 1,280.
-- Legacy TXT bounded samples parsed split releases:
-  - `c20_0001.txt`: February 16, 2000 8:30 AM EST; starts 1,775; permits 1,763.
-  - `c22_0001.txt`: March 6, 2000 10:00 AM EST; completions 1,556.
-- Census current calendar page was reachable. A separate historical release-date Excel link was not discovered in bounded official-page probes; the archived official release files themselves contain timestamp text.
-- ALFRED bounded vintage CSV probes for `HOUST`, `PERMIT`, and `COMPUTSA` timed out or closed without response in this environment, so ALFRED is not used as the primary source.
+## Conclusion
 
-## Required booleans
-
-- `no_csv_used`: true
-- `no_data_csv_argument_used`: true
-- `no_daemon`: true
-- `no_orders`: true
-- `raw_daily_paths_retained`: false
-- `asset_bucket`: etf
-- `crypto_label`: false
-- `metrics`: null
-
-## Warnings
-
-- This is not an accepted/watchlist alpha. It is a source-gate pass with a disabled scaffold and no performance metrics.
-- Future evaluation must use official first-vintage event tables, qfa/Alpaca real ETF bars, next-session timing unless same-day timing is proven safe, random windows, and controls versus static ETF allocations, TSMOM/reversal, CPI/PPI/labor/FOMC controls, shifted/random labels, and inverted shocks.
+Rejected after real-data evaluation. The primary post-cost allocator is not robust enough under random windows and controls. No direct Census NRC refinement/extension children were spawned.

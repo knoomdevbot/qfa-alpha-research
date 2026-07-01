@@ -4,7 +4,7 @@ AR-183 source/vintage feasibility scout for official Census/HUD New Residential 
 
 ## Decision
 
-**Source gate passed for parser feasibility only; performance not evaluated.** This folder is a disabled, zero-weight qfa wrapper. It must not place orders or claim ETF alpha until a later real-data evaluator fixes daily-bar timing, ETF coverage, controls, and random-window validation.
+**Rejected after real-data evaluation.** The source gate passed, but the timestamp-safe daily-bar allocator failed robustness and control gates. The model remains disabled/zero-weight and must not place orders.
 
 ## Source findings
 
@@ -36,4 +36,12 @@ The parser does not persist raw downloads. Future evaluators should persist only
 - No `data.csv` argument was used.
 - No daemon or orders were started.
 - Raw daily paths are not retained.
-- Metrics are null because no market-data performance run occurred.
+- Real-data metrics were compactly retained under `evaluations/latest.json`; no raw bars/equity curves/weights arrays were retained.
+
+## Real-data evaluation summary
+
+- Evaluation run: `ar183_qfa_alpaca_real_20260701T125402Z`.
+- Selected universe: XHB, ITB, VNQ, XLF, KRE, XLB, SPY, IWM, TLT, IEF, HYG, LQD.
+- Protocol: 123 monthly release events from 2016-01-04 to 2026-06-16; release-date close to next trading close; 10 bps primary cost with 5/20 bps sensitivities.
+- Primary 10 bps Sharpe: -0.8561; p25 random-window Sharpe: -1.1333; worst random-window Sharpe: -1.5636; positive-window rate: 1.56%.
+- Decision: rejected; no direct Census NRC refinement/extension child spawned.
