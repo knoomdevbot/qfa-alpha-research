@@ -1443,18 +1443,17 @@ issues:
 - id: AR-184
   title: AR-005 megacap-tech pairs residual promotion/pruning validator
   model_name: megacap-tech-pairs-residual-promotion-validator-v1
-  status: queued
-  priority: preflight_queue_validator
+  status: rejected
+  priority: completed_realdata_validator
   family: stat_arb_validator
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-184.md
   parent: AR-005
-  last_checked_at: '2026-07-01T13:35:35Z'
-  tried_count: 0
-active_batch:
-- AR-184
+  last_checked_at: '2026-07-01T13:56:30Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
-- AR-183
-updated_at: '2026-07-01T13:35:35Z'
+- AR-184
+updated_at: '2026-07-01T13:56:30Z'
 target_tried_ideas: 100
-tried_ideas_count: 167
+tried_ideas_count: 168

@@ -1,0 +1,2227 @@
+{
+  "asset_bucket": "equity",
+  "controls": {
+    "ar005_original_six_name_residual": {
+      "active_rate": 0.886224,
+      "annualized_return": 0.049758,
+      "annualized_volatility": 0.214462,
+      "average_active_names": 4.210947,
+      "average_turnover": 0.155852,
+      "hit_rate": 0.458795,
+      "max_drawdown": -0.28925,
+      "periods": 1626,
+      "sharpe": 0.328734,
+      "total_return": 0.367969,
+      "total_turnover": 253.415199
+    },
+    "equal_weight_selected_common_stocks": {
+      "active_rate": 1.0,
+      "annualized_return": 0.186371,
+      "annualized_volatility": 0.276924,
+      "average_active_names": 60.0,
+      "average_turnover": 0.0,
+      "hit_rate": 0.54797,
+      "max_drawdown": -0.442534,
+      "periods": 1626,
+      "sharpe": 0.75606,
+      "total_return": 2.012308,
+      "total_turnover": 0.0
+    },
+    "inverted_main_signal": {
+      "active_rate": 0.966175,
+      "annualized_return": -0.072782,
+      "annualized_volatility": 0.077357,
+      "average_active_names": 43.149446,
+      "average_turnover": 0.172687,
+      "hit_rate": 0.467405,
+      "max_drawdown": -0.41626,
+      "periods": 1626,
+      "sharpe": -0.937865,
+      "total_return": -0.385892,
+      "total_turnover": 280.789088
+    },
+    "qqq_static_buy_hold": {
+      "active_rate": 1.0,
+      "annualized_return": 0.202553,
+      "annualized_volatility": 0.250071,
+      "average_active_names": 1.0,
+      "average_turnover": 0.0,
+      "hit_rate": 0.559656,
+      "max_drawdown": -0.356172,
+      "periods": 1626,
+      "sharpe": 0.863118,
+      "total_return": 2.287472,
+      "total_turnover": 0.0
+    },
+    "random_non_economic_pairs_same_count": {
+      "active_rate": 0.966175,
+      "annualized_return": 0.003542,
+      "annualized_volatility": 0.088769,
+      "average_active_names": 45.707257,
+      "average_turnover": 0.172514,
+      "hit_rate": 0.469865,
+      "max_drawdown": -0.20721,
+      "periods": 1626,
+      "sharpe": 0.084156,
+      "total_return": 0.023073,
+      "total_turnover": 280.508246
+    },
+    "raw_20d_cross_sectional_momentum": {
+      "active_rate": 1.0,
+      "annualized_return": -0.079286,
+      "annualized_volatility": 0.135342,
+      "average_active_names": 59.996925,
+      "average_turnover": 0.140078,
+      "hit_rate": 0.485855,
+      "max_drawdown": -0.625463,
+      "periods": 1626,
+      "sharpe": -0.542209,
+      "total_return": -0.41316,
+      "total_turnover": 227.766048
+    },
+    "raw_5d_cross_sectional_reversal": {
+      "active_rate": 1.0,
+      "annualized_return": 0.013712,
+      "annualized_volatility": 0.131428,
+      "average_active_names": 59.996925,
+      "average_turnover": 0.291281,
+      "hit_rate": 0.501845,
+      "max_drawdown": -0.227862,
+      "periods": 1626,
+      "sharpe": 0.169178,
+      "total_return": 0.091851,
+      "total_turnover": 473.622217
+    },
+    "spy_static_buy_hold": {
+      "active_rate": 1.0,
+      "annualized_return": 0.134466,
+      "annualized_volatility": 0.200609,
+      "average_active_names": 1.0,
+      "average_turnover": 0.0,
+      "hit_rate": 0.548585,
+      "max_drawdown": -0.341807,
+      "periods": 1626,
+      "sharpe": 0.729662,
+      "total_return": 1.257026,
+      "total_turnover": 0.0
+    },
+    "xlk_static_buy_hold": {
+      "active_rate": 1.0,
+      "annualized_return": 0.109932,
+      "annualized_volatility": 0.341935,
+      "average_active_names": 1.0,
+      "average_turnover": 0.0,
+      "hit_rate": 0.558426,
+      "max_drawdown": -0.580771,
+      "periods": 1626,
+      "sharpe": 0.506261,
+      "total_return": 0.96006,
+      "total_turnover": 0.0
+    }
+  },
+  "created_at": "2026-07-01T13:46:28Z",
+  "crypto_label": false,
+  "data_source": "configured Alpaca/qfa real daily bars; credentials redacted; no CSV input",
+  "date_ranges": {
+    "data_fetch": {
+      "end": "2026-06-26",
+      "start": "2018-01-01"
+    },
+    "evaluation": {
+      "end": "2026-06-24",
+      "start": "2020-01-02"
+    }
+  },
+  "decision": "rejected",
+  "decision_reasons": [
+    "median after-cost random-window Sharpe <= 0",
+    "p25 after-cost random-window Sharpe <= 0",
+    "20 bps stress collapsed/nonpositive",
+    "controls with higher full-period Sharpe: ar005_original_six_name_residual, random_non_economic_pairs_same_count, raw_5d_cross_sectional_reversal, spy_static_buy_hold, qqq_static_buy_hold, xlk_static_buy_hold",
+    "max relevant correlation 0.989 > 0.60"
+  ],
+  "frozen_clusters": {
+    "ai_semis": [
+      "NVDA",
+      "AVGO",
+      "AMD",
+      "INTC",
+      "QCOM",
+      "TXN",
+      "ADI",
+      "MRVL",
+      "MCHP",
+      "NXPI",
+      "ON"
+    ],
+    "communications_media": [
+      "NFLX",
+      "DIS",
+      "CMCSA",
+      "TMUS",
+      "T",
+      "VZ"
+    ],
+    "cybersecurity_infrastructure": [
+      "PANW",
+      "CRWD",
+      "FTNT",
+      "ZS"
+    ],
+    "eda_design": [
+      "CDNS",
+      "SNPS",
+      "ROP",
+      "ADSK"
+    ],
+    "enterprise_software_cloud": [
+      "CRM",
+      "ADBE",
+      "NOW",
+      "INTU",
+      "SHOP",
+      "WDAY",
+      "ADSK",
+      "TEAM",
+      "MDB",
+      "DDOG"
+    ],
+    "gaming_interactive": [
+      "EA",
+      "TTWO",
+      "NFLX",
+      "DIS"
+    ],
+    "hardware_storage": [
+      "HPQ",
+      "WDC"
+    ],
+    "mega_platform_cloud_devices": [
+      "AAPL",
+      "MSFT",
+      "AMZN",
+      "GOOGL",
+      "GOOG",
+      "META",
+      "ORCL",
+      "IBM"
+    ],
+    "payments_networks": [
+      "V",
+      "MA",
+      "PYPL",
+      "XYZ",
+      "FIS",
+      "ADP"
+    ],
+    "platform_marketplaces": [
+      "UBER",
+      "AMZN",
+      "SHOP",
+      "META",
+      "GOOGL",
+      "GOOG"
+    ],
+    "semi_equipment_foundry": [
+      "AMAT",
+      "LRCX",
+      "KLAC",
+      "ASML",
+      "TSM"
+    ]
+  },
+  "frozen_pair_count": 196,
+  "frozen_pairs": [
+    [
+      "AAPL",
+      "AMZN"
+    ],
+    [
+      "AAPL",
+      "GOOG"
+    ],
+    [
+      "AAPL",
+      "GOOGL"
+    ],
+    [
+      "AAPL",
+      "IBM"
+    ],
+    [
+      "AAPL",
+      "META"
+    ],
+    [
+      "AAPL",
+      "MSFT"
+    ],
+    [
+      "AAPL",
+      "ORCL"
+    ],
+    [
+      "ADBE",
+      "ADSK"
+    ],
+    [
+      "ADBE",
+      "CRM"
+    ],
+    [
+      "ADBE",
+      "DDOG"
+    ],
+    [
+      "ADBE",
+      "INTU"
+    ],
+    [
+      "ADBE",
+      "MDB"
+    ],
+    [
+      "ADBE",
+      "NOW"
+    ],
+    [
+      "ADBE",
+      "SHOP"
+    ],
+    [
+      "ADBE",
+      "TEAM"
+    ],
+    [
+      "ADBE",
+      "WDAY"
+    ],
+    [
+      "ADI",
+      "AMD"
+    ],
+    [
+      "ADI",
+      "AVGO"
+    ],
+    [
+      "ADI",
+      "INTC"
+    ],
+    [
+      "ADI",
+      "MCHP"
+    ],
+    [
+      "ADI",
+      "MRVL"
+    ],
+    [
+      "ADI",
+      "NVDA"
+    ],
+    [
+      "ADI",
+      "NXPI"
+    ],
+    [
+      "ADI",
+      "ON"
+    ],
+    [
+      "ADI",
+      "QCOM"
+    ],
+    [
+      "ADI",
+      "TXN"
+    ],
+    [
+      "ADP",
+      "FIS"
+    ],
+    [
+      "ADP",
+      "INTU"
+    ],
+    [
+      "ADP",
+      "MA"
+    ],
+    [
+      "ADP",
+      "PYPL"
+    ],
+    [
+      "ADP",
+      "V"
+    ],
+    [
+      "ADP",
+      "XYZ"
+    ],
+    [
+      "ADSK",
+      "CDNS"
+    ],
+    [
+      "ADSK",
+      "CRM"
+    ],
+    [
+      "ADSK",
+      "DDOG"
+    ],
+    [
+      "ADSK",
+      "INTU"
+    ],
+    [
+      "ADSK",
+      "MDB"
+    ],
+    [
+      "ADSK",
+      "NOW"
+    ],
+    [
+      "ADSK",
+      "ROP"
+    ],
+    [
+      "ADSK",
+      "SHOP"
+    ],
+    [
+      "ADSK",
+      "SNPS"
+    ],
+    [
+      "ADSK",
+      "TEAM"
+    ],
+    [
+      "ADSK",
+      "WDAY"
+    ],
+    [
+      "AMAT",
+      "ASML"
+    ],
+    [
+      "AMAT",
+      "KLAC"
+    ],
+    [
+      "AMAT",
+      "LRCX"
+    ],
+    [
+      "AMAT",
+      "TSM"
+    ],
+    [
+      "AMD",
+      "AVGO"
+    ],
+    [
+      "AMD",
+      "INTC"
+    ],
+    [
+      "AMD",
+      "MCHP"
+    ],
+    [
+      "AMD",
+      "MRVL"
+    ],
+    [
+      "AMD",
+      "NVDA"
+    ],
+    [
+      "AMD",
+      "NXPI"
+    ],
+    [
+      "AMD",
+      "ON"
+    ],
+    [
+      "AMD",
+      "QCOM"
+    ],
+    [
+      "AMD",
+      "TXN"
+    ],
+    [
+      "AMZN",
+      "GOOG"
+    ],
+    [
+      "AMZN",
+      "GOOGL"
+    ],
+    [
+      "AMZN",
+      "IBM"
+    ],
+    [
+      "AMZN",
+      "META"
+    ],
+    [
+      "AMZN",
+      "MSFT"
+    ],
+    [
+      "AMZN",
+      "ORCL"
+    ],
+    [
+      "AMZN",
+      "SHOP"
+    ],
+    [
+      "AMZN",
+      "UBER"
+    ],
+    [
+      "ASML",
+      "KLAC"
+    ],
+    [
+      "ASML",
+      "LRCX"
+    ],
+    [
+      "ASML",
+      "TSM"
+    ],
+    [
+      "AVGO",
+      "INTC"
+    ],
+    [
+      "AVGO",
+      "MCHP"
+    ],
+    [
+      "AVGO",
+      "MRVL"
+    ],
+    [
+      "AVGO",
+      "NVDA"
+    ],
+    [
+      "AVGO",
+      "NXPI"
+    ],
+    [
+      "AVGO",
+      "ON"
+    ],
+    [
+      "AVGO",
+      "QCOM"
+    ],
+    [
+      "AVGO",
+      "TXN"
+    ],
+    [
+      "CDNS",
+      "ROP"
+    ],
+    [
+      "CDNS",
+      "SNPS"
+    ],
+    [
+      "CMCSA",
+      "DIS"
+    ],
+    [
+      "CMCSA",
+      "NFLX"
+    ],
+    [
+      "CMCSA",
+      "T"
+    ],
+    [
+      "CMCSA",
+      "TMUS"
+    ],
+    [
+      "CMCSA",
+      "VZ"
+    ],
+    [
+      "CRM",
+      "DDOG"
+    ],
+    [
+      "CRM",
+      "INTU"
+    ],
+    [
+      "CRM",
+      "MDB"
+    ],
+    [
+      "CRM",
+      "NOW"
+    ],
+    [
+      "CRM",
+      "SHOP"
+    ],
+    [
+      "CRM",
+      "TEAM"
+    ],
+    [
+      "CRM",
+      "WDAY"
+    ],
+    [
+      "CRWD",
+      "FTNT"
+    ],
+    [
+      "CRWD",
+      "PANW"
+    ],
+    [
+      "CRWD",
+      "ZS"
+    ],
+    [
+      "DDOG",
+      "INTU"
+    ],
+    [
+      "DDOG",
+      "MDB"
+    ],
+    [
+      "DDOG",
+      "NOW"
+    ],
+    [
+      "DDOG",
+      "SHOP"
+    ],
+    [
+      "DDOG",
+      "TEAM"
+    ],
+    [
+      "DDOG",
+      "WDAY"
+    ],
+    [
+      "DIS",
+      "EA"
+    ],
+    [
+      "DIS",
+      "NFLX"
+    ],
+    [
+      "DIS",
+      "T"
+    ],
+    [
+      "DIS",
+      "TMUS"
+    ],
+    [
+      "DIS",
+      "TTWO"
+    ],
+    [
+      "DIS",
+      "VZ"
+    ],
+    [
+      "EA",
+      "NFLX"
+    ],
+    [
+      "EA",
+      "TTWO"
+    ],
+    [
+      "FIS",
+      "MA"
+    ],
+    [
+      "FIS",
+      "PYPL"
+    ],
+    [
+      "FIS",
+      "V"
+    ],
+    [
+      "FIS",
+      "XYZ"
+    ],
+    [
+      "FTNT",
+      "PANW"
+    ],
+    [
+      "FTNT",
+      "ZS"
+    ],
+    [
+      "GOOG",
+      "GOOGL"
+    ],
+    [
+      "GOOG",
+      "IBM"
+    ],
+    [
+      "GOOG",
+      "META"
+    ],
+    [
+      "GOOG",
+      "MSFT"
+    ],
+    [
+      "GOOG",
+      "ORCL"
+    ],
+    [
+      "GOOG",
+      "SHOP"
+    ],
+    [
+      "GOOG",
+      "UBER"
+    ],
+    [
+      "GOOGL",
+      "IBM"
+    ],
+    [
+      "GOOGL",
+      "META"
+    ],
+    [
+      "GOOGL",
+      "MSFT"
+    ],
+    [
+      "GOOGL",
+      "ORCL"
+    ],
+    [
+      "GOOGL",
+      "SHOP"
+    ],
+    [
+      "GOOGL",
+      "UBER"
+    ],
+    [
+      "HPQ",
+      "WDC"
+    ],
+    [
+      "IBM",
+      "META"
+    ],
+    [
+      "IBM",
+      "MSFT"
+    ],
+    [
+      "IBM",
+      "ORCL"
+    ],
+    [
+      "INTC",
+      "MCHP"
+    ],
+    [
+      "INTC",
+      "MRVL"
+    ],
+    [
+      "INTC",
+      "NVDA"
+    ],
+    [
+      "INTC",
+      "NXPI"
+    ],
+    [
+      "INTC",
+      "ON"
+    ],
+    [
+      "INTC",
+      "QCOM"
+    ],
+    [
+      "INTC",
+      "TXN"
+    ],
+    [
+      "INTU",
+      "MDB"
+    ],
+    [
+      "INTU",
+      "NOW"
+    ],
+    [
+      "INTU",
+      "SHOP"
+    ],
+    [
+      "INTU",
+      "TEAM"
+    ],
+    [
+      "INTU",
+      "WDAY"
+    ],
+    [
+      "KLAC",
+      "LRCX"
+    ],
+    [
+      "KLAC",
+      "TSM"
+    ],
+    [
+      "LRCX",
+      "TSM"
+    ],
+    [
+      "MA",
+      "PYPL"
+    ],
+    [
+      "MA",
+      "V"
+    ],
+    [
+      "MA",
+      "XYZ"
+    ],
+    [
+      "MCHP",
+      "MRVL"
+    ],
+    [
+      "MCHP",
+      "NVDA"
+    ],
+    [
+      "MCHP",
+      "NXPI"
+    ],
+    [
+      "MCHP",
+      "ON"
+    ],
+    [
+      "MCHP",
+      "QCOM"
+    ],
+    [
+      "MCHP",
+      "TXN"
+    ],
+    [
+      "MDB",
+      "NOW"
+    ],
+    [
+      "MDB",
+      "SHOP"
+    ],
+    [
+      "MDB",
+      "TEAM"
+    ],
+    [
+      "MDB",
+      "WDAY"
+    ],
+    [
+      "META",
+      "MSFT"
+    ],
+    [
+      "META",
+      "ORCL"
+    ],
+    [
+      "META",
+      "SHOP"
+    ],
+    [
+      "META",
+      "UBER"
+    ],
+    [
+      "MRVL",
+      "NVDA"
+    ],
+    [
+      "MRVL",
+      "NXPI"
+    ],
+    [
+      "MRVL",
+      "ON"
+    ],
+    [
+      "MRVL",
+      "QCOM"
+    ],
+    [
+      "MRVL",
+      "TXN"
+    ],
+    [
+      "MSFT",
+      "ORCL"
+    ],
+    [
+      "NFLX",
+      "T"
+    ],
+    [
+      "NFLX",
+      "TMUS"
+    ],
+    [
+      "NFLX",
+      "TTWO"
+    ],
+    [
+      "NFLX",
+      "VZ"
+    ],
+    [
+      "NOW",
+      "SHOP"
+    ],
+    [
+      "NOW",
+      "TEAM"
+    ],
+    [
+      "NOW",
+      "WDAY"
+    ],
+    [
+      "NVDA",
+      "NXPI"
+    ],
+    [
+      "NVDA",
+      "ON"
+    ],
+    [
+      "NVDA",
+      "QCOM"
+    ],
+    [
+      "NVDA",
+      "TXN"
+    ],
+    [
+      "NXPI",
+      "ON"
+    ],
+    [
+      "NXPI",
+      "QCOM"
+    ],
+    [
+      "NXPI",
+      "TXN"
+    ],
+    [
+      "ON",
+      "QCOM"
+    ],
+    [
+      "ON",
+      "TXN"
+    ],
+    [
+      "PANW",
+      "ZS"
+    ],
+    [
+      "PYPL",
+      "V"
+    ],
+    [
+      "PYPL",
+      "XYZ"
+    ],
+    [
+      "QCOM",
+      "TXN"
+    ],
+    [
+      "ROP",
+      "SNPS"
+    ],
+    [
+      "SHOP",
+      "TEAM"
+    ],
+    [
+      "SHOP",
+      "UBER"
+    ],
+    [
+      "SHOP",
+      "WDAY"
+    ],
+    [
+      "T",
+      "TMUS"
+    ],
+    [
+      "T",
+      "VZ"
+    ],
+    [
+      "TEAM",
+      "WDAY"
+    ],
+    [
+      "TMUS",
+      "VZ"
+    ],
+    [
+      "V",
+      "XYZ"
+    ]
+  ],
+  "issue_id": "AR-184",
+  "metrics": {
+    "cost_sensitivity_full_period": {
+      "10bps": {
+        "active_rate": 0.966175,
+        "annualized_return": -0.017352,
+        "annualized_volatility": 0.077846,
+        "average_active_names": 43.149446,
+        "average_turnover": 0.172687,
+        "hit_rate": 0.463715,
+        "max_drawdown": -0.177894,
+        "periods": 1626,
+        "sharpe": -0.186061,
+        "total_return": -0.106802,
+        "total_turnover": 280.789088
+      },
+      "20bps": {
+        "active_rate": 0.966175,
+        "annualized_return": -0.059269,
+        "annualized_volatility": 0.078726,
+        "average_active_names": 43.149446,
+        "average_turnover": 0.172687,
+        "hit_rate": 0.450185,
+        "max_drawdown": -0.359003,
+        "periods": 1626,
+        "sharpe": -0.736747,
+        "total_return": -0.325801,
+        "total_turnover": 280.789088
+      },
+      "5bps": {
+        "active_rate": 0.966175,
+        "annualized_return": 0.004286,
+        "annualized_volatility": 0.077564,
+        "average_active_names": 43.149446,
+        "average_turnover": 0.172687,
+        "hit_rate": 0.47294,
+        "max_drawdown": -0.110848,
+        "periods": 1626,
+        "sharpe": 0.093786,
+        "total_return": 0.02798,
+        "total_turnover": 280.789088
+      }
+    },
+    "full_period_10bps": {
+      "active_rate": 0.966175,
+      "annualized_return": -0.017352,
+      "annualized_volatility": 0.077846,
+      "average_active_names": 43.149446,
+      "average_turnover": 0.172687,
+      "hit_rate": 0.463715,
+      "max_drawdown": -0.177894,
+      "periods": 1626,
+      "sharpe": -0.186061,
+      "total_return": -0.106802,
+      "total_turnover": 280.789088
+    },
+    "random_windows_10bps": {
+      "count": 50,
+      "mean_sharpe": 0.01014,
+      "median_active_names": 44.886904,
+      "median_active_rate": 1.0,
+      "median_annualized_return": -0.007249,
+      "median_annualized_volatility": 0.072627,
+      "median_hit_rate": 0.484127,
+      "median_max_drawdown": -0.064379,
+      "median_sharpe": -0.064667,
+      "median_turnover": 0.181053,
+      "p25_sharpe": -0.387306,
+      "positive_window_rate": 0.48,
+      "worst_period_sharpe": -1.627871
+    },
+    "random_windows_20bps": {
+      "count": 50,
+      "mean_sharpe": -0.594361,
+      "median_active_names": 44.886904,
+      "median_active_rate": 1.0,
+      "median_annualized_return": -0.050843,
+      "median_annualized_volatility": 0.073291,
+      "median_hit_rate": 0.470238,
+      "median_max_drawdown": -0.088791,
+      "median_sharpe": -0.683501,
+      "median_turnover": 0.181053,
+      "p25_sharpe": -1.034056,
+      "positive_window_rate": 0.22,
+      "worst_period_sharpe": -2.054768
+    }
+  },
+  "model_name": "megacap-tech-pairs-residual-promotion-validator-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "orthogonality": {
+    "correlations": {
+      "ar005": 0.251384,
+      "inverted": -0.988978,
+      "qqq": 0.036534,
+      "random_pairs": 0.605177,
+      "raw_momentum": -0.497538,
+      "raw_reversal": 0.331742,
+      "spy": 0.064221,
+      "xlk": 0.022834
+    },
+    "library_streams_available": false,
+    "max_relevant_corr": 0.988978,
+    "methodology": "Daily after-cost return stream was used transiently in memory only; compact correlations retained against controls and SPY/QQQ/XLK, plus AR-005/AR-019/AR-177 proxy notes where raw streams absent.",
+    "proxy_notes": [
+      "AR-005 proxied by original six-name residual implementation in controls.",
+      "AR-019 and AR-177 raw daily paths were not retained in repo; closest behavior proxy is random/non-economic pair residual and broad peer residual-like control."
+    ],
+    "raw_streams_retained": false
+  },
+  "parameters": {
+    "entry_z": 1.5,
+    "formation_window": 126,
+    "gross_target": 1.0,
+    "max_abs_weight": 0.08,
+    "rebalance_days": 5,
+    "z_window": 60
+  },
+  "parent_issue_id": "AR-005",
+  "qfa_smoke": {
+    "generate_signals_import_ok": true,
+    "gross": 1.0,
+    "nonzero_weight_count": 48
+  },
+  "random_pair_control_pair_count": 196,
+  "random_window_protocol": {
+    "actual_count": 50,
+    "compact_runs": [
+      {
+        "end": "2021-01-26",
+        "metrics": {
+          "active_rate": 0.84127,
+          "annualized_return": 0.042595,
+          "annualized_volatility": 0.074404,
+          "average_active_names": 36.480159,
+          "average_turnover": 0.155743,
+          "hit_rate": 0.460317,
+          "max_drawdown": -0.062149,
+          "periods": 252,
+          "sharpe": 0.597889,
+          "total_return": 0.042595,
+          "total_turnover": 39.247273
+        },
+        "start": "2020-01-27",
+        "window_id": 1
+      },
+      {
+        "end": "2021-02-05",
+        "metrics": {
+          "active_rate": 0.861111,
+          "annualized_return": 0.001012,
+          "annualized_volatility": 0.081921,
+          "average_active_names": 37.400794,
+          "average_turnover": 0.157415,
+          "hit_rate": 0.456349,
+          "max_drawdown": -0.084856,
+          "periods": 252,
+          "sharpe": 0.053438,
+          "total_return": 0.001012,
+          "total_turnover": 39.668678
+        },
+        "start": "2020-02-06",
+        "window_id": 2
+      },
+      {
+        "end": "2021-03-26",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.051115,
+          "annualized_volatility": 0.084668,
+          "average_active_names": 43.472222,
+          "average_turnover": 0.189165,
+          "hit_rate": 0.535714,
+          "max_drawdown": -0.076037,
+          "periods": 252,
+          "sharpe": 0.631166,
+          "total_return": 0.051115,
+          "total_turnover": 47.669702
+        },
+        "start": "2020-03-26",
+        "window_id": 3
+      },
+      {
+        "end": "2021-04-19",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.03238,
+          "annualized_volatility": 0.082893,
+          "average_active_names": 43.638889,
+          "average_turnover": 0.186315,
+          "hit_rate": 0.531746,
+          "max_drawdown": -0.076037,
+          "periods": 252,
+          "sharpe": 0.425916,
+          "total_return": 0.03238,
+          "total_turnover": 46.951434
+        },
+        "start": "2020-04-17",
+        "window_id": 4
+      },
+      {
+        "end": "2021-06-09",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.008701,
+          "annualized_volatility": 0.070905,
+          "average_active_names": 43.992063,
+          "average_turnover": 0.183402,
+          "hit_rate": 0.515873,
+          "max_drawdown": -0.060834,
+          "periods": 252,
+          "sharpe": -0.087701,
+          "total_return": -0.008701,
+          "total_turnover": 46.217282
+        },
+        "start": "2020-06-09",
+        "window_id": 5
+      },
+      {
+        "end": "2021-07-08",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.002237,
+          "annualized_volatility": 0.069298,
+          "average_active_names": 44.194444,
+          "average_turnover": 0.183737,
+          "hit_rate": 0.519841,
+          "max_drawdown": -0.054488,
+          "periods": 252,
+          "sharpe": 0.002431,
+          "total_return": -0.002237,
+          "total_turnover": 46.301687
+        },
+        "start": "2020-07-08",
+        "window_id": 6
+      },
+      {
+        "end": "2021-08-03",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.084084,
+          "annualized_volatility": 0.082877,
+          "average_active_names": 44.654762,
+          "average_turnover": 0.179548,
+          "hit_rate": 0.507937,
+          "max_drawdown": -0.040736,
+          "periods": 252,
+          "sharpe": 1.015174,
+          "total_return": 0.084084,
+          "total_turnover": 45.246211
+        },
+        "start": "2020-08-03",
+        "window_id": 7
+      },
+      {
+        "end": "2021-10-01",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.008932,
+          "annualized_volatility": 0.057096,
+          "average_active_names": 44.690476,
+          "average_turnover": 0.178934,
+          "hit_rate": 0.52381,
+          "max_drawdown": -0.039074,
+          "periods": 252,
+          "sharpe": 0.184293,
+          "total_return": 0.008932,
+          "total_turnover": 45.091349
+        },
+        "start": "2020-10-01",
+        "window_id": 8
+      },
+      {
+        "end": "2021-10-14",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.053461,
+          "annualized_volatility": 0.0658,
+          "average_active_names": 45.65873,
+          "average_turnover": 0.182947,
+          "hit_rate": 0.535714,
+          "max_drawdown": -0.029629,
+          "periods": 252,
+          "sharpe": 0.82442,
+          "total_return": 0.053461,
+          "total_turnover": 46.102529
+        },
+        "start": "2020-10-14",
+        "window_id": 9
+      },
+      {
+        "end": "2021-11-08",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.0001,
+          "annualized_volatility": 0.056835,
+          "average_active_names": 45.797619,
+          "average_turnover": 0.176891,
+          "hit_rate": 0.492063,
+          "max_drawdown": -0.04829,
+          "periods": 252,
+          "sharpe": 0.026647,
+          "total_return": -0.0001,
+          "total_turnover": 44.576423
+        },
+        "start": "2020-11-06",
+        "window_id": 10
+      },
+      {
+        "end": "2022-01-10",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.059075,
+          "annualized_volatility": 0.066642,
+          "average_active_names": 46.146825,
+          "average_turnover": 0.185548,
+          "hit_rate": 0.519841,
+          "max_drawdown": -0.029629,
+          "periods": 252,
+          "sharpe": 0.894592,
+          "total_return": 0.059075,
+          "total_turnover": 46.758036
+        },
+        "start": "2021-01-11",
+        "window_id": 11
+      },
+      {
+        "end": "2022-01-14",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.01348,
+          "annualized_volatility": 0.065071,
+          "average_active_names": 45.833333,
+          "average_turnover": 0.178416,
+          "hit_rate": 0.468254,
+          "max_drawdown": -0.059731,
+          "periods": 252,
+          "sharpe": -0.176065,
+          "total_return": -0.01348,
+          "total_turnover": 44.960863
+        },
+        "start": "2021-01-15",
+        "window_id": 12
+      },
+      {
+        "end": "2022-03-04",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.009573,
+          "annualized_volatility": 0.066396,
+          "average_active_names": 45.876984,
+          "average_turnover": 0.185399,
+          "hit_rate": 0.484127,
+          "max_drawdown": -0.059003,
+          "periods": 252,
+          "sharpe": 0.176719,
+          "total_return": 0.009573,
+          "total_turnover": 46.720554
+        },
+        "start": "2021-03-05",
+        "window_id": 13
+      },
+      {
+        "end": "2022-03-08",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.023165,
+          "annualized_volatility": 0.066406,
+          "average_active_names": 46.09127,
+          "average_turnover": 0.176202,
+          "hit_rate": 0.456349,
+          "max_drawdown": -0.072665,
+          "periods": 252,
+          "sharpe": -0.319765,
+          "total_return": -0.023165,
+          "total_turnover": 44.402881
+        },
+        "start": "2021-03-09",
+        "window_id": 14
+      },
+      {
+        "end": "2022-07-05",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.06988,
+          "annualized_volatility": 0.080675,
+          "average_active_names": 46.916667,
+          "average_turnover": 0.178055,
+          "hit_rate": 0.496032,
+          "max_drawdown": -0.038694,
+          "periods": 252,
+          "sharpe": 0.877488,
+          "total_return": 0.06988,
+          "total_turnover": 44.869874
+        },
+        "start": "2021-07-02",
+        "window_id": 15
+      },
+      {
+        "end": "2022-08-09",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.112874,
+          "annualized_volatility": 0.085648,
+          "average_active_names": 46.357143,
+          "average_turnover": 0.176167,
+          "hit_rate": 0.503968,
+          "max_drawdown": -0.038694,
+          "periods": 252,
+          "sharpe": 1.291378,
+          "total_return": 0.112874,
+          "total_turnover": 44.394188
+        },
+        "start": "2021-08-09",
+        "window_id": 16
+      },
+      {
+        "end": "2022-08-25",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.084675,
+          "annualized_volatility": 0.095929,
+          "average_active_names": 44.65873,
+          "average_turnover": 0.188467,
+          "hit_rate": 0.488095,
+          "max_drawdown": -0.046354,
+          "periods": 252,
+          "sharpe": 0.894585,
+          "total_return": 0.084675,
+          "total_turnover": 47.493665
+        },
+        "start": "2021-08-25",
+        "window_id": 17
+      },
+      {
+        "end": "2022-09-09",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.081192,
+          "annualized_volatility": 0.097134,
+          "average_active_names": 44.146825,
+          "average_turnover": 0.189231,
+          "hit_rate": 0.47619,
+          "max_drawdown": -0.046354,
+          "periods": 252,
+          "sharpe": 0.851556,
+          "total_return": 0.081192,
+          "total_turnover": 47.686272
+        },
+        "start": "2021-09-09",
+        "window_id": 18
+      },
+      {
+        "end": "2022-09-19",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.069541,
+          "annualized_volatility": 0.086091,
+          "average_active_names": 44.507937,
+          "average_turnover": 0.181631,
+          "hit_rate": 0.507937,
+          "max_drawdown": -0.037024,
+          "periods": 252,
+          "sharpe": 0.823638,
+          "total_return": 0.069541,
+          "total_turnover": 45.771014
+        },
+        "start": "2021-09-17",
+        "window_id": 19
+      },
+      {
+        "end": "2022-11-17",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.038516,
+          "annualized_volatility": 0.104468,
+          "average_active_names": 45.52381,
+          "average_turnover": 0.181465,
+          "hit_rate": 0.488095,
+          "max_drawdown": -0.071525,
+          "periods": 252,
+          "sharpe": 0.412935,
+          "total_return": 0.038516,
+          "total_turnover": 45.729075
+        },
+        "start": "2021-11-17",
+        "window_id": 20
+      },
+      {
+        "end": "2023-03-07",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.083426,
+          "annualized_volatility": 0.087367,
+          "average_active_names": 44.519841,
+          "average_turnover": 0.178695,
+          "hit_rate": 0.488095,
+          "max_drawdown": -0.068797,
+          "periods": 252,
+          "sharpe": 0.960579,
+          "total_return": 0.083426,
+          "total_turnover": 45.031145
+        },
+        "start": "2022-03-04",
+        "window_id": 21
+      },
+      {
+        "end": "2023-05-11",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.037237,
+          "annualized_volatility": 0.086626,
+          "average_active_names": 43.559524,
+          "average_turnover": 0.186554,
+          "hit_rate": 0.515873,
+          "max_drawdown": -0.083878,
+          "periods": 252,
+          "sharpe": 0.465045,
+          "total_return": 0.037237,
+          "total_turnover": 47.011548
+        },
+        "start": "2022-05-10",
+        "window_id": 22
+      },
+      {
+        "end": "2023-07-18",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.023545,
+          "annualized_volatility": 0.07473,
+          "average_active_names": 43.34127,
+          "average_turnover": 0.185866,
+          "hit_rate": 0.503968,
+          "max_drawdown": -0.103486,
+          "periods": 252,
+          "sharpe": -0.281672,
+          "total_return": -0.023545,
+          "total_turnover": 46.838177
+        },
+        "start": "2022-07-15",
+        "window_id": 23
+      },
+      {
+        "end": "2023-10-06",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.033166,
+          "annualized_volatility": 0.068532,
+          "average_active_names": 43.678571,
+          "average_turnover": 0.184452,
+          "hit_rate": 0.507937,
+          "max_drawdown": -0.099979,
+          "periods": 252,
+          "sharpe": -0.457816,
+          "total_return": -0.033166,
+          "total_turnover": 46.48184
+        },
+        "start": "2022-10-05",
+        "window_id": 24
+      },
+      {
+        "end": "2023-12-14",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.008327,
+          "annualized_volatility": 0.064162,
+          "average_active_names": 43.22619,
+          "average_turnover": 0.193338,
+          "hit_rate": 0.511905,
+          "max_drawdown": -0.063843,
+          "periods": 252,
+          "sharpe": 0.161337,
+          "total_return": 0.008327,
+          "total_turnover": 48.72127
+        },
+        "start": "2022-12-13",
+        "window_id": 25
+      },
+      {
+        "end": "2024-02-28",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.023224,
+          "annualized_volatility": 0.066476,
+          "average_active_names": 43.873016,
+          "average_turnover": 0.18988,
+          "hit_rate": 0.515873,
+          "max_drawdown": -0.054523,
+          "periods": 252,
+          "sharpe": -0.320195,
+          "total_return": -0.023224,
+          "total_turnover": 47.849849
+        },
+        "start": "2023-02-27",
+        "window_id": 26
+      },
+      {
+        "end": "2024-03-11",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.027003,
+          "annualized_volatility": 0.070856,
+          "average_active_names": 44.246032,
+          "average_turnover": 0.177452,
+          "hit_rate": 0.511905,
+          "max_drawdown": -0.065252,
+          "periods": 252,
+          "sharpe": -0.350833,
+          "total_return": -0.027003,
+          "total_turnover": 44.717785
+        },
+        "start": "2023-03-09",
+        "window_id": 27
+      },
+      {
+        "end": "2024-05-21",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.021088,
+          "annualized_volatility": 0.068193,
+          "average_active_names": 45.047619,
+          "average_turnover": 0.175391,
+          "hit_rate": 0.472222,
+          "max_drawdown": -0.065252,
+          "periods": 252,
+          "sharpe": -0.278392,
+          "total_return": -0.021088,
+          "total_turnover": 44.198493
+        },
+        "start": "2023-05-19",
+        "window_id": 28
+      },
+      {
+        "end": "2024-07-19",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.04157,
+          "annualized_volatility": 0.071632,
+          "average_active_names": 45.265873,
+          "average_turnover": 0.181795,
+          "hit_rate": 0.47619,
+          "max_drawdown": -0.065252,
+          "periods": 252,
+          "sharpe": 0.604427,
+          "total_return": 0.04157,
+          "total_turnover": 45.812248
+        },
+        "start": "2023-07-19",
+        "window_id": 29
+      },
+      {
+        "end": "2024-09-04",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.032953,
+          "annualized_volatility": 0.071712,
+          "average_active_names": 46.178571,
+          "average_turnover": 0.175891,
+          "hit_rate": 0.492063,
+          "max_drawdown": -0.071928,
+          "periods": 252,
+          "sharpe": -0.431308,
+          "total_return": -0.032953,
+          "total_turnover": 44.324442
+        },
+        "start": "2023-09-01",
+        "window_id": 30
+      },
+      {
+        "end": "2024-09-12",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.01672,
+          "annualized_volatility": 0.071039,
+          "average_active_names": 45.873016,
+          "average_turnover": 0.179138,
+          "hit_rate": 0.43254,
+          "max_drawdown": -0.096083,
+          "periods": 252,
+          "sharpe": -0.201876,
+          "total_return": -0.01672,
+          "total_turnover": 45.142731
+        },
+        "start": "2023-09-12",
+        "window_id": 31
+      },
+      {
+        "end": "2024-10-17",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.007012,
+          "annualized_volatility": 0.07307,
+          "average_active_names": 45.547619,
+          "average_turnover": 0.179357,
+          "hit_rate": 0.452381,
+          "max_drawdown": -0.096083,
+          "periods": 252,
+          "sharpe": -0.059805,
+          "total_return": -0.007012,
+          "total_turnover": 45.197838
+        },
+        "start": "2023-10-17",
+        "window_id": 32
+      },
+      {
+        "end": "2024-12-26",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.026333,
+          "annualized_volatility": 0.074554,
+          "average_active_names": 45.436508,
+          "average_turnover": 0.180642,
+          "hit_rate": 0.452381,
+          "max_drawdown": -0.062944,
+          "periods": 252,
+          "sharpe": -0.320644,
+          "total_return": -0.026333,
+          "total_turnover": 45.521777
+        },
+        "start": "2023-12-26",
+        "window_id": 33
+      },
+      {
+        "end": "2025-01-03",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.019822,
+          "annualized_volatility": 0.074568,
+          "average_active_names": 45.555556,
+          "average_turnover": 0.176903,
+          "hit_rate": 0.456349,
+          "max_drawdown": -0.057678,
+          "periods": 252,
+          "sharpe": -0.231196,
+          "total_return": -0.019822,
+          "total_turnover": 44.579525
+        },
+        "start": "2024-01-03",
+        "window_id": 34
+      },
+      {
+        "end": "2025-01-13",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.007988,
+          "annualized_volatility": 0.074658,
+          "average_active_names": 46.103175,
+          "average_turnover": 0.174703,
+          "hit_rate": 0.464286,
+          "max_drawdown": -0.056552,
+          "periods": 252,
+          "sharpe": -0.070091,
+          "total_return": -0.007988,
+          "total_turnover": 44.025203
+        },
+        "start": "2024-01-10",
+        "window_id": 35
+      },
+      {
+        "end": "2025-02-26",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.007486,
+          "annualized_volatility": 0.071419,
+          "average_active_names": 45.642857,
+          "average_turnover": 0.178071,
+          "hit_rate": 0.444444,
+          "max_drawdown": -0.06922,
+          "periods": 252,
+          "sharpe": -0.069528,
+          "total_return": -0.007486,
+          "total_turnover": 44.874014
+        },
+        "start": "2024-02-23",
+        "window_id": 36
+      },
+      {
+        "end": "2025-05-20",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.021729,
+          "annualized_volatility": 0.078887,
+          "average_active_names": 45.984127,
+          "average_turnover": 0.188094,
+          "hit_rate": 0.456349,
+          "max_drawdown": -0.064379,
+          "periods": 252,
+          "sharpe": 0.311877,
+          "total_return": 0.021729,
+          "total_turnover": 47.399718
+        },
+        "start": "2024-05-16",
+        "window_id": 37
+      },
+      {
+        "end": "2025-06-18",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.014572,
+          "annualized_volatility": 0.077173,
+          "average_active_names": 45.392857,
+          "average_turnover": 0.186783,
+          "hit_rate": 0.468254,
+          "max_drawdown": -0.064379,
+          "periods": 252,
+          "sharpe": 0.225983,
+          "total_return": 0.014572,
+          "total_turnover": 47.069379
+        },
+        "start": "2024-06-14",
+        "window_id": 38
+      },
+      {
+        "end": "2025-08-01",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.044568,
+          "annualized_volatility": 0.069461,
+          "average_active_names": 44.563492,
+          "average_turnover": 0.187385,
+          "hit_rate": 0.448413,
+          "max_drawdown": -0.054974,
+          "periods": 252,
+          "sharpe": -0.62152,
+          "total_return": -0.044568,
+          "total_turnover": 47.220986
+        },
+        "start": "2024-07-30",
+        "window_id": 39
+      },
+      {
+        "end": "2025-08-06",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.062114,
+          "annualized_volatility": 0.069571,
+          "average_active_names": 43.5,
+          "average_turnover": 0.190253,
+          "hit_rate": 0.468254,
+          "max_drawdown": -0.070763,
+          "periods": 252,
+          "sharpe": -0.886777,
+          "total_return": -0.062114,
+          "total_turnover": 47.94366
+        },
+        "start": "2024-08-02",
+        "window_id": 40
+      },
+      {
+        "end": "2025-08-12",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.043813,
+          "annualized_volatility": 0.068295,
+          "average_active_names": 44.349206,
+          "average_turnover": 0.18608,
+          "hit_rate": 0.456349,
+          "max_drawdown": -0.064095,
+          "periods": 252,
+          "sharpe": -0.621797,
+          "total_return": -0.043813,
+          "total_turnover": 46.892285
+        },
+        "start": "2024-08-08",
+        "window_id": 41
+      },
+      {
+        "end": "2025-09-08",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.055461,
+          "annualized_volatility": 0.071181,
+          "average_active_names": 44.72619,
+          "average_turnover": 0.185312,
+          "hit_rate": 0.444444,
+          "max_drawdown": -0.068751,
+          "periods": 252,
+          "sharpe": -0.765861,
+          "total_return": -0.055461,
+          "total_turnover": 46.698585
+        },
+        "start": "2024-09-04",
+        "window_id": 42
+      },
+      {
+        "end": "2025-09-11",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.047039,
+          "annualized_volatility": 0.070671,
+          "average_active_names": 44.126984,
+          "average_turnover": 0.188518,
+          "hit_rate": 0.47619,
+          "max_drawdown": -0.067073,
+          "periods": 252,
+          "sharpe": -0.646291,
+          "total_return": -0.047039,
+          "total_turnover": 47.506437
+        },
+        "start": "2024-09-09",
+        "window_id": 43
+      },
+      {
+        "end": "2025-09-26",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": 0.019139,
+          "annualized_volatility": 0.072184,
+          "average_active_names": 43.853175,
+          "average_turnover": 0.192838,
+          "hit_rate": 0.464286,
+          "max_drawdown": -0.041237,
+          "periods": 252,
+          "sharpe": 0.298753,
+          "total_return": 0.019139,
+          "total_turnover": 48.595174
+        },
+        "start": "2024-09-24",
+        "window_id": 44
+      },
+      {
+        "end": "2025-12-23",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.030515,
+          "annualized_volatility": 0.071217,
+          "average_active_names": 45.40873,
+          "average_turnover": 0.179971,
+          "hit_rate": 0.448413,
+          "max_drawdown": -0.051599,
+          "periods": 252,
+          "sharpe": -0.399464,
+          "total_return": -0.030515,
+          "total_turnover": 45.352607
+        },
+        "start": "2024-12-19",
+        "window_id": 45
+      },
+      {
+        "end": "2026-01-02",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.066776,
+          "annualized_volatility": 0.095675,
+          "average_active_names": 46.257937,
+          "average_turnover": 0.176591,
+          "hit_rate": 0.47619,
+          "max_drawdown": -0.118138,
+          "periods": 252,
+          "sharpe": -0.673248,
+          "total_return": -0.066776,
+          "total_turnover": 44.500817
+        },
+        "start": "2024-12-30",
+        "window_id": 46
+      },
+      {
+        "end": "2026-03-31",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.067485,
+          "annualized_volatility": 0.097761,
+          "average_active_names": 45.301587,
+          "average_turnover": 0.179934,
+          "hit_rate": 0.515873,
+          "max_drawdown": -0.134153,
+          "periods": 252,
+          "sharpe": -0.664577,
+          "total_return": -0.067485,
+          "total_turnover": 45.343415
+        },
+        "start": "2025-03-28",
+        "window_id": 47
+      },
+      {
+        "end": "2026-04-28",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.049394,
+          "annualized_volatility": 0.073162,
+          "average_active_names": 43.730159,
+          "average_turnover": 0.179756,
+          "hit_rate": 0.484127,
+          "max_drawdown": -0.069703,
+          "periods": 252,
+          "sharpe": -0.655641,
+          "total_return": -0.049394,
+          "total_turnover": 45.298618
+        },
+        "start": "2025-04-25",
+        "window_id": 48
+      },
+      {
+        "end": "2026-05-21",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.116591,
+          "annualized_volatility": 0.093002,
+          "average_active_names": 45.353175,
+          "average_turnover": 0.174924,
+          "hit_rate": 0.507937,
+          "max_drawdown": -0.135463,
+          "periods": 252,
+          "sharpe": -1.285333,
+          "total_return": -0.116591,
+          "total_turnover": 44.080939
+        },
+        "start": "2025-05-20",
+        "window_id": 49
+      },
+      {
+        "end": "2026-06-11",
+        "metrics": {
+          "active_rate": 1.0,
+          "annualized_return": -0.156278,
+          "annualized_volatility": 0.101142,
+          "average_active_names": 45.22619,
+          "average_turnover": 0.173878,
+          "hit_rate": 0.47619,
+          "max_drawdown": -0.163598,
+          "periods": 252,
+          "sharpe": -1.627871,
+          "total_return": -0.156278,
+          "total_turnover": 43.817366
+        },
+        "start": "2025-06-10",
+        "window_id": 50
+      }
+    ],
+    "seed": 184005,
+    "target_count": 50,
+    "window_trading_days": 252
+  },
+  "raw_daily_paths_retained": false,
+  "universe_discovery": {
+    "candidate_count": 71,
+    "dropped_symbols": [
+      {
+        "bars": 1390,
+        "first": "2020-12-10",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 916210730.6,
+        "reason": "insufficient_history",
+        "symbol": "ABNB"
+      },
+      {
+        "bars": 1628,
+        "first": "2020-01-02",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 161018979.165,
+        "reason": "dropped_cap_60_lower_liquidity_rank",
+        "symbol": "ANET"
+      },
+      {
+        "bars": 1628,
+        "first": "2020-01-02",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 135998933.735,
+        "reason": "dropped_cap_60_lower_liquidity_rank",
+        "symbol": "DELL"
+      },
+      {
+        "bars": 1473,
+        "first": "2020-01-02",
+        "last": "2025-11-10",
+        "median_dollar_volume_first252": 1765644.26,
+        "reason": "liquidity_proxy_below_100m_median_dollar_volume",
+        "symbol": "FI"
+      },
+      {
+        "bars": 1628,
+        "first": "2020-01-02",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 117541227.115,
+        "reason": "dropped_cap_60_lower_liquidity_rank",
+        "symbol": "HPE"
+      },
+      {
+        "bars": 1628,
+        "first": "2020-01-02",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 162683893.08,
+        "reason": "dropped_cap_60_lower_liquidity_rank",
+        "symbol": "NET"
+      },
+      {
+        "bars": 1628,
+        "first": "2020-01-02",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 120109510.18,
+        "reason": "dropped_cap_60_lower_liquidity_rank",
+        "symbol": "NTAP"
+      },
+      {
+        "bars": 1440,
+        "first": "2020-09-30",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 1314640286.2,
+        "reason": "insufficient_history",
+        "symbol": "PLTR"
+      },
+      {
+        "bars": 1450,
+        "first": "2020-09-16",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 942289556.545,
+        "reason": "insufficient_history",
+        "symbol": "SNOW"
+      },
+      {
+        "bars": 0,
+        "first": null,
+        "last": null,
+        "median_dollar_volume_first252": 0.0,
+        "reason": "insufficient_history",
+        "symbol": "SQ"
+      },
+      {
+        "bars": 1628,
+        "first": "2020-01-02",
+        "last": "2026-06-25",
+        "median_dollar_volume_first252": 157193403.085,
+        "reason": "dropped_cap_60_lower_liquidity_rank",
+        "symbol": "STX"
+      }
+    ],
+    "etfs_excluded_from_primary": [
+      "SPY",
+      "QQQ",
+      "XLK"
+    ],
+    "selected_count": 60,
+    "selected_symbols": [
+      "AAPL",
+      "ADBE",
+      "ADI",
+      "ADP",
+      "ADSK",
+      "AMAT",
+      "AMD",
+      "AMZN",
+      "ASML",
+      "AVGO",
+      "CDNS",
+      "CMCSA",
+      "CRM",
+      "CRWD",
+      "CSCO",
+      "DDOG",
+      "DIS",
+      "EA",
+      "FIS",
+      "FTNT",
+      "GOOG",
+      "GOOGL",
+      "HPQ",
+      "IBM",
+      "INTC",
+      "INTU",
+      "KLAC",
+      "LRCX",
+      "MA",
+      "MCHP",
+      "MDB",
+      "META",
+      "MRVL",
+      "MSFT",
+      "MU",
+      "NFLX",
+      "NOW",
+      "NVDA",
+      "NXPI",
+      "ON",
+      "ORCL",
+      "PANW",
+      "PYPL",
+      "QCOM",
+      "ROP",
+      "SHOP",
+      "SNPS",
+      "T",
+      "TEAM",
+      "TMUS",
+      "TSM",
+      "TTWO",
+      "TXN",
+      "UBER",
+      "V",
+      "VZ",
+      "WDAY",
+      "WDC",
+      "XYZ",
+      "ZS"
+    ],
+    "selection_filters": [
+      "not ETF in primary universe",
+      "Alpaca daily bar coverage >= 90% of evaluation days and >= 1000 bars",
+      "first-252-bar median dollar-volume proxy >= 100m"
+    ]
+  },
+  "warnings": [
+    "Daily close-to-close residual validator only; borrow, spread, intraday execution and locate constraints not modeled.",
+    "Universe/pairs frozen by deterministic history/liquidity/economic-exposure filters before alpha performance review in this run.",
+    "No raw bars, equity curves, daily return paths, weight tails, databases, or caches retained."
+  ]
+}

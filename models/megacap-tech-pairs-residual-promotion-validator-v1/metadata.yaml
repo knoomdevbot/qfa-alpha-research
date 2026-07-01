@@ -1,0 +1,18 @@
+issue_id: AR-184
+model_name: megacap-tech-pairs-residual-promotion-validator-v1
+parent: AR-005
+status: rejected
+asset_bucket: equity
+crypto_label: false
+created_at: '2026-07-01T00:00:00Z'
+updated_at: '2026-07-01T13:56:30Z'
+research_type: promotion_pruning_validator
+hypothesis: AR-005 mega-cap technology pair residual mean reversion may contain stable nonredundant residual returns if frozen ex ante and broadened across related liquid common stocks.
+falsifier: controls dominate, random-window median or p25 after-cost Sharpe <= 0, 20 bps cost collapse, unreasonable turnover, max relevant corr > 0.60, or AR-177-like peer-residual failure.
+data_source: qfa/Alpaca real daily bars only; no CSV-backed qfa backtests.
+artifact_policy:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

@@ -1,0 +1,39 @@
+issue_id: AR-184
+model_name: megacap-tech-pairs-residual-promotion-validator-v1
+parent_issue_id: AR-005
+asset_bucket: equity
+crypto_label: false
+data_source: qfa/Alpaca real daily bars only; no CSV; credentials redacted
+universe_policy:
+  candidate_pool: broad liquid U.S.-listed common-stock/ADR technology, communications, semiconductor, payments, platform, and adjacent mega-cap growth names
+  primary_etfs_excluded: true
+  deterministic_filters:
+    - common stock / ADR exposure, no ETFs in primary universe
+    - sufficient Alpaca daily bar history over the declared evaluation span
+    - first-year median dollar-volume liquidity proxy at least 100m USD
+    - economically related to at least one frozen cluster or pair
+  performance_filtering_prohibited: true
+signal:
+  formation_window: 126
+  zscore_window: 60
+  entry_z: 1.5
+  rebalance_days: 5
+  max_abs_weight: 0.08
+  gross_target: 1.0
+  direction: residual_mean_reversion
+costs:
+  primary_decision_cost_bps: 10
+  sensitivity_bps: [5, 20]
+controls_required:
+  - original_ar005_six_name_residual
+  - random_non_economic_pairs
+  - raw_cross_sectional_reversal
+  - raw_cross_sectional_momentum
+  - static_spy_qqq_xlk_equal_weight
+  - shifted_or_inverted_signal
+artifact_policy:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
