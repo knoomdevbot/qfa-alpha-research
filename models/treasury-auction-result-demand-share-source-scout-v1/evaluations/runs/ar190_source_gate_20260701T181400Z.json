@@ -1,0 +1,157 @@
+{
+  "accepted": false,
+  "asset_bucket": "etf",
+  "counts": {
+    "all_rows_since_2008": 6202,
+    "future_announcement_only_sample_rows": 2,
+    "sampled_bid_to_cover_nonnull_since_2010": 5654,
+    "sampled_rows_since_2010": 5656,
+    "sampled_xml_result_file_nonnull_since_2010": 5654
+  },
+  "crypto_label": false,
+  "decision": "source_gate_passed_needs_realdata_evaluation",
+  "enabled": false,
+  "field_presence": {
+    "date_fields": [
+      "announcemt_date",
+      "auction_date",
+      "issue_date",
+      "record_date"
+    ],
+    "demand_fields": [
+      "bid_to_cover_ratio",
+      "total_tendered",
+      "total_accepted",
+      "comp_tendered",
+      "comp_accepted",
+      "indirect_bidder_tendered",
+      "indirect_bidder_accepted",
+      "direct_bidder_tendered",
+      "direct_bidder_accepted",
+      "primary_dealer_tendered",
+      "primary_dealer_accepted"
+    ],
+    "file_handle_fields": [
+      "xml_filenm_announcemt",
+      "xml_filenm_comp_results",
+      "pdf_filenm_announcemt",
+      "pdf_filenm_comp_results"
+    ],
+    "xml_publication_timestamp_convention": "official result XML AuctionResults/ReleaseTime, combined with AuctionAnnouncement/AuctionDate, interpreted as ET result release timestamp"
+  },
+  "issue_id": "AR-190",
+  "limitations": [
+    "HTTP Last-Modified on older TreasuryDirect result files reflects 2026 site/object migration, not first publication; parser must use XML ReleaseTime plus AuctionDate for event timestamp and retain file hash/header evidence as retrieval proof.",
+    "No market-data performance evaluation was run."
+  ],
+  "market_data": {
+    "qfa_alpaca_evaluation_run": false,
+    "reason": "Bounded source/vintage scout only; no real ETF OHLCV backtest run."
+  },
+  "model_name": "treasury-auction-result-demand-share-source-scout-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "performance_evaluated": false,
+  "probe_utc": "2026-07-01T18:14:00Z",
+  "raw_daily_paths_retained": false,
+  "required_next_step": "Run qfa/Alpaca real ETF daily performance evaluator with next-session execution before completion or child suggestions.",
+  "run_id": "ar190_source_gate_20260701T181400Z",
+  "sample_regime_summaries": [
+    {
+      "auction_date": "2008-01-02",
+      "demand_share_fields_present": false,
+      "hash_or_etag_headers_present": true,
+      "last_modified_is_first_publication_evidence": false,
+      "pdf_result_file_head_ok": true,
+      "result_fields_present": true,
+      "security_term": "4-Week",
+      "security_type": "Bill",
+      "xml_auction_date_matches": null,
+      "xml_release_time": null,
+      "xml_result_file_retrieved": false,
+      "year": 2008
+    },
+    {
+      "auction_date": "2010-01-04",
+      "demand_share_fields_present": true,
+      "hash_or_etag_headers_present": true,
+      "last_modified_is_first_publication_evidence": false,
+      "pdf_result_file_head_ok": true,
+      "result_fields_present": true,
+      "security_term": "26-Week",
+      "security_type": "Bill",
+      "xml_auction_date_matches": true,
+      "xml_release_time": "11:31",
+      "xml_result_file_retrieved": true,
+      "year": 2010
+    },
+    {
+      "auction_date": "2020-01-02",
+      "demand_share_fields_present": true,
+      "hash_or_etag_headers_present": true,
+      "last_modified_is_first_publication_evidence": false,
+      "pdf_result_file_head_ok": true,
+      "result_fields_present": true,
+      "security_term": "8-Week",
+      "security_type": "Bill",
+      "xml_auction_date_matches": true,
+      "xml_release_time": "11:32",
+      "xml_result_file_retrieved": true,
+      "year": 2020
+    },
+    {
+      "auction_date": "2024-01-02",
+      "demand_share_fields_present": true,
+      "hash_or_etag_headers_present": true,
+      "last_modified_is_first_publication_evidence": false,
+      "pdf_result_file_head_ok": true,
+      "result_fields_present": true,
+      "security_term": "42-Day",
+      "security_type": "Bill",
+      "xml_auction_date_matches": true,
+      "xml_release_time": "13:01",
+      "xml_result_file_retrieved": true,
+      "year": 2024
+    },
+    {
+      "auction_date": "2026-01-05",
+      "demand_share_fields_present": true,
+      "hash_or_etag_headers_present": true,
+      "last_modified_is_first_publication_evidence": false,
+      "pdf_result_file_head_ok": true,
+      "result_fields_present": true,
+      "security_term": "13-Week",
+      "security_type": "Bill",
+      "xml_auction_date_matches": true,
+      "xml_release_time": "11:32",
+      "xml_result_file_retrieved": true,
+      "year": 2026
+    }
+  ],
+  "source": {
+    "api_endpoint": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "csv_used": false,
+    "name": "U.S. Treasury FiscalData / TreasuryDirect auction results",
+    "official": true
+  },
+  "source_gate_passed": true,
+  "status": "queued",
+  "timestamp_vintage_gate": {
+    "event_timestamp_parser": "Combine official result XML AuctionDate with AuctionResults ReleaseTime as America/New_York timestamp; ignore record_date for publication timing.",
+    "future_announcement_only_separation": {
+      "announcement_only_rows": 2,
+      "auction_dates": [
+        "2026-07-02"
+      ],
+      "result_bearing_rows": 0,
+      "rows": 2
+    },
+    "header_last_modified_caveat": "Older TreasuryDirect object Last-Modified headers reflect 2026 site/object migration and are not first-publication evidence; XML ReleaseTime is the publication convention.",
+    "passed": true,
+    "record_date_is_publication_timestamp": false,
+    "result_file_retrieval_proven": true
+  },
+  "weight": 0.0
+}

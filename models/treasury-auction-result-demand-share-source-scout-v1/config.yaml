@@ -1,0 +1,20 @@
+model_name: treasury-auction-result-demand-share-source-scout-v1
+issue_id: AR-190
+asset_bucket: etf
+crypto_label: false
+enabled: false
+weight: 0.0
+status: queued
+decision: source_gate_passed_needs_realdata_evaluation
+source_gate_passed: true
+performance_evaluated: false
+source:
+  official: true
+  api_endpoint: https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query
+  result_xml_url_pattern: https://www.treasurydirect.gov/xml/{xml_filenm_comp_results}
+  result_pdf_url_pattern: https://www.treasurydirect.gov/instit/annceresult/press/preanre/{yyyy}/{pdf_filenm_comp_results}
+timing:
+  event_timestamp: combine AuctionDate and AuctionResults ReleaseTime from official result XML, America/New_York
+  record_date_is_publication_timestamp: false
+  announcement_only_rows_excluded: true
+next_step: qfa_alpaca_real_etf_daily_evaluation_required
