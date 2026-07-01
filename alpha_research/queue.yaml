@@ -1421,14 +1421,14 @@ issues:
 - id: AR-182
   title: Official Federal Reserve G.17 industrial-production/capacity-utilization first-vintage ETF allocator source/vintage scout
   model_name: fed-g17-industrial-production-capacity-etf-source-scout-v1
-  status: queued
-  priority: source_gate_passed_needs_realdata_evaluation
+  status: rejected
+  priority: completed_realdata
   family: public_macro_production_release
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-182.md
   parent: null
-  last_checked_at: '2026-07-01T10:38:43Z'
-  tried_count: 0
+  last_checked_at: '2026-07-01T12:04:11Z'
+  tried_count: 1
 - id: AR-183
   title: Official Census New Residential Construction housing-starts/permits first-vintage ETF allocator source/vintage scout
   model_name: census-nrc-housing-starts-permits-etf-source-scout-v1
@@ -1441,10 +1441,9 @@ issues:
   last_checked_at: '2026-07-01T10:38:43Z'
   tried_count: 0
 active_batch:
-- AR-182
 - AR-183
 last_realdata_batch:
-- AR-178
-updated_at: '2026-07-01T11:23:58Z'
+- AR-182
+updated_at: '2026-07-01T12:04:11Z'
 target_tried_ideas: 100
-tried_ideas_count: 165
+tried_ideas_count: 166

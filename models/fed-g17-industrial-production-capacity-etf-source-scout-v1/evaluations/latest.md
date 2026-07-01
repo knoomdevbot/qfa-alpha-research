@@ -1,35 +1,35 @@
-# AR-182 source/vintage gate — 2026-07-01T11:21:40Z
+# AR-182 real-data evaluation — Federal Reserve G.17 ETF allocator
 
-Decision: **source_gate_pass** / `source_gate_passed_needs_realdata_evaluation`.
+- Run ID: `ar182_realdata_g17_etf_allocator_20260701T050000Z`
+- Completed: 2026-07-01T12:03:13Z
+- Decision: **rejected**
+- Market data: qfa `AlpacaGateway.get_bars` real daily ETF bars; no CSV/`--data-csv`; no daemon; no orders.
+- Universe: selected all candidates XLI, XLB, XLE, SPY, IWM, TLT, IEF, HYG, LQD, DBC, GLD after pre-performance coverage/economic-exposure checks; dropped: none. qfa/Alpaca common daily-bar evaluation span is 2016-01-04 through 2026-06-30.
 
-Official Federal Reserve G.17 source/vintage gate passed for a future real-data evaluator. No ETF market-data performance was run and the qfa wrapper is a disabled zero-weight scaffold.
+## Primary metrics (10 bps one-way)
 
-## Diagnostics
+- Full-sample Sharpe: -0.203554
+- Annual return / vol: -0.01155 / 0.05707
+- Max drawdown: -0.212752
+- Random-window median / p25 / worst Sharpe: -0.386432 / -0.463945 / -2.013603
+- Positive random-window rate: 0.06
+- Events total / active: 303 / 186
+- Event hit rate: 0.790323
+- Activation rate: 0.144158
+- Avg daily turnover: 0.057633
 
-- Release-date rows parsed: 949
-- Official text events parsed: 303
-- Official text parse failures: 0
-- Archive TXT links: 303
-- Parser path: `models/fed-g17-industrial-production-capacity-etf-source-scout-v1/model.py`.
-- Sample events retained as compact examples only:
-  - 2001-02-16 for 2001-01: INDPRO 147.0, TCU 80.2, URL https://www.federalreserve.gov/releases/g17/20010216/g17.txt
-  - 2007-05-16 for 2007-04: INDPRO 113.0, TCU 81.6, URL https://www.federalreserve.gov/releases/g17/20070516/g17.txt
-  - 2013-09-16 for 2013-08: INDPRO 99.4, TCU 77.8, URL https://www.federalreserve.gov/releases/g17/20130916/g17.txt
-  - 2020-01-17 for 2019-12: INDPRO 109.4, TCU 77.0, URL https://www.federalreserve.gov/releases/g17/20200117/g17.txt
-  - 2026-05-15 for 2026-04: INDPRO 102.5, TCU 76.1, URL https://www.federalreserve.gov/releases/g17/20260515/g17.txt
+## Controls
 
-## Required booleans
+- Equal-weight static Sharpe: 0.565437
+- SPY / IWM static Sharpe: 0.798783 / 0.534783
+- ETF TSMOM / reversal Sharpe: 0.181869 / -0.029116
+- Shifted / random / inverted labels Sharpe: -0.358338 / -0.316701 / -0.308896
 
-- `no_csv_used`: true
-- `no_data_csv_argument_used`: true
-- `no_daemon`: true
-- `no_orders`: true
-- `raw_daily_paths_retained`: false
-- `asset_bucket`: etf
-- `crypto_label`: false
-- `metrics`: null
+## Decision rationale
 
-## Warnings
+- primary 10bps full-sample Sharpe not positive
+- lower-tail random-window Sharpe materially negative
+- positive random-window rate below 55%
+- does not beat equal-weight ETF static control
 
-- This is not an accepted/watchlist alpha. It is a source-gate pass with no performance metrics.
-- Future evaluation must use qfa/Alpaca real ETF bars, next-session timing, random windows, 10 bps primary cost, and controls versus static/equal ETF allocations, ETF TSMOM/reversal, shifted/random labels, inverted shocks, and macro-family controls.
+Orthogonality vs accepted/watchlist alphas: deferred_due_rejection; rejected before promotion because lower-tail/random-window and control gates failed

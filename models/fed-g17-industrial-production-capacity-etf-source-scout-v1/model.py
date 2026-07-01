@@ -1,9 +1,11 @@
-"""Federal Reserve G.17 source/vintage scout zero-weight qfa wrapper.
+"""Federal Reserve G.17 first-vintage ETF allocator research wrapper.
 
-This module intentionally contains no trading signal.  It provides a small,
-timestamp-safe parser for official Federal Reserve G.17 dated release text pages
-so a later real-data evaluator can build first-vintage event tables without
-using current-revised macro data or market CSVs.
+This module keeps the official dated-release parser from the source/vintage
+scout and exposes a fixed, interpretable qfa ``generate_signals(context)`` rule.
+The rule is deliberately sparse: it returns zero weights unless the caller
+passes timestamp-safe first-vintage G.17 release history through ``context`` on a
+valid post-release allocation day.  It does not fetch credentials, read CSVs,
+place orders, or use current-revised macro data.
 """
 
 from __future__ import annotations
@@ -23,6 +25,11 @@ except Exception:  # pragma: no cover
 BASE_URL = "https://www.federalreserve.gov/releases/g17/"
 RELEASE_DATES_URL = urljoin(BASE_URL, "release_dates.htm")
 USER_AGENT = "qfa-alpha-research AR-182 G17 source scout (no orders)"
+CANDIDATE_UNIVERSE = ("XLI", "XLB", "XLE", "SPY", "IWM", "TLT", "IEF", "HYG", "LQD", "DBC", "GLD")
+LOOKBACK_RELEASES = 36
+MIN_HISTORY_RELEASES = 24
+POSITIVE_THRESHOLD = 0.75
+NEGATIVE_THRESHOLD = -0.75
 
 
 @dataclass(frozen=True)
@@ -46,9 +53,77 @@ def zero_weights(symbols: Iterable[str]) -> dict[str, float]:
     return {str(symbol): 0.0 for symbol in symbols}
 
 
+def _finite_values(values: Iterable[Optional[float]]) -> list[float]:
+    return [float(v) for v in values if v is not None]
+
+
+def trailing_zscore(values: Iterable[Optional[float]], current: Optional[float]) -> float:
+    """Population z-score using only prior first-vintage values."""
+    vals = _finite_values(values)
+    if current is None or len(vals) < 18:
+        return 0.0
+    mean = sum(vals) / len(vals)
+    variance = sum((v - mean) ** 2 for v in vals) / len(vals)
+    if variance <= 1e-12:
+        return 0.0
+    return (float(current) - mean) / (variance**0.5)
+
+
+def fixed_g17_release_weights(history: list[dict[str, object]], event: dict[str, object]) -> dict[str, float]:
+    """Compute the predeclared AR-182 fixed-rule ETF sleeve for one release.
+
+    ``history`` must contain only releases known strictly before ``event``.
+    The score combines total IP MoM, manufacturing MoM, capacity-utilization
+    change, and capacity-utilization level trailing z-scores.  Direction and
+    sleeve weights were specified before looking at performance and are not
+    optimized in this module.
+    """
+    if len(history) < MIN_HISTORY_RELEASES:
+        return zero_weights(CANDIDATE_UNIVERSE)
+    trail = history[-LOOKBACK_RELEASES:]
+    ip_z = trailing_zscore((row.get("indpro_total_mom_pct") for row in trail), event.get("indpro_total_mom_pct"))
+    mfg_z = trailing_zscore((row.get("manufacturing_mom_pct") for row in trail), event.get("manufacturing_mom_pct"))
+    cu_ch_z = trailing_zscore(
+        (row.get("capacity_utilization_total_change_pp") for row in trail),
+        event.get("capacity_utilization_total_change_pp"),
+    )
+    cu_z = trailing_zscore((row.get("capacity_utilization_total") for row in trail), event.get("capacity_utilization_total"))
+    score = ip_z + 0.5 * mfg_z + 0.5 * cu_ch_z + 0.25 * cu_z
+    weights = zero_weights(CANDIDATE_UNIVERSE)
+    if score >= POSITIVE_THRESHOLD:
+        weights.update({"XLI": 0.16, "XLB": 0.13, "XLE": 0.12, "IWM": 0.15, "SPY": 0.14, "DBC": 0.10, "HYG": 0.10})
+        weights.update({"TLT": -0.05, "IEF": -0.03, "LQD": -0.02})
+    elif score <= NEGATIVE_THRESHOLD:
+        weights.update({"TLT": 0.20, "IEF": 0.17, "LQD": 0.13, "GLD": 0.10, "SPY": 0.05})
+        weights.update({"XLI": -0.10, "XLB": -0.08, "XLE": -0.07, "IWM": -0.10})
+    if any(abs(v) > 0 for v in weights.values()) and cu_z >= 1.0:
+        for symbol, delta in {"DBC": 0.04, "XLE": 0.03, "GLD": 0.03, "TLT": -0.05, "IEF": -0.03, "XLI": -0.02}.items():
+            weights[symbol] += delta
+    gross = sum(abs(v) for v in weights.values())
+    if gross > 1.0:
+        weights = {symbol: value / gross for symbol, value in weights.items()}
+    return weights
+
+
 def generate_signals(context) -> dict[str, float]:
-    """qfa alpha contract: disabled source-gate scaffold returns zero weights."""
-    return zero_weights(getattr(context, "symbols", []))
+    """qfa alpha contract for the fixed G.17 release-event allocator.
+
+    Expected context fields are intentionally generic for research adapters:
+    ``symbols`` plus either ``g17_event``/``g17_history`` or
+    ``latest_g17_event``/``g17_prior_events``.  If the caller has not already
+    established that today is inside the timestamp-safe post-release holding
+    window, it should omit the event or set ``g17_active`` false; this function
+    then returns zeros.
+    """
+    symbols = [str(symbol) for symbol in getattr(context, "symbols", CANDIDATE_UNIVERSE)]
+    if getattr(context, "g17_active", True) is False:
+        return zero_weights(symbols)
+    event = getattr(context, "g17_event", None) or getattr(context, "latest_g17_event", None)
+    history = getattr(context, "g17_history", None) or getattr(context, "g17_prior_events", None)
+    if not isinstance(event, dict) or not isinstance(history, list):
+        return zero_weights(symbols)
+    raw_weights = fixed_g17_release_weights(history, event)
+    return {symbol: float(raw_weights.get(symbol, 0.0)) for symbol in symbols}
 
 
 def fetch_url(url: str, timeout: int = 15) -> str:

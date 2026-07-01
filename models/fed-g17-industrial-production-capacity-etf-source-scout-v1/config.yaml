@@ -3,8 +3,10 @@ issue_id: AR-182
 asset_bucket: etf
 crypto_label: false
 enabled: false
-zero_weight_scaffold: true
-source_gate_only: true
+zero_weight_scaffold: false
+source_gate_only: false
+realdata_evaluated: true
+decision: rejected
 candidate_universe:
   - XLI
   - XLB
@@ -17,15 +19,39 @@ candidate_universe:
   - LQD
   - DBC
   - GLD
+selected_universe:
+  - XLI
+  - XLB
+  - XLE
+  - SPY
+  - IWM
+  - TLT
+  - IEF
+  - HYG
+  - LQD
+  - DBC
+  - GLD
+universe_selection:
+  rule: pre-performance liquidity/data availability/economic exposure
+  common_real_bar_coverage: 2016-01-04 through 2026-06-30 from qfa/Alpaca daily ETF bars
+  dropped: []
 data_sources:
   official_frb_g17_archive: https://www.federalreserve.gov/releases/g17/
   official_frb_g17_release_dates: https://www.federalreserve.gov/releases/g17/release_dates.htm
-  alfred_graph_probe: https://alfred.stlouisfed.org/graph/alfredgraph.csv
-  fred_api_probe: https://api.stlouisfed.org/fred/series/observations
+  market_bars: qfa AlpacaGateway.get_bars real daily ETF bars
+signal:
+  type: fixed_rule_release_event_allocator
+  lookback_releases: 36
+  minimum_history_releases: 24
+  hold_sessions_after_next_session: 5
+  positive_threshold: 0.75
+  negative_threshold: -0.75
+  gross_cap: 1.0
 trading:
   disabled: true
-  weights: zero
   earliest_future_timing: next_etf_session_after_09_15_et_release
+  costs_bps_one_way_primary: 10
+  costs_bps_one_way_sensitivities: [5, 10, 20]
 constraints:
   no_csv_used: true
   no_data_csv_argument_used: true
