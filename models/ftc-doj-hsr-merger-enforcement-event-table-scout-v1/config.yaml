@@ -1,0 +1,17 @@
+model_name: ftc-doj-hsr-merger-enforcement-event-table-scout-v1
+issue_id: AR-181
+asset_bucket: equity
+crypto_label: false
+status: rejected_source_gate
+source_gate_only: true
+performance_backtest_allowed: false
+performance_backtest_ran: false
+signal_mode: zero_weight_scaffold
+official_sources_probed:
+  - https://www.ftc.gov/legal-library/browse/early-termination-notices
+  - https://www.ftc.gov/developer/api/v0/endpoints/hsr-early-termination-notices-api
+  - https://api.ftc.gov/v0/hsr-early-termination-notices
+  - https://www.ftc.gov/news-events/news/press-releases?combine=merger
+  - https://www.justice.gov/atr/press-releases
+  - https://www.justice.gov/opa/pr/statement-department-justice-antitrust-division-closing-its-investigation-merger-paramount
+next_session_rule: date-only official FTC HSR notices require no-earlier-than next regular session after notice date; DOJ detail pages can expose published_time metadata when reachable

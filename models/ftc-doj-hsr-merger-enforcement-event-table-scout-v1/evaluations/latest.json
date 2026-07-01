@@ -1,0 +1,93 @@
+{
+  "issue_id": "AR-181",
+  "model_name": "ftc-doj-hsr-merger-enforcement-event-table-scout-v1",
+  "run_id": "ar181_source_gate_20260701T102151Z",
+  "completed_at": "2026-07-01T10:21:51Z",
+  "decision": "rejected",
+  "status": "rejected_source_gate",
+  "asset_bucket": "equity",
+  "crypto_label": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "metrics": null,
+  "source_gate": {
+    "passed": false,
+    "official_endpoints_probed": 6,
+    "official_sources_reachable": true,
+    "ftc_hsr_legal_library_reachable": true,
+    "ftc_hsr_total_displayed": 27907,
+    "ftc_hsr_listing_pages_scanned": 6,
+    "ftc_hsr_listing_events_scanned": 120,
+    "ftc_hsr_detail_pages_scanned": 17,
+    "ftc_hsr_details_with_transaction_fields": 17,
+    "ftc_hsr_api_docs_reachable": true,
+    "ftc_hsr_api_without_key_status": 403,
+    "ftc_press_merger_search_reachable": true,
+    "ftc_press_results_first_page": 21,
+    "doj_antitrust_press_base_reachable": true,
+    "doj_base_press_links_seen": 6,
+    "doj_merger_query_status": 403,
+    "doj_detail_published_time_metadata_seen": true,
+    "sample_hsr_private_or_fund_indicator_count": 69,
+    "sample_hsr_private_or_fund_indicator_denominator": 120,
+    "candidate_official_events_seen": 120,
+    "accepted_event_table_rows": 0,
+    "conservatively_mapped_liquid_common_stock_events": 0,
+    "mapped_target_role_events": 0,
+    "mapped_acquirer_role_events": 0,
+    "dropped_event_log_available": false,
+    "manual_precision_audit_rows": 17,
+    "manual_precision_audit_result": "official field extraction was plausible in sampled HSR detail pages, but mapping precision to event-date liquid U.S. common stocks was not auditable because no durable mapper/event table was built",
+    "timestamp_safety_assessment": "date-only FTC HSR notices can be next-session mapped conservatively but do not provide verified first-public timestamps per notice; DOJ detail pages may expose article:published_time metadata but a combined official event table was not built",
+    "concentration_check_available": false,
+    "rejection_reason": "failed source gate: no durable official event table with >=150 conservatively mapped liquid U.S. common-stock events, source URLs/IDs, timestamp-safe next-session mapping, role labels, dropped-event logs, manual mapping precision audit, and concentration diagnostics"
+  },
+  "official_source_samples": [
+    {
+      "source": "FTC HSR Legal Library",
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20261547",
+      "id": "20261547",
+      "date": "2026-06-25",
+      "acquiring_party": "Global-E Online Ltd.",
+      "acquired_party": "Passport Global Newco, Inc.",
+      "status": "Granted",
+      "mapping_note": "Global-E may be public/foreign and Passport appears private/subsidiary-like; not accepted without event-date security mapping"
+    },
+    {
+      "source": "FTC HSR Legal Library",
+      "url": "https://www.ftc.gov/legal-library/browse/early-termination-notices/20200113",
+      "id": "20200113",
+      "date": "2019-11-01",
+      "acquiring_party": "American Securities Partners VIII, L.P.",
+      "acquired_party": "AECOM",
+      "status": "Granted",
+      "mapping_note": "public-company name present, but fund acquirer and acquired-entity/subsidiary fields require dedupe and point-in-time role/security mapping before use"
+    },
+    {
+      "source": "DOJ Antitrust detail page",
+      "url": "https://www.justice.gov/opa/pr/statement-department-justice-antitrust-division-closing-its-investigation-merger-paramount",
+      "published_time": "2026-06-12T17:32:31-04:00",
+      "mapping_note": "official timestamp exists on sample detail page, but no broad DOJ merger-enforcement event table was constructed"
+    }
+  ],
+  "failure_modes_seen": [
+    "FTC HSR API endpoint returns 403 without an API key despite reachable documentation",
+    "FTC HSR detail pages are date-only for the notice event; page markup also contains unrelated site times that must be ignored",
+    "simple FTC press search for merger is noisy and duplicated on the first page",
+    "DOJ base pages are reachable but one DOJ search query returned 403",
+    "HSR parties are frequently private, funds, partnerships, subsidiaries, foreign issuers, or legal-name variants requiring point-in-time issuer/security mapping",
+    "no compact dropped-event log, dedupe, concentration diagnostics, or >=150 liquid U.S. common-stock mappings were produced"
+  ],
+  "performance": {
+    "ran": false,
+    "reason": "source_gate_failed",
+    "median_sharpe_10bps": null,
+    "p25_sharpe_10bps": null,
+    "positive_window_rate": null,
+    "stress_20bps_sharpe": null,
+    "control_results": null
+  }
+}

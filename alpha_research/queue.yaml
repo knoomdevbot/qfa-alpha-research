@@ -1410,18 +1410,17 @@ issues:
 - id: AR-181
   title: Official FTC/DOJ HSR and merger-enforcement event-table source/vintage feasibility scout
   model_name: ftc-doj-hsr-merger-enforcement-event-table-scout-v1
-  status: queued
-  priority: preflight_queue
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_antitrust_merger_review_event_source
   asset_bucket: equity
   issue_path: alpha_research/issues/AR-181.md
   parent: null
-  last_checked_at: '2026-07-01T09:44:48Z'
-  tried_count: 0
-active_batch:
-- AR-181
+  last_checked_at: '2026-07-01T10:21:51Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
 - AR-178
-updated_at: '2026-07-01T09:44:48Z'
+updated_at: '2026-07-01T10:21:51Z'
 target_tried_ideas: 100
-tried_ideas_count: 164
+tried_ideas_count: 165
