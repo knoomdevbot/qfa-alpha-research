@@ -1218,11 +1218,11 @@
       },
       {
         "model": "AR-039",
-        "status": "no_retained_equity_curve"
+        "status": "no_retained_return_stream"
       },
       {
         "model": "AR-016",
-        "status": "no_retained_equity_curve"
+        "status": "no_retained_return_stream"
       },
       {
         "model": "AR-063",
