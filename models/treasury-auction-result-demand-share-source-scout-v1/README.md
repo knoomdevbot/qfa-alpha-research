@@ -1,10 +1,10 @@
 # Treasury auction-result demand-share source scout v1
 
-AR-190 bounded source/vintage scout for official Treasury auction result demand fields. This is a disabled zero-weight scaffold; no qfa/Alpaca performance evaluator was run.
+AR-190 bounded source/vintage scout for official Treasury auction result demand fields. The official-source gate passed, then a real qfa/Alpaca ETF daily performance evaluation was run with next-session execution. The performance gate failed, so this remains a disabled zero-weight artifact.
 
 ## Decision
 
-`source_gate_passed_needs_realdata_evaluation`
+`rejected_realdata_performance_gate_failed`
 
 ## Source/vintage findings
 
@@ -27,6 +27,14 @@ AR-190 bounded source/vintage scout for official Treasury auction result demand 
 }
 ```
 
-## Required next step
+## Real-data performance result
 
-Run a real qfa/Alpaca ETF daily evaluation with next-session execution before marking complete, accepting, or spawning children.
+- Run ID: `ar190_qfa_alpaca_real_20260701T184846Z`.
+- Data: configured paper-data access through qfa/AlpacaGateway real ETF 1Day bars; no CSV/no `--data-csv`; no daemon; no orders.
+- Execution: next ETF session after Treasury result timestamp; timestamp convention remains XML `AuctionDate` plus `ReleaseTime` in America/New_York, not `record_date`.
+- Universe: primary duration/cash/inflation ETFs TLT, IEF, SHY, AGG, BND, GOVT, TIP; diagnostics/controls LQD, HYG, SPY, QQQ, IWM, GLD, UUP, BIL, SGOV where coverage was available.
+- Primary 10 bps result: Sharpe `-7.477436`, annualized return `-0.33328501`, max drawdown `-0.97005281`, hit rate `0.184471`, modeled events `1816`.
+- Random/stress windows at 10 bps: median Sharpe `-6.305271`, p25 `-8.337412`, worst `-11.158621`, positive-window rate `0.0`.
+- Controls were not convincingly dominated; static/calendar/random-label variants were similarly weak or less bad. Acceptance gate failed; no children spawned.
+
+Compact artifacts are under `evaluations/latest.json`, `evaluations/latest.md`, and `evaluations/runs/ar190_qfa_alpaca_real_20260701T184846Z.json`. No raw bars, daily equity paths, SQLite DBs, helper scripts, orders, daemon state, or CSV market data are retained.

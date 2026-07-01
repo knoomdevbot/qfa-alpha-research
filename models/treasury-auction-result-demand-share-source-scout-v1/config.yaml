@@ -4,10 +4,13 @@ asset_bucket: etf
 crypto_label: false
 enabled: false
 weight: 0.0
-status: queued
-decision: source_gate_passed_needs_realdata_evaluation
+status: rejected
+decision: rejected_realdata_performance_gate_failed
 source_gate_passed: true
-performance_evaluated: false
+performance_evaluated: true
+accepted: false
+latest_run_id: ar190_qfa_alpaca_real_20260701T184846Z
+costs_bps: [5, 10, 20]
 source:
   official: true
   api_endpoint: https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query
@@ -17,4 +20,14 @@ timing:
   event_timestamp: combine AuctionDate and AuctionResults ReleaseTime from official result XML, America/New_York
   record_date_is_publication_timestamp: false
   announcement_only_rows_excluded: true
-next_step: qfa_alpaca_real_etf_daily_evaluation_required
+market_data:
+  source: configured paper-data access via qfa/AlpacaGateway real ETF daily bars
+  timeframe: 1Day
+  next_session_execution: true
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
+next_step: none_rejected_no_children
