@@ -1,0 +1,16 @@
+model_name: sec-8k-item101-201-agreement-completion-source-scout-v1
+issue_id: AR-191
+asset_bucket: equity
+crypto_label: false
+status: rejected_source_gate
+source_gate_only: true
+performance_backtest_allowed: false
+performance_backtest_ran: false
+signal_mode: zero_weight_scaffold
+official_sources_probed:
+  - https://www.sec.gov/files/company_tickers.json
+  - https://data.sec.gov/submissions/CIK##########.json
+probe_caps:
+  max_company_submission_probes: 30
+  deep_document_crawl: false
+next_session_rule: future source-pass work must use no-earlier-than next regular session after SEC acceptanceDateTime

@@ -1,0 +1,282 @@
+{
+  "issue_id": "AR-191",
+  "model_name": "sec-8k-item101-201-agreement-completion-source-scout-v1",
+  "run_id": "ar191_source_gate_20260701T193819Z",
+  "completed_at": "2026-07-01T19:38:19Z",
+  "decision": "rejected",
+  "status": "rejected",
+  "asset_bucket": "equity",
+  "crypto_label": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "metrics": null,
+  "source_gate": {
+    "passed": false,
+    "hard_cap_observed": true,
+    "company_tickers_reachable": true,
+    "company_tickers_rows": 10426,
+    "submission_probes": 30,
+    "successful_submission_probes": 30,
+    "official_sources_reachable": true,
+    "primary_document_fetches": 0,
+    "deep_document_crawl_ran": false,
+    "recent_8k_rows_seen": 2435,
+    "metadata_item101_8k_seen": 111,
+    "metadata_item201_8k_seen": 16,
+    "metadata_candidate_101_or_201_seen": 121,
+    "accepted_event_table_rows": 0,
+    "conservatively_mapped_liquid_common_stock_events": 0,
+    "unique_issuers_in_durable_event_table": 0,
+    "per_primary_class_counts": {
+      "item_1_01_agreement": 0,
+      "item_2_01_completion": 0
+    },
+    "dropped_event_log_available": false,
+    "manual_precision_audit_rows": 0,
+    "manual_precision_audit_result": "not attempted: SEC metadata confirmed reachability and acceptance timestamps, but no durable class-separated parser/event table was built within hard-capped micro-scout; primary documents were intentionally not crawled deeply",
+    "concentration_check_available": false,
+    "rejection_reason": "failed source gate: bounded SEC company-submission metadata probe found reachable Item 1.01/2.01 metadata, but did not produce a durable class-separated parser/event table satisfying >=150 mapped liquid events overall, >=75 per primary class, >=75 issuers, concentration limits, audited parser precision, and dropped-event logs"
+  },
+  "source_probe_summary": {
+    "fixed_liquid_ticker_sample_size": 30,
+    "note": "GOOGL and GOOG share one CIK; counts are reported as probed ticker metadata, not deduped issuer events.",
+    "ticker_item_counts": [
+      {
+        "ticker": "AAPL",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "MSFT",
+        "item101_8k": 0,
+        "item201_8k": 1,
+        "candidate_101_or_201": 1
+      },
+      {
+        "ticker": "NVDA",
+        "item101_8k": 2,
+        "item201_8k": 0,
+        "candidate_101_or_201": 2
+      },
+      {
+        "ticker": "AMZN",
+        "item101_8k": 6,
+        "item201_8k": 0,
+        "candidate_101_or_201": 6
+      },
+      {
+        "ticker": "META",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "GOOGL/GOOG duplicate CIK",
+        "item101_8k": 2,
+        "item201_8k": 0,
+        "candidate_101_or_201": 2
+      },
+      {
+        "ticker": "BRK-B",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "LLY",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "AVGO",
+        "item101_8k": 18,
+        "item201_8k": 3,
+        "candidate_101_or_201": 19
+      },
+      {
+        "ticker": "JPM",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "TSLA",
+        "item101_8k": 18,
+        "item201_8k": 0,
+        "candidate_101_or_201": 18
+      },
+      {
+        "ticker": "XOM",
+        "item101_8k": 2,
+        "item201_8k": 2,
+        "candidate_101_or_201": 3
+      },
+      {
+        "ticker": "UNH",
+        "item101_8k": 2,
+        "item201_8k": 0,
+        "candidate_101_or_201": 2
+      },
+      {
+        "ticker": "V",
+        "item101_8k": 6,
+        "item201_8k": 1,
+        "candidate_101_or_201": 6
+      },
+      {
+        "ticker": "MA",
+        "item101_8k": 5,
+        "item201_8k": 0,
+        "candidate_101_or_201": 5
+      },
+      {
+        "ticker": "COST",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "WMT",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "PG",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "JNJ",
+        "item101_8k": 3,
+        "item201_8k": 2,
+        "candidate_101_or_201": 4
+      },
+      {
+        "ticker": "HD",
+        "item101_8k": 3,
+        "item201_8k": 1,
+        "candidate_101_or_201": 4
+      },
+      {
+        "ticker": "ABBV",
+        "item101_8k": 12,
+        "item201_8k": 1,
+        "candidate_101_or_201": 13
+      },
+      {
+        "ticker": "BAC",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "KO",
+        "item101_8k": 0,
+        "item201_8k": 0,
+        "candidate_101_or_201": 0
+      },
+      {
+        "ticker": "MRK",
+        "item101_8k": 0,
+        "item201_8k": 1,
+        "candidate_101_or_201": 1
+      },
+      {
+        "ticker": "NFLX",
+        "item101_8k": 3,
+        "item201_8k": 0,
+        "candidate_101_or_201": 3
+      },
+      {
+        "ticker": "AMD",
+        "item101_8k": 16,
+        "item201_8k": 3,
+        "candidate_101_or_201": 18
+      },
+      {
+        "ticker": "CRM",
+        "item101_8k": 4,
+        "item201_8k": 0,
+        "candidate_101_or_201": 4
+      },
+      {
+        "ticker": "ORCL",
+        "item101_8k": 3,
+        "item201_8k": 1,
+        "candidate_101_or_201": 4
+      },
+      {
+        "ticker": "PEP",
+        "item101_8k": 4,
+        "item201_8k": 0,
+        "candidate_101_or_201": 4
+      }
+    ]
+  },
+  "official_source_samples": [
+    {
+      "ticker": "MSFT",
+      "cik": 789019,
+      "accession": "0001193125-23-255762",
+      "acceptanceDateTime": "2023-10-13T12:37:32.000Z",
+      "items": "2.01",
+      "primaryDocument": "d537928d8k.htm"
+    },
+    {
+      "ticker": "AMZN",
+      "cik": 1018724,
+      "accession": "0001104659-26-072140",
+      "acceptanceDateTime": "2026-06-10T09:00:19.000Z",
+      "items": "1.01,2.03,9.01",
+      "primaryDocument": "tm2613616d4_8k.htm"
+    },
+    {
+      "ticker": "AVGO",
+      "cik": 1730168,
+      "accession": "0001140361-23-054354",
+      "acceptanceDateTime": "2023-11-22T14:14:41.000Z",
+      "items": "2.01,2.03,8.01,9.01",
+      "primaryDocument": "ef20015100_form8k.htm"
+    },
+    {
+      "ticker": "TSLA",
+      "cik": 1318605,
+      "accession": "0001104659-25-087862",
+      "acceptanceDateTime": "2025-09-05T20:46:03.000Z",
+      "items": "1.01,9.01",
+      "primaryDocument": "tm2525337d1_8k.htm"
+    },
+    {
+      "ticker": "AMD",
+      "cik": 2488,
+      "accession": "0001193125-26-226746",
+      "acceptanceDateTime": "2026-05-15T20:12:53.000Z",
+      "items": "1.01,1.02,2.03,5.02,5.07,9.01",
+      "primaryDocument": "d118163d8k.htm"
+    }
+  ],
+  "failure_modes_seen": [
+    "SEC company_tickers and company submission JSON endpoints were reachable with acceptanceDateTime and item metadata.",
+    "Item metadata alone is insufficient to split 1.01 agreements into merger, debt/credit, equity investment, commercial/supply, and other classes with audited precision.",
+    "Only 16 Item 2.01 metadata rows appeared in 30 large-liquid-ticker probes, below the 75-per-primary-class acceptance gate even before dedupe/mapping drops.",
+    "No primary-document parser, role/counterparty extraction, duplicate clustering, dropped-event log, or concentration diagnostics were built under the hard cap.",
+    "No qfa/Alpaca performance backtest was run because source gate failed."
+  ],
+  "performance": {
+    "ran": false,
+    "reason": "source_gate_failed",
+    "median_sharpe_10bps": null,
+    "p25_sharpe_10bps": null,
+    "positive_window_rate": null,
+    "stress_20bps_sharpe": null,
+    "control_results": null
+  },
+  "source_gate_status": "rejected_source_gate"
+}

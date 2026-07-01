@@ -1,0 +1,22 @@
+model_name: sec-8k-item101-201-agreement-completion-source-scout-v1
+issue_id: AR-191
+created_at: '2026-07-01T19:38:19Z'
+completed_at: '2026-07-01T19:38:19Z'
+status: rejected_source_gate
+decision: rejected
+asset_bucket: equity
+crypto_label: false
+family: public_filing_material_agreement_event_source
+parent_alpha: null
+source_gate:
+  passed: false
+  rejection_reason: SEC Item 1.01/2.01 metadata was reachable in a bounded 30-company-submission probe, but no durable class-separated parser/event table was created satisfying mapped-event breadth, per-class counts, issuer concentration, manual precision audit, and dropped-event log gates.
+performance:
+  ran: false
+  reason: source_gate_failed
+safety:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
