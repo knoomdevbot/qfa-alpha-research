@@ -1377,18 +1377,17 @@ issues:
 - id: AR-178
   title: AR-039/AR-051 frozen ETF defensive-rotation expanded-universe promotion/pruning validator
   model_name: etf-defensive-rotation-expanded-universe-validator-v1
-  status: queued
-  priority: preflight_queue
+  status: rejected
+  priority: completed_realdata
   family: defensive_rotation_validation
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-178.md
   parent: AR-039/AR-051
-  last_checked_at: '2026-07-01T06:33:55Z'
-  tried_count: 0
-active_batch:
-- AR-178
+  last_checked_at: '2026-07-01T07:11:53Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
-- AR-177
-updated_at: '2026-07-01T06:33:55Z'
+- AR-178
+updated_at: '2026-07-01T07:11:53Z'
 target_tried_ideas: 100
-tried_ideas_count: 161
+tried_ideas_count: 162

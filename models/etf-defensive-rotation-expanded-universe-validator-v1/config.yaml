@@ -1,0 +1,41 @@
+model_name: etf-defensive-rotation-expanded-universe-validator-v1
+issue_id: AR-178
+asset_bucket: etf
+crypto_label: false
+data_source: qfa AlpacaGateway real daily bars
+primary_cost_bps_one_way: 10
+cost_sensitivity_bps_one_way: [5, 10, 20]
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+candidate_pool:
+  description: Broad U.S.-listed ETF candidates across equity beta/style/factors/sectors, international equity, Treasuries/TIPS/credit/cash, commodities/gold and volatility proxies; leveraged/inverse products excluded from primary.
+  candidate_count: 86
+selection_filters:
+  - Exclude leveraged/inverse products from primary universe.
+  - Require Alpaca daily-bar history >= 7 years where feasible.
+  - Require coverage >= 85% over fetched daily calendar.
+  - Require recent median dollar volume >= 5,000,000 USD.
+  - Prune broad duplicate clones before scoring while retaining economic exposure diversity.
+selected_symbols: [SPY, QQQ, IWM, MDY, RSP, VTI, IWF, IWD, MTUM, QUAL, USMV, SPLV, SCHD, XLK, XLY, XLF, XLI, XLB, XLE, XLV, XLP, XLU, XLRE, VNQ, SMH, IBB, KRE, XRT, XHB, IYT, EFA, EEM, EWJ, EWG, EWU, FXI, EWZ, EWC, EWA, SHY, IEF, TLT, BIL, SHV, TIP, LQD, HYG, AGG, MBB, EMB, GLD, IAU, SLV, DBC, USO, VIXY]
+params:
+  momentum_lookback: 126
+  secondary_lookback: 63
+  vol_window: 63
+  corr_window: 63
+  min_periods: 190
+  top_n: 2
+  corr_penalty: 0.50
+  target_vol: 0.10
+  max_abs_weight: 0.50
+  rebalance: monthly_calendar_proxy_prior_month_end
+  risk_on_symbols: [SPY, QQQ, IWM, MDY, VTI, RSP, XLK, XLY, XLF, XLI, XLB, XLE, XLV, SMH, EFA, EEM, VNQ]
+  defensive_symbols: [XLU, XLP, TLT, IEF, SHY, BIL, SHV, TIP, GLD, IAU, LQD, AGG, MBB, USMV, SPLV, QUAL, SCHD]
+acceptance_gates:
+  median_random_window_sharpe_10bps: "> 0"
+  p25_random_window_sharpe_10bps: non_hostile_non_negative
+  positive_window_rate: ">= 0.55"
+  stress_cost_20bps: must_not_collapse
+  max_relevant_correlation: "<= 0.60 hard, <= 0.50 preferred"
