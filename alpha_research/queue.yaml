@@ -1396,9 +1396,21 @@ issues:
   parent: null
   last_checked_at: '2026-07-01T08:52:14Z'
   tried_count: 1
-active_batch: []
+- id: AR-180
+  title: Official FDA approval-decision event-table source/vintage feasibility scout
+  model_name: fda-approval-decision-event-table-scout-v1
+  status: queued
+  priority: preflight_queue
+  family: public_regulatory_fda_approval_source
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-180.md
+  parent: null
+  last_checked_at: '2026-07-01T09:00:22Z'
+  tried_count: 0
+active_batch:
+- AR-180
 last_realdata_batch:
 - AR-178
-updated_at: '2026-07-01T08:52:14Z'
+updated_at: '2026-07-01T09:00:22Z'
 target_tried_ideas: 100
 tried_ideas_count: 163
