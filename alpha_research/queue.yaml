@@ -1495,9 +1495,44 @@ issues:
   parent: null
   last_checked_at: '2026-07-01T16:44:07Z'
   tried_count: 1
-active_batch: []
+- id: AR-189
+  title: Federal Reserve commercial-paper stress impulse ETF source/vintage scout
+  model_name: fed-commercial-paper-stress-impulse-source-scout-v1
+  status: queued
+  priority: preflight_queue_source_vintage
+  family: public_short_term_funding_stress
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-189.md
+  parent: null
+  last_checked_at: '2026-07-01T16:52:00Z'
+  tried_count: 0
+- id: AR-190
+  title: Treasury auction-result demand-share duration ETF source/vintage scout
+  model_name: treasury-auction-result-demand-share-source-scout-v1
+  status: queued
+  priority: preflight_queue_source_vintage
+  family: public_treasury_auction_result_demand
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-190.md
+  parent: null
+  last_checked_at: '2026-07-01T16:52:00Z'
+  tried_count: 0
+- id: AR-191
+  title: SEC 8-K Item 1.01/2.01 agreement/completion event-table source scout
+  model_name: sec-8k-item101-201-agreement-completion-source-scout-v1
+  status: queued
+  priority: preflight_queue_source_parser
+  family: public_filing_material_agreement_event_source
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-191.md
+  parent: null
+  last_checked_at: '2026-07-01T16:52:00Z'
+  tried_count: 0
+active_batch:
+- AR-189
+- AR-190
 last_realdata_batch:
 - AR-187
-updated_at: '2026-07-01T16:44:07Z'
+updated_at: '2026-07-01T16:52:00Z'
 target_tried_ideas: 100
 tried_ideas_count: 172
