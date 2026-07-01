@@ -4,10 +4,10 @@
   "issue_id": "AR-192",
   "asset_bucket": "etf",
   "crypto_label": false,
-  "run_id": "ar192_hold_no_alpaca_credentials_20260701T225012Z",
-  "completed_at": "2026-07-01T22:50:12Z",
-  "status": "hold",
-  "decision": "hold_realdata_blocked_no_alpaca_credentials",
+  "run_id": "ar192_source_gate_20260701T203203Z",
+  "completed_at": "2026-07-01T20:32:03Z",
+  "status": "source_gate_passed_needs_realdata_evaluation",
+  "decision": "source_gate_passed_needs_realdata_evaluation",
   "no_csv_used": true,
   "no_data_csv_argument_used": true,
   "no_daemon": true,
@@ -15,52 +15,110 @@
   "raw_daily_paths_retained": false,
   "source_gate": {
     "passed": true,
-    "previous_run_id": "ar192_source_gate_20260701T203203Z",
-    "official_archive_index_links_seen": 1507,
-    "sampled_dated_archive_pages_with_storage_table": 4,
-    "finding": "Official dated EIA Natural Gas Weekly Update archive pages previously recovered release dates, total storage levels, and weekly net changes; source/vintage gate remains passed."
+    "urls": [
+      "https://www.eia.gov/naturalgas/weekly/includes/archive.php",
+      "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2025/12_18/",
+      "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2024/12_19/",
+      "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2023/09_28/",
+      "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2022/12_22/",
+      "https://ir.eia.gov/ngs/ngs.html",
+      "https://ir.eia.gov/ngs/wngsr.json",
+      "https://ir.eia.gov/ngs/wngsr.csv",
+      "https://ir.eia.gov/ngs/wngsr.txt",
+      "https://ir.eia.gov/ngs/ngshistory.xls",
+      "https://ir.eia.gov/ngs/archngshistory.xls",
+      "https://ir.eia.gov/ngs/revisions.html",
+      "https://ir.eia.gov/ngs/schedule.html"
+    ],
+    "probes": [
+      {
+        "url": "https://www.eia.gov/naturalgas/weekly/includes/archive.php",
+        "status": 200,
+        "finding": "official EIA archive index reachable; bounded probe counted 1507 archivenew_ngwu links"
+      },
+      {
+        "url": "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2025/12_18/",
+        "status": 200,
+        "release_date": "2025-12-18",
+        "week_ending": "2025-12-17",
+        "total_row_sample": {"current_bcf": 3579, "prior_bcf": 3746, "net_change_bcf": -167},
+        "finding": "dated official archive page contains WNGSR-sourced storage table"
+      },
+      {
+        "url": "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2024/12_19/",
+        "status": 200,
+        "release_date": "2024-12-19",
+        "week_ending": "2024-12-18",
+        "total_row_sample": {"current_bcf": 3622, "prior_bcf": 3747, "net_change_bcf": -125},
+        "finding": "dated official archive page contains WNGSR-sourced storage table"
+      },
+      {
+        "url": "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2023/09_28/",
+        "status": 200,
+        "release_date": "2023-09-28",
+        "week_ending": "2023-09-27",
+        "total_row_sample": {"current_bcf": 3359, "prior_bcf": 3269, "net_change_bcf": 90},
+        "finding": "dated official archive page contains WNGSR-sourced storage table"
+      },
+      {
+        "url": "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/2022/12_22/",
+        "status": 200,
+        "release_date": "2022-12-22",
+        "week_ending": "2022-12-21",
+        "total_row_sample": {"current_bcf": 3325, "prior_bcf": 3412, "net_change_bcf": -87},
+        "finding": "dated official archive page contains WNGSR-sourced storage table"
+      },
+      {
+        "url": "https://ir.eia.gov/ngs/wngsr.csv",
+        "status": 200,
+        "finding": "current official WNGSR file includes current release timestamp text: released at 10:30 a.m. Eastern for week ending 2026-06-19"
+      },
+      {
+        "url": "https://ir.eia.gov/ngs/wngsr.json",
+        "status": 200,
+        "finding": "current official WNGSR JSON exposes release_date/current_week/series values; current only, not historical vintages"
+      },
+      {
+        "url": "https://ir.eia.gov/ngs/ngshistory.xls",
+        "status": 200,
+        "finding": "current history workbook reachable but treated as revised/current history, not sufficient alone for first-vintage proof"
+      },
+      {
+        "url": "https://ir.eia.gov/ngs/archngshistory.xls",
+        "status": 200,
+        "finding": "archive history workbook reachable but not used as sole first-vintage proof"
+      }
+    ],
+    "counts": {
+      "official_archive_index_links_seen": 1507,
+      "dated_archive_pages_sampled": 4,
+      "sampled_pages_with_release_date": 4,
+      "sampled_pages_with_storage_table": 4,
+      "sampled_pages_with_total_net_change": 4,
+      "current_wngsr_machine_files_reachable": 3,
+      "current_or_revised_history_files_reachable": 2,
+      "performance_runs": 0
+    },
+    "findings": [
+      "Official EIA Natural Gas Weekly Update archive pages are date-stamped and include WNGSR-sourced working-gas storage tables with regional and total stocks plus net changes.",
+      "Four bounded archive-page probes across 2022-2025 recovered total storage levels and net changes directly from official dated pages.",
+      "The archive index is large enough for a later parser/evaluator and exposes about 1507 dated archive links.",
+      "Current WNGSR JSON/CSV/TXT endpoints and WNGSR landing page are reachable; current CSV shows exact release-time wording at 10:30 a.m. Eastern.",
+      "Current ngshistory/archngshistory/revisions files are not treated as first-vintage proof by themselves because they may represent revised or compiled histories.",
+      "Later real-data evaluation must conservatively timestamp each signal after the official release date and standard WNGSR 10:30 a.m. Eastern release convention, with holiday/schedule exceptions audited before trading logic."
+    ],
+    "failure_reason": null
   },
-  "market_data_gate": {
-    "provider_required": "qfa/Alpaca ETF daily bars",
-    "qfa_venv_available": true,
-    "alpaca_py_available": true,
-    "alpaca_credentials_configured_in_runtime": false,
-    "unauthenticated_alpaca_attempt": "failed_before_market_data_retrieval",
-    "raw_bars_retrieved": false,
-    "reason": "This scheduled runtime did not expose usable Alpaca authentication. Alpaca-py refused an unauthenticated StockHistoricalDataClient request, so no qfa/Alpaca ETF bars could be retrieved."
-  },
-  "candidate_universe_policy": {
-    "broad_candidate_pool": ["UNG", "UNL", "XLE", "XOP", "AMLP", "XLU", "VPU", "DBC", "DBE", "USO", "PDBC", "GSG", "SPY", "TLT", "IEF", "SHY", "FCG"],
-    "diagnostics_only": ["BOIL", "KOLD", "UGA"],
-    "selection_basis": "Would select non-levered/non-inverse natural-gas, energy, pipeline/MLP, utility, commodity, and risk-control ETFs by Alpaca daily-bar availability, history, liquidity, and economic exposure; no return optimization.",
-    "limitation": "Selection could not be finalized without real Alpaca daily bars and data-availability checks. Natural-gas ETF/ETN history and closures may force broader energy-sector/oil/gas proxies."
-  },
+  "metrics": null,
   "performance": {
     "ran": false,
-    "reason": "hold_no_alpaca_credentials_no_real_market_data",
-    "event_count": null,
-    "selected_universe": [],
-    "costs_bps_planned": [5, 10, 20],
-    "primary_cost_bps_planned": 10,
+    "reason": "source_gate_only_no_performance_allowed",
     "median_sharpe_10bps": null,
     "p25_sharpe_10bps": null,
     "positive_window_rate": null,
-    "max_drawdown": null,
-    "turnover": null,
+    "stress_20bps_sharpe": null,
     "control_results": null
   },
-  "controls": {
-    "spy_control": "not_run_hold_no_market_data",
-    "equal_weight_control": "not_run_hold_no_market_data",
-    "trend_or_placebo_control": "not_run_hold_no_market_data"
-  },
-  "orthogonality": "deferred_due_hold",
-  "model_wrapper": {
-    "path": "models/eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1/model.py",
-    "qfa_alpha_context_compatible": true,
-    "default_without_metadata": "zero_weights",
-    "required_metadata_key": "eia_wngsr_storage_surprise_z"
-  },
-  "decision_rationale": "Hold rather than reject: source/vintage gate passed, but the mandated qfa/Alpaca real ETF performance evaluation was impossible in this runtime without credentials. No CSV-backed market data, daemon, orders, raw bars, raw arrays, or equity paths were used or retained.",
-  "compact_artifact_note": "No raw market data, raw daily paths, equity curves, databases, caches, helper scripts, credentials, credential variable names, or command snippets retained."
+  "orthogonality": "deferred_until_realdata",
+  "compact_artifact_note": "Compact source/vintage scout only; no raw data, raw bars, databases, caches, helper scripts, credentials, or command provenance retained."
 }

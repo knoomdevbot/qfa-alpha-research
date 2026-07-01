@@ -1531,17 +1531,18 @@ issues:
 - id: AR-192
   title: EIA Weekly Natural Gas Storage first-vintage source/vintage scout
   model_name: eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1
-  status: hold
-  priority: hold_realdata_blocked_no_alpaca_credentials
+  status: active
+  priority: source_gate_passed_needs_realdata_evaluation
   family: public_energy_inventory_source_vintage
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-192.md
   parent: null
-  last_checked_at: '2026-07-01T22:50:12Z'
+  last_checked_at: '2026-07-01T20:32:03Z'
   tried_count: 0
-active_batch: []
+active_batch:
+- AR-192
 last_realdata_batch:
 - AR-190
-updated_at: '2026-07-01T22:50:12Z'
+updated_at: '2026-07-01T20:32:03Z'
 target_tried_ideas: 100
 tried_ideas_count: 175
