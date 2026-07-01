@@ -1,0 +1,17 @@
+model_name: fda-approval-decision-event-table-scout-v1
+issue_id: AR-180
+status: rejected_source_gate
+asset_bucket: equity
+crypto_label: false
+model_type: disabled_zero_weight_source_scout
+source_gate_only: true
+weights_enabled: false
+performance_ran: false
+source_urls:
+  drugsatfda_data_files_page: https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files
+  drugsatfda_download_zip: https://www.fda.gov/media/89850/download?attachment
+notes: >-
+  Official FDA Drugs@FDA downloadable files are reachable and parseable, but
+  current snapshot decision/document dates do not by themselves prove first
+  public web availability on the approval date. No CSV-backed qfa backtest,
+  daemon, or orders were used.

@@ -1,0 +1,19 @@
+name: fda-approval-decision-event-table-scout-v1
+issue_id: AR-180
+created_at: '2026-07-01T09:35:34Z'
+status: rejected_source_gate
+decision: rejected
+asset_bucket: equity
+crypto_label: false
+family: public_regulatory_fda_approval_source
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+summary: >-
+  Bounded official FDA Drugs@FDA source/vintage feasibility scout. FDA files
+  yielded a broad approval-date table and enough manually mappable examples,
+  but the source gate rejected because timestamp-safe next-session public
+  availability cannot be established from the current downloadable snapshot and
+  approval-letter metadata alone.

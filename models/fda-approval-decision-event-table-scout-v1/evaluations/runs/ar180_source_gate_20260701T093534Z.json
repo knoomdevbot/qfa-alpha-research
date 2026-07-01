@@ -1,0 +1,157 @@
+{
+  "issue_id": "AR-180",
+  "model_name": "fda-approval-decision-event-table-scout-v1",
+  "run_id": "ar180_source_gate_20260701T093534Z",
+  "completed_at": "2026-07-01T09:35:34Z",
+  "decision": "rejected",
+  "status": "rejected_source_gate",
+  "asset_bucket": "equity",
+  "crypto_label": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "metrics": null,
+  "official_sources_probed": [
+    {
+      "name": "FDA Drugs@FDA data files page",
+      "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files",
+      "status": 200,
+      "last_modified": "Tue, 30 Jun 2026 12:20:32 GMT",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "name": "FDA Drugs@FDA downloadable ZIP",
+      "url": "https://www.fda.gov/media/89850/download?attachment",
+      "status": 200,
+      "last_modified": "Tue, 30 Jun 2026 12:05:39 GMT",
+      "content_type": "application/zip",
+      "content_length": 6036440
+    }
+  ],
+  "source_gate": {
+    "passed": false,
+    "official_fda_probe_only": true,
+    "drugsatfda_zip_reachable": true,
+    "downloaded_zip_bytes": 6036440,
+    "files_seen": [
+      "ActionTypes_Lookup.txt",
+      "ApplicationDocs.txt",
+      "Applications.txt",
+      "ApplicationsDocsType_Lookup.txt",
+      "Join_Submission_ActionTypes_Lookup.txt",
+      "MarketingStatus.txt",
+      "MarketingStatus_Lookup.txt",
+      "Products.txt",
+      "SubmissionClass_Lookup.txt",
+      "SubmissionPropertyType.txt",
+      "Submissions.txt",
+      "TE.txt"
+    ],
+    "row_counts": {
+      "applications": 29175,
+      "submissions": 192793,
+      "products": 51439,
+      "application_docs": 80370
+    },
+    "candidate_original_approved_nda_bla_since_2015": 1533,
+    "candidate_unique_sponsors": 666,
+    "candidate_with_any_application_doc": 1530,
+    "candidate_with_approval_letterish_doc": 1510,
+    "manual_conservative_mapping_probe_events": 255,
+    "manual_conservative_mapping_probe_unique_tickers": 32,
+    "required_mapped_liquid_events": 150,
+    "breadth_gate_observed_if_timestamp_accepted": true,
+    "timestamp_safe_next_session_public_availability": false,
+    "parser_precision_sample": null,
+    "mapping_precision_sample": "spot check found obvious public-sponsor mappings, but no accepted event table was built because timestamp vintage failed first",
+    "rejection_reason": "official FDA current snapshot gives approval/status/document dates but not durable first-public posting timestamps; approval letters are applicant decision documents and ApplicationDocsDate is not proof of public web availability on that date"
+  },
+  "candidate_by_year": {
+    "2015": 120,
+    "2016": 102,
+    "2017": 147,
+    "2018": 155,
+    "2019": 133,
+    "2020": 132,
+    "2021": 124,
+    "2022": 131,
+    "2023": 136,
+    "2024": 136,
+    "2025": 164,
+    "2026": 53
+  },
+  "mapped_probe_by_year": {
+    "2015": 27,
+    "2016": 20,
+    "2017": 22,
+    "2018": 32,
+    "2019": 25,
+    "2020": 19,
+    "2021": 23,
+    "2022": 16,
+    "2023": 24,
+    "2024": 24,
+    "2025": 18,
+    "2026": 5
+  },
+  "mapped_probe_top_tickers": [
+    ["PFE", 41],
+    ["ABBV", 27],
+    ["LLY", 22],
+    ["MRK", 20],
+    ["AMGN", 19],
+    ["GILD", 17],
+    ["VTRS", 12],
+    ["BMY", 11],
+    ["VRTX", 8],
+    ["BIIB", 8],
+    ["AMRX", 8],
+    ["REGN", 7]
+  ],
+  "concentration_diagnostics": {
+    "mapped_probe_top_ticker_share": 0.1608,
+    "mapped_probe_top_5_ticker_share": 0.5059,
+    "mapped_probe_top_10_ticker_share": 0.7255,
+    "candidate_top_sponsors": [
+      ["AZURITY", 27],
+      ["FRESENIUS KABI USA", 26],
+      ["NOVARTIS", 25],
+      ["GENENTECH INC", 24],
+      ["ABBVIE", 23],
+      ["AMGEN INC", 19],
+      ["ELI LILLY AND CO", 18],
+      ["GILEAD SCIENCES INC", 17],
+      ["PFIZER", 16],
+      ["JANSSEN BIOTECH", 16],
+      ["HIKMA", 15],
+      ["BAXTER HLTHCARE CORP", 14]
+    ]
+  },
+  "sample_mapped_probe_events": [
+    {"appl_no": "022225", "submission_no": "1", "date": "2015-12-15", "sponsor": "MSD SUB MERCK", "drug": "BRIDION", "ticker": "MRK", "application_docs": 4, "approval_letterish_docs": 1},
+    {"appl_no": "125521", "submission_no": "1", "date": "2016-03-22", "sponsor": "ELI LILLY AND CO", "drug": "TALTZ", "ticker": "LLY", "application_docs": 4, "approval_letterish_docs": 1},
+    {"appl_no": "125522", "submission_no": "1", "date": "2015-08-27", "sponsor": "AMGEN INC", "drug": "REPATHA", "ticker": "AMGN", "application_docs": 4, "approval_letterish_docs": 1},
+    {"appl_no": "125527", "submission_no": "1", "date": "2015-03-04", "sponsor": "BRISTOL MYERS SQUIBB", "drug": "OPDIVO", "ticker": "BMY", "application_docs": 3, "approval_letterish_docs": 1},
+    {"appl_no": "125559", "submission_no": "1", "date": "2015-07-24", "sponsor": "REGENERON PHARMACEUTICALS", "drug": "PRALUENT", "ticker": "REGN", "application_docs": 3, "approval_letterish_docs": 1},
+    {"appl_no": "203952", "submission_no": "1", "date": "2015-01-09", "sponsor": "ABBVIE", "drug": "DUOPA", "ticker": "ABBV", "application_docs": 3, "approval_letterish_docs": 1},
+    {"appl_no": "206038", "submission_no": "1", "date": "2015-07-02", "sponsor": "VERTEX PHARMS INC", "drug": "ORKAMBI", "ticker": "VRTX", "application_docs": 4, "approval_letterish_docs": 1},
+    {"appl_no": "206488", "submission_no": "1", "date": "2016-09-19", "sponsor": "SAREPTA THERAPS INC", "drug": "EXONDYS 51", "ticker": "SRPT", "application_docs": 4, "approval_letterish_docs": 1}
+  ],
+  "failure_modes_seen": [
+    "Drugs@FDA downloadable ZIP is a current snapshot with current Last-Modified, not a historical point-in-time vintage series for each approval row.",
+    "SubmissionStatusDate and ApplicationDocsDate are regulatory/document dates; the files do not expose first public web-posting timestamp for each approval decision.",
+    "Approval letters evidence FDA decisions but are addressed to applicants, so next-session trading from the letter date would require non-FDA assumptions about public disclosure timing.",
+    "Sponsor-to-issuer mapping is feasible for some large public sponsors but requires acquisition/subsidiary/event-date validation and is not the binding failure in this scout."
+  ],
+  "performance": {
+    "ran": false,
+    "reason": "source_gate_failed_timestamp_vintage",
+    "median_sharpe_10bps": null,
+    "p25_sharpe_10bps": null,
+    "positive_window_rate": null,
+    "stress_20bps_sharpe": null,
+    "control_results": null
+  }
+}
