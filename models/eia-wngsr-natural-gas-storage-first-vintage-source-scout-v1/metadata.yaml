@@ -4,11 +4,20 @@ model_name: eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1
 asset_bucket: etf
 crypto_label: false
 family: public_energy_inventory_source_vintage
-status: source_gate_passed_needs_realdata_evaluation
-decision: source_gate_passed_needs_realdata_evaluation
-created_at: '2026-07-01T20:32:03Z'
-updated_at: '2026-07-01T20:32:03Z'
+status: hold
+decision: hold_realdata_blocked_no_alpaca_credentials
+completed_at: '2026-07-01T22:50:12Z'
+run_id: ar192_hold_no_alpaca_credentials_20260701T225012Z
 source_gate_passed: true
-performance_ran: false
-orthogonality: deferred_until_realdata
-compact_artifact_note: Compact official-source/vintage scout only; no raw data, market bars, databases, caches, credentials, or helper scripts retained.
+realdata_evaluation_completed: false
+hold_reason: >-
+  qfa and alpaca-py were available, but this scheduled execution environment had
+  no usable Alpaca authentication configured, and unauthenticated Alpaca stock
+  bars failed before any market data could be retrieved. CSV-backed market data
+  was not used.
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+orthogonality: deferred_due_hold

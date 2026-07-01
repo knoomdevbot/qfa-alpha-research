@@ -2,36 +2,57 @@ alpha_id: eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1
 issue_id: AR-192
 model_name: eia-wngsr-natural-gas-storage-first-vintage-source-scout-v1
 asset_bucket: etf
+crypto_label: false
 family: public_energy_inventory_source_vintage
-status: source_gate_passed_needs_realdata_evaluation
-decision: source_gate_passed_needs_realdata_evaluation
+status: hold
+decision: hold_realdata_blocked_no_alpaca_credentials
 enabled: false
-zero_weight: true
+zero_weight_without_context_metadata: true
+source_gate_passed: true
+realdata_evaluation_completed: false
 candidate_product_pool:
-  - UNG
-  - UNL
-  - XLE
-  - XOP
-  - AMLP
-  - XLU
-  - VPU
-  - DBC
-  - DBE
-  - USO
-  - PDBC
-  - GSG
-  - SPY
-  - TLT
-  - IEF
-  - SHY
-diagnostics_only:
+  natural_gas_primary:
+    - UNG
+    - UNL
+  energy_oil_gas_proxies:
+    - XLE
+    - XOP
+    - FCG
+    - DBE
+    - USO
+  pipelines_mlp_utilities:
+    - AMLP
+    - XLU
+    - VPU
+  broad_commodity_risk_controls:
+    - DBC
+    - PDBC
+    - GSG
+    - SPY
+    - TLT
+    - IEF
+    - SHY
+diagnostics_only_levered_or_inverse_or_special:
   - BOIL
   - KOLD
   - UGA
-  - FCG
-no_performance_before_realdata_gate: true
-costs_future_bps: [5, 10, 20]
+universe_selection_policy: >-
+  Use non-levered/non-inverse ETFs/ETNs with Alpaca daily-bar availability,
+  adequate history/liquidity, and direct or proxy economic exposure to natural
+  gas/storage shocks. Levered/inverse products are diagnostics only.
+planned_costs_bps: [5, 10, 20]
+primary_planned_cost_bps: 10
+controls_required:
+  - SPY
+  - equal_weight_selected_universe
+  - trend_only_or_release_calendar_placebo
 risk_constraints:
   max_gross_exposure_future: 1.0
   non_levered_non_inverse_primary_universe: true
   no_orders: true
+artifact_booleans:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

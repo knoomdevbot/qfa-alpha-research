@@ -1,20 +1,39 @@
-# AR-192 source-gate run — 2026-07-01T20:32:03Z
+# AR-192 Latest Evaluation
 
-Decision: `source_gate_passed_needs_realdata_evaluation`.
+- Run ID: `ar192_hold_no_alpaca_credentials_20260701T225012Z`
+- Completed at: 2026-07-01T22:50:12Z
+- Status: `hold`
+- Decision: `hold_realdata_blocked_no_alpaca_credentials`
+- Asset bucket: ETF
+- Crypto label: false
 
-## Compact findings
+## Result
 
-- Official EIA archive index `https://www.eia.gov/naturalgas/weekly/includes/archive.php` was reachable and a bounded probe counted about 1,507 `archivenew_ngwu` dated archive links.
-- Four official dated EIA archive pages were sampled; all contained a release date and a WNGSR-sourced working-gas storage table with total stock levels and net change:
-  - 2025-12-18 page: total 3,579 Bcf vs 3,746 Bcf, net change -167 Bcf.
-  - 2024-12-19 page: total 3,622 Bcf vs 3,747 Bcf, net change -125 Bcf.
-  - 2023-09-28 page: total 3,359 Bcf vs 3,269 Bcf, net change +90 Bcf.
-  - 2022-12-22 page: total 3,325 Bcf vs 3,412 Bcf, net change -87 Bcf.
-- Current official WNGSR files (`wngsr.json`, `wngsr.csv`, `wngsr.txt`) were reachable. Current CSV includes exact 10:30 a.m. Eastern release-time wording for the current release.
-- Current/revised history workbooks (`ngshistory.xls`, `archngshistory.xls`) are reachable but were not counted as first-vintage proof by themselves.
+The source/vintage gate remains passed from the prior official EIA archive probe, but the required qfa/Alpaca real ETF performance evaluation could not be completed in this scheduled runtime.
 
-## Caveat for later evaluator
+qfa's virtual environment and `alpaca-py` are installed. The runtime did not expose usable Alpaca authentication, and an unauthenticated Alpaca stock-bars request failed before any market data was retrieved. Because AR-192 explicitly requires qfa/Alpaca real ETF bars and forbids CSV-backed market data, I placed the issue on hold rather than substituting another data source.
 
-Historical archive pages directly provide dated values/net changes; the exact intraday timestamp should be normalized conservatively using official WNGSR schedule/current-release convention and audited for holiday exceptions before any market-data evaluation.
+## Candidate universe policy
 
-No qfa/Alpaca performance run was executed. Metrics remain null.
+Broad pool considered for the eventual real-data run: UNG, UNL, XLE, XOP, AMLP, XLU, VPU, DBC, DBE, USO, PDBC, GSG, SPY, TLT, IEF, SHY, and FCG. BOIL, KOLD, and UGA are diagnostics-only because of leverage/inverse/special product risks.
+
+Final universe selection is deferred until Alpaca daily-bar availability and history/liquidity can be verified. Direct natural-gas product limitations may require energy-sector/oil/gas proxy ETFs.
+
+## Metrics
+
+No performance metrics are reported because no real market bars were retrieved.
+
+- Event count: null
+- Selected universe: none
+- Costs planned: 5, 10, and 20 bps; primary 10 bps
+- SPY/equal-weight/trend-or-placebo controls: not run
+- Turnover / Sharpe / drawdown: null
+- Orthogonality: deferred due hold
+
+## Required safety flags
+
+- no_csv_used: true
+- no_data_csv_argument_used: true
+- no_daemon: true
+- no_orders: true
+- raw_daily_paths_retained: false
