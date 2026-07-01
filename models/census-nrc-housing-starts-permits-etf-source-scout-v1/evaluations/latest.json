@@ -1,0 +1,124 @@
+{
+  "run_id": "ar183_source_gate_20260701T111952Z",
+  "issue_id": "AR-183",
+  "model_name": "census-nrc-housing-starts-permits-etf-source-scout-v1",
+  "checked_at": "2026-07-01T11:19:52Z",
+  "decision": "source_gate_passed_no_performance_disabled_scaffold",
+  "source_gate_passed": true,
+  "performance_gate_passed": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "asset_bucket": "etf",
+  "crypto_label": false,
+  "market_data_evaluation_run": false,
+  "selected_universe": [],
+  "candidate_universe": ["XHB", "ITB", "VNQ", "XLF", "KRE", "XLB", "SPY", "IWM", "TLT", "IEF", "HYG", "LQD"],
+  "metrics": null,
+  "source_gate": {
+    "official_archive_reachable": true,
+    "official_archive_url": "https://www.census.gov/construction/nrc/data/releases.html",
+    "official_current_calendar_reachable": true,
+    "official_current_calendar_url": "https://www.census.gov/economic-indicators/calendar-listview.html",
+    "official_nrc_current_xls_reachable": true,
+    "official_nrc_current_xls_url": "https://www.census.gov/construction/nrc/xls/newresconst.xls",
+    "historical_release_date_excel_probe": {
+      "calendar_listview_xlsx_links_found": 0,
+      "economic_indicators_release_xlsx_url_status": 200,
+      "economic_indicators_release_xlsx_content_type": "text/html;charset=UTF-8",
+      "note": "No separate historical release-date Excel link was discovered in bounded official-page probes; release dates/times are embedded in official archived PDFs/TXTs."
+    },
+    "official_archive_link_counts": {
+      "modern_pdf_newresconst_links": 298,
+      "legacy_txt_c20_c22_links": 149,
+      "modern_pdf_range": ["2001-04", "2026-05"],
+      "legacy_txt_range": ["1995-01", "2001-03"]
+    },
+    "durable_parser_available": true,
+    "durable_parser_path": "models/census-nrc-housing-starts-permits-etf-source-scout-v1/model.py",
+    "event_table_available_from_official_archive": true,
+    "raw_downloads_retained": false,
+    "sample_parse_results": [
+      {
+        "source_url": "https://www.census.gov/construction/nrc/pdf/newresconst_202405.pdf",
+        "release_month": "2024-05",
+        "release_date_text": "Thursday, June 20, 2024",
+        "release_time_text": "8:30 AM EDT",
+        "permits_saar_thousands": 1386,
+        "starts_saar_thousands": 1277,
+        "completions_saar_thousands": 1514,
+        "prior_permits_revised_thousands": 1440,
+        "prior_starts_revised_thousands": 1352,
+        "prior_completions_revised_thousands": 1652
+      },
+      {
+        "source_url": "https://www.census.gov/construction/nrc/pdf/newresconst_202301.pdf",
+        "release_month": "2023-01",
+        "release_date_text": "Thursday, February 16, 2023",
+        "release_time_text": "8:30 AM EST",
+        "permits_saar_thousands": 1339,
+        "starts_saar_thousands": 1309,
+        "completions_saar_thousands": 1406,
+        "prior_permits_revised_thousands": 1337,
+        "prior_starts_revised_thousands": 1371,
+        "prior_completions_revised_thousands": 1376
+      },
+      {
+        "source_url": "https://www.census.gov/construction/nrc/pdf/newresconst_202001.pdf",
+        "release_month": "2020-01",
+        "release_date_text": "Wednesday, February 19, 2020",
+        "release_time_text": "8:30 AM EST",
+        "permits_saar_thousands": 1551,
+        "starts_saar_thousands": 1567,
+        "completions_saar_thousands": 1280,
+        "prior_permits_revised_thousands": 1420,
+        "prior_starts_revised_thousands": 1626,
+        "prior_completions_revised_thousands": 1338
+      },
+      {
+        "source_url": "https://www.census.gov/construction/nrc/txt/c20_0001.txt",
+        "release_month": "2000-01 starts/permits legacy TXT",
+        "release_date_text": "Wednesday, February 16, 2000",
+        "release_time_text": "8:30 AM EST",
+        "permits_saar_thousands": 1763,
+        "starts_saar_thousands": 1775,
+        "completions_saar_thousands": null
+      },
+      {
+        "source_url": "https://www.census.gov/construction/nrc/txt/c22_0001.txt",
+        "release_month": "2000-01 completions legacy TXT",
+        "release_date_text": "Monday, March 6, 2000",
+        "release_time_text": "10:00 AM EST",
+        "permits_saar_thousands": null,
+        "starts_saar_thousands": null,
+        "completions_saar_thousands": 1556
+      }
+    ],
+    "alfred_probe": {
+      "series_checked": ["HOUST", "PERMIT", "COMPUTSA"],
+      "bounded_queries": [
+        "https://alfred.stlouisfed.org/graph/fredgraph.csv?id=HOUST&observation_start=2024-05-01&observation_end=2024-05-01&vintage_date=2024-06-20",
+        "https://alfred.stlouisfed.org/graph/fredgraph.csv?id=PERMIT&observation_start=2024-05-01&observation_end=2024-05-01&vintage_date=2024-06-20",
+        "https://alfred.stlouisfed.org/graph/fredgraph.csv?id=COMPUTSA&observation_start=2024-05-01&observation_end=2024-05-01&vintage_date=2024-06-20"
+      ],
+      "reachable_from_environment": false,
+      "results": [
+        {"series_id": "HOUST", "status": "read_timeout_60s"},
+        {"series_id": "PERMIT", "status": "read_timeout_60s"},
+        {"series_id": "COMPUTSA", "status": "remote_closed_connection"}
+      ],
+      "use_as_primary_source": false,
+      "note": "ALFRED was probed only as a vintage cross-check; official Census/HUD archive documents already expose first-published values and timestamps."
+    }
+  },
+  "warnings": [
+    "No qfa/Alpaca ETF bar performance evaluation was run; metrics are null.",
+    "Scaffold is disabled/zero-weight and should remain active/queued for a separate real-data evaluator if promoted.",
+    "ALFRED graph CSV vintage samples were not reachable from this environment during this run; retry only as cross-check, not as a replacement for official archived releases.",
+    "Do not use current revised Census/FRED values for historical signals."
+  ],
+  "status": "active",
+  "decision_status": "source_gate_passed_no_performance"
+}

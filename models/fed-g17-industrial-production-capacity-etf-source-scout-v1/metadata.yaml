@@ -1,0 +1,25 @@
+model_name: fed-g17-industrial-production-capacity-etf-source-scout-v1
+issue_id: AR-182
+title: Official Federal Reserve G.17 industrial-production/capacity-utilization first-vintage ETF allocator source/vintage scout
+status: source_gate_passed_needs_realdata_evaluation
+asset_bucket: etf
+crypto_label: false
+created_at: '2026-07-01T11:21:40Z'
+updated_at: '2026-07-01T11:21:40Z'
+version: 1
+enabled: false
+zero_weight_scaffold: true
+metrics: null
+source_gate:
+  decision: source_gate_pass
+  official_parser_available: true
+  official_release_dates_available: true
+  official_archive_text_available: true
+  performance_ran: false
+  reason_no_performance: source_vintage_scout_only; qfa/Alpaca real-data evaluation deferred
+provenance:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

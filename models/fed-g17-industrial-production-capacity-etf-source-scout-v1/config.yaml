@@ -1,0 +1,34 @@
+model_name: fed-g17-industrial-production-capacity-etf-source-scout-v1
+issue_id: AR-182
+asset_bucket: etf
+crypto_label: false
+enabled: false
+zero_weight_scaffold: true
+source_gate_only: true
+candidate_universe:
+  - XLI
+  - XLB
+  - XLE
+  - SPY
+  - IWM
+  - TLT
+  - IEF
+  - HYG
+  - LQD
+  - DBC
+  - GLD
+data_sources:
+  official_frb_g17_archive: https://www.federalreserve.gov/releases/g17/
+  official_frb_g17_release_dates: https://www.federalreserve.gov/releases/g17/release_dates.htm
+  alfred_graph_probe: https://alfred.stlouisfed.org/graph/alfredgraph.csv
+  fred_api_probe: https://api.stlouisfed.org/fred/series/observations
+trading:
+  disabled: true
+  weights: zero
+  earliest_future_timing: next_etf_session_after_09_15_et_release
+constraints:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

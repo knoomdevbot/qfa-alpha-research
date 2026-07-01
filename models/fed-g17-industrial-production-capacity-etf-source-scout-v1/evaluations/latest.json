@@ -1,0 +1,143 @@
+{
+  "issue_id": "AR-182",
+  "model_name": "fed-g17-industrial-production-capacity-etf-source-scout-v1",
+  "run_id": "ar182_source_gate_20260701T112140Z",
+  "completed_at": "2026-07-01T11:21:40Z",
+  "decision": "source_gate_pass",
+  "status": "source_gate_passed_needs_realdata_evaluation",
+  "asset_bucket": "etf",
+  "crypto_label": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "metrics": null,
+  "source_gate": {
+    "passed": true,
+    "performance_ran": false,
+    "official_frb_g17_archive_url": "https://www.federalreserve.gov/releases/g17/",
+    "official_frb_g17_release_dates_url": "https://www.federalreserve.gov/releases/g17/release_dates.htm",
+    "release_date_rows_parsed": 949,
+    "release_date_first_observation_month": "1947-09",
+    "release_date_first_release_date": "1947-09-27",
+    "release_date_last_observation_month": "2026-12",
+    "release_date_last_release_date": "2026-12-16",
+    "archive_g17_txt_links_200102_plus": 303,
+    "official_text_events_parsed_200102_to_202605": 303,
+    "official_text_parse_failures": 0,
+    "official_release_time_coverage": "all parsed sampled/archive events expose For release at 9:15 a.m. ET label in official g17.txt header",
+    "first_vintage_fields": [
+      "release_date",
+      "release_time_et",
+      "release_timezone_label",
+      "observation_month",
+      "indpro_total_index",
+      "indpro_total_mom_pct",
+      "capacity_utilization_total",
+      "manufacturing_index",
+      "manufacturing_mom_pct",
+      "manufacturing_capacity_utilization"
+    ],
+    "parser_path": "models/fed-g17-industrial-production-capacity-etf-source-scout-v1/model.py",
+    "decision_reason": "Official Federal Reserve dated G.17 g17.txt archives and release_dates.htm support a timestamp-safe first-vintage event table over 303 post-2001 releases with zero parse failures in the bounded full official-text probe; real-market performance was not run in this source/vintage scout. ALFRED/FRED probes were not needed for source pass and remain caveated."
+  },
+  "vintage_endpoint_probes": [
+    {
+      "name": "ALFRED graph vintage CSV",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=INDPRO&observation_start=2021-11-01&observation_end=2021-11-01&realtime_start=2021-12-16&realtime_end=2021-12-16",
+      "result": "connection_aborted_remote_disconnected_after_18.32s",
+      "required_for_source_pass": false,
+      "warning": "ALFRED graph vintage CSV did not return during bounded live probe; later evaluator may retry or rely on official FRB first-vintage release text."
+    },
+    {
+      "name": "FRED API vintage observations",
+      "url": "https://api.stlouisfed.org/fred/series/observations?series_id=INDPRO&realtime_start=2021-12-16&realtime_end=2021-12-16&observation_start=2021-11-01&observation_end=2021-11-01&file_type=json",
+      "status_code": 400,
+      "result": "api_key_required",
+      "required_for_source_pass": false,
+      "warning": "Unauthenticated FRED API vintage endpoint requires an API key; do not make it a production dependency unless credentials are configured."
+    }
+  ],
+  "sample_events": [
+    {
+      "release_date": "2001-02-16",
+      "release_time_et": "9:15",
+      "release_timezone_label": "EST",
+      "observation_month": "2001-01",
+      "indpro_total_index": 147.0,
+      "indpro_total_mom_pct": -0.3,
+      "capacity_utilization_total": 80.2,
+      "manufacturing_index": 152.3,
+      "manufacturing_mom_pct": -0.1,
+      "manufacturing_capacity_utilization": 78.9,
+      "official_text_url": "https://www.federalreserve.gov/releases/g17/20010216/g17.txt"
+    },
+    {
+      "release_date": "2007-05-16",
+      "release_time_et": "9:15",
+      "release_timezone_label": "EDT",
+      "observation_month": "2007-04",
+      "indpro_total_index": 113.0,
+      "indpro_total_mom_pct": 0.7,
+      "capacity_utilization_total": 81.6,
+      "manufacturing_index": 115.0,
+      "manufacturing_mom_pct": 0.5,
+      "manufacturing_capacity_utilization": 80.2,
+      "official_text_url": "https://www.federalreserve.gov/releases/g17/20070516/g17.txt"
+    },
+    {
+      "release_date": "2013-09-16",
+      "release_time_et": "9:15",
+      "release_timezone_label": "EDT",
+      "observation_month": "2013-08",
+      "indpro_total_index": 99.4,
+      "indpro_total_mom_pct": 0.4,
+      "capacity_utilization_total": 77.8,
+      "manufacturing_index": 96.0,
+      "manufacturing_mom_pct": 0.7,
+      "manufacturing_capacity_utilization": 76.1,
+      "official_text_url": "https://www.federalreserve.gov/releases/g17/20130916/g17.txt"
+    },
+    {
+      "release_date": "2020-01-17",
+      "release_time_et": "9:15",
+      "release_timezone_label": "EST",
+      "observation_month": "2019-12",
+      "indpro_total_index": 109.4,
+      "indpro_total_mom_pct": -0.3,
+      "capacity_utilization_total": 77.0,
+      "manufacturing_index": 105.0,
+      "manufacturing_mom_pct": 0.2,
+      "manufacturing_capacity_utilization": 75.2,
+      "official_text_url": "https://www.federalreserve.gov/releases/g17/20200117/g17.txt"
+    },
+    {
+      "release_date": "2026-05-15",
+      "release_time_et": "9:15",
+      "release_timezone_label": "PM",
+      "observation_month": "2026-04",
+      "indpro_total_index": 102.5,
+      "indpro_total_mom_pct": 0.7,
+      "capacity_utilization_total": 76.1,
+      "manufacturing_index": 97.9,
+      "manufacturing_mom_pct": 0.6,
+      "manufacturing_capacity_utilization": 75.8,
+      "official_text_url": "https://www.federalreserve.gov/releases/g17/20260515/g17.txt"
+    }
+  ],
+  "performance": {
+    "ran": false,
+    "reason": "source_vintage_scout_only",
+    "median_sharpe_10bps": null,
+    "p25_sharpe_10bps": null,
+    "positive_window_rate": null,
+    "stress_20bps_sharpe": null,
+    "control_results": null
+  },
+  "warnings": [
+    "Scaffold is disabled and returns zero weights; no qfa/Alpaca real-market performance or ETF coverage check was run.",
+    "Official release text exists before 2001, but the compact parser was validated from 2001-02 onward, which is sufficient for modern ETF allocator evaluation coverage.",
+    "2026-05-15 official header labels the parenthetical time zone as PM; parser preserves the official label, and downstream timing should still treat the public release clock as 9:15 a.m. ET unless manually corrected from FRB context."
+  ]
+}

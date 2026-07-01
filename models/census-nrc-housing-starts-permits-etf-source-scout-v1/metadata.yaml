@@ -1,0 +1,19 @@
+model_name: census-nrc-housing-starts-permits-etf-source-scout-v1
+issue_id: AR-183
+title: Official Census New Residential Construction housing-starts/permits first-vintage ETF allocator source/vintage scout
+status: active
+priority: source_gate_passed_no_performance
+created_at: '2026-07-01T11:19:52Z'
+updated_at: '2026-07-01T11:19:52Z'
+decision: source_gate_passed_no_performance_disabled_scaffold
+asset_bucket: etf
+crypto_label: false
+summary: >-
+  Official Census/HUD NRC archive page and current release/calendar pages were
+  reachable. A bounded in-memory parser extracted release timestamp and
+  first-published headline permits, starts, completions, and prior-month revised
+  headline samples from modern official PDFs, with legacy TXT parser support for
+  1995-2001 starts/permits and completions releases. ALFRED graph CSV vintage
+  samples were probed but timed out/closed from this environment, so official
+  archive documents are the durable first-vintage source of record. No ETF
+  performance evaluation was run and the qfa scaffold is disabled/zero-weight.

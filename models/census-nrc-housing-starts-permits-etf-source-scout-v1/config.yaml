@@ -1,0 +1,33 @@
+model_name: census-nrc-housing-starts-permits-etf-source-scout-v1
+issue_id: AR-183
+asset_bucket: etf
+crypto_label: false
+enabled: false
+zero_weight_scaffold: true
+source_gate_decision: source_gate_passed_no_performance
+performance_evaluation_run: false
+candidate_universe:
+  - XHB
+  - ITB
+  - VNQ
+  - XLF
+  - KRE
+  - XLB
+  - SPY
+  - IWM
+  - TLT
+  - IEF
+  - HYG
+  - LQD
+source_urls:
+  archive: https://www.census.gov/construction/nrc/data/releases.html
+  current_calendar: https://www.census.gov/economic-indicators/calendar-listview.html
+  nrc_current_xlsx: https://www.census.gov/construction/nrc/xls/newresconst.xlsx
+  alfred_graph_csv: https://alfred.stlouisfed.org/graph/fredgraph.csv
+series_checked:
+  - HOUST
+  - PERMIT
+  - COMPUTSA
+risk_controls:
+  timing: next-session only until daily-bar convention is independently reviewed
+  no_current_revised_census_or_fred_for_historical_signals: true
