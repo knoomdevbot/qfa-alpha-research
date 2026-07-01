@@ -1509,14 +1509,14 @@ issues:
 - id: AR-190
   title: Treasury auction-result demand-share duration ETF source/vintage scout
   model_name: treasury-auction-result-demand-share-source-scout-v1
-  status: queued
-  priority: source_gate_passed_needs_realdata_evaluation
+  status: rejected
+  priority: completed_realdata_rejection
   family: public_treasury_auction_result_demand
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-190.md
   parent: null
-  last_checked_at: '2026-07-01T18:14:00Z'
-  tried_count: 0
+  last_checked_at: '2026-07-01T18:49:32Z'
+  tried_count: 1
 - id: AR-191
   title: SEC 8-K Item 1.01/2.01 agreement/completion event-table source scout
   model_name: sec-8k-item101-201-agreement-completion-source-scout-v1
@@ -1529,9 +1529,9 @@ issues:
   last_checked_at: '2026-07-01T16:52:00Z'
   tried_count: 0
 active_batch:
-- AR-190
+- AR-191
 last_realdata_batch:
-- AR-187
-updated_at: '2026-07-01T18:14:00Z'
+- AR-190
+updated_at: '2026-07-01T18:49:32Z'
 target_tried_ideas: 100
-tried_ideas_count: 173
+tried_ideas_count: 174
