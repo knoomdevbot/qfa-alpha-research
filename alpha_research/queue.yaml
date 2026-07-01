@@ -1347,17 +1347,27 @@ issues:
 - id: AR-175
   title: Official Federal Reserve SLOOS credit-tightening first-vintage ETF allocator source scout
   model_name: fed-sloos-credit-tightening-etf-source-scout-v1
-  status: queued
-  priority: preflight_queue_source_vintage_scout
+  status: rejected
+  priority: completed_source_gate_rejection
   family: public_credit_conditions_macro_release
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-175.md
-  last_checked_at: '2026-07-01T00:23:49Z'
+  last_checked_at: '2026-07-01T00:59:42Z'
+  tried_count: 1
+- id: AR-176
+  title: Official BEA Personal Income and Outlays first-vintage consumer impulse ETF source scout
+  model_name: bea-personal-income-outlays-consumer-impulse-source-scout-v1
+  status: queued
+  priority: preflight_queue_source_vintage_scout
+  family: public_consumer_income_inflation_macro_release
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-176.md
+  last_checked_at: '2026-07-01T01:10:10Z'
   tried_count: 0
 active_batch:
-- AR-175
+- AR-176
 last_realdata_batch:
 - AR-171
-updated_at: '2026-07-01T00:23:49Z'
+updated_at: '2026-07-01T01:10:10Z'
 target_tried_ideas: 100
-tried_ideas_count: 158
+tried_ideas_count: 159

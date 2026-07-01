@@ -1,0 +1,13 @@
+model_name: fed-sloos-credit-tightening-etf-source-scout-v1
+issue_id: AR-175
+created_at: '2026-07-01T00:59:42Z'
+updated_at: '2026-07-01T00:59:42Z'
+status: rejected
+decision: rejected
+rejection_stage: source_vintage_gate
+asset_bucket: etf
+crypto_label: false
+family: public_credit_conditions_macro_release
+hypothesis: Official quarterly Federal Reserve SLOOS first-vintage lending standards and demand diffusion measures may forecast ETF credit-cycle rotations.
+source_gate_summary: Official dated Federal Reserve SLOOS pages expose release/chart/table pages and Last Update dates, but this scout did not find an official historical release time field on dated pages and did not prove immutability of first-vintage values; current DDP/FRED alone was prohibited.
+performance_metrics: null

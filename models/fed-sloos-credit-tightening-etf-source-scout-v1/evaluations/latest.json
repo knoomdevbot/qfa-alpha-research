@@ -1,0 +1,85 @@
+{
+  "asset_bucket": "etf",
+  "candidate_product_pool": [
+    "XLF",
+    "KRE",
+    "HYG",
+    "LQD",
+    "IWM",
+    "SPY",
+    "XLP",
+    "TLT",
+    "IEF"
+  ],
+  "controls_run": [],
+  "created_at": "2026-07-01T00:59:42Z",
+  "crypto_label": false,
+  "decision": "rejected",
+  "issue_id": "AR-175",
+  "market_data_evaluation_run": false,
+  "metrics": null,
+  "model_name": "fed-sloos-credit-tightening-etf-source-scout-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "performance_summary": null,
+  "qfa_alpaca_performance_run": false,
+  "raw_daily_paths_retained": false,
+  "rejection_stage": "source_vintage_gate",
+  "run_id": "ar175_sourcegate_20260701T005942Z",
+  "schema_version": "alpha_research_result_v1",
+  "selected_universe": [],
+  "selection_filters": [
+    "liquid U.S.-listed ETFs",
+    "sufficient qfa/Alpaca real daily-bar coverage if later eligible",
+    "unlevered/non-inverse products only",
+    "economic exposure to financials/regional banks/credit/small-cap cyclicals and defensives/duration"
+  ],
+  "source_gate": {
+    "chart_data_pages_parser_readable": 4,
+    "chart_data_pages_sampled": 4,
+    "component_vintage_coverage_status": "partial_parser_evidence_not_accepted_as_vintage_safe",
+    "dated_release_pages_sampled": 4,
+    "dated_release_pages_with_last_update_date": 4,
+    "dated_release_pages_with_official_release_time_found": 0,
+    "dated_release_span_found": "2017-04 through 2026-04 on current landing page",
+    "first_vintage_requirement": "Rejected because dated pages were not enough to prove timestamp-safe immutable first vintages; no fallback to current FRED/DDP was used.",
+    "landing_page_dated_release_links_found": 38,
+    "landing_page_url": "https://www.federalreserve.gov/data/sloos.htm",
+    "official_federal_reserve_pages_accessible": true,
+    "passed": false,
+    "reason": "Required official historical release dates/times plus vintage-safe first-vintage SLOOS component values were not fully proven from dated Federal Reserve pages. Dated SLOOS pages provide Last Update dates and parser-readable chart/table links, but no official per-survey release-time field was found; RSS/DDP timestamps found were notices/corrections rather than the needed survey release timestamps; current FRED/DDP-only history is prohibited.",
+    "rss_feed_url": "https://www.federalreserve.gov/feeds/sloos.xml",
+    "rss_items_found": 22,
+    "rss_items_interpreted_as_survey_release_timestamps": 0,
+    "sample_chart_data_pages": [
+      {
+        "last_update": "May 04, 2026",
+        "max_period_observed": "2026:2",
+        "url": "https://www.federalreserve.gov/data/sloos/sloos-202604-chart-data.htm"
+      },
+      {
+        "last_update": "February 02, 2026",
+        "max_period_observed": "2026:1",
+        "url": "https://www.federalreserve.gov/data/sloos/sloos-202601-chart-data.htm"
+      },
+      {
+        "last_update": "November 03, 2025",
+        "max_period_observed": "2025:4",
+        "url": "https://www.federalreserve.gov/data/sloos/sloos-202510-chart-data.htm"
+      },
+      {
+        "last_update": "February 03, 2025",
+        "max_period_observed": "2025:1",
+        "url": "https://www.federalreserve.gov/data/sloos/sloos-202501-chart-data.htm"
+      }
+    ]
+  },
+  "status": "rejected",
+  "universe_limitations": "No ETF universe was selected because the source/vintage gate failed before qfa/Alpaca real-bar evaluation.",
+  "warnings": [
+    "Do not use this scaffold for allocation; generate_signals returns zero weights.",
+    "A later attempt would need an official Federal Reserve historical release-time source or immutable archived snapshots proving first-vintage table/chart values."
+  ]
+}

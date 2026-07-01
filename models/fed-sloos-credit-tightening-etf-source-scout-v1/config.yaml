@@ -1,0 +1,27 @@
+model_name: fed-sloos-credit-tightening-etf-source-scout-v1
+issue_id: AR-175
+status: rejected
+asset_bucket: etf
+crypto_label: false
+research_stage: source_vintage_gate
+allocation_enabled: false
+candidate_product_pool:
+  - XLF
+  - KRE
+  - HYG
+  - LQD
+  - IWM
+  - SPY
+  - XLP
+  - TLT
+  - IEF
+selected_universe: []
+source_gate_required: true
+source_gate_passed: false
+performance_enabled: false
+qfa_alpaca_real_bars_required_if_enabled: true
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
