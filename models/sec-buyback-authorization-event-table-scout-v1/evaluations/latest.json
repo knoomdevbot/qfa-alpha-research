@@ -1,0 +1,90 @@
+{
+  "issue_id": "AR-179",
+  "model_name": "sec-buyback-authorization-event-table-scout-v1",
+  "run_id": "ar179_source_gate_20260701T085214Z",
+  "completed_at": "2026-07-01T08:52:14Z",
+  "decision": "rejected",
+  "status": "rejected_source_gate",
+  "asset_bucket": "equity",
+  "crypto_label": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "metrics": null,
+  "source_gate": {
+    "passed": false,
+    "official_sec_edgar_probe_only": true,
+    "company_tickers_reachable": true,
+    "issuer_submissions_scanned": 12,
+    "issuer_submissions_limit": 12,
+    "recent_docs_scanned": 30,
+    "recent_docs_limit": 30,
+    "docs_scanned": 30,
+    "candidate_hits": 10,
+    "confirmed_events_sample": 4,
+    "mapped_liquid_events": 4,
+    "parser_precision_sample": 0.4,
+    "network_request_timeout_seconds_max": 10,
+    "rejection_reason": "no durable broad parser/event table >=150 events, no qfa/Alpaca performance"
+  },
+  "sample_issuers": [
+    "AAPL",
+    "NFLX",
+    "SNDK",
+    "MSFT",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "NVDA",
+    "JPM",
+    "WMT",
+    "HD",
+    "XOM"
+  ],
+  "confirmed_sample_events": [
+    {
+      "ticker": "AAPL",
+      "form": "8-K exhibit 99.1",
+      "filing_date": "2026-04-30",
+      "accession": "0000320193-26-000011",
+      "evidence": "board of directors has also authorized an additional program to repurchase up to $100 billion"
+    },
+    {
+      "ticker": "NFLX",
+      "form": "8-K Item 8.01",
+      "filing_date": "2026-04-23",
+      "accession": "0001065280-26-000139",
+      "evidence": "Board ... authorized the repurchase of an additional $25 billion"
+    },
+    {
+      "ticker": "SNDK",
+      "form": "8-K Item 8.01",
+      "filing_date": "2026-04-30",
+      "accession": "0001628280-26-028879",
+      "evidence": "Board of Directors had approved a $6 billion ... share repurchase program"
+    },
+    {
+      "ticker": "NVDA",
+      "form": "10-Q subsequent event note",
+      "filing_date": "2026-05-20",
+      "accession": "0001045810-26-000052",
+      "evidence": "Board of Directors approved an additional $80.0 billion in share repurchase authorization"
+    }
+  ],
+  "failure_modes_seen": [
+    "routine 10-Q remaining-capacity or financing text can match naive buyback patterns",
+    "same authorization can appear in both primary 8-K and exhibit/10-Q, requiring deduplication",
+    "historical authorization descriptions in current 10-Q filings are not necessarily new event timestamps"
+  ],
+  "performance": {
+    "ran": false,
+    "reason": "source_gate_failed",
+    "median_sharpe_10bps": null,
+    "p25_sharpe_10bps": null,
+    "positive_window_rate": null,
+    "stress_20bps_sharpe": null,
+    "control_results": null
+  }
+}

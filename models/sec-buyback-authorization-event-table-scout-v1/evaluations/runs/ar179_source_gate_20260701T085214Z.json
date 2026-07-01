@@ -1,0 +1,37 @@
+{
+  "issue_id": "AR-179",
+  "model_name": "sec-buyback-authorization-event-table-scout-v1",
+  "run_id": "ar179_source_gate_20260701T085214Z",
+  "completed_at": "2026-07-01T08:52:14Z",
+  "decision": "rejected",
+  "status": "rejected_source_gate",
+  "asset_bucket": "equity",
+  "crypto_label": false,
+  "no_csv_used": true,
+  "no_data_csv_argument_used": true,
+  "no_daemon": true,
+  "no_orders": true,
+  "raw_daily_paths_retained": false,
+  "metrics": null,
+  "source_gate": {
+    "passed": false,
+    "official_sec_edgar_probe_only": true,
+    "company_tickers_reachable": true,
+    "issuer_submissions_scanned": 12,
+    "issuer_submissions_limit": 12,
+    "recent_docs_scanned": 30,
+    "recent_docs_limit": 30,
+    "docs_scanned": 30,
+    "candidate_hits": 10,
+    "confirmed_events_sample": 4,
+    "mapped_liquid_events": 4,
+    "parser_precision_sample": 0.4,
+    "network_request_timeout_seconds_max": 10,
+    "rejection_reason": "no durable broad parser/event table >=150 events, no qfa/Alpaca performance"
+  },
+  "performance": {
+    "ran": false,
+    "reason": "source_gate_failed",
+    "metrics": null
+  }
+}

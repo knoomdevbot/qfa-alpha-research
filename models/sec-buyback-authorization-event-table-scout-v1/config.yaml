@@ -1,0 +1,22 @@
+issue_id: AR-179
+model_name: sec-buyback-authorization-event-table-scout-v1
+status: rejected_source_gate
+decision: rejected
+asset_bucket: equity
+crypto_label: false
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+source_gate:
+  type: official_sec_edgar_micro_scout
+  passed: false
+  bounded_probe: true
+  max_issuer_submissions: 12
+  max_recent_docs: 30
+  network_timeout_seconds: 10
+  rejection_reason: no durable broad parser/event table >=150 events, no qfa/Alpaca performance
+performance:
+  ran: false
+  metrics: null

@@ -1,0 +1,24 @@
+issue_id: AR-179
+model_name: sec-buyback-authorization-event-table-scout-v1
+title: Official SEC buyback authorization source/event-table feasibility scout
+created_at: '2026-07-01T08:52:14Z'
+completed_at: '2026-07-01T08:52:14Z'
+status: rejected_source_gate
+decision: rejected
+asset_bucket: equity
+crypto_label: false
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+metrics: null
+source_gate:
+  official_source: SEC EDGAR company_tickers.json, submissions JSON, Archives filing documents
+  bounded_probe: true
+  docs_scanned: 30
+  candidate_hits: 10
+  confirmed_events_sample: 4
+  mapped_liquid_events: 4
+  parser_precision_sample: 0.4
+  rejection_reason: no durable broad parser/event table >=150 events, no qfa/Alpaca performance
