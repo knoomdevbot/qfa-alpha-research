@@ -1,0 +1,70 @@
+issue_id: AR-186
+model_name: ar157-qfa-alpaca-replication-audit-ar063-v1
+asset_bucket: etf
+crypto_label: false
+data_source: qfa_alpaca_real_daily_only
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+primary_cost_bps: 10
+cost_sensitivity_bps: [5, 10, 20]
+random_window_count: 50
+universe_predeclared:
+  - SPY
+  - QQQ
+  - IWM
+  - DIA
+  - VTI
+  - EFA
+  - EEM
+  - VEA
+  - VWO
+  - ACWI
+  - XLK
+  - XLF
+  - XLE
+  - XLV
+  - XLY
+  - XLP
+  - XLU
+  - XLI
+  - XLB
+  - XLRE
+  - XLC
+  - IWF
+  - IWD
+  - IWO
+  - IWN
+  - MTUM
+  - QUAL
+  - USMV
+  - SPLV
+  - RSP
+  - SCHD
+  - TLT
+  - IEF
+  - SHY
+  - SHV
+  - BIL
+  - TIP
+  - LQD
+  - HYG
+  - MBB
+  - AGG
+  - BND
+  - EMB
+  - GLD
+  - IAU
+  - SLV
+  - DBC
+  - USO
+  - UNG
+  - UUP
+  - FXE
+  - FXY
+  - VNQ
+  - REET
+  - PDBC
+  - VIXY

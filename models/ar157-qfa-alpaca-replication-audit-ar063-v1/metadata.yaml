@@ -1,0 +1,9 @@
+issue_id: AR-186
+status: rejected
+model_name: ar157-qfa-alpaca-replication-audit-ar063-v1
+created_at_utc: 2026-07-01T15:21:02Z
+parent_alpha: AR-063 / AR-157
+artifact_type: compact_replication_audit
+provider: qfa_alpaca
+asset_bucket: etf
+crypto_label: false

@@ -1,0 +1,315 @@
+{
+  "asset_bucket": "etf",
+  "created_at_utc": "2026-07-01T15:21:02Z",
+  "crypto_label": false,
+  "data_source": "qfa AlpacaGateway real daily equity/ETF bars via configured paper-data access; provider bars used only in memory; no CSV/fallback/daemon/orders",
+  "date_range": {
+    "end": "2026-06-30",
+    "start": "2020-07-28",
+    "timeframe": "1Day"
+  },
+  "decision": "rejected",
+  "falsifiers_triggered": [
+    "controls_dominate"
+  ],
+  "issue_id": "AR-186",
+  "metrics": {
+    "compact_monthly_returns": {
+      "2020-07": 0.0,
+      "2020-08": 0.0,
+      "2020-09": 0.0,
+      "2020-10": 0.0,
+      "2020-11": 0.0,
+      "2020-12": 0.0,
+      "2021-01": 0.0,
+      "2021-02": 0.0,
+      "2021-03": 0.0,
+      "2021-04": 0.0,
+      "2021-05": 0.0,
+      "2021-06": 0.0,
+      "2021-07": 0.000876,
+      "2021-08": -0.004782,
+      "2021-09": -0.035421,
+      "2021-10": 0.016401,
+      "2021-11": -0.028252,
+      "2021-12": 0.01653,
+      "2022-01": -0.040317,
+      "2022-02": -0.007835,
+      "2022-03": 0.005818,
+      "2022-04": -0.069254,
+      "2022-05": -0.004459,
+      "2022-06": -0.034442,
+      "2022-07": 0.033323,
+      "2022-08": -0.035099,
+      "2022-09": -0.06252,
+      "2022-10": 0.014955,
+      "2022-11": 0.044645,
+      "2022-12": -0.023614,
+      "2023-01": 0.031101,
+      "2023-02": -0.030675,
+      "2023-03": 0.039333,
+      "2023-04": 0.021114,
+      "2023-05": 0.001535,
+      "2023-06": 0.045049,
+      "2023-07": 0.030618,
+      "2023-08": -0.012422,
+      "2023-09": -0.038799,
+      "2023-10": -0.036358,
+      "2023-11": 0.030548,
+      "2023-12": 0.029227,
+      "2024-01": 0.019055,
+      "2024-02": 0.003863,
+      "2024-03": 0.02008,
+      "2024-04": -0.03925,
+      "2024-05": 0.027881,
+      "2024-06": 0.019094,
+      "2024-07": -0.004423,
+      "2024-08": 0.019388,
+      "2024-09": 0.027069,
+      "2024-10": -0.017333,
+      "2024-11": 0.02179,
+      "2024-12": -0.050168,
+      "2025-01": 0.02485,
+      "2025-02": -0.013206,
+      "2025-03": -0.01771,
+      "2025-04": -0.008968,
+      "2025-05": 0.048351,
+      "2025-06": 0.031434,
+      "2025-07": -0.004069,
+      "2025-08": 0.028748,
+      "2025-09": 0.056997,
+      "2025-10": 0.00623,
+      "2025-11": -0.026704,
+      "2025-12": -0.04997,
+      "2026-01": 0.068505,
+      "2026-02": 0.027444,
+      "2026-03": -0.042452,
+      "2026-04": 0.022578,
+      "2026-05": 0.013599,
+      "2026-06": -0.037603
+    },
+    "control_dominated": true,
+    "controls": [
+      {
+        "annualized_return": 0.15353971774010589,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.25375196232339103,
+        "name": "SPY_buy_hold_10bps",
+        "sharpe": 0.919979556408403
+      },
+      {
+        "annualized_return": 0.10426875279702807,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.17202729536537187,
+        "name": "equal_weight_universe_10bps",
+        "sharpe": 0.9584089024393655
+      },
+      {
+        "annualized_return": 0.13298493719261706,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.3067318841638055,
+        "name": "static_risk_on_sleeve_10bps",
+        "sharpe": 0.757948663495398
+      },
+      {
+        "annualized_return": 0.0023911624961752143,
+        "dominates_primary_sharpe": false,
+        "max_drawdown": -0.1769314411940327,
+        "name": "static_defensive_sleeve_10bps",
+        "sharpe": 0.027529283089465374
+      },
+      {
+        "annualized_return": 0.02279788700344554,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.1309047148960676,
+        "name": "static_credit_real_asset_sleeve_10bps",
+        "sharpe": 0.35561436010635794
+      },
+      {
+        "annualized_return": 0.055441818262455866,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.15263149129723863,
+        "name": "etf_tsmom_126d_10bps",
+        "sharpe": 0.4492184784833957
+      },
+      {
+        "annualized_return": 0.14599808778262702,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.3360555661567928,
+        "name": "etf_reversal_5d_10bps",
+        "sharpe": 0.5552598085175754
+      },
+      {
+        "annualized_return": 0.04965674236842488,
+        "dominates_primary_sharpe": true,
+        "max_drawdown": -0.3259032614623635,
+        "name": "risk_off_switch_10bps",
+        "sharpe": 0.36223198725044864
+      },
+      {
+        "annualized_return": 0.004449083244395524,
+        "dominates_primary_sharpe": false,
+        "max_drawdown": -0.25488828207209235,
+        "name": "date_only_month_turn_10bps",
+        "sharpe": 0.039717595306268824
+      },
+      {
+        "dominates_primary_sharpe": true,
+        "name": "shifted_signal_proxy_10bps",
+        "sharpe": 0.13240743025917578
+      },
+      {
+        "dominates_primary_sharpe": false,
+        "name": "inverted_signal_proxy_10bps",
+        "sharpe": -0.1708976908024326
+      }
+    ],
+    "correlations": [
+      {
+        "status": "no_stream_proxy_only",
+        "target": "AR-037"
+      },
+      {
+        "status": "no_stream_proxy_only",
+        "target": "AR-043"
+      },
+      {
+        "status": "no_stream_proxy_only",
+        "target": "AR-051"
+      },
+      {
+        "method": "compact_proxy",
+        "status": "insufficient_overlap",
+        "target": "AR-063"
+      },
+      {
+        "status": "no_stream_proxy_only",
+        "target": "AR-157"
+      },
+      {
+        "status": "no_stream_proxy_only",
+        "target": "AR-167"
+      },
+      {
+        "status": "no_stream_proxy_only",
+        "target": "AR-178"
+      }
+    ],
+    "cost_sensitivity": {
+      "10bps": {
+        "median_random_sharpe": 0.646008352872509,
+        "p25_random_sharpe": 0.005211042242356134,
+        "primary_sharpe": 0.06752318256651094
+      },
+      "20bps": {
+        "median_random_sharpe": 0.3687422545342267,
+        "p25_random_sharpe": -0.17067596842446897,
+        "primary_sharpe": -0.10926576182944454
+      },
+      "5bps": {
+        "median_random_sharpe": 0.7746827318860884,
+        "p25_random_sharpe": 0.1260253742041251,
+        "primary_sharpe": 0.1570778356577576
+      }
+    },
+    "max_relevant_abs_correlation": null,
+    "primary_10bps": {
+      "annualized_return": 0.007099282961872566,
+      "annualized_volatility": 0.10513845307690747,
+      "max_drawdown": -0.24139354610291142,
+      "mean_daily_turnover": 0.07392054909696039,
+      "periods": 1488,
+      "sharpe": 0.06752318256651094,
+      "total_return": 0.04265618022749229,
+      "win_rate": 0.46102150537634407
+    },
+    "random_windows_10bps": {
+      "count": 55,
+      "median_sharpe": 0.646008352872509,
+      "p25_sharpe": 0.005211042242356134,
+      "positive_window_rate": 0.7454545454545455,
+      "worst_sharpe": -1.8370814757944247
+    }
+  },
+  "model_name": "ar157-qfa-alpaca-replication-audit-ar063-v1",
+  "no_csv_used": true,
+  "no_daemon": true,
+  "no_data_csv_argument_used": true,
+  "no_orders": true,
+  "qfa_source_repo_read_only": "/Users/moonk/quant-for-agent",
+  "raw_daily_paths_retained": false,
+  "reconstruction_assumptions": [
+    "AR-063/AR-157 true macro-surprise source was unavailable/frozen; reconstructed as OHLCV-only drawdown/stress/recovery allocator from local issue/artifact descriptions",
+    "Fixed lookbacks: 252d drawdown, 20d realized-vol stress z-score, 126d ETF momentum, LQD-HYG 63d credit-stress proxy; no parameter search",
+    "Weights are deterministic long-only gross<=1 and shifted one day to avoid lookahead"
+  ],
+  "run_id": "ar186_qfa_alpaca_real_20260701T152058Z",
+  "universe": {
+    "excluded": {},
+    "predeclared_count": 56,
+    "selected_count": 56,
+    "selected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA",
+      "VTI",
+      "EFA",
+      "EEM",
+      "VEA",
+      "VWO",
+      "ACWI",
+      "XLK",
+      "XLF",
+      "XLE",
+      "XLV",
+      "XLY",
+      "XLP",
+      "XLU",
+      "XLI",
+      "XLB",
+      "XLRE",
+      "XLC",
+      "IWF",
+      "IWD",
+      "IWO",
+      "IWN",
+      "MTUM",
+      "QUAL",
+      "USMV",
+      "SPLV",
+      "RSP",
+      "SCHD",
+      "TLT",
+      "IEF",
+      "SHY",
+      "SHV",
+      "BIL",
+      "TIP",
+      "LQD",
+      "HYG",
+      "MBB",
+      "AGG",
+      "BND",
+      "EMB",
+      "GLD",
+      "IAU",
+      "SLV",
+      "DBC",
+      "USO",
+      "UNG",
+      "UUP",
+      "FXE",
+      "FXY",
+      "VNQ",
+      "REET",
+      "PDBC",
+      "VIXY"
+    ],
+    "selection_rule": "predeclared broad liquid ETF universe; retained only qfa/Alpaca daily coverage >=1500 bars and common-history availability; no performance filter"
+  },
+  "warnings": [
+    "Alpaca credentials were inherited silently from configured running qfa environment; credential values were not printed or stored",
+    "Correlation to prior alphas uses compact monthly/proxy streams when daily retained streams are absent; marked as limitation"
+  ]
+}
