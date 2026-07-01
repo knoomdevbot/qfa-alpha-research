@@ -1364,9 +1364,20 @@ issues:
   issue_path: alpha_research/issues/AR-176.md
   last_checked_at: '2026-07-01T05:35:15Z'
   tried_count: 1
-active_batch: []
+- id: AR-177
+  title: Sector-neutral peer-cluster residual convergence in liquid U.S. common stocks
+  model_name: sector-neutral-peer-residual-convergence-v1
+  status: queued
+  priority: preflight_queue
+  family: sector_neutral_peer_residual_convergence
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-177.md
+  last_checked_at: '2026-07-01T05:42:07Z'
+  tried_count: 0
+active_batch:
+- AR-177
 last_realdata_batch:
 - AR-171
-updated_at: '2026-07-01T05:35:15Z'
+updated_at: '2026-07-01T05:42:07Z'
 target_tried_ideas: 100
 tried_ideas_count: 160
