@@ -1462,9 +1462,21 @@ issues:
   parent: AR-028/AR-045/AR-046/AR-056
   last_checked_at: '2026-07-01T14:29:11Z'
   tried_count: 1
-active_batch: []
+- id: AR-186
+  title: AR-157 caveat resolution qfa/Alpaca-only replication audit of AR-063 macro-drawdown ETF allocator rejection
+  model_name: ar157-qfa-alpaca-replication-audit-ar063-v1
+  status: queued
+  priority: preflight_queue_validator_only
+  family: macro_drawdown_allocator_replication_audit
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-186.md
+  parent: AR-063/AR-157
+  last_checked_at: '2026-07-01T15:10:10Z'
+  tried_count: 0
+active_batch:
+- AR-186
 last_realdata_batch:
 - AR-185
-updated_at: '2026-07-01T14:29:11Z'
+updated_at: '2026-07-01T15:10:10Z'
 target_tried_ideas: 100
 tried_ideas_count: 169
