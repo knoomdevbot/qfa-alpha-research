@@ -1385,9 +1385,21 @@ issues:
   parent: AR-039/AR-051
   last_checked_at: '2026-07-01T07:11:53Z'
   tried_count: 1
-active_batch: []
+- id: AR-179
+  title: Official SEC buyback authorization source/event-table feasibility scout
+  model_name: sec-buyback-authorization-event-table-scout-v1
+  status: queued
+  priority: preflight_queue
+  family: public_filing_buyback_authorization_source
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-179.md
+  parent: null
+  last_checked_at: '2026-07-01T07:25:43Z'
+  tried_count: 0
+active_batch:
+- AR-179
 last_realdata_batch:
 - AR-178
-updated_at: '2026-07-01T07:11:53Z'
+updated_at: '2026-07-01T07:25:43Z'
 target_tried_ideas: 100
 tried_ideas_count: 162
