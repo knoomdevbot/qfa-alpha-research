@@ -1451,9 +1451,20 @@ issues:
   parent: AR-005
   last_checked_at: '2026-07-01T13:56:30Z'
   tried_count: 1
+- id: AR-185
+  title: AR-028/045/046/056 closing-volume liquidity-exhaustion single-stock promotion/pruning validator
+  model_name: closing-liquidity-exhaustion-single-stock-validator-v1
+  status: rejected
+  priority: completed_realdata_validator
+  family: liquidity_reversal_validator
+  asset_bucket: equity
+  issue_path: alpha_research/issues/AR-185.md
+  parent: AR-028/AR-045/AR-046/AR-056
+  last_checked_at: '2026-07-01T14:29:11Z'
+  tried_count: 1
 active_batch: []
 last_realdata_batch:
-- AR-184
-updated_at: '2026-07-01T13:56:30Z'
+- AR-185
+updated_at: '2026-07-01T14:29:11Z'
 target_tried_ideas: 100
-tried_ideas_count: 168
+tried_ideas_count: 169

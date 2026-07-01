@@ -1,0 +1,57 @@
+issue_id: AR-185
+model_name: closing-liquidity-exhaustion-single-stock-validator-v1
+parent_issue_id: AR-028/AR-045/AR-046/AR-056
+asset_bucket: equity
+crypto_label: false
+research_type: promotion_pruning_validator
+data_source: qfa/Alpaca real daily bars only; no CSV; credentials redacted
+universe_policy:
+  candidate_pool: fixed broad U.S.-listed liquid common-stock list across sectors; no ETFs/ETNs/funds/ADRs/preferreds/REITs intentionally included
+  selected_count: 150
+  primary_etfs_excluded: true
+  deterministic_filters:
+    - Alpaca daily OHLCV availability
+    - at least 1500 daily bars in fetch span
+    - 2019 median price at least 5 USD
+    - 2019 median dollar volume at least 50mm USD
+    - no alpha-performance filtering
+  survivorship_risk: current large/liquid common-stock list is ex-post and has survivorship/index-membership lookahead risk
+signal:
+  direction: closing_volume_liquidity_exhaustion_reversal
+  formula: score = -(0.65 * 1d_return_z60 + 0.35 * 2 * close_location_centered) * max(volume_abnormal_z126, 0)
+  gates:
+    volume_z_min: 0.75
+    abs_return_z_min: 0.50
+    abs_close_location_min: 0.25
+  volume_median_window: 60
+  volume_z_window: 126
+  return_z_window: 60
+  top_bottom_quantile: 0.20
+  max_abs_weight: 0.03
+  gross_target: 1.0
+  rebalance: daily close signal, next-session close-to-close evaluation
+costs:
+  primary_decision_cost_bps: 10
+  diagnostic_bps: 5
+  stress_bps: 20
+acceptance_gates:
+  median_random_window_sharpe_10bps: "> 0"
+  p25_random_window_sharpe_10bps: not materially negative
+  positive_window_rate: ">= 55%"
+  stress_20bps: must not collapse
+  max_relevant_correlation: "<= 0.60"
+controls_required:
+  - generic_single_stock_reversal
+  - volume_only
+  - close_location_only
+  - shifted_labels
+  - random_labels
+  - SPY_buy_hold
+  - QQQ_buy_hold
+  - equal_weight_selected_common_stocks
+artifact_policy:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false

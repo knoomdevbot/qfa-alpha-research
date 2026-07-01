@@ -1,0 +1,19 @@
+issue_id: AR-185
+model_name: closing-liquidity-exhaustion-single-stock-validator-v1
+parent: AR-028/AR-045/AR-046/AR-056
+status: rejected
+asset_bucket: equity
+crypto_label: false
+created_at: '2026-07-01T14:29:11Z'
+updated_at: '2026-07-01T14:29:11Z'
+research_type: promotion_pruning_validator
+family: liquidity_reversal_validator
+hypothesis: Daily OHLCV abnormal volume plus close-location/liquidity-exhaustion may contain robust short-horizon reversal in liquid common stocks.
+falsifier: Reject/prune if 10 bps cost-adjusted random-window median Sharpe <= 0, p25 materially negative, positive-window rate <55%, 20 bps costs collapse, controls dominate, turnover excessive, or max relevant correlation >0.60.
+data_source: qfa/Alpaca real daily bars only; no CSV-backed qfa backtests.
+artifact_policy:
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
