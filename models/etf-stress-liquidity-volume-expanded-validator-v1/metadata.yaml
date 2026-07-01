@@ -1,0 +1,45 @@
+issue: AR-187
+title: AR-043 ETF stress-liquidity-volume expanded-universe promotion/pruning validator
+model_name: etf-stress-liquidity-volume-expanded-validator-v1
+status: rejected
+decision: rejected
+family: liquidity_stress_validator
+asset_bucket: etf
+type: stress-test / promotion-pruning validator
+parent_alpha: AR-043
+created_at: '2026-07-01T16:04:59Z'
+completed_at: '2026-07-01T16:04:59Z'
+preflight:
+  verdict: queue_validator_only
+  confidence: medium
+  score: 21/30
+  rationale: Queue only as a terminal validator, not a new alpha family.
+data:
+  source: Alpaca real daily OHLCV via qfa AlpacaGateway
+  configured_access: configured paper-data access / configured market-data access
+  no_csv_used: true
+  no_data_csv_argument_used: true
+  no_daemon: true
+  no_orders: true
+  raw_daily_paths_retained: false
+evaluation:
+  primary_cost_bps: 10
+  sensitivity_cost_bps: [5, 20]
+  random_windows: 40
+  stress_windows: 10
+  selected_symbol_count: 48
+key_metrics:
+  primary_10bps_sharpe: 0.6172688016000923
+  median_random_stress_window_sharpe_10bps: 0.7159278614579974
+  p25_random_stress_window_sharpe_10bps: 0.21991702646449462
+  worst_random_stress_window_sharpe_10bps: -0.7815256647070731
+  positive_window_rate_10bps: 0.82
+  max_drawdown_10bps: -0.18419689143968054
+  avg_daily_turnover_10bps: 0.07131988603075488
+  best_control: spy_buy_hold
+  best_control_sharpe: 0.799377761212326
+  max_relevant_abs_correlation: 0.9272508279357444
+falsifiers_triggered:
+  - controls_dominate
+  - max_relevant_correlation_gt_0_60
+children_spawned: false

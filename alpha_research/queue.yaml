@@ -1473,9 +1473,20 @@ issues:
   parent: AR-063/AR-157
   last_checked_at: '2026-07-01T15:10:10Z'
   tried_count: 1
+- id: AR-187
+  title: AR-043 ETF stress-liquidity-volume expanded-universe promotion/pruning validator
+  model_name: etf-stress-liquidity-volume-expanded-validator-v1
+  status: rejected
+  priority: completed_realdata_validator
+  family: liquidity_stress_validator
+  asset_bucket: etf
+  issue_path: alpha_research/issues/AR-187.md
+  parent: AR-043
+  last_checked_at: '2026-07-01T16:04:59Z'
+  tried_count: 1
 active_batch: []
 last_realdata_batch:
-- AR-186
-updated_at: '2026-07-01T15:21:02Z'
+- AR-187
+updated_at: '2026-07-01T16:04:59Z'
 target_tried_ideas: 100
-tried_ideas_count: 170
+tried_ideas_count: 171

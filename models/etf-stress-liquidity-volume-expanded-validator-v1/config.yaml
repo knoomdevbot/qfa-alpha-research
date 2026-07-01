@@ -1,0 +1,84 @@
+issue: AR-187
+model_name: etf-stress-liquidity-volume-expanded-validator-v1
+status: rejected
+family: liquidity_stress_validator
+asset_bucket: etf
+type: stress-test / promotion-pruning validator
+parent_alpha: AR-043
+data_source: Alpaca real daily OHLCV via qfa AlpacaGateway
+no_csv_used: true
+no_data_csv_argument_used: true
+no_daemon: true
+no_orders: true
+raw_daily_paths_retained: false
+candidate_pool_rule: broad U.S.-listed liquid ETFs across broad equity, sectors, styles/factors, duration/credit, commodities, real assets, and FX proxies where Alpaca/qfa bars exist; exclude leveraged/inverse/ETNs from primary unless diagnostics
+rebalance: daily close signal, target weights shifted one trading day in evaluation
+min_history_days: 130
+baseline_window_days: 90
+trend_window_days: 40
+vol_window_days: 40
+max_single_weight: 0.12
+cost_bps_evaluated:
+  - 5
+  - 10
+  - 20
+primary_cost_bps: 10
+acceptance_gates:
+  median_random_window_sharpe_gt_0: true
+  p25_random_window_sharpe_gt_0: true
+  positive_window_rate_ge_55pct: true
+  cost_20bps_not_collapsed: true
+  max_corr_le_0_60: false
+  beats_controls: false
+falsifiers_triggered:
+  - controls_dominate
+  - max_relevant_correlation_gt_0_60
+selected_symbols:
+  - SPY
+  - QQQ
+  - IWM
+  - DIA
+  - VTI
+  - MDY
+  - IJR
+  - EFA
+  - EEM
+  - EWJ
+  - EWZ
+  - FXI
+  - XLB
+  - XLE
+  - XLF
+  - XLI
+  - XLK
+  - XLP
+  - XLU
+  - XLV
+  - XLY
+  - IWF
+  - IWD
+  - MTUM
+  - QUAL
+  - USMV
+  - VLUE
+  - TLT
+  - IEF
+  - SHY
+  - BIL
+  - AGG
+  - BND
+  - LQD
+  - HYG
+  - TIP
+  - EMB
+  - GLD
+  - SLV
+  - DBC
+  - DBA
+  - USO
+  - UNG
+  - VNQ
+  - REM
+  - UUP
+  - FXE
+  - FXY
