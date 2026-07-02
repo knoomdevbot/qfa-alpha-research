@@ -1,20 +1,29 @@
-# AR-192 source-gate run — 2026-07-01T20:32:03Z
+# AR-192 latest evaluation — EIA WNGSR storage-shock ETF scout
 
-Decision: `source_gate_passed_needs_realdata_evaluation`.
+- **Decision:** rejected
+- **Run ID:** `ar192_realdata_micro_20260701T223000Z`
+- **Data:** official EIA dated archive pages plus qfa/Alpaca real daily OHLCV; no CSV, no daemon, no orders.
+- **Universe:** `UNG`, `UNL`, `XLE`, `XOP`, `AMLP`, `XLU`, `DBC`, `USO`; controls included `SPY`, `UNG`, and an equal-weight exposed ETF basket.
+- **Events:** 108 dated official pages parsed; 80 signal events after same-month seasonal warmup.
+- **Protocol:** next-session and five-session event returns, 5/10/20 bps cost sensitivity, 30 contiguous 12-event random/stress windows for the five-session 10 bps decision series.
 
-## Compact findings
+## Metrics
 
-- Official EIA archive index `https://www.eia.gov/naturalgas/weekly/includes/archive.php` was reachable and a bounded probe counted about 1,507 `archivenew_ngwu` dated archive links.
-- Four official dated EIA archive pages were sampled; all contained a release date and a WNGSR-sourced working-gas storage table with total stock levels and net change:
-  - 2025-12-18 page: total 3,579 Bcf vs 3,746 Bcf, net change -167 Bcf.
-  - 2024-12-19 page: total 3,622 Bcf vs 3,747 Bcf, net change -125 Bcf.
-  - 2023-09-28 page: total 3,359 Bcf vs 3,269 Bcf, net change +90 Bcf.
-  - 2022-12-22 page: total 3,325 Bcf vs 3,412 Bcf, net change -87 Bcf.
-- Current official WNGSR files (`wngsr.json`, `wngsr.csv`, `wngsr.txt`) were reachable. Current CSV includes exact 10:30 a.m. Eastern release-time wording for the current release.
-- Current/revised history workbooks (`ngshistory.xls`, `archngshistory.xls`) are reachable but were not counted as first-vintage proof by themselves.
+| Metric | Value |
+|---|---:|
+| Median random-window Sharpe | -0.2944 |
+| p25 random-window Sharpe | -1.6450 |
+| Worst random-window Sharpe | -2.6004 |
+| Positive-window rate | 0.4000 |
+| 5-session 10 bps event Sharpe | 0.0867 |
+| 5-session equal-weight control Sharpe | 0.4664 |
+| 5-session hit rate | 0.3125 |
+| 5-session max drawdown proxy | -0.3132 |
 
-## Caveat for later evaluator
+## Rationale
 
-Historical archive pages directly provide dated values/net changes; the exact intraday timestamp should be normalized conservatively using official WNGSR schedule/current-release convention and audited for holiday exceptions before any market-data evaluation.
+Rejected because the after-cost random-window distribution was hostile and the equal-weight exposed ETF basket control dominated the event rule. The result prunes this simple WNGSR storage-shock ETF allocation hypothesis; no direct refinement child was spawned.
 
-No qfa/Alpaca performance run was executed. Metrics remain null.
+## Process caveat
+
+A subagent timeout produced a partial artifact claiming market-data credentials were unavailable. Controller smoke testing independently verified configured market-data access and recovered with a hard-capped real-data micro-evaluator, so the issue was not placed on hold.
