@@ -1542,18 +1542,17 @@ issues:
 - id: AR-193
   title: AR-006/AR-021 turn-of-month ETF seasonality expanded-universe promotion/pruning validator
   model_name: turn-month-etf-expanded-universe-validator-v1
-  status: queued
-  priority: preflight_queue_validator_only
+  status: rejected
+  priority: completed_realdata_validator
   family: etf_turn_of_month_seasonality_validator
   asset_bucket: etf
   issue_path: alpha_research/issues/AR-193.md
   parent: AR-006/AR-021
-  last_checked_at: '2026-07-02T01:42:49Z'
-  tried_count: 0
-active_batch:
-- AR-193
+  last_checked_at: '2026-07-02T01:52:30Z'
+  tried_count: 1
+active_batch: []
 last_realdata_batch:
-- AR-192
-updated_at: '2026-07-02T01:42:49Z'
+- AR-193
+updated_at: '2026-07-02T01:52:30Z'
 target_tried_ideas: 100
-tried_ideas_count: 176
+tried_ideas_count: 177
